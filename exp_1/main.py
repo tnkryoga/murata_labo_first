@@ -232,7 +232,7 @@ def main(cfg: DictConfig):
     trainer = pl.Trainer(
         max_epochs=cfg.training.n_epochs,
         devices=1, 
-        enable_progress_bar=30,
+        enable_progress_bar=0,
         callbacks=call_backs,
         logger=wandb_logger,
     )
