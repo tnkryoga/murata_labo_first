@@ -1,0 +1,98 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    python_version: 3.10.11
+    cli_version: 0.15.3
+    framework: huggingface
+    huggingface_version: 4.29.2
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1684902701.635679
+    t:
+      1:
+      - 1
+      - 5
+      - 9
+      - 11
+      - 12
+      - 41
+      - 49
+      - 50
+      - 53
+      - 55
+      2:
+      - 1
+      - 5
+      - 9
+      - 11
+      - 12
+      - 41
+      - 49
+      - 50
+      - 53
+      - 55
+      3:
+      - 7
+      - 13
+      - 15
+      - 23
+      4: 3.10.11
+      5: 0.15.3
+      6: 4.29.2
+      8:
+      - 5
+    m:
+    - 1: trainer/global_step
+      6:
+      - 3
+wandb/project:
+  desc: null
+  value: murata_exp
+wandb/exp_num:
+  desc: null
+  value: 1
+wandb/tags:
+  desc: null
+  value:
+  - bert
+path/data_file_name:
+  desc: null
+  value: /content/drive/MyDrive/murata_labo_exp/data/livedoor.tsv
+path/checkpoint_path:
+  desc: null
+  value: checkpoints
+model/d_model:
+  desc: null
+  value: 768
+model/n_classes:
+  desc: null
+  value: 9
+model/max_length:
+  desc: null
+  value: 512
+training/test_size:
+  desc: null
+  value: 0.3
+training/n_epochs:
+  desc: null
+  value: 30
+training/batch_size:
+  desc: null
+  value: 32
+training/learning_rate:
+  desc: null
+  value: 0.0001
+training/text_column_name:
+  desc: null
+  value: article
+training/label_column_name:
+  desc: null
+  value: label
+callbacks/patience:
+  desc: null
+  value: 5
+callbacks/patience_min_delta:
+  desc: null
+  value: 0
