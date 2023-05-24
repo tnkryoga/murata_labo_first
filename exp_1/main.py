@@ -146,7 +146,7 @@ class CustumBert(pl.LightningModule):
         loss = self.criterion(y_hat, y)
         return {"loss": loss, "batch_preds": y_hat, "batch_labels": y}
 
-    def training_epoch_end(self, outputs, mode="train"):
+    def on_training_epoch_end(self, outputs, mode="train"):
         epoch_y_hats = torch.cat([x["batch_preds"] for x in outputs])
         epoch_labels = torch.cat([x["batch_labels"] for x in outputs])
         epoch_loss = self.criterion(epoch_y_hats, epoch_labels)
