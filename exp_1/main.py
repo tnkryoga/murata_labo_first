@@ -159,7 +159,7 @@ class CustumBert(pl.LightningModule):
         epoch_auroc = auroc(epoch_y_hats, epoch_labels, num_classes=self.n_classes)
         self.log(f"{mode}_auroc", epoch_auroc)
 
-    def on_validation_epoch_end(self, outputs=True, mode="val"):
+    def on_validation_epoch_end(self, outputs=1, mode="val"):
         epoch_y_hats = torch.cat([x["batch_preds"] for x in outputs])
         epoch_labels = torch.cat([x["batch_labels"] for x in outputs])
         epoch_loss = self.criterion(epoch_y_hats, epoch_labels)
