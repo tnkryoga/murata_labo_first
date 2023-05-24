@@ -231,7 +231,7 @@ def main(cfg: DictConfig):
     )
     trainer = pl.Trainer(
         max_epochs=cfg.training.n_epochs,
-        gpus=1,
+        devices=1, 
         progress_bar_refresh_rate=30,
         callbacks=call_backs,
         logger=wandb_logger,
