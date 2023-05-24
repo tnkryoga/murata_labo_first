@@ -73,7 +73,7 @@ class CreateDataModule(pl.LightningDataModule):
         self.text_columm_name = text_column_name
         self.label_column_name = label_column_name
 
-    def setup(self):
+    def setup(self,stage=None):
         self.train_dataset = BertDataset(
             self.train_df,
             self.tokenizer,
