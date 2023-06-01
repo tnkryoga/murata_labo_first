@@ -75,7 +75,7 @@ class CreateDataModule(pl.LightningDataModule):
         self.tokenizer = BertJapaneseTokenizer.from_pretrained(pretrained_model)
 
     # train,val,testデータのsplit
-    def setup(self):
+    def setup(self, stage=None):
         self.train_dataset = CreateDataset(
             self.train_df, self.tokenizer, self.max_token_len
         )
