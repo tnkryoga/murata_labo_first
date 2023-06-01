@@ -164,7 +164,7 @@ class TextClassifierModel(pl.LightningModule):
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
     # epoch終了時にvalidationのlossとaccuracyを記録
-    def validation_epoch_end(self, outputs, mode="val"):
+    def on_validation_epoch_end(self, outputs, mode="val"):
         # loss計算
         epoch_preds = torch.cat([x["batch_preds"] for x in outputs])
         epoch_labels = torch.cat([x["batch_labels"] for x in outputs])
@@ -177,7 +177,7 @@ class TextClassifierModel(pl.LightningModule):
         self.log(f"{mode}_accuracy", epoch_accuracy, logger=True)
 
     # testデータのlossとaccuracyを算出（validationの使いまわし）
-    def test_epoch_end(self, outputs):
+    def on_test_epoch_end(self, outputs):
         return self.validation_epoch_end(outputs, "test")
 
     # optimizerの設定
