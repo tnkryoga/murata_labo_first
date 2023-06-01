@@ -1,0 +1,8 @@
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp_1/main.py", line 233, in main
+    pd.read_csv(cfg.data_file_name),
+omegaconf.errors.ConfigAttributeError: Key 'data_file_name' is not in struct
+    full_key: data_file_name
+    object_type=dict
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
