@@ -1,0 +1,8 @@
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp_1/main.py", line 234, in main
+    train_size=cfg.traning.val_test_size,
+omegaconf.errors.ConfigAttributeError: Key 'traning' is not in struct
+    full_key: traning
+    object_type=dict
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
