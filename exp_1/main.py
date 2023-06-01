@@ -256,7 +256,7 @@ def main(cfg: DictConfig):
     # modelのインスタンスの作成
     model = TextClassifierModel(
         n_classes=cfg.model.n_classes,
-        n_epochs=cfg.n_epochs,
+        n_epochs=cfg.training.n_epochs,
     )
 
     # Trainerの設定
