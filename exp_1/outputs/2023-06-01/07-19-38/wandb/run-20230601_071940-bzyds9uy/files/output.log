@@ -1,0 +1,11 @@
+Downloading (…)solve/main/vocab.txt: 100% 15.7k/15.7k [00:00<00:00, 24.1MB/s]
+Downloading (…)okenizer_config.json: 100% 110/110 [00:00<00:00, 117kB/s]
+Downloading (…)lve/main/config.json: 100% 478/478 [00:00<00:00, 294kB/s]
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp_1/main.py", line 259, in main
+    n_epochs=cfg.n_epochs,
+omegaconf.errors.ConfigAttributeError: Key 'n_epochs' is not in struct
+    full_key: n_epochs
+    object_type=dict
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
