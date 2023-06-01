@@ -230,7 +230,7 @@ def main(cfg: DictConfig):
 
     # dataModuleのインスタンス化
     train, val_test = train_test_split(
-        pd.read_csv(cfg.data_file_name),
+        pd.read_csv(cfg.path.data_file_name),
         train_size=cfg.traning.val_test_size,
         random_state=cfg.traning.seed,
     )
