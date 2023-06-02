@@ -1,0 +1,28 @@
+2023-06-02 01:35:32,840 INFO    MainThread:14385 [wandb_setup.py:_flush():76] Current SDK version is 0.15.3
+2023-06-02 01:35:32,841 INFO    MainThread:14385 [wandb_setup.py:_flush():76] Configure stats pid to 14385
+2023-06-02 01:35:32,841 INFO    MainThread:14385 [wandb_setup.py:_flush():76] Loading settings from /root/.config/wandb/settings
+2023-06-02 01:35:32,841 INFO    MainThread:14385 [wandb_setup.py:_flush():76] Loading settings from /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp_1/outputs/2023-06-02/01-35-31/wandb/settings
+2023-06-02 01:35:32,841 INFO    MainThread:14385 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-06-02 01:35:32,842 INFO    MainThread:14385 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-06-02 01:35:32,842 INFO    MainThread:14385 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'exp_1/main.py', 'program': '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp_1/main.py'}
+2023-06-02 01:35:32,843 INFO    MainThread:14385 [wandb_init.py:_log_setup():507] Logging user logs to ./wandb/run-20230602_013532-aphkovg9/logs/debug.log
+2023-06-02 01:35:32,843 INFO    MainThread:14385 [wandb_init.py:_log_setup():508] Logging internal logs to ./wandb/run-20230602_013532-aphkovg9/logs/debug-internal.log
+2023-06-02 01:35:32,843 INFO    MainThread:14385 [wandb_init.py:init():547] calling init triggers
+2023-06-02 01:35:32,844 INFO    MainThread:14385 [wandb_init.py:init():554] wandb.init called with sweep_config: {}
+config: {}
+2023-06-02 01:35:32,844 INFO    MainThread:14385 [wandb_init.py:init():596] starting backend
+2023-06-02 01:35:32,844 INFO    MainThread:14385 [wandb_init.py:init():600] setting up manager
+2023-06-02 01:35:32,849 INFO    MainThread:14385 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-06-02 01:35:32,856 INFO    MainThread:14385 [wandb_init.py:init():606] backend started and connected
+2023-06-02 01:35:32,860 INFO    MainThread:14385 [wandb_init.py:init():700] updated telemetry
+2023-06-02 01:35:32,923 INFO    MainThread:14385 [wandb_init.py:init():737] communicating run to backend with 60.0 second timeout
+2023-06-02 01:35:33,176 INFO    MainThread:14385 [wandb_run.py:_on_init():2177] communicating current version
+2023-06-02 01:35:33,220 INFO    MainThread:14385 [wandb_run.py:_on_init():2186] got version response 
+2023-06-02 01:35:33,220 INFO    MainThread:14385 [wandb_init.py:init():787] starting run threads in backend
+2023-06-02 01:35:33,384 INFO    MainThread:14385 [wandb_run.py:_console_start():2158] atexit reg
+2023-06-02 01:35:33,386 INFO    MainThread:14385 [wandb_run.py:_redirect():2013] redirect: SettingsConsole.WRAP_RAW
+2023-06-02 01:35:33,386 INFO    MainThread:14385 [wandb_run.py:_redirect():2078] Wrapping output streams.
+2023-06-02 01:35:33,387 INFO    MainThread:14385 [wandb_run.py:_redirect():2103] Redirects installed.
+2023-06-02 01:35:33,390 INFO    MainThread:14385 [wandb_init.py:init():829] run started, returning control to user process
+2023-06-02 01:35:33,394 INFO    MainThread:14385 [wandb_run.py:_config_callback():1286] config_cb None None {'wandb/project': 'murata_exp', 'wandb/exp_num': 1, 'wandb/tags': ['bert'], 'path/data_file_name': '/content/drive/MyDrive/murata_labo_exp/data/livedoor_sentence.csv', 'path/checkpoint_path': 'checkpoints', 'model/d_model': 768, 'model/n_classes': 3, 'model/max_length': 512, 'training/val_test_size': 0.3, 'training/test_size': 0.15, 'training/n_epochs': 10, 'training/seed': 40, 'training/batch_size': 32, 'training/learning_rate': 0.0001, 'training/text_column_name': 'sentence', 'training/label_column_name': 'label', 'callbacks/patience': 3, 'callbacks/patience_min_delta': 0}
+2023-06-02 01:37:12,387 WARNING MsgRouterThr:14385 [router.py:message_loop():77] message_loop has been closed
