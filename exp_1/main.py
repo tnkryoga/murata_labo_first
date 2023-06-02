@@ -172,10 +172,10 @@ class TextClassifierModel(pl.LightningModule):
         self, mode="val"
     ):  # https://github.com/Lightning-AI/lightning/pull/16520
         # loss計算
-        epoch_preds = torch.cat(
+        epoch_preds = torch.stack(
             [x["batch_preds"] for x in self.validation_step_outputs], dim=0
         )
-        epoch_labels = torch.cat(
+        epoch_labels = torch.stack(
             [x["batch_labels"] for x in self.validation_step_outputs], dim=0
         )
         epoch_loss = self.criterion(epoch_preds, epoch_labels)
