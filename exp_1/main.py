@@ -190,7 +190,7 @@ class TextClassifierModel(pl.LightningModule):
         self.validation_step_outputs.clear()"""
         epoch_average = torch.stack(self.validation_step_outputs).mean()
         self.validation_step_outputs.clear()  # free memory
-        self.log("val/loss", epoch_average)
+        self.log(f"{mode}_accuracy", epoch_average, logger=True)
 
     # testデータのlossとaccuracyを算出（validationの使いまわし）
     def on_test_epoch_end(self):
