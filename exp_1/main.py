@@ -172,7 +172,7 @@ class TextClassifierModel(pl.LightningModule):
         self, mode="val"
     ):  # https://github.com/Lightning-AI/lightning/pull/16520
         # loss計算
-        print(self.validation_step_outputs)
+        """print(self.validation_step_outputs)
         epoch_preds = torch.stack(
             [x["batch_preds"] for x in self.validation_step_outputs], dim=0
         )
@@ -187,7 +187,10 @@ class TextClassifierModel(pl.LightningModule):
         epoch_accuracy = num_correct / len(epoch_labels)
         self.log(f"{mode}_accuracy", epoch_accuracy, logger=True)
 
-        self.validation_step_outputs.clear()
+        self.validation_step_outputs.clear()"""
+        epoch_average = torch.stack(self.validation_step_outputs).mean()
+        self.validation_step_outputs.clear()  # free memory
+        self.log("val/loss", epoch_average)
 
     # testデータのlossとaccuracyを算出（validationの使いまわし）
     def on_test_epoch_end(self):
