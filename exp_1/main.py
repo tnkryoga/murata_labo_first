@@ -155,6 +155,7 @@ class TextClassifierModel(pl.LightningModule):
             attention_mask=batch["attention_mask"],
             labels=batch["labels"],
         )
+        self.validation_step_outputs.append(loss)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
     def test_step(self, batch, batch_idx):
@@ -163,6 +164,7 @@ class TextClassifierModel(pl.LightningModule):
             attention_mask=batch["attention_mask"],
             labels=batch["labels"],
         )
+        self.test_step_outputs.append(loss)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
     # epoch終了時にvalidationのlossとaccuracyを記録
@@ -183,6 +185,7 @@ class TextClassifierModel(pl.LightningModule):
         num_correct = (epoch_preds.argmax(dim=1) == epoch_labels).sum().item()
         epoch_accuracy = num_correct / len(epoch_labels)
         self.log(f"{mode}_accuracy", epoch_accuracy, logger=True)
+        self.validation_step_outputs.clear()
 
     # testデータのlossとaccuracyを算出（validationの使いまわし）
     def on_test_epoch_end(self):
