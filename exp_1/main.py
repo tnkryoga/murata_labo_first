@@ -115,6 +115,8 @@ class TextClassifierModel(pl.LightningModule):
         pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking",
     ):
         super().__init__()
+        self.validation_step_outputs = []
+        self.test_step_outputs = []
 
         # モデルの構造
         self.bert = BertModel.from_pretrained(pretrained_model, return_dict=True)
@@ -164,10 +166,16 @@ class TextClassifierModel(pl.LightningModule):
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
     # epoch終了時にvalidationのlossとaccuracyを記録
-    def on_validation_epoch_end(self, outputs, mode="val"):
+    def on_validation_epoch_end(
+        self, mode="val"
+    ):  # https://github.com/Lightning-AI/lightning/pull/16520
         # loss計算
-        epoch_preds = torch.cat([x["batch_preds"] for x in outputs])
-        epoch_labels = torch.cat([x["batch_labels"] for x in outputs])
+        epoch_preds = torch.cat(
+            [x["batch_preds"] for x in self.validation_step_outputs]
+        )
+        epoch_labels = torch.cat(
+            [x["batch_labels"] for x in self.validation_step_outputs]
+        )
         epoch_loss = self.criterion(epoch_preds, epoch_labels)
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
@@ -177,8 +185,8 @@ class TextClassifierModel(pl.LightningModule):
         self.log(f"{mode}_accuracy", epoch_accuracy, logger=True)
 
     # testデータのlossとaccuracyを算出（validationの使いまわし）
-    def on_test_epoch_end(self, outputs):
-        return self.validation_epoch_end(outputs, "test")
+    def on_test_epoch_end(self):
+        return self.on_validation_epoch_end(self.test_step_outputs, "test")
 
     # optimizerの設定
     def configure_optimizers(self):
