@@ -247,7 +247,7 @@ def main(cfg: DictConfig):
     wandb_logger = WandbLogger(
         log_model=False,
     )
-    wandb_logger.watch(model, log="all")
+    # wandb_logger.watch(model, log="all")
 
     checkpoint_path = os.path.join(
         wandb_logger.experiment.dir, cfg.path.checkpoint_path
