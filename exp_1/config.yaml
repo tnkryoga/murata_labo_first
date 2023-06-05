@@ -12,7 +12,7 @@ model:
 training:
   val_test_size: 0.3
   test_size: 0.15
-  n_epochs: 10
+  n_epochs: 2
   seed: 40
   batch_size: 32
   learning_rate: 0.0001
