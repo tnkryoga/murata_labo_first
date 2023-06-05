@@ -1,0 +1,8 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:395: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp_1/main.py", line 250, in main
+    wandb_logger.watch(model, log="all")
+UnboundLocalError: local variable 'model' referenced before assignment
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
