@@ -239,9 +239,8 @@ def main(cfg: DictConfig):
 
     # wandbの初期化
     wandb.init(
-        project=cfg.wandb.prroject,
-        name=("exp_" + str(cfg.wandb.exp_num)),
         project=cfg.wandb.project,
+        name=("exp_" + str(cfg.wandb.exp_num)),
         tags=cfg.wandb.tags,
     )
 
