@@ -158,6 +158,7 @@ class TextClassifierModel(pl.LightningModule):
             labels=batch["labels"],
         )
         self.validation_step_outputs.append(loss)
+        self.log("val_loss", loss, on_epoch=True, prog_bar=True)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
     def test_step(self, batch, batch_idx):
@@ -167,6 +168,7 @@ class TextClassifierModel(pl.LightningModule):
             labels=batch["labels"],
         )
         self.test_step_outputs.append(loss)
+        self.log("test_loss", loss, on_epoch=True, prog_bar=True)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
     # epoch終了時にvalidationのlossとaccuracyを記録
@@ -191,8 +193,8 @@ class TextClassifierModel(pl.LightningModule):
 
         self.validation_step_outputs.clear()"""
         epoch_average = torch.stack(self.validation_step_outputs).mean()
+        self.log(f"{mode}_loss", epoch_average, logger=True)
         self.validation_step_outputs.clear()  # free memory
-        self.log(f"{mode}_accuracy", epoch_average, logger=True)
 
     # testデータのlossとaccuracyを算出（validationの使いまわし）
     def on_test_epoch_end(self):
@@ -218,12 +220,12 @@ def make_callbacks(min_delta, patience, checkpoint_path):
         filename="{epoch}",
         # save_top_k=1,  #save_best_only
         verbose=True,
-        monitor="val/loss",
+        monitor="val_loss",
         mode="min",
     )
 
     early_stop_callback = EarlyStopping(
-        monitor="val/loss", min_delta=min_delta, patience=patience, mode="min"
+        monitor="val_loss", min_delta=min_delta, patience=patience, mode="min"
     )
 
     return [early_stop_callback, checkpoint_callback]
