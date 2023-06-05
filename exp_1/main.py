@@ -1,4 +1,5 @@
 import os
+import datetime
 import hydra
 import numpy as np
 import pandas as pd
@@ -6,6 +7,7 @@ import pytorch_lightning as pl
 import torch
 import torch.optim as optim
 from omegaconf import DictConfig
+import wandb
 from pytorch_lightning.callbacks import EarlyStopping, ModelCheckpoint
 from pytorch_lightning.loggers import WandbLogger
 from sklearn.model_selection import train_test_split
@@ -231,18 +233,26 @@ def make_callbacks(min_delta, patience, checkpoint_path):
 @hydra.main(config_path=".", config_name="config")
 def main(cfg: DictConfig):
     cwd = hydra.utils.get_original_cwd()
+    current = (datetime.datetime.now() + datetime.timedelta(hours=9)).strftime(
+        "%Y%m%d_%H%M%S"
+    )
 
     # wandbの初期化
-    wandb_logger = WandbLogger(
+    wandb.init(
+        project=cfg.wandb.prroject,
         name=("exp_" + str(cfg.wandb.exp_num)),
         project=cfg.wandb.project,
         tags=cfg.wandb.tags,
-        log_model=True,
     )
+
+    wandb_logger = WandbLogger(
+        log_model=False,
+    )
+    wandb_logger.watch(model, log="all")
+
     checkpoint_path = os.path.join(
         wandb_logger.experiment.dir, cfg.path.checkpoint_path
     )
-    wandb_logger.log_hyperparams(cfg)
 
     # dataModuleのインスタンス化
     train, val_test = train_test_split(
@@ -285,6 +295,8 @@ def main(cfg: DictConfig):
         fast_dev_run=True,
     )
     trainer.fit(model, data_module)
+
+    wandb.finish()
 
 
 if __name__ == "__main__":
