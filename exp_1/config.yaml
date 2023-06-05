@@ -3,7 +3,7 @@ wandb:
   exp_num: 1
   tags: [bert]
 path:
-  data_file_name: /content/drive/MyDrive/murata_labo_exp/data/livedoor_sentence.csv
+  data_file_name: /content/drive/MyDrive/murata_labo_exp/data/livedoor_sentence_test.csv
   checkpoint_path: checkpoints
 model:
   d_model: 768
