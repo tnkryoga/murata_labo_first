@@ -117,6 +117,7 @@ class TextClassifierModel(pl.LightningModule):
         pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking",
     ):
         super().__init__()
+        self.train_step_outputs = []
         self.validation_step_outputs = []
         self.test_step_outputs = []
 
@@ -148,6 +149,7 @@ class TextClassifierModel(pl.LightningModule):
             attention_mask=batch["attention_mask"],
             labels=batch["labels"],
         )
+        self.train_step_outputs.append(loss)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
     # validation、testでもtrain_stepと同じ処理を行う
@@ -171,12 +173,18 @@ class TextClassifierModel(pl.LightningModule):
         self.log("test_loss", loss, on_epoch=True, prog_bar=True)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
+    # epoch終了時にtrainのlossを記録
+    def on_epoch_end(self, mode="train"):
+        epoch_average = torch.stack(self.train_step_outputs).mean()
+        self.log(f"{mode}_loss", epoch_average, logger=True)
+        self.train_step_outputs.clear()  # free memory
+
     # epoch終了時にvalidationのlossとaccuracyを記録
     def on_validation_epoch_end(
         self, mode="val"
     ):  # https://github.com/Lightning-AI/lightning/pull/16520
         # loss計算
-        """print(self.validation_step_outputs)
+        print(self.validation_step_outputs)
         epoch_preds = torch.stack(
             [x["batch_preds"] for x in self.validation_step_outputs], dim=0
         )
@@ -191,9 +199,8 @@ class TextClassifierModel(pl.LightningModule):
         epoch_accuracy = num_correct / len(epoch_labels)
         self.log(f"{mode}_accuracy", epoch_accuracy, logger=True)
 
-        self.validation_step_outputs.clear()"""
-        epoch_average = torch.stack(self.validation_step_outputs).mean()
-        self.log(f"{mode}_loss", epoch_average, logger=True)
+        """ epoch_average = torch.stack(self.validation_step_outputs).mean()
+        self.log(f"{mode}_loss", epoch_average, logger=True)"""
         self.validation_step_outputs.clear()  # free memory
 
     # testデータのlossとaccuracyを算出（validationの使いまわし）
