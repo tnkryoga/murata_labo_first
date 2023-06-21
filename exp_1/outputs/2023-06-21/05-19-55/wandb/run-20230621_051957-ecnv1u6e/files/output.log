@@ -1,0 +1,51 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+Some weights of the model checkpoint at cl-tohoku/bert-base-japanese-char-whole-word-masking were not used when initializing BertModel: ['cls.predictions.transform.LayerNorm.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.dense.bias', 'cls.predictions.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name       | Type             | Params
+------------------------------------------------
+0 | bert       | BertModel        | 89.1 M
+1 | classifier | Linear           | 2.3 K
+2 | criterion  | CrossEntropyLoss | 0
+------------------------------------------------
+7.1 M     Trainable params
+82.0 M    Non-trainable params
+89.1 M    Total params
+356.463   Total estimated model params size (MB)
+
+Sanity Checking DataLoader 0: 100% 2/2 [01:32<00:00, 46.48s/it][tensor(1.0487), tensor(1.1689)]
+Epoch 0:   0% 0/8 [00:00<?, ?it/s]
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:280: PossibleUserWarning: The number of training batches (8) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+
+
+
+
+
+
+
+Epoch 0: 100% 8/8 [06:09<00:00, 46.15s/it, v_num=1u6e]
+
+
+Validation DataLoader 0:  67% 2/3 [01:13<00:36, 36.75s/it]
+
+
+
+
+
+
+
+
+
+Epoch 1: 100% 8/8 [06:14<00:00, 46.86s/it, v_num=1u6e, val_loss=0.994]
+
+
+
+Epoch 1: 100% 8/8 [07:50<00:00, 58.78s/it, v_num=1u6e, val_loss=0.883]
+Epoch 1, global step 16: 'val_loss' reached 0.88297 (best 0.88297), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp_1/outputs/2023-06-21/05-19-55/wandb/run-20230621_051957-ecnv1u6e/files/checkpoints/epoch=1.ckpt' as top 1
+
+Epoch 1: 100% 8/8 [07:53<00:00, 59.18s/it, v_num=1u6e, val_loss=0.883]
