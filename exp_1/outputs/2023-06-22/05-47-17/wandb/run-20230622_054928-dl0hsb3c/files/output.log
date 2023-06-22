@@ -1,0 +1,60 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+Downloading (…)solve/main/vocab.txt: 15.7kB [00:00, 28.2MB/s]
+Downloading (…)okenizer_config.json: 100% 110/110 [00:00<00:00, 320kB/s]
+Downloading (…)lve/main/config.json: 100% 478/478 [00:00<00:00, 1.66MB/s]
+
+
+
+
+
+Downloading pytorch_model.bin: 100% 359M/359M [00:10<00:00, 35.6MB/s]
+Some weights of the model checkpoint at cl-tohoku/bert-base-japanese-char-whole-word-masking were not used when initializing BertModel: ['cls.predictions.transform.LayerNorm.weight', 'cls.seq_relationship.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.seq_relationship.bias', 'cls.predictions.decoder.weight', 'cls.predictions.transform.LayerNorm.bias']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name       | Type             | Params
+------------------------------------------------
+0 | bert       | BertModel        | 89.1 M
+1 | classifier | Linear           | 2.3 K
+2 | criterion  | CrossEntropyLoss | 0
+------------------------------------------------
+7.1 M     Trainable params
+82.0 M    Non-trainable params
+89.1 M    Total params
+356.463   Total estimated model params size (MB)
+
+Sanity Checking DataLoader 0:  50% 1/2 [00:33<00:33, 33.38s/it]
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:280: PossibleUserWarning: The number of training batches (8) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+Sanity Checking DataLoader 0: 100% 2/2 [00:58<00:00, 29.21s/it][tensor(1.2268), tensor(1.0758)]
+
+
+
+
+
+
+
+Epoch 0: 100% 8/8 [03:55<00:00, 29.44s/it, v_num=sb3c]
+
+
+Validation DataLoader 0:  67% 2/3 [00:47<00:23, 23.71s/it]
+
+
+
+
+
+
+
+
+
+Epoch 1: 100% 8/8 [03:56<00:00, 29.57s/it, v_num=sb3c, val_loss=1.020]
+
+
+Validation DataLoader 0:  67% 2/3 [00:53<00:26, 26.76s/it]
+
+Epoch 1: 100% 8/8 [05:06<00:00, 38.33s/it, v_num=sb3c, val_loss=0.902]
+
+Epoch 1: 100% 8/8 [05:13<00:00, 39.23s/it, v_num=sb3c, val_loss=0.902]
