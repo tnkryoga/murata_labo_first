@@ -175,7 +175,7 @@ class TextClassifierModel(pl.LightningModule):
 
     # epoch終了時にtrainのlossを記録
     def on_train_epoch_end(self, mode="train"):
-        epoch_preds = torch.stack(
+        """epoch_preds = torch.stack(
             [x["batch_preds"] for x in self.validation_step_outputs], dim=0
         )
         epoch_labels = torch.stack(
@@ -185,7 +185,7 @@ class TextClassifierModel(pl.LightningModule):
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
         epoch_average = torch.stack(self.train_step_outputs).mean()
-        self.log(f"{mode}_loss", epoch_average, logger=True)
+        self.log(f"{mode}_loss", epoch_average, logger=True)"""
 
         f = open("train_step_outputs.txt", "w")
         f.write(self.train_step_outputs)
