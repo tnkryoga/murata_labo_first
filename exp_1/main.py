@@ -186,7 +186,11 @@ class TextClassifierModel(pl.LightningModule):
 
         epoch_average = torch.stack(self.train_step_outputs).mean()
         self.log(f"{mode}_loss", epoch_average, logger=True)
-        print("train_step_outputs:", len(self.train_step_outputs))
+
+        f = open("train_step_outputs.txt", "w")
+        f.write(self.train_step_outputs)
+        f.close()
+
         self.train_step_outputs.clear()  # free memory
 
     # epoch終了時にvalidationのlossとaccuracyを記録

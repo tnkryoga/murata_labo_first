@@ -1,0 +1,125 @@
+{
+    "os": "Linux-5.4.72-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python": "3.10.6",
+    "heartbeatAt": "2023-06-21T05:50:52.023454",
+    "startedAt": "2023-06-21T05:50:51.336231",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/tnkryoga/murata_labo_first/exp_1/main.py",
+    "codePath": "exp_1/main.py",
+    "git": {
+        "remote": "https://github.com/tnkryoga/murata_labo_first.git",
+        "commit": "d2fdf84fcdbb6a17439ed0566fab8099587fa32d"
+    },
+    "email": "tanaryo-miyabi818@outlook.jp",
+    "root": "/home/tnkryoga/murata_labo_first",
+    "host": "DESKTOP-GM337LR",
+    "username": "tnkryoga",
+    "executable": "/bin/python3",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 3593.247000000001,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3593.247,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3593.247,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3593.247,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3593.247,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3593.247,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3593.247,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3593.247,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3593.247,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3593.247,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3593.247,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3593.247,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3593.247,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3593.247,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3593.247,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3593.247,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3593.247,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "total": 250.98248672485352,
+        "used": 8.866569519042969
+    },
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1660 SUPER",
+            "memory_total": 6442450944
+        }
+    ],
+    "memory": {
+        "total": 24.993534088134766
+    }
+}
