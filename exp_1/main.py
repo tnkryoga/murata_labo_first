@@ -187,9 +187,9 @@ class TextClassifierModel(pl.LightningModule):
         epoch_average = torch.stack(self.train_step_outputs).mean()
         self.log(f"{mode}_loss", epoch_average, logger=True)"""
 
-        f = open("train_step_outputs.txt", "w")
-        f.write(self.train_step_outputs)
-        f.close()
+        with open("train_step_outputs.txt", "w") as train_file:
+            for item in self.train_step_outputs:
+                train_file.write("%s\n" % item)
 
         self.train_step_outputs.clear()  # free memory
 
