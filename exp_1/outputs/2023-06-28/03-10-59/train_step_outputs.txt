@@ -1,0 +1,8 @@
+tensor(1.1482, grad_fn=<NllLossBackward0>)
+tensor(1.1115, grad_fn=<NllLossBackward0>)
+tensor(0.9714, grad_fn=<NllLossBackward0>)
+tensor(1.0740, grad_fn=<NllLossBackward0>)
+tensor(1.1328, grad_fn=<NllLossBackward0>)
+tensor(0.9695, grad_fn=<NllLossBackward0>)
+tensor(1.0842, grad_fn=<NllLossBackward0>)
+tensor(1.0082, grad_fn=<NllLossBackward0>)
