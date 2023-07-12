@@ -5,9 +5,11 @@ import numpy as np
 import pandas as pd
 import pytorch_lightning as pl
 import torch
+import torchmetrics
 import torch.optim as optim
 from omegaconf import DictConfig
 import wandb
+from wandb import plot
 from pytorch_lightning.callbacks import EarlyStopping, ModelCheckpoint
 from pytorch_lightning.loggers import WandbLogger
 from sklearn.model_selection import train_test_split
@@ -19,8 +21,8 @@ from transformers import BertJapaneseTokenizer
 
 # Dataset
 class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoaderに渡す関数
-    TEXT_COLUMN = "sentence"
-    LABEL_COLUMN = "label"
+    TEXT_COLUMN = "chunk"
+    LABEL_COLUMN = "binary"
 
     def __init__(self, data, tokenizer, max_token_len):
         self.data = data
@@ -33,7 +35,7 @@ class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoader�
     def __getitem__(self, index):
         data_row = self.data.iloc[index]
         text = data_row[self.TEXT_COLUMN]
-        labels = data_row[self.LABEL_COLUMN]
+        label = data_row[self.LABEL_COLUMN]
 
         encoding = self.tokenizer.encode_plus(
             text,
@@ -49,7 +51,7 @@ class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoader�
             text=text,
             input_ids=encoding["input_ids"].flatten(),
             attention_mask=encoding["attention_mask"].flatten(),
-            labels=torch.tensor(labels),
+            label=torch.tensor(label),
         )
 
 
@@ -64,8 +66,8 @@ class CreateDataModule(pl.LightningDataModule):
         train_df,
         valid_df,
         test_df,
-        batch_size=16,
-        max_token_len=512,
+        batch_size,
+        max_token_len,
         pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking",
     ):
         super().__init__()
@@ -95,24 +97,33 @@ class CreateDataModule(pl.LightningDataModule):
             batch_size=self.batch_size,
             shuffle=True,
             num_workers=os.cpu_count(),
+            pin_memory=True,
         )
 
     def val_dataloader(self):
         return DataLoader(
-            self.vaild_dataset, batch_size=self.batch_size, num_workers=os.cpu_count()
+            self.vaild_dataset,
+            batch_size=self.batch_size,
+            num_workers=os.cpu_count(),
+            pin_memory=True,
         )
 
     def test_dataloader(self):
         return DataLoader(
-            self.test_dataset, batch_size=self.batch_size, num_workers=os.cpu_count()
+            self.test_dataset,
+            batch_size=self.batch_size,
+            num_workers=os.cpu_count(),
+            pin_memory=True,
         )
 
 
 # Model
-class TextClassifierModel(pl.LightningModule):
+class BinaryClassifierModel(pl.LightningModule):
+    THRESHOLD = 0.5  # 閾値
+
     def __init__(
         self,
-        n_classes: int,  # クラスの数
+        hidden_size,
         n_epochs=None,
         pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking",
     ):
@@ -123,9 +134,21 @@ class TextClassifierModel(pl.LightningModule):
 
         # モデルの構造
         self.bert = BertModel.from_pretrained(pretrained_model, return_dict=True)
-        self.classifier = nn.Linear(self.bert.config.hidden_size, n_classes)
+        self.hidden_layer = nn.Linear(
+            self.bert.config.hidden_size, hidden_size
+        )  # 入力BERT層、出力hidden_sizeの全結合層
+        self.layer = nn.Linear(hidden_size, 1)  # 二値分類
         self.n_epochs = n_epochs
         self.criterion = nn.CrossEntropyLoss()
+        # self.metrics = torchmetrics.MetricCollection(
+        #     [
+        #         torchmetrics.Accuracy(task="binary", threshold=self.THRESHOLD),
+        #         torchmetrics.Precision(task="binary", threshold=self.THRESHOLD),
+        #         torchmetrics.Recall(task="binary", threshold=self.THRESHOLD),
+        #         torchmetrics.F1Score(task="binary", threshold=self.THRESHOLD),
+        #         torchmetrics.MatthewsCorrCoef(task="binary", threshold=self.THRESHOLD),
+        #     ]
+        # )
 
         # BertLayerモジュールの最後を勾配計算ありに変更
         for param in self.bert.parameters():
@@ -136,7 +159,8 @@ class TextClassifierModel(pl.LightningModule):
     # 順伝搬
     def forward(self, input_ids, attention_mask, labels=None):
         output = self.bert(input_ids, attention_mask=attention_mask)
-        preds = self.classifier(output.pooler_output)
+        outputs = torch.relu(self.hidden_layer(output.pooler_output))  # 活性化関数Relu
+        preds = torch.sigmoid(self.layer(outputs))  # sigmoidによる確率化
         loss = 0
         if labels is not None:
             loss = self.criterion(preds, labels)
@@ -150,6 +174,7 @@ class TextClassifierModel(pl.LightningModule):
             labels=batch["labels"],
         )
         self.train_step_outputs.append(loss)
+        self.log("train/loss", loss, on_step=True, prog_bar=True)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
     # validation、testでもtrain_stepと同じ処理を行う
@@ -160,7 +185,7 @@ class TextClassifierModel(pl.LightningModule):
             labels=batch["labels"],
         )
         self.validation_step_outputs.append(loss)
-        self.log("val_loss", loss, on_epoch=True, prog_bar=True)
+        # self.log("val_loss", loss, on_epoch=True, prog_bar=True)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
     def test_step(self, batch, batch_idx):
@@ -170,26 +195,22 @@ class TextClassifierModel(pl.LightningModule):
             labels=batch["labels"],
         )
         self.test_step_outputs.append(loss)
-        self.log("test_loss", loss, on_epoch=True, prog_bar=True)
+        # self.log("test_loss", loss, on_epoch=True, prog_bar=True)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
     # epoch終了時にtrainのlossを記録
     def on_train_epoch_end(self, mode="train"):
-        epoch_preds = torch.stack(
-            [x["batch_preds"] for x in self.validation_step_outputs], dim=0
-        )
-        epoch_labels = torch.stack(
-            [x["batch_labels"] for x in self.validation_step_outputs], dim=0
-        )
+        epoch_preds = torch.cat([x["batch_preds"] for x in self.train_step_outputs])
+        epoch_labels = torch.cat([x["batch_labels"] for x in self.train_step_outputs])
         epoch_loss = self.criterion(epoch_preds, epoch_labels)
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
-        epoch_average = torch.stack(self.train_step_outputs).mean()
-        self.log(f"{mode}_loss", epoch_average, logger=True)
+        # epoch_average = torch.stack(self.train_step_outputs).mean()
+        # self.log(f"{mode}_loss", epoch_average, logger=True)
 
-        with open("train_step_outputs.txt", "w") as train_file:
-            for item in self.train_step_outputs:
-                train_file.write("%s\n" % item)
+        # with open("train_step_outputs.txt", "w") as train_file:
+        #     for item in self.train_step_outputs:
+        #         train_file.write("%s\n" % item)
 
         self.train_step_outputs.clear()  # free memory
 
@@ -198,28 +219,61 @@ class TextClassifierModel(pl.LightningModule):
         self, mode="val"
     ):  # https://github.com/Lightning-AI/lightning/pull/16520
         # loss計算
-        print(self.validation_step_outputs)
-        """epoch_preds = torch.stack(
-            [x["batch_preds"] for x in self.validation_step_outputs], dim=0
-        )
-        epoch_labels = torch.stack(
-            [x["batch_labels"] for x in self.validation_step_outputs], dim=0
-        )
+        epoch_preds = torch.cat([x["batch_preds"] for x in self.train_step_outputs])
+        epoch_labels = torch.cat([x["batch_labels"] for x in self.train_step_outputs])
         epoch_loss = self.criterion(epoch_preds, epoch_labels)
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
-        # accuracy計算
-        num_correct = (epoch_preds.argmax(dim=1) == epoch_labels).sum().item()
-        epoch_accuracy = num_correct / len(epoch_labels)
-        self.log(f"{mode}_accuracy", epoch_accuracy, logger=True)
-
-        epoch_average = torch.stack(self.validation_step_outputs).mean()
-        self.log(f"{mode}_loss", epoch_average, logger=True)"""
         self.validation_step_outputs.clear()  # free memory
 
-    # testデータのlossとaccuracyを算出（validationの使いまわし）
-    def on_test_epoch_end(self):
-        return self.on_validation_epoch_end(self.test_step_outputs, "test")
+    # testデータのlossとaccuracyを算出
+    def on_test_epoch_end(self, mode="test"):
+        preds = torch.cat([x["batch_preds"] for x in self.train_step_outputs])
+        labels = torch.cat([x["batch_labels"] for x in self.train_step_outputs])
+        loss = self.criterion(preds, labels)
+        self.log(f"{mode}_loss", loss, logger=True)
+
+        preds, labels = (
+            preds.cpu().numpy(),  # cpu上に移動し、numpy配列に変換
+            labels.cpu().numpy(),
+        )
+        preds_binary = np.where(preds > self.THRESHOLD, 1, 0)
+
+        # 混同行列
+        wandb.log(
+            {
+                "test/confusion_matrix": plot.confusion_matrix(
+                    probs=None,
+                    y_true=labels,
+                    preds=preds_binary,
+                    class_names=["応答なし", "応答あり"],
+                ),
+            }
+        )
+
+        # PR曲線
+        wandb.log(
+            {
+                "test/pr": plot.pr_curve(
+                    y_true=labels,
+                    y_probas=self.score_to_complement_pairs(preds),
+                    labels=["応答なし", "応答あり"],
+                ),
+            }
+        )
+
+        # ROC曲線
+        wandb.log(
+            {
+                "test/lf/roc": plot.roc_curve(
+                    y_true=labels,
+                    y_probas=self.score_to_complement_pairs(preds),
+                    labels=["応答なし", "応答あり"],
+                ),
+            }
+        )
+
+        self.test_step_outputs.clear()
 
     # optimizerの設定
     def configure_optimizers(self):
@@ -302,8 +356,8 @@ def main(cfg: DictConfig):
     )
 
     # modelのインスタンスの作成
-    model = TextClassifierModel(
-        n_classes=cfg.model.n_classes,
+    model = BinaryClassifierModel(
+        hidden_size=cfg.model.hidden_size,
         n_epochs=cfg.training.n_epochs,
     )
 

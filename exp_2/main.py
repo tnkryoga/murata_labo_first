@@ -1,18 +1,25 @@
 import os
 import datetime
-import hydra
-import numpy as np
 import pandas as pd
-import pytorch_lightning as pl
-import torch
-import torch.optim as optim
-from omegaconf import DictConfig
+import numpy as np
+import hydra
 import wandb
-from pytorch_lightning.callbacks import EarlyStopping, ModelCheckpoint
+from omegaconf import DictConfig
+from tqdm.auto import tqdm
+import torch
+import torch.nn as nn
+from torch.utils.data import Dataset, DataLoader
+from transformers import (
+    BertTokenizerFast as BertTokenizer,
+    BertModel,
+    AdamW,
+    get_linear_schedule_with_warmup,
+)
+import pytorch_lightning as pl
+from pytorch_lightning.callbacks import ModelCheckpoint, EarlyStopping
 from pytorch_lightning.loggers import WandbLogger
 from sklearn.model_selection import train_test_split
-from torch import nn
-from torch.utils.data import DataLoader, Dataset
+from sklearn.metrics import classification_report, multilabel_confusion_matrix
 from transformers import BertModel
 from transformers import BertJapaneseTokenizer
 
@@ -20,7 +27,7 @@ from transformers import BertJapaneseTokenizer
 # Dataset
 class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoaderに渡す関数
     TEXT_COLUMN = "sentence"
-    LABEL_COLUMN = "label"
+    LABEL_COLUMNS = Dataset.columns.tolist()[1:]  # ラベル名の取得
 
     def __init__(self, data, tokenizer, max_token_len):
         self.data = data
@@ -33,12 +40,13 @@ class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoader�
     def __getitem__(self, index):
         data_row = self.data.iloc[index]
         text = data_row[self.TEXT_COLUMN]
-        labels = data_row[self.LABEL_COLUMN]
+        labels = data_row[self.LABEL_COLUMNS]
 
         encoding = self.tokenizer.encode_plus(
             text,
             add_special_tokens=True,
             max_length=self.max_token_len,
+            return_token_type_ids=False,
             padding="max_length",
             truncation=True,
             return_attention_mask=True,
@@ -49,7 +57,7 @@ class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoader�
             text=text,
             input_ids=encoding["input_ids"].flatten(),
             attention_mask=encoding["attention_mask"].flatten(),
-            labels=torch.tensor(labels),
+            labels=torch.FloatTensor(labels),
         )
 
 
@@ -65,7 +73,7 @@ class CreateDataModule(pl.LightningDataModule):
         valid_df,
         test_df,
         batch_size=16,
-        max_token_len=512,
+        max_token_len=128,
         pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking",
     ):
         super().__init__()
@@ -76,7 +84,7 @@ class CreateDataModule(pl.LightningDataModule):
         self.max_token_len = max_token_len
         self.tokenizer = BertJapaneseTokenizer.from_pretrained(pretrained_model)
 
-    # train,val,testデータのsplit
+    # train,val,testデータのsetupの定義
     def setup(self, stage=None):
         self.train_dataset = CreateDataset(
             self.train_df, self.tokenizer, self.max_token_len
@@ -109,11 +117,13 @@ class CreateDataModule(pl.LightningDataModule):
 
 
 # Model
-class TextClassifierModel(pl.LightningModule):
+class MultiLabelClassifier(pl.LightningModule):
     def __init__(
         self,
-        n_classes: int,  # クラスの数
+        n_classes: int,
         n_epochs=None,
+        n_training_steps=None,
+        n_warmup_steps=None,
         pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking",
     ):
         super().__init__()
@@ -125,113 +135,116 @@ class TextClassifierModel(pl.LightningModule):
         self.bert = BertModel.from_pretrained(pretrained_model, return_dict=True)
         self.classifier = nn.Linear(self.bert.config.hidden_size, n_classes)
         self.n_epochs = n_epochs
-        self.criterion = nn.CrossEntropyLoss()
-
-        # BertLayerモジュールの最後を勾配計算ありに変更
-        for param in self.bert.parameters():
-            param.requires_grad = False
-        for param in self.bert.encoder.layer[-1].parameters():
-            param.requires_grad = True
+        self.n_training_steps = n_training_steps
+        self.n_warmup_steps = n_warmup_steps
+        self.criterion = nn.BCELoss()
 
     # 順伝搬
     def forward(self, input_ids, attention_mask, labels=None):
         output = self.bert(input_ids, attention_mask=attention_mask)
-        preds = self.classifier(output.pooler_output)
+        output = self.classifier(output.pooler_output)
+        output = torch.sigmoid(output)
         loss = 0
         if labels is not None:
-            loss = self.criterion(preds, labels)
-        return loss, preds
+            loss = self.criterion(output, labels)
+        return loss, output
 
     # trainのミニバッチに対して行う処理
     def training_step(self, batch, batch_idx):
-        loss, preds = self.forward(
-            input_ids=batch["input_ids"],
-            attention_mask=batch["attention_mask"],
-            labels=batch["labels"],
-        )
+        input_ids = batch["input_ids"]
+        attention_mask = batch["attention_mask"]
+        labels = batch["labels"]
+        loss, outputs = self(input_ids, attention_mask, labels)  # forward?
+        self.log("train_loss", loss, prog_bar=True, logger=True)
         self.train_step_outputs.append(loss)
-        return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
+        self.train_step_outputs.append(outputs)
+        self.train_step_outputs.append(labels)
+        return {"loss": loss, "predictions": outputs, "labels": labels}
 
-    # validation、testでもtrain_stepと同じ処理を行う
     def validation_step(self, batch, batch_idx):
-        loss, preds = self.forward(
-            input_ids=batch["input_ids"],
-            attention_mask=batch["attention_mask"],
-            labels=batch["labels"],
-        )
-        self.validation_step_outputs.append(loss)
-        self.log("val_loss", loss, on_epoch=True, prog_bar=True)
-        return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
+        input_ids = batch["input_ids"]
+        attention_mask = batch["attention_mask"]
+        labels = batch["labels"]
+        loss, outputs = self(input_ids, attention_mask, labels)
+        self.log("val_loss", loss, prog_bar=True, logger=True)
+        self.train_step_outputs.append(loss)
+        self.train_step_outputs.append(outputs)
+        self.train_step_outputs.append(labels)
+        return loss
 
     def test_step(self, batch, batch_idx):
-        loss, preds = self.forward(
-            input_ids=batch["input_ids"],
-            attention_mask=batch["attention_mask"],
-            labels=batch["labels"],
-        )
-        self.test_step_outputs.append(loss)
-        self.log("test_loss", loss, on_epoch=True, prog_bar=True)
-        return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
+        input_ids = batch["input_ids"]
+        attention_mask = batch["attention_mask"]
+        labels = batch["labels"]
+        loss, outputs = self(input_ids, attention_mask, labels)
+        self.log("test_loss", loss, prog_bar=True, logger=True)
+        self.train_step_outputs.append(loss)
+        self.train_step_outputs.append(outputs)
+        self.train_step_outputs.append(labels)
+        return loss
 
-    # epoch終了時にtrainのlossを記録
-    def on_train_epoch_end(self, mode="train"):
-        epoch_preds = torch.stack(
-            [x["batch_preds"] for x in self.validation_step_outputs], dim=0
-        )
-        epoch_labels = torch.stack(
-            [x["batch_labels"] for x in self.validation_step_outputs], dim=0
-        )
-        epoch_loss = self.criterion(epoch_preds, epoch_labels)
-        self.log(f"{mode}_loss", epoch_loss, logger=True)
+    # 1epoch終了時に実行/debugに使用
+    def on_train_epoch_end(self):
+        labels = []
+        predictions = []
+        for output in self.train_step_outputs:
+            for out_labels in output[2].detach().cpu():
+                labels.append(out_labels)
+            for out_predictions in output[1].detach().cpu():
+                predictions.append(out_predictions)
+        labels = torch.stack(labels).int()
+        predictions = torch.stack(predictions)
+        """for i, name in enumerate(LABEL_COLUMNS):
+            class_roc_auc = auroc(predictions[:, i], labels[:, i])
+            self.logger.experiment.add_scalar(
+                f"{name}_roc_auc/Train", class_roc_auc, self.current_epoch
+            )"""
+        self.train_step_outputs.clear()
 
-        epoch_average = torch.stack(self.train_step_outputs).mean()
-        self.log(f"{mode}_loss", epoch_average, logger=True)
+    def on_validation_epoch_end(self):
+        labels = []
+        predictions = []
+        for output in self.train_step_outputs:
+            for out_labels in output[2].detach().cpu():
+                labels.append(out_labels)
+            for out_predictions in output[1].detach().cpu():
+                predictions.append(out_predictions)
+        labels = torch.stack(labels).int()
+        predictions = torch.stack(predictions)
+        """for i, name in enumerate(LABEL_COLUMNS):
+            class_roc_auc = auroc(predictions[:, i], labels[:, i])
+            self.logger.experiment.add_scalar(
+                f"{name}_roc_auc/Train", class_roc_auc, self.current_epoch
+            )"""
+        self.validation_step_outputs.clear()
 
-        with open("train_step_outputs.txt", "w") as train_file:
-            for item in self.train_step_outputs:
-                train_file.write("%s\n" % item)
-
-        self.train_step_outputs.clear()  # free memory
-
-    # epoch終了時にvalidationのlossとaccuracyを記録
-    def on_validation_epoch_end(
-        self, mode="val"
-    ):  # https://github.com/Lightning-AI/lightning/pull/16520
-        # loss計算
-        print(self.validation_step_outputs)
-        """epoch_preds = torch.stack(
-            [x["batch_preds"] for x in self.validation_step_outputs], dim=0
-        )
-        epoch_labels = torch.stack(
-            [x["batch_labels"] for x in self.validation_step_outputs], dim=0
-        )
-        epoch_loss = self.criterion(epoch_preds, epoch_labels)
-        self.log(f"{mode}_loss", epoch_loss, logger=True)
-
-        # accuracy計算
-        num_correct = (epoch_preds.argmax(dim=1) == epoch_labels).sum().item()
-        epoch_accuracy = num_correct / len(epoch_labels)
-        self.log(f"{mode}_accuracy", epoch_accuracy, logger=True)
-
-        epoch_average = torch.stack(self.validation_step_outputs).mean()
-        self.log(f"{mode}_loss", epoch_average, logger=True)"""
-        self.validation_step_outputs.clear()  # free memory
-
-    # testデータのlossとaccuracyを算出（validationの使いまわし）
     def on_test_epoch_end(self):
-        return self.on_validation_epoch_end(self.test_step_outputs, "test")
+        labels = []
+        predictions = []
+        for output in self.train_step_outputs:
+            for out_labels in output[2].detach().cpu():
+                labels.append(out_labels)
+            for out_predictions in output[1].detach().cpu():
+                predictions.append(out_predictions)
+        labels = torch.stack(labels).int()
+        predictions = torch.stack(predictions)
+        """for i, name in enumerate(LABEL_COLUMNS):
+            class_roc_auc = auroc(predictions[:, i], labels[:, i])
+            self.logger.experiment.add_scalar(
+                f"{name}_roc_auc/Train", class_roc_auc, self.current_epoch
+            )"""
+        self.test_step_outputs.clear()
 
-    # optimizerの設定
     def configure_optimizers(self):
-        # pretrainされているbert最終層のlrは小さめ、pretrainされていない分類層のlrは大きめに設定
-        optimizer = optim.Adam(
-            [
-                {"params": self.bert.encoder.layer[-1].parameters(), "lr": 5e-5},
-                {"params": self.classifier.parameters(), "lr": 1e-4},
-            ]
+        optimizer = AdamW(self.parameters(), lr=2e-5)
+        scheduler = get_linear_schedule_with_warmup(
+            optimizer,
+            num_warmup_steps=self.n_warmup_steps,  # 正規化の際の学習率の調整に使用
+            num_training_steps=self.n_training_steps,
         )
-
-        return [optimizer]
+        return dict(
+            optimizer=optimizer, lr_scheduler=dict(scheduler=scheduler, interval="step")
+        )
 
 
 # モデルの保存と更新のための関数
@@ -301,10 +314,17 @@ def main(cfg: DictConfig):
         cfg.callbacks.patience_min_delta, cfg.callbacks.patience, checkpoint_path
     )
 
+    # train_step,warmup_stepの計算
+    steps_per_epoch = len(train) // cfg.training.batch_size
+    total_training_steps = steps_per_epoch * cfg.training.n_epochs
+    warmup_steps = total_training_steps // 5
+
     # modelのインスタンスの作成
-    model = TextClassifierModel(
+    model = MultiLabelClassifier(
         n_classes=cfg.model.n_classes,
         n_epochs=cfg.training.n_epochs,
+        n_training_steps=total_training_steps,
+        n_warmup_steps=warmup_steps,
     )
 
     # Trainerの設定
