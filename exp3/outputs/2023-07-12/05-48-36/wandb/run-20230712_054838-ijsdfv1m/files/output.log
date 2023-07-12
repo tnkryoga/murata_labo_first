@@ -1,0 +1,8 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 344, in main
+    data_module = CreateDataModule(
+TypeError: CreateDataModule.__init__() missing 2 required positional arguments: 'batch_size' and 'max_token_len'
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
