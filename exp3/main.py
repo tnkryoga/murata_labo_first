@@ -345,8 +345,8 @@ def main(cfg: DictConfig):
         train,
         val,
         test,
-        # cfg.training.batch_size,
-        # cfg.model.max_length,
+        cfg.training.batch_size,
+        cfg.model.max_length,
     )
     data_module.setup()
 
