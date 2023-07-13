@@ -1,0 +1,59 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+Some weights of the model checkpoint at cl-tohoku/bert-base-japanese-char-whole-word-masking were not used when initializing BertModel: ['cls.predictions.decoder.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.bias', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.seq_relationship.weight', 'cls.predictions.transform.dense.weight']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name       | Type             | Params
+------------------------------------------------
+0 | bert       | BertModel        | 89.1 M
+1 | classifier | Linear           | 2.3 K
+2 | criterion  | CrossEntropyLoss | 0
+------------------------------------------------
+7.1 M     Trainable params
+82.0 M    Non-trainable params
+89.1 M    Total params
+356.463   Total estimated model params size (MB)
+Sanity Checking DataLoader 0:   0% 0/2 [00:00<?, ?it/s]tensor([[-0.1917,  0.2038, -0.1879],
+        [-0.3582,  0.2367,  0.1458],
+        [-0.2902,  0.1692, -0.0719],
+        [-0.1450,  0.1707, -0.1718],
+        [-0.4891,  0.1475, -0.1145],
+        [-0.4081,  0.2852, -0.1340],
+        [-0.4987,  0.2769,  0.0077],
+        [-0.2755,  0.4451, -0.2602],
+        [-0.3787,  0.1466, -0.2151],
+        [-0.7602,  0.5250,  0.4017],
+        [-0.3728,  0.2155, -0.0455],
+        [-0.5384,  0.3277, -0.1374],
+        [-0.3970,  0.1747, -0.0347],
+        [-0.4526,  0.1545, -0.0130],
+        [-0.1516,  0.2082, -0.0209],
+        [-0.3533,  0.1880, -0.0990]])
+tensor([1, 2, 1, 0, 1, 0, 1, 2, 1, 1, 1, 1, 1, 1, 2, 2])
+Sanity Checking DataLoader 0:  50% 1/2 [00:40<00:40, 40.72s/it]
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:280: PossibleUserWarning: The number of training batches (8) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+Sanity Checking DataLoader 0:  50% 1/2 [00:40<00:40, 40.72s/it]tensor([[-0.1123,  0.1063, -0.1225],
+        [-0.5759,  0.2900,  0.1187],
+        [-0.4210,  0.2202, -0.1929],
+        [-0.3637,  0.2992, -0.2348],
+        [-0.6455,  0.3490, -0.0685],
+        [-0.3270,  0.1872, -0.0288],
+        [-0.5718,  0.2227,  0.0059],
+        [-0.4845,  0.3260, -0.2835],
+        [-0.6060,  0.2964, -0.1152],
+        [-0.5938,  0.3181, -0.0643],
+        [-0.5229,  0.4340, -0.0440],
+        [-0.4047,  0.3279,  0.1036],
+        [-0.3109,  0.4228, -0.1932],
+        [-0.4053,  0.2214,  0.1420],
+        [-0.3023,  0.2165,  0.1040],
+        [-0.5894,  0.4596,  0.0732]])
+tensor([2, 2, 0, 0, 0, 1, 2, 0, 0, 0, 0, 2, 2, 2, 2, 0])
+Sanity Checking DataLoader 0: 100% 2/2 [01:20<00:00, 40.22s/it][tensor(0.9745), tensor(1.3228)]
+Epoch 0:   0% 0/8 [00:00<?, ?it/s]
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py:52: UserWarning: Detected KeyboardInterrupt, attempting graceful shutdown...
+  rank_zero_warn("Detected KeyboardInterrupt, attempting graceful shutdown...")
