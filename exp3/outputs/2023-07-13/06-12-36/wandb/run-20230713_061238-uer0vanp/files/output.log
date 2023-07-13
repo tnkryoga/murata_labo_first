@@ -1,0 +1,75 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+Some weights of the model checkpoint at cl-tohoku/bert-base-japanese-char-whole-word-masking were not used when initializing BertModel: ['cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.seq_relationship.weight', 'cls.predictions.bias', 'cls.seq_relationship.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.decoder.weight']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name         | Type      | Params
+-------------------------------------------
+0 | bert         | BertModel | 89.1 M
+1 | hidden_layer | Linear    | 49.2 K
+2 | layer        | Linear    | 65
+3 | criterion    | BCELoss   | 0
+-------------------------------------------
+7.1 M     Trainable params
+82.0 M    Non-trainable params
+89.2 M    Total params
+356.650   Total estimated model params size (MB)
+Sanity Checking DataLoader 0:   0% 0/1 [00:00<?, ?it/s]
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 380, in main
+    trainer.fit(model, data_module)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 529, in fit
+    call._call_and_handle_interrupt(
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 568, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 973, in _run
+    results = self._run_stage()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 1014, in _run_stage
+    self._run_sanity_check()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 1043, in _run_sanity_check
+    val_loop.run()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/utilities.py", line 177, in _decorator
+    return loop_run(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/evaluation_loop.py", line 122, in run
+    return self.on_run_end()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/evaluation_loop.py", line 244, in on_run_end
+    self._on_evaluation_epoch_end()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/evaluation_loop.py", line 326, in _on_evaluation_epoch_end
+    call._call_lightning_module_hook(trainer, hook_name)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 144, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 226, in on_validation_epoch_end
+    [x["batch_preds"] for x in self.validation_step_outputs]
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 226, in <listcomp>
+    [x["batch_preds"] for x in self.validation_step_outputs]
+IndexError: too many indices for tensor of dimension 0
+Sanity Checking DataLoader 0:   0% 0/1 [00:00<?, ?it/s]tensor([[0.5417],
+        [0.5353],
+        [0.5536],
+        [0.5403],
+        [0.5480],
+        [0.5370],
+        [0.5518],
+        [0.5284],
+        [0.5396],
+        [0.5480],
+        [0.5320],
+        [0.5400],
+        [0.5529],
+        [0.5506],
+        [0.5376],
+        [0.5388],
+        [0.5456],
+        [0.5735],
+        [0.5377],
+        [0.5422],
+        [0.5319]])
+tensor([1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0])
+Sanity Checking DataLoader 0: 100% 1/1 [00:51<00:00, 51.84s/it][tensor(0.6597)]
