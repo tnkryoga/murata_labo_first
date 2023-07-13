@@ -35,7 +35,7 @@ class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoader�
     def __getitem__(self, index):
         data_row = self.data.iloc[index]
         text = data_row[self.TEXT_COLUMN]
-        label = data_row[self.LABEL_COLUMN]
+        labels = data_row[self.LABEL_COLUMN]
 
         encoding = self.tokenizer.encode_plus(
             text,
@@ -51,7 +51,7 @@ class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoader�
             text=text,
             input_ids=encoding["input_ids"].flatten(),
             attention_mask=encoding["attention_mask"].flatten(),
-            label=torch.tensor(label),
+            labels=torch.tensor(labels),
         )
 
 
