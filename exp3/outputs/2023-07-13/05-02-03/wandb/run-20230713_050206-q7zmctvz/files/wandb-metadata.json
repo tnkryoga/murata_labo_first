@@ -1,0 +1,47 @@
+{
+    "os": "Linux-5.15.109+-x86_64-with-glibc2.31",
+    "python": "3.10.12",
+    "heartbeatAt": "2023-07-13T05:02:07.390996",
+    "startedAt": "2023-07-13T05:02:06.545833",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py",
+    "codePath": "exp3/main.py",
+    "git": {
+        "remote": "https://tnkryoga:@github.com/tnkryoga/murata_labo_first.git",
+        "commit": "f18106a52cfe3d3766a63f293c543066844673fa"
+    },
+    "email": "tanaryo-miyabi818@outlook.jp",
+    "root": "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src",
+    "host": "be02ceef8032",
+    "username": "root",
+    "executable": "/usr/bin/python3",
+    "cpu_count": 1,
+    "cpu_count_logical": 2,
+    "cpu_freq": {
+        "current": 2199.998,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "total": 107.71508407592773,
+        "used": 24.80150604248047
+    },
+    "memory": {
+        "total": 12.678386688232422
+    }
+}
