@@ -202,6 +202,7 @@ class BinaryClassifierModel(pl.LightningModule):
 
     # epoch終了時にtrainのlossを記録
     def on_train_epoch_end(self, mode="train"):
+        print(self.train_step_outputs)
         epoch_preds = torch.cat([x["batch_preds"] for x in self.train_step_outputs])
         epoch_labels = torch.cat([x["batch_labels"] for x in self.train_step_outputs])
         epoch_loss = self.criterion(epoch_preds, epoch_labels)
