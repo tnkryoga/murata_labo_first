@@ -130,8 +130,10 @@ class BinaryClassifierModel(pl.LightningModule):
         super().__init__()
         self.train_step_outputs_preds = []
         self.train_step_outputs_labels = []
-        self.validation_step_outputs = []
-        self.test_step_outputs = []
+        self.validation_step_outputs_preds = []
+        self.validation_step_outputs_labels = []
+        self.test_step_outputs_preds = []
+        self.test_step_outputs_labels = []
 
         # モデルの構造
         self.bert = BertModel.from_pretrained(pretrained_model, return_dict=True)
@@ -188,9 +190,8 @@ class BinaryClassifierModel(pl.LightningModule):
             attention_mask=batch["attention_mask"],
             labels=batch["labels"],
         )
-        self.train_step_outputs.extend(
-            {"batch_preds": preds, "batch_labels": batch["labels"]}
-        )
+        self.validation_step_outputs_preds.append(preds)
+        self.validation_step_outputs_labels.append(batch["labels"])
         # self.log("val_loss", loss, on_epoch=True, prog_bar=True)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
@@ -200,9 +201,8 @@ class BinaryClassifierModel(pl.LightningModule):
             attention_mask=batch["attention_mask"],
             labels=batch["labels"],
         )
-        self.train_step_outputs.extend(
-            {"batch_preds": preds, "batch_labels": batch["labels"]}
-        )
+        self.test_step_outputs_preds.append(preds)
+        self.test_step_outputs_labels.append(batch["labels"])
         # self.log("test_loss", loss, on_epoch=True, prog_bar=True)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
@@ -242,8 +242,8 @@ class BinaryClassifierModel(pl.LightningModule):
 
     # testデータのlossとaccuracyを算出
     def on_test_epoch_end(self, mode="test"):
-        preds = torch.cat([x["batch_preds"] for x in self.test_step_outputs])
-        labels = torch.cat([x["batch_labels"] for x in self.test_step_outputs])
+        preds = torch.stack(self.train_step_outputs_preds)
+        labels = torch.stack(self.train_step_outputs_labels)
         loss = self.criterion(preds, labels)
         self.log(f"{mode}_loss", loss, logger=True)
 
