@@ -179,6 +179,7 @@ class BinaryClassifierModel(pl.LightningModule):
 
     # validation、testでもtrain_stepと同じ処理を行う
     def validation_step(self, batch, batch_idx):
+        print(batch)
         loss, preds = self.forward(
             input_ids=batch["input_ids"],
             attention_mask=batch["attention_mask"],
