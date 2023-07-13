@@ -128,7 +128,8 @@ class BinaryClassifierModel(pl.LightningModule):
         pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking",
     ):
         super().__init__()
-        self.train_step_outputs = []
+        self.train_step_outputs_preds = []
+        self.train_step_outputs_labels = []
         self.validation_step_outputs = []
         self.test_step_outputs = []
 
@@ -175,8 +176,8 @@ class BinaryClassifierModel(pl.LightningModule):
             attention_mask=batch["attention_mask"],
             labels=batch["labels"],
         )
-        self.train_step_outputs.append(preds)
-        self.train_step_outputs.append(batch["labels"])
+        self.train_step_outputs_preds.append(preds)
+        self.train_step_outputs_labels.append(batch["labels"])
         self.log("train/loss", loss, on_step=True, prog_bar=True)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
@@ -207,9 +208,10 @@ class BinaryClassifierModel(pl.LightningModule):
 
     # epoch終了時にtrainのlossを記録
     def on_train_epoch_end(self, mode="train"):
-        print(self.train_step_outputs)
-        epoch_preds = torch.stack(x["batch_preds"] for x in self.train_step_outputs)
-        epoch_labels = torch.stack(x["batch_labels"] for x in self.train_step_outputs)
+        print(self.train_step_outputs_preds)
+        print(self.train_step_outputs_labels)
+        epoch_preds = torch.stack(self.train_step_outputs_preds)
+        epoch_labels = torch.stack(self.train_step_outputs_labels)
         epoch_loss = self.criterion(epoch_preds, epoch_labels)
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
