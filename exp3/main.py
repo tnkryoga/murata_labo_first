@@ -175,7 +175,9 @@ class BinaryClassifierModel(pl.LightningModule):
             attention_mask=batch["attention_mask"],
             labels=batch["labels"],
         )
-        self.train_step_outputs.append(loss)
+        self.train_step_outputs.extend(
+            {"batch_preds": preds, "batch_labels": batch["labels"]}
+        )
         self.log("train/loss", loss, on_step=True, prog_bar=True)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
@@ -186,7 +188,9 @@ class BinaryClassifierModel(pl.LightningModule):
             attention_mask=batch["attention_mask"],
             labels=batch["labels"],
         )
-        self.validation_step_outputs.append(loss)
+        self.train_step_outputs.extend(
+            {"batch_preds": preds, "batch_labels": batch["labels"]}
+        )
         # self.log("val_loss", loss, on_epoch=True, prog_bar=True)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
@@ -196,15 +200,17 @@ class BinaryClassifierModel(pl.LightningModule):
             attention_mask=batch["attention_mask"],
             labels=batch["labels"],
         )
-        self.test_step_outputs.append(loss)
+        self.train_step_outputs.extend(
+            {"batch_preds": preds, "batch_labels": batch["labels"]}
+        )
         # self.log("test_loss", loss, on_epoch=True, prog_bar=True)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
     # epoch終了時にtrainのlossを記録
     def on_train_epoch_end(self, mode="train"):
         print(self.train_step_outputs)
-        epoch_preds = torch.cat([x["batch_preds"] for x in self.train_step_outputs])
-        epoch_labels = torch.cat([x["batch_labels"] for x in self.train_step_outputs])
+        epoch_preds = torch.stack(x["batch_preds"] for x in self.train_step_outputs)
+        epoch_labels = torch.stack(x["batch_labels"] for x in self.train_step_outputs)
         epoch_loss = self.criterion(epoch_preds, epoch_labels)
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
