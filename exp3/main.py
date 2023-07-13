@@ -202,12 +202,8 @@ class BinaryClassifierModel(pl.LightningModule):
 
     # epoch終了時にtrainのlossを記録
     def on_train_epoch_end(self, mode="train"):
-        epoch_preds = torch.cat(
-            [x["batch_preds"] for x in self.validation_step_outputs]
-        )
-        epoch_labels = torch.cat(
-            [x["batch_labels"] for x in self.validation_step_outputs]
-        )
+        epoch_preds = torch.cat([x["batch_preds"] for x in self.train_step_outputs])
+        epoch_labels = torch.cat([x["batch_labels"] for x in self.train_step_outputs])
         epoch_loss = self.criterion(epoch_preds, epoch_labels)
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
@@ -225,8 +221,12 @@ class BinaryClassifierModel(pl.LightningModule):
         self, mode="val"
     ):  # https://github.com/Lightning-AI/lightning/pull/16520
         # loss計算
-        epoch_preds = torch.cat([x["batch_preds"] for x in self.test_step_outputs])
-        epoch_labels = torch.cat([x["batch_labels"] for x in self.test_step_outputs])
+        epoch_preds = torch.cat(
+            [x["batch_preds"] for x in self.validation_step_outputs]
+        )
+        epoch_labels = torch.cat(
+            [x["batch_labels"] for x in self.validation_step_outputs]
+        )
         epoch_loss = self.criterion(epoch_preds, epoch_labels)
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
@@ -234,8 +234,8 @@ class BinaryClassifierModel(pl.LightningModule):
 
     # testデータのlossとaccuracyを算出
     def on_test_epoch_end(self, mode="test"):
-        preds = torch.cat([x["batch_preds"] for x in self.train_step_outputs])
-        labels = torch.cat([x["batch_labels"] for x in self.train_step_outputs])
+        preds = torch.cat([x["batch_preds"] for x in self.test_step_outputs])
+        labels = torch.cat([x["batch_labels"] for x in self.test_step_outputs])
         loss = self.criterion(preds, labels)
         self.log(f"{mode}_loss", loss, logger=True)
 
