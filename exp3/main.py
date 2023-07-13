@@ -175,9 +175,8 @@ class BinaryClassifierModel(pl.LightningModule):
             attention_mask=batch["attention_mask"],
             labels=batch["labels"],
         )
-        self.train_step_outputs.extend(
-            {"batch_preds": preds, "batch_labels": batch["labels"]}
-        )
+        self.train_step_outputs.append(preds)
+        self.train_step_outputs.append(batch["labels"])
         self.log("train/loss", loss, on_step=True, prog_bar=True)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
