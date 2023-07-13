@@ -221,6 +221,7 @@ class BinaryClassifierModel(pl.LightningModule):
         self, mode="val"
     ):  # https://github.com/Lightning-AI/lightning/pull/16520
         # loss計算
+        print(self.validation_step_outputs)
         epoch_preds = torch.cat(
             [x["batch_preds"] for x in self.validation_step_outputs]
         )
