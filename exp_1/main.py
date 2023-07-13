@@ -138,6 +138,8 @@ class TextClassifierModel(pl.LightningModule):
         output = self.bert(input_ids, attention_mask=attention_mask)
         preds = self.classifier(output.pooler_output)
         loss = 0
+        print(preds)
+        print(labels)
         if labels is not None:
             loss = self.criterion(preds, labels)
         return loss, preds
