@@ -1,0 +1,27 @@
+2023-07-13 06:35:03,064 INFO    MainThread:33269 [wandb_setup.py:_flush():76] Current SDK version is 0.15.5
+2023-07-13 06:35:03,065 INFO    MainThread:33269 [wandb_setup.py:_flush():76] Configure stats pid to 33269
+2023-07-13 06:35:03,066 INFO    MainThread:33269 [wandb_setup.py:_flush():76] Loading settings from /root/.config/wandb/settings
+2023-07-13 06:35:03,066 INFO    MainThread:33269 [wandb_setup.py:_flush():76] Loading settings from /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-13/06-35-01/wandb/settings
+2023-07-13 06:35:03,066 INFO    MainThread:33269 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-07-13 06:35:03,066 INFO    MainThread:33269 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-07-13 06:35:03,066 INFO    MainThread:33269 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'exp3/main.py', 'program': '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py'}
+2023-07-13 06:35:03,068 INFO    MainThread:33269 [wandb_init.py:_log_setup():507] Logging user logs to /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-13/06-35-01/wandb/run-20230713_063503-82jqhbiw/logs/debug.log
+2023-07-13 06:35:03,069 INFO    MainThread:33269 [wandb_init.py:_log_setup():508] Logging internal logs to /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-13/06-35-01/wandb/run-20230713_063503-82jqhbiw/logs/debug-internal.log
+2023-07-13 06:35:03,069 INFO    MainThread:33269 [wandb_init.py:init():547] calling init triggers
+2023-07-13 06:35:03,069 INFO    MainThread:33269 [wandb_init.py:init():554] wandb.init called with sweep_config: {}
+config: {}
+2023-07-13 06:35:03,069 INFO    MainThread:33269 [wandb_init.py:init():596] starting backend
+2023-07-13 06:35:03,069 INFO    MainThread:33269 [wandb_init.py:init():600] setting up manager
+2023-07-13 06:35:03,079 INFO    MainThread:33269 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-07-13 06:35:03,096 INFO    MainThread:33269 [wandb_init.py:init():606] backend started and connected
+2023-07-13 06:35:03,099 INFO    MainThread:33269 [wandb_init.py:init():705] updated telemetry
+2023-07-13 06:35:03,145 INFO    MainThread:33269 [wandb_init.py:init():738] communicating run to backend with 60.0 second timeout
+2023-07-13 06:35:04,019 INFO    MainThread:33269 [wandb_run.py:_on_init():2173] communicating current version
+2023-07-13 06:35:04,131 INFO    MainThread:33269 [wandb_run.py:_on_init():2182] got version response 
+2023-07-13 06:35:04,132 INFO    MainThread:33269 [wandb_init.py:init():789] starting run threads in backend
+2023-07-13 06:35:04,256 INFO    MainThread:33269 [wandb_run.py:_console_start():2152] atexit reg
+2023-07-13 06:35:04,257 INFO    MainThread:33269 [wandb_run.py:_redirect():2007] redirect: SettingsConsole.WRAP_RAW
+2023-07-13 06:35:04,261 INFO    MainThread:33269 [wandb_run.py:_redirect():2072] Wrapping output streams.
+2023-07-13 06:35:04,261 INFO    MainThread:33269 [wandb_run.py:_redirect():2097] Redirects installed.
+2023-07-13 06:35:04,264 INFO    MainThread:33269 [wandb_init.py:init():830] run started, returning control to user process
+2023-07-13 06:40:49,568 WARNING MsgRouterThr:33269 [router.py:message_loop():77] message_loop has been closed
