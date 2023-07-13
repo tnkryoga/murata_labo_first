@@ -222,7 +222,8 @@ class BinaryClassifierModel(pl.LightningModule):
         #     for item in self.train_step_outputs:
         #         train_file.write("%s\n" % item)
 
-        self.train_step_outputs.clear()  # free memory
+        self.train_step_outputs_preds.clear()  # free memory
+        self.train_step_outputs_labels.clear()  # free memory
 
     # epoch終了時にvalidationのlossとaccuracyを記録
     def on_validation_epoch_end(
@@ -238,7 +239,8 @@ class BinaryClassifierModel(pl.LightningModule):
         # epoch_loss = self.criterion(epoch_preds, epoch_labels)
         # self.log(f"{mode}_loss", epoch_loss, logger=True)
 
-        self.validation_step_outputs.clear()  # free memory
+        self.validation_step_outputs_preds.clear()  # free memory
+        self.validation_step_outputs_labels.clear()  # free memory
 
     # testデータのlossとaccuracyを算出
     def on_test_epoch_end(self, mode="test"):
@@ -287,7 +289,8 @@ class BinaryClassifierModel(pl.LightningModule):
             }
         )
 
-        self.test_step_outputs.clear()
+        self.test_step_outputs_preds.clear()
+        self.test_step_outputs_labels.clear()  # free memory
 
     # optimizerの設定
     def configure_optimizers(self):
