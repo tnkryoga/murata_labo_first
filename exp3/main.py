@@ -162,6 +162,8 @@ class BinaryClassifierModel(pl.LightningModule):
         outputs = torch.relu(self.hidden_layer(output.pooler_output))  # 活性化関数Relu
         preds = torch.sigmoid(self.layer(outputs))  # sigmoidによる確率化
         loss = 0
+        print(preds)
+        print(labels)
         if labels is not None:
             loss = self.criterion(preds, labels)
         return loss, preds
@@ -179,7 +181,6 @@ class BinaryClassifierModel(pl.LightningModule):
 
     # validation、testでもtrain_stepと同じ処理を行う
     def validation_step(self, batch, batch_idx):
-        print(batch)
         loss, preds = self.forward(
             input_ids=batch["input_ids"],
             attention_mask=batch["attention_mask"],
