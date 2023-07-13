@@ -165,7 +165,7 @@ class BinaryClassifierModel(pl.LightningModule):
         print(preds)
         print(labels)
         if labels is not None:
-            loss = self.criterion(preds.view(-1), labels.long())
+            loss = self.criterion(preds.view(-1), labels.float())
         return loss, preds
 
     # trainのミニバッチに対して行う処理
