@@ -1,0 +1,111 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+Some weights of the model checkpoint at cl-tohoku/bert-base-japanese-char-whole-word-masking were not used when initializing BertModel: ['cls.predictions.bias', 'cls.seq_relationship.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.predictions.transform.LayerNorm.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.dense.weight']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name         | Type      | Params
+-------------------------------------------
+0 | bert         | BertModel | 89.1 M
+1 | hidden_layer | Linear    | 49.2 K
+2 | layer        | Linear    | 65
+3 | criterion    | BCELoss   | 0
+-------------------------------------------
+7.1 M     Trainable params
+82.0 M    Non-trainable params
+89.2 M    Total params
+356.650   Total estimated model params size (MB)
+Sanity Checking DataLoader 0:   0% 0/1 [00:00<?, ?it/s]
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:280: PossibleUserWarning: The number of training batches (2) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+
+  rank_zero_warn(
+
+Epoch 0: 100% 2/2 [03:27<00:00, 103.82s/it, v_num=g22o, train/loss=0.650]
+Validation DataLoader 0:   0% 0/1 [00:00<?, ?it/s]
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 390, in main
+    trainer.fit(model, data_module)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 529, in fit
+    call._call_and_handle_interrupt(
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 568, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 973, in _run
+    results = self._run_stage()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 1016, in _run_stage
+    self.fit_loop.run()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py", line 202, in run
+    self.on_advance_end()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py", line 368, in on_advance_end
+    call._call_lightning_module_hook(trainer, "on_train_epoch_end")
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 144, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 213, in on_train_epoch_end
+    epoch_preds = torch.stack(self.train_step_outputs_preds)
+RuntimeError: stack expects each tensor to be equal size, but got [32, 1] at entry 0 and [28, 1] at entry 1
+        [0.5215],
+        [0.5100],
+        [0.4871],
+        [0.5186],
+        [0.5237],
+        [0.5159],
+        [0.5223],
+        [0.5487],
+        [0.5223],
+        [0.5153],
+        [0.5112],
+        [0.4972],
+        [0.4907],
+        [0.5128],
+        [0.5141],
+        [0.5280],
+        [0.5022],
+        [0.5287],
+        [0.5144],
+        [0.5046],
+        [0.5143],
+        [0.4895],
+        [0.5204],
+        [0.4953],
+        [0.5135],
+        [0.5417],
+        [0.4831],
+        [0.5237],
+        [0.5020],
+        [0.5030],
+        [0.5229]], grad_fn=<SigmoidBackward0>), tensor([[0.5095],
+        [0.5296],
+        [0.5073],
+        [0.5052],
+        [0.5050],
+        [0.5177],
+        [0.5387],
+        [0.5148],
+        [0.5424],
+        [0.5226],
+        [0.5034],
+        [0.4964],
+        [0.5273],
+        [0.4957],
+        [0.5367],
+        [0.5313],
+        [0.5550],
+        [0.5099],
+        [0.5086],
+        [0.5220],
+        [0.5048],
+        [0.5262],
+        [0.5216],
+        [0.5455],
+        [0.5501],
+        [0.5435],
+        [0.5294],
+        [0.5258]], grad_fn=<SigmoidBackward0>)]
+[tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1]), tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1])]
