@@ -139,7 +139,7 @@ class BinaryClassifierModel(pl.LightningModule):
         )  # 入力BERT層、出力hidden_sizeの全結合層
         self.layer = nn.Linear(hidden_size, 1)  # 二値分類
         self.n_epochs = n_epochs
-        self.criterion = nn.CrossEntropyLoss()
+        self.criterion = nn.BCELoss()
         # self.metrics = torchmetrics.MetricCollection(
         #     [
         #         torchmetrics.Accuracy(task="binary", threshold=self.THRESHOLD),
