@@ -1,0 +1,130 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name         | Type      | Params
+-------------------------------------------
+0 | bert         | BertModel | 89.1 M
+1 | hidden_layer | Linear    | 49.2 K
+2 | layer        | Linear    | 65
+3 | criterion    | BCELoss   | 0
+-------------------------------------------
+7.1 M     Trainable params
+82.0 M    Non-trainable params
+89.2 M    Total params
+356.650   Total estimated model params size (MB)
+
+
+Sanity Checking DataLoader 0:  50% 1/2 [00:41<00:41, 41.29s/it]
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:280: PossibleUserWarning: The number of training batches (5) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+  rank_zero_warn(
+
+
+
+
+Epoch 0: 100% 5/5 [04:15<00:00, 51.13s/it, v_num=fcpd, train/loss=0.672]
+
+Validation DataLoader 0:  50% 1/2 [00:39<00:39, 39.07s/it]
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 391, in main
+    trainer.fit(model, data_module)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 529, in fit
+    call._call_and_handle_interrupt(
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 568, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 973, in _run
+    results = self._run_stage()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 1016, in _run_stage
+    self.fit_loop.run()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py", line 202, in run
+    self.on_advance_end()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py", line 368, in on_advance_end
+    call._call_lightning_module_hook(trainer, "on_train_epoch_end")
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 144, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 216, in on_train_epoch_end
+    epoch_loss = self.criterion(epoch_preds, epoch_labels)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/loss.py", line 619, in forward
+    return F.binary_cross_entropy(input, target, weight=self.weight, reduction=self.reduction)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 3089, in binary_cross_entropy
+    raise ValueError(
+ValueError: Using a target size (torch.Size([76])) that is different to the input size (torch.Size([76, 1])) is deprecated. Please ensure they have the same size.
+        [0.4916],
+        [0.4912],
+        [0.4817],
+        [0.4801],
+        [0.4478],
+        [0.4585],
+        [0.4724],
+        [0.4783],
+        [0.4470],
+        [0.4513],
+        [0.4638],
+        [0.4503],
+        [0.4652],
+        [0.4775],
+        [0.4630]], grad_fn=<SigmoidBackward0>), tensor([[0.4715],
+        [0.4798],
+        [0.5021],
+        [0.4563],
+        [0.4845],
+        [0.4719],
+        [0.5052],
+        [0.4622],
+        [0.4777],
+        [0.4830],
+        [0.4873],
+        [0.4872],
+        [0.4743],
+        [0.4978],
+        [0.4874],
+        [0.4617]], grad_fn=<SigmoidBackward0>), tensor([[0.5093],
+        [0.4993],
+        [0.4885],
+        [0.4834],
+        [0.4739],
+        [0.4939],
+        [0.4946],
+        [0.4733],
+        [0.4579],
+        [0.4886],
+        [0.4764],
+        [0.4999],
+        [0.4773],
+        [0.4751],
+        [0.4844],
+        [0.5034]], grad_fn=<SigmoidBackward0>), tensor([[0.4839],
+        [0.5027],
+        [0.4945],
+        [0.4970],
+        [0.5093],
+        [0.5075],
+        [0.4961],
+        [0.5068],
+        [0.5143],
+        [0.4784],
+        [0.4931],
+        [0.4723],
+        [0.4905],
+        [0.4986],
+        [0.5088],
+        [0.4953]], grad_fn=<SigmoidBackward0>), tensor([[0.5073],
+        [0.5125],
+        [0.5354],
+        [0.4952],
+        [0.4940],
+        [0.5293],
+        [0.5081],
+        [0.5184],
+        [0.5096],
+        [0.5157],
+        [0.4965],
+        [0.5051]], grad_fn=<SigmoidBackward0>)]
+[tensor([0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]), tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]), tensor([1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1]), tensor([1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1]), tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])]
