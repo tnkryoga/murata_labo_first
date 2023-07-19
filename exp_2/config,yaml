@@ -1,6 +1,6 @@
 wandb:
   project: murata_exp
-  exp_num: 1
+  exp_num: 2
   tags: [bert]
 path:
   data_file_name: /content/drive/MyDrive/murata_labo_exp/data/livedoor_sentence_test.csv
