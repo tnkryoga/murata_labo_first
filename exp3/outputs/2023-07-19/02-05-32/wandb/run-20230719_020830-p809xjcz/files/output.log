@@ -1,0 +1,117 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+Downloading (…)solve/main/vocab.txt: 100% 15.7k/15.7k [00:00<00:00, 30.2MB/s]
+Downloading (…)okenizer_config.json: 100% 110/110 [00:00<00:00, 107kB/s]
+Downloading (…)lve/main/config.json: 100% 478/478 [00:00<00:00, 540kB/s]
+
+
+
+
+
+
+Downloading pytorch_model.bin: 100% 359M/359M [00:11<00:00, 31.8MB/s]
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name         | Type      | Params
+-------------------------------------------
+0 | bert         | BertModel | 89.1 M
+1 | hidden_layer | Linear    | 49.2 K
+2 | layer        | Linear    | 65
+3 | criterion    | BCELoss   | 0
+-------------------------------------------
+7.1 M     Trainable params
+82.0 M    Non-trainable params
+89.2 M    Total params
+356.650   Total estimated model params size (MB)
+Sanity Checking DataLoader 0:   0% 0/1 [00:00<?, ?it/s]
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:280: PossibleUserWarning: The number of training batches (2) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+
+
+Epoch 0: 100% 2/2 [03:24<00:00, 102.28s/it, v_num=xjcz, train/loss=0.807]
+        [0.4171],
+        [0.4301],
+        [0.4396],
+        [0.4315],
+        [0.4142],
+        [0.4223],
+        [0.4270],
+        [0.4296],
+        [0.4398],
+        [0.4449],
+        [0.4369],
+        [0.4216],
+        [0.4278],
+        [0.4278],
+        [0.4352],
+        [0.4612],
+        [0.4303],
+        [0.4016],
+        [0.4371],
+        [0.4353],
+        [0.4296],
+        [0.4323],
+        [0.4521],
+        [0.4452],
+        [0.4400],
+        [0.4362],
+        [0.4265],
+        [0.4107],
+        [0.4248],
+        [0.4213],
+        [0.4266]], grad_fn=<SigmoidBackward0>), tensor([[0.4472],
+        [0.4522],
+        [0.4352],
+        [0.4327],
+        [0.4738],
+        [0.4293],
+        [0.4555],
+        [0.4556],
+        [0.4308],
+        [0.4451],
+        [0.4400],
+        [0.4441],
+        [0.4423],
+        [0.4568],
+        [0.4459],
+        [0.4399],
+        [0.4294],
+        [0.4456],
+        [0.4316],
+        [0.4460],
+        [0.4555],
+        [0.4533],
+        [0.4303],
+        [0.4440],
+        [0.4390],
+        [0.4530],
+        [0.4222],
+        [0.4370]], grad_fn=<SigmoidBackward0>)]
+[tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 1, 1, 1, 1, 1, 1, 1]), tensor([1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1])]
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 390, in main
+    trainer.fit(model, data_module)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 529, in fit
+    call._call_and_handle_interrupt(
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 568, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 973, in _run
+    results = self._run_stage()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 1016, in _run_stage
+    self.fit_loop.run()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py", line 202, in run
+    self.on_advance_end()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py", line 368, in on_advance_end
+    call._call_lightning_module_hook(trainer, "on_train_epoch_end")
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 144, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 213, in on_train_epoch_end
+    epoch_preds = torch.stack(self.train_step_outputs_preds)
+RuntimeError: stack expects each tensor to be equal size, but got [32, 1] at entry 0 and [28, 1] at entry 1
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
