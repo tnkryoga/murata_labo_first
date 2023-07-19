@@ -47,17 +47,10 @@ class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoader�
             return_tensors="pt",
         )
 
-        input_ids = encoding["input_ids"].flatten()
-        attention_mask = encoding["attention_mask"].flatten()
-
-        # サイズを揃える
-        input_ids = input_ids[: self.max_token_len]
-        attention_mask = attention_mask[: self.max_token_len]
-
         return dict(
             text=text,
-            input_ids=input_ids,
-            attention_mask=attention_mask,
+            input_ids=encoding["input_ids"].flatten(),
+            attention_mask=encoding["attention_mask"].flatten(),
             labels=torch.tensor(labels),
         )
 
@@ -185,6 +178,7 @@ class BinaryClassifierModel(pl.LightningModule):
             attention_mask=batch["attention_mask"],
             labels=batch["labels"],
         )
+
         self.train_step_outputs_preds.append(preds)
         self.train_step_outputs_labels.append(batch["labels"])
         self.log("train/loss", loss, on_step=True, prog_bar=True)
@@ -217,8 +211,8 @@ class BinaryClassifierModel(pl.LightningModule):
     def on_train_epoch_end(self, mode="train"):
         print(self.train_step_outputs_preds)
         print(self.train_step_outputs_labels)
-        epoch_preds = torch.stack(self.train_step_outputs_preds)
-        epoch_labels = torch.stack(self.train_step_outputs_labels)
+        epoch_preds = torch.cat(self.train_step_outputs_preds)
+        epoch_labels = torch.cat(self.train_step_outputs_labels)
         epoch_loss = self.criterion(epoch_preds, epoch_labels)
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
