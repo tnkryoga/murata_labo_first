@@ -1,0 +1,295 @@
+2023-07-19 03:02:41,050 INFO    StreamThr :16138 [internal.py:wandb_internal():86] W&B internal server running at pid: 16138, started at: 2023-07-19 03:02:41.044231
+2023-07-19 03:02:41,054 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status
+2023-07-19 03:02:41,069 INFO    WriterThread:16138 [datastore.py:open_for_write():85] open: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/run-gnktawq5.wandb
+2023-07-19 03:02:41,076 DEBUG   SenderThread:16138 [sender.py:send():369] send: header
+2023-07-19 03:02:41,123 DEBUG   SenderThread:16138 [sender.py:send():369] send: run
+2023-07-19 03:02:41,525 INFO    SenderThread:16138 [dir_watcher.py:__init__():211] watching files in: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files
+2023-07-19 03:02:41,526 INFO    SenderThread:16138 [sender.py:_start_run_threads():1100] run started: gnktawq5 with start time 1689735761.065737
+2023-07-19 03:02:41,526 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: summary_record
+2023-07-19 03:02:41,532 INFO    SenderThread:16138 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-19 03:02:41,539 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: check_version
+2023-07-19 03:02:41,540 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: check_version
+2023-07-19 03:02:41,634 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: run_start
+2023-07-19 03:02:41,636 DEBUG   HandlerThread:16138 [system_info.py:__init__():31] System info init
+2023-07-19 03:02:41,636 DEBUG   HandlerThread:16138 [system_info.py:__init__():46] System info init done
+2023-07-19 03:02:41,636 INFO    HandlerThread:16138 [system_monitor.py:start():181] Starting system monitor
+2023-07-19 03:02:41,636 INFO    SystemMonitor:16138 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-07-19 03:02:41,637 INFO    HandlerThread:16138 [system_monitor.py:probe():201] Collecting system info
+2023-07-19 03:02:41,639 INFO    SystemMonitor:16138 [interfaces.py:start():190] Started cpu monitoring
+2023-07-19 03:02:41,640 DEBUG   HandlerThread:16138 [system_info.py:probe():195] Probing system
+2023-07-19 03:02:41,641 INFO    SystemMonitor:16138 [interfaces.py:start():190] Started disk monitoring
+2023-07-19 03:02:41,646 INFO    SystemMonitor:16138 [interfaces.py:start():190] Started memory monitoring
+2023-07-19 03:02:41,656 DEBUG   HandlerThread:16138 [system_info.py:_probe_git():180] Probing git
+2023-07-19 03:02:41,666 INFO    SystemMonitor:16138 [interfaces.py:start():190] Started network monitoring
+2023-07-19 03:02:41,704 DEBUG   HandlerThread:16138 [system_info.py:_probe_git():188] Probing git done
+2023-07-19 03:02:41,704 DEBUG   HandlerThread:16138 [system_info.py:probe():240] Probing system done
+2023-07-19 03:02:41,705 DEBUG   HandlerThread:16138 [system_monitor.py:probe():210] {'os': 'Linux-5.15.109+-x86_64-with-glibc2.31', 'python': '3.10.12', 'heartbeatAt': '2023-07-19T03:02:41.641892', 'startedAt': '2023-07-19T03:02:40.950719', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py', 'codePath': 'exp3/main.py', 'git': {'remote': 'https://tnkryoga:@github.com/tnkryoga/murata_labo_first.git', 'commit': '156582f9a31aea79ad537ee51024a4d7b1086a65'}, 'email': 'tanaryo-miyabi818@outlook.jp', 'root': '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src', 'host': 'fe90cf951f68', 'username': 'root', 'executable': '/usr/bin/python3', 'cpu_count': 1, 'cpu_count_logical': 2, 'cpu_freq': {'current': 2199.998, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2199.998, 'min': 0.0, 'max': 0.0}, {'current': 2199.998, 'min': 0.0, 'max': 0.0}], 'disk': {'total': 107.71508407592773, 'used': 24.862102508544922}, 'memory': {'total': 12.678386688232422}}
+2023-07-19 03:02:41,705 INFO    HandlerThread:16138 [system_monitor.py:probe():211] Finished collecting system info
+2023-07-19 03:02:41,705 INFO    HandlerThread:16138 [system_monitor.py:probe():214] Publishing system info
+2023-07-19 03:02:41,705 DEBUG   HandlerThread:16138 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-07-19 03:02:41,710 DEBUG   HandlerThread:16138 [system_info.py:_save_pip():67] Saving pip packages done
+2023-07-19 03:02:41,715 INFO    HandlerThread:16138 [system_monitor.py:probe():216] Finished publishing system info
+2023-07-19 03:02:41,726 DEBUG   SenderThread:16138 [sender.py:send():369] send: files
+2023-07-19 03:02:41,726 INFO    SenderThread:16138 [sender.py:_save_file():1354] saving file wandb-metadata.json with policy now
+2023-07-19 03:02:41,745 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:02:41,746 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:02:41,907 DEBUG   SenderThread:16138 [sender.py:send():369] send: telemetry
+2023-07-19 03:02:42,180 INFO    wandb-upload_0:16138 [upload_job.py:push():133] Uploaded file /tmp/tmp8wpm6p4nwandb/96igetoi-wandb-metadata.json
+2023-07-19 03:02:42,537 INFO    Thread-12 :16138 [dir_watcher.py:_on_file_created():272] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/wandb-summary.json
+2023-07-19 03:02:42,541 INFO    Thread-12 :16138 [dir_watcher.py:_on_file_created():272] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/requirements.txt
+2023-07-19 03:02:42,544 INFO    Thread-12 :16138 [dir_watcher.py:_on_file_created():272] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/output.log
+2023-07-19 03:02:42,547 INFO    Thread-12 :16138 [dir_watcher.py:_on_file_created():272] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/wandb-metadata.json
+2023-07-19 03:02:46,913 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:02:48,571 INFO    Thread-12 :16138 [dir_watcher.py:_on_file_modified():289] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/output.log
+2023-07-19 03:02:49,575 INFO    Thread-12 :16138 [dir_watcher.py:_on_file_modified():289] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/output.log
+2023-07-19 03:02:52,655 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:02:56,747 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:02:56,750 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:02:57,882 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:03:02,883 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:03:07,883 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:03:11,746 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:03:11,747 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:03:13,886 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:03:14,728 INFO    Thread-12 :16138 [dir_watcher.py:_on_file_modified():289] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/config.yaml
+2023-07-19 03:03:19,084 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:03:24,085 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:03:26,746 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:03:26,752 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:03:29,631 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:03:31,809 INFO    Thread-12 :16138 [dir_watcher.py:_on_file_modified():289] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/output.log
+2023-07-19 03:03:34,632 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:03:39,641 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:03:41,667 DEBUG   SystemMonitor:16138 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-07-19 03:03:41,669 DEBUG   SenderThread:16138 [sender.py:send():369] send: stats
+2023-07-19 03:03:41,748 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:03:41,749 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:03:41,853 INFO    Thread-12 :16138 [dir_watcher.py:_on_file_modified():289] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/output.log
+2023-07-19 03:03:44,891 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:03:49,893 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:03:49,900 INFO    Thread-12 :16138 [dir_watcher.py:_on_file_modified():289] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/output.log
+2023-07-19 03:03:54,896 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:03:56,747 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:03:56,748 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:03:59,898 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:04:04,899 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:04:09,900 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:04:11,670 DEBUG   SenderThread:16138 [sender.py:send():369] send: stats
+2023-07-19 03:04:11,747 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:04:11,748 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:04:15,880 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:04:20,880 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:04:25,881 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:04:26,747 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:04:26,748 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:04:30,895 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:04:36,060 INFO    Thread-12 :16138 [dir_watcher.py:_on_file_modified():289] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/output.log
+2023-07-19 03:04:36,164 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:04:41,165 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:04:41,670 DEBUG   SenderThread:16138 [sender.py:send():369] send: stats
+2023-07-19 03:04:41,747 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:04:41,748 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:04:46,874 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:04:51,875 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:04:56,747 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:04:56,748 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:04:56,878 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:05:01,882 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:05:06,883 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:05:11,671 DEBUG   SenderThread:16138 [sender.py:send():369] send: stats
+2023-07-19 03:05:11,747 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:05:11,748 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:05:12,882 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:05:17,883 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:05:22,884 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:05:26,747 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:05:26,748 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:05:27,894 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:05:30,269 INFO    Thread-12 :16138 [dir_watcher.py:_on_file_modified():289] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/output.log
+2023-07-19 03:05:33,136 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:05:38,138 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:05:41,672 DEBUG   SenderThread:16138 [sender.py:send():369] send: stats
+2023-07-19 03:05:41,747 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:05:41,748 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:05:43,888 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:05:48,889 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:05:53,889 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:05:56,748 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:05:56,748 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:05:59,886 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:06:04,887 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:06:09,888 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:06:11,673 DEBUG   SenderThread:16138 [sender.py:send():369] send: stats
+2023-07-19 03:06:11,748 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:06:11,749 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:06:15,887 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:06:20,888 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:06:26,446 INFO    Thread-12 :16138 [dir_watcher.py:_on_file_modified():289] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/output.log
+2023-07-19 03:06:26,573 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:06:26,748 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:06:26,749 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:06:31,886 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:06:36,887 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:06:41,674 DEBUG   SenderThread:16138 [sender.py:send():369] send: stats
+2023-07-19 03:06:41,749 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:06:41,753 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:06:41,892 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:06:46,893 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:06:51,894 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:06:56,748 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:06:56,749 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:06:57,876 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:07:02,968 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:07:04,577 INFO    Thread-12 :16138 [dir_watcher.py:_on_file_modified():289] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/output.log
+2023-07-19 03:07:07,983 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:07:11,675 DEBUG   SenderThread:16138 [sender.py:send():369] send: stats
+2023-07-19 03:07:11,749 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:07:11,750 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:07:13,891 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:07:18,892 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:07:23,893 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:07:26,748 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:07:26,749 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:07:29,890 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:07:34,891 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:07:39,892 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:07:41,675 DEBUG   SenderThread:16138 [sender.py:send():369] send: stats
+2023-07-19 03:07:41,749 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-19 03:07:41,750 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: stop_status
+2023-07-19 03:07:44,701 INFO    Thread-12 :16138 [dir_watcher.py:_on_file_modified():289] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/output.log
+2023-07-19 03:07:45,702 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:07:50,703 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:07:52,893 DEBUG   SenderThread:16138 [sender.py:send():369] send: exit
+2023-07-19 03:07:52,893 INFO    SenderThread:16138 [sender.py:send_exit():574] handling exit code: 1
+2023-07-19 03:07:52,894 INFO    SenderThread:16138 [sender.py:send_exit():576] handling runtime: 311
+2023-07-19 03:07:52,899 INFO    SenderThread:16138 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-19 03:07:52,901 INFO    SenderThread:16138 [sender.py:send_exit():582] send defer
+2023-07-19 03:07:52,901 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: defer
+2023-07-19 03:07:52,902 INFO    HandlerThread:16138 [handler.py:handle_request_defer():170] handle defer: 0
+2023-07-19 03:07:52,902 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: defer
+2023-07-19 03:07:52,902 INFO    SenderThread:16138 [sender.py:send_request_defer():598] handle sender defer: 0
+2023-07-19 03:07:52,902 INFO    SenderThread:16138 [sender.py:transition_state():602] send defer: 1
+2023-07-19 03:07:52,903 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: defer
+2023-07-19 03:07:52,903 INFO    HandlerThread:16138 [handler.py:handle_request_defer():170] handle defer: 1
+2023-07-19 03:07:52,903 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: defer
+2023-07-19 03:07:52,904 INFO    SenderThread:16138 [sender.py:send_request_defer():598] handle sender defer: 1
+2023-07-19 03:07:52,904 INFO    SenderThread:16138 [sender.py:transition_state():602] send defer: 2
+2023-07-19 03:07:52,904 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: defer
+2023-07-19 03:07:52,904 INFO    HandlerThread:16138 [handler.py:handle_request_defer():170] handle defer: 2
+2023-07-19 03:07:52,904 INFO    HandlerThread:16138 [system_monitor.py:finish():190] Stopping system monitor
+2023-07-19 03:07:52,905 DEBUG   SystemMonitor:16138 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-07-19 03:07:52,905 DEBUG   SystemMonitor:16138 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-07-19 03:07:52,905 INFO    HandlerThread:16138 [interfaces.py:finish():202] Joined cpu monitor
+2023-07-19 03:07:52,906 INFO    HandlerThread:16138 [interfaces.py:finish():202] Joined disk monitor
+2023-07-19 03:07:52,906 INFO    HandlerThread:16138 [interfaces.py:finish():202] Joined memory monitor
+2023-07-19 03:07:52,906 INFO    HandlerThread:16138 [interfaces.py:finish():202] Joined network monitor
+2023-07-19 03:07:52,907 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: defer
+2023-07-19 03:07:52,907 INFO    SenderThread:16138 [sender.py:send_request_defer():598] handle sender defer: 2
+2023-07-19 03:07:52,907 INFO    SenderThread:16138 [sender.py:transition_state():602] send defer: 3
+2023-07-19 03:07:52,908 DEBUG   SenderThread:16138 [sender.py:send():369] send: stats
+2023-07-19 03:07:52,908 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: defer
+2023-07-19 03:07:52,908 INFO    HandlerThread:16138 [handler.py:handle_request_defer():170] handle defer: 3
+2023-07-19 03:07:52,909 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: defer
+2023-07-19 03:07:52,909 INFO    SenderThread:16138 [sender.py:send_request_defer():598] handle sender defer: 3
+2023-07-19 03:07:52,909 INFO    SenderThread:16138 [sender.py:transition_state():602] send defer: 4
+2023-07-19 03:07:52,909 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: defer
+2023-07-19 03:07:52,909 INFO    HandlerThread:16138 [handler.py:handle_request_defer():170] handle defer: 4
+2023-07-19 03:07:52,910 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: defer
+2023-07-19 03:07:52,910 INFO    SenderThread:16138 [sender.py:send_request_defer():598] handle sender defer: 4
+2023-07-19 03:07:52,910 INFO    SenderThread:16138 [sender.py:transition_state():602] send defer: 5
+2023-07-19 03:07:52,910 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: defer
+2023-07-19 03:07:52,910 INFO    HandlerThread:16138 [handler.py:handle_request_defer():170] handle defer: 5
+2023-07-19 03:07:52,911 DEBUG   SenderThread:16138 [sender.py:send():369] send: summary
+2023-07-19 03:07:52,915 INFO    SenderThread:16138 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-19 03:07:52,917 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: defer
+2023-07-19 03:07:52,917 INFO    SenderThread:16138 [sender.py:send_request_defer():598] handle sender defer: 5
+2023-07-19 03:07:52,917 INFO    SenderThread:16138 [sender.py:transition_state():602] send defer: 6
+2023-07-19 03:07:52,918 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: defer
+2023-07-19 03:07:52,918 INFO    HandlerThread:16138 [handler.py:handle_request_defer():170] handle defer: 6
+2023-07-19 03:07:52,918 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: defer
+2023-07-19 03:07:52,919 INFO    SenderThread:16138 [sender.py:send_request_defer():598] handle sender defer: 6
+2023-07-19 03:07:52,919 INFO    SenderThread:16138 [sender.py:transition_state():602] send defer: 7
+2023-07-19 03:07:52,919 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:07:52,919 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: defer
+2023-07-19 03:07:52,920 INFO    HandlerThread:16138 [handler.py:handle_request_defer():170] handle defer: 7
+2023-07-19 03:07:52,920 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: defer
+2023-07-19 03:07:52,920 INFO    SenderThread:16138 [sender.py:send_request_defer():598] handle sender defer: 7
+2023-07-19 03:07:53,729 INFO    Thread-12 :16138 [dir_watcher.py:_on_file_modified():289] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/wandb-summary.json
+2023-07-19 03:07:53,893 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: poll_exit
+2023-07-19 03:07:54,732 INFO    Thread-12 :16138 [dir_watcher.py:_on_file_modified():289] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/output.log
+2023-07-19 03:07:55,821 INFO    SenderThread:16138 [sender.py:transition_state():602] send defer: 8
+2023-07-19 03:07:55,822 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: poll_exit
+2023-07-19 03:07:55,822 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: defer
+2023-07-19 03:07:55,823 INFO    HandlerThread:16138 [handler.py:handle_request_defer():170] handle defer: 8
+2023-07-19 03:07:55,823 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: defer
+2023-07-19 03:07:55,824 INFO    SenderThread:16138 [sender.py:send_request_defer():598] handle sender defer: 8
+2023-07-19 03:07:55,824 INFO    SenderThread:16138 [job_builder.py:build():240] Attempting to build job artifact
+2023-07-19 03:07:55,826 INFO    SenderThread:16138 [job_builder.py:build():264] is repo sourced job
+2023-07-19 03:07:55,829 INFO    SenderThread:16138 [job_builder.py:build():305] adding wandb-job metadata file
+2023-07-19 03:07:55,842 INFO    SenderThread:16138 [sender.py:transition_state():602] send defer: 9
+2023-07-19 03:07:55,842 DEBUG   SenderThread:16138 [sender.py:send():369] send: artifact
+2023-07-19 03:07:55,843 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: defer
+2023-07-19 03:07:55,846 INFO    HandlerThread:16138 [handler.py:handle_request_defer():170] handle defer: 9
+2023-07-19 03:07:56,739 INFO    Thread-12 :16138 [dir_watcher.py:_on_file_modified():289] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/output.log
+2023-07-19 03:07:57,231 INFO    wandb-upload_0:16138 [upload_job.py:push():88] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpsz6nyse4
+2023-07-19 03:07:57,897 INFO    wandb-upload_1:16138 [upload_job.py:push():91] Uploaded file /root/.local/share/wandb/artifacts/staging/tmp3cy22rkf
+2023-07-19 03:07:58,895 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: keepalive
+2023-07-19 03:07:59,421 INFO    SenderThread:16138 [sender.py:send_artifact():1450] sent artifact job-https___tnkryoga__github.com_tnkryoga_murata_labo_first.git_exp3_main.py - {'id': 'QXJ0aWZhY3Q6NTE2Mzk1ODkw', 'digest': '1f3d412f6f05234c381f67885f17970c', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjgyMjI0MTA5', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NTE2MzgxMTIy', 'versionIndex': 26}}, 'version': 'latest'}
+2023-07-19 03:07:59,421 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: defer
+2023-07-19 03:07:59,422 INFO    SenderThread:16138 [sender.py:send_request_defer():598] handle sender defer: 9
+2023-07-19 03:07:59,422 INFO    SenderThread:16138 [dir_watcher.py:finish():359] shutting down directory watcher
+2023-07-19 03:07:59,744 INFO    SenderThread:16138 [dir_watcher.py:finish():389] scan: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files
+2023-07-19 03:07:59,745 INFO    SenderThread:16138 [dir_watcher.py:finish():403] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/config.yaml config.yaml
+2023-07-19 03:07:59,748 INFO    SenderThread:16138 [dir_watcher.py:finish():403] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/wandb-summary.json wandb-summary.json
+2023-07-19 03:07:59,754 INFO    SenderThread:16138 [dir_watcher.py:finish():403] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/requirements.txt requirements.txt
+2023-07-19 03:07:59,759 INFO    SenderThread:16138 [dir_watcher.py:finish():403] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/wandb-metadata.json wandb-metadata.json
+2023-07-19 03:07:59,759 INFO    SenderThread:16138 [dir_watcher.py:finish():403] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/output.log output.log
+2023-07-19 03:07:59,764 INFO    SenderThread:16138 [sender.py:transition_state():602] send defer: 10
+2023-07-19 03:07:59,765 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: defer
+2023-07-19 03:07:59,768 INFO    HandlerThread:16138 [handler.py:handle_request_defer():170] handle defer: 10
+2023-07-19 03:07:59,768 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: defer
+2023-07-19 03:07:59,769 INFO    SenderThread:16138 [sender.py:send_request_defer():598] handle sender defer: 10
+2023-07-19 03:07:59,770 INFO    SenderThread:16138 [file_pusher.py:finish():159] shutting down file pusher
+2023-07-19 03:08:00,158 INFO    wandb-upload_0:16138 [upload_job.py:push():133] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/config.yaml
+2023-07-19 03:08:00,193 INFO    wandb-upload_1:16138 [upload_job.py:push():133] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/wandb-summary.json
+2023-07-19 03:08:00,237 INFO    wandb-upload_2:16138 [upload_job.py:push():133] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/requirements.txt
+2023-07-19 03:08:00,258 INFO    wandb-upload_3:16138 [upload_job.py:push():133] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/files/output.log
+2023-07-19 03:08:00,459 INFO    Thread-11 (_thread_body):16138 [sender.py:transition_state():602] send defer: 11
+2023-07-19 03:08:00,460 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: defer
+2023-07-19 03:08:00,460 INFO    HandlerThread:16138 [handler.py:handle_request_defer():170] handle defer: 11
+2023-07-19 03:08:00,461 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: defer
+2023-07-19 03:08:00,461 INFO    SenderThread:16138 [sender.py:send_request_defer():598] handle sender defer: 11
+2023-07-19 03:08:00,461 INFO    SenderThread:16138 [file_pusher.py:join():164] waiting for file pusher
+2023-07-19 03:08:00,461 INFO    SenderThread:16138 [sender.py:transition_state():602] send defer: 12
+2023-07-19 03:08:00,461 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: defer
+2023-07-19 03:08:00,462 INFO    HandlerThread:16138 [handler.py:handle_request_defer():170] handle defer: 12
+2023-07-19 03:08:00,462 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: defer
+2023-07-19 03:08:00,464 INFO    SenderThread:16138 [sender.py:send_request_defer():598] handle sender defer: 12
+2023-07-19 03:08:01,008 INFO    SenderThread:16138 [sender.py:transition_state():602] send defer: 13
+2023-07-19 03:08:01,009 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: defer
+2023-07-19 03:08:01,009 INFO    HandlerThread:16138 [handler.py:handle_request_defer():170] handle defer: 13
+2023-07-19 03:08:01,010 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: status_report
+2023-07-19 03:08:01,010 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: defer
+2023-07-19 03:08:01,010 INFO    SenderThread:16138 [sender.py:send_request_defer():598] handle sender defer: 13
+2023-07-19 03:08:01,011 INFO    SenderThread:16138 [sender.py:transition_state():602] send defer: 14
+2023-07-19 03:08:01,011 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: defer
+2023-07-19 03:08:01,011 DEBUG   SenderThread:16138 [sender.py:send():369] send: final
+2023-07-19 03:08:01,011 INFO    HandlerThread:16138 [handler.py:handle_request_defer():170] handle defer: 14
+2023-07-19 03:08:01,012 DEBUG   SenderThread:16138 [sender.py:send():369] send: footer
+2023-07-19 03:08:01,012 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: defer
+2023-07-19 03:08:01,013 INFO    SenderThread:16138 [sender.py:send_request_defer():598] handle sender defer: 14
+2023-07-19 03:08:01,014 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: poll_exit
+2023-07-19 03:08:01,014 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: server_info
+2023-07-19 03:08:01,014 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: get_summary
+2023-07-19 03:08:01,015 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: poll_exit
+2023-07-19 03:08:01,015 DEBUG   SenderThread:16138 [sender.py:send_request():396] send_request: server_info
+2023-07-19 03:08:01,018 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: sampled_history
+2023-07-19 03:08:01,164 INFO    MainThread:16138 [wandb_run.py:_footer_history_summary_info():3464] rendering history
+2023-07-19 03:08:01,164 INFO    MainThread:16138 [wandb_run.py:_footer_history_summary_info():3496] rendering summary
+2023-07-19 03:08:01,164 INFO    MainThread:16138 [wandb_run.py:_footer_sync_info():3423] logging synced files
+2023-07-19 03:08:01,165 DEBUG   HandlerThread:16138 [handler.py:handle_request():144] handle_request: shutdown
+2023-07-19 03:08:01,165 INFO    HandlerThread:16138 [handler.py:finish():854] shutting down handler
+2023-07-19 03:08:02,015 INFO    WriterThread:16138 [datastore.py:close():298] close: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-07-19/03-02-38/wandb/run-20230719_030240-gnktawq5/run-gnktawq5.wandb
+2023-07-19 03:08:02,164 INFO    SenderThread:16138 [sender.py:finish():1526] shutting down sender
+2023-07-19 03:08:02,164 INFO    SenderThread:16138 [file_pusher.py:finish():159] shutting down file pusher
+2023-07-19 03:08:02,164 INFO    SenderThread:16138 [file_pusher.py:join():164] waiting for file pusher
