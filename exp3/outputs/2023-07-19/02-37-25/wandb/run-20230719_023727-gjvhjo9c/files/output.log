@@ -1,0 +1,107 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name         | Type      | Params
+-------------------------------------------
+0 | bert         | BertModel | 89.1 M
+1 | hidden_layer | Linear    | 49.2 K
+2 | layer        | Linear    | 65
+3 | criterion    | BCELoss   | 0
+-------------------------------------------
+7.1 M     Trainable params
+82.0 M    Non-trainable params
+89.2 M    Total params
+356.650   Total estimated model params size (MB)
+
+Epoch 0:   0% 0/2 [00:00<?, ?it/s]
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:280: PossibleUserWarning: The number of training batches (2) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+
+Epoch 0: 100% 2/2 [03:34<00:00, 107.04s/it, v_num=jo9c, train/loss=0.727]
+Validation DataLoader 0:   0% 0/1 [00:00<?, ?it/s]
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 390, in main
+    trainer.fit(model, data_module)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 529, in fit
+    call._call_and_handle_interrupt(
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 568, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 973, in _run
+    results = self._run_stage()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 1016, in _run_stage
+    self.fit_loop.run()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py", line 202, in run
+    self.on_advance_end()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py", line 368, in on_advance_end
+    call._call_lightning_module_hook(trainer, "on_train_epoch_end")
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 144, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 213, in on_train_epoch_end
+    epoch_preds = torch.stack(self.train_step_outputs_preds)
+RuntimeError: stack expects each tensor to be equal size, but got [32, 1] at entry 0 and [28, 1] at entry 1
+        [0.4787],
+        [0.4615],
+        [0.4650],
+        [0.4694],
+        [0.4580],
+        [0.4778],
+        [0.4886],
+        [0.4786],
+        [0.4765],
+        [0.4781],
+        [0.4553],
+        [0.4763],
+        [0.4827],
+        [0.4720],
+        [0.4742],
+        [0.4671],
+        [0.4582],
+        [0.4774],
+        [0.4797],
+        [0.4797],
+        [0.4488],
+        [0.4707],
+        [0.4711],
+        [0.5107],
+        [0.4884],
+        [0.5079],
+        [0.4815],
+        [0.5001],
+        [0.4889],
+        [0.4974],
+        [0.4257]], grad_fn=<SigmoidBackward0>), tensor([[0.4541],
+        [0.4833],
+        [0.4857],
+        [0.4812],
+        [0.4861],
+        [0.5080],
+        [0.4724],
+        [0.4754],
+        [0.4998],
+        [0.4867],
+        [0.4761],
+        [0.4801],
+        [0.4838],
+        [0.4821],
+        [0.5060],
+        [0.4713],
+        [0.4774],
+        [0.4520],
+        [0.4813],
+        [0.4670],
+        [0.4994],
+        [0.4469],
+        [0.4838],
+        [0.4889],
+        [0.4810],
+        [0.4801],
+        [0.5013],
+        [0.4561]], grad_fn=<SigmoidBackward0>)]
+[tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1]), tensor([1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1,
+        1, 1, 1, 1])]
