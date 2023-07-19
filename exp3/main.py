@@ -47,10 +47,17 @@ class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoader�
             return_tensors="pt",
         )
 
+        input_ids = encoding["input_ids"].flatten()
+        attention_mask = encoding["attention_mask"].flatten()
+
+        # サイズを揃える
+        input_ids = input_ids[: self.max_token_len]
+        attention_mask = attention_mask[: self.max_token_len]
+
         return dict(
             text=text,
-            input_ids=encoding["input_ids"].flatten(),
-            attention_mask=encoding["attention_mask"].flatten(),
+            input_ids=input_ids,
+            attention_mask=attention_mask,
             labels=torch.tensor(labels),
         )
 
