@@ -320,7 +320,7 @@ def make_callbacks(min_delta, patience, checkpoint_path):
     )
 
     early_stop_callback = EarlyStopping(
-        monitor="val_loss", min_delta=min_delta, patience=patience, mode="min"
+        monitor="train_loss", min_delta=min_delta, patience=patience, mode="min"
     )
 
     return [early_stop_callback, checkpoint_callback]
