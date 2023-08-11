@@ -215,7 +215,7 @@ class BinaryClassifierModel(pl.LightningModule):
         epoch_preds = epoch_preds.squeeze()
         epoch_labels = torch.cat(self.train_step_outputs_labels)
         epoch_labels = epoch_labels.squeeze()
-        epoch_loss = self.criterion(epoch_preds, epoch_labels)
+        epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
         # epoch_average = torch.stack(self.train_step_outputs).mean()
