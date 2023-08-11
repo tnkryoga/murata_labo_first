@@ -315,7 +315,7 @@ def make_callbacks(min_delta, patience, checkpoint_path):
         filename="{epoch}",
         # save_top_k=1,  #save_best_only
         verbose=True,
-        monitor="val_loss",
+        monitor="train_loss",
         mode="min",
     )
 
