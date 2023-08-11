@@ -1,0 +1,89 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name         | Type      | Params
+-------------------------------------------
+0 | bert         | BertModel | 89.1 M
+1 | hidden_layer | Linear    | 49.2 K
+2 | layer        | Linear    | 65
+3 | criterion    | BCELoss   | 0
+-------------------------------------------
+7.1 M     Trainable params
+82.0 M    Non-trainable params
+89.2 M    Total params
+356.650   Total estimated model params size (MB)
+
+Epoch 0:   0% 0/3 [00:00<?, ?it/s]
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:280: PossibleUserWarning: The number of training batches (3) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+
+
+Epoch 0: 100% 3/3 [02:01<00:00, 40.56s/it, v_num=ojkl, train/loss=0.611]
+Validation DataLoader 0:   0% 0/1 [00:00<?, ?it/s]
+        [0.4753],
+        [0.5166],
+        [0.5155],
+        [0.5376],
+        [0.5089],
+        [0.5292],
+        [0.5243],
+        [0.4987],
+        [0.5120],
+        [0.4647],
+        [0.5355],
+        [0.4513],
+        [0.5231],
+        [0.5408],
+        [0.5476]], grad_fn=<SigmoidBackward0>), tensor([[0.4868],
+        [0.5223],
+        [0.5193],
+        [0.5248],
+        [0.5313],
+        [0.5493],
+        [0.5106],
+        [0.5769],
+        [0.5390],
+        [0.5359],
+        [0.5319],
+        [0.4874],
+        [0.5010],
+        [0.5421],
+        [0.5038],
+        [0.5441]], grad_fn=<SigmoidBackward0>), tensor([[0.5629],
+        [0.5471],
+        [0.5538],
+        [0.5324],
+        [0.5257],
+        [0.5353]], grad_fn=<SigmoidBackward0>)]
+[tensor([1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1]), tensor([1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1]), tensor([1, 1, 1, 1, 1, 1])]
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 393, in main
+    trainer.fit(model, data_module)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 529, in fit
+    call._call_and_handle_interrupt(
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 568, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 973, in _run
+    results = self._run_stage()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 1016, in _run_stage
+    self.fit_loop.run()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py", line 202, in run
+    self.on_advance_end()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py", line 368, in on_advance_end
+    call._call_lightning_module_hook(trainer, "on_train_epoch_end")
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 144, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 218, in on_train_epoch_end
+    epoch_loss = self.criterion(epoch_preds, epoch_labels)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/loss.py", line 619, in forward
+    return F.binary_cross_entropy(input, target, weight=self.weight, reduction=self.reduction)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 3089, in binary_cross_entropy
+    raise ValueError(
+ValueError: Using a target size (torch.Size([38])) that is different to the input size (torch.Size([38, 1])) is deprecated. Please ensure they have the same size.
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
