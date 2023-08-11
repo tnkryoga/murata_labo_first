@@ -1,0 +1,132 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+Downloading (…)solve/main/vocab.txt: 100% 15.7k/15.7k [00:00<00:00, 14.1MB/s]
+Downloading (…)okenizer_config.json: 100% 110/110 [00:00<00:00, 143kB/s]
+Downloading (…)lve/main/config.json: 100% 478/478 [00:00<00:00, 595kB/s]
+
+
+
+
+
+Downloading pytorch_model.bin: 100% 359M/359M [00:10<00:00, 33.2MB/s]
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name         | Type      | Params
+-------------------------------------------
+0 | bert         | BertModel | 89.1 M
+1 | hidden_layer | Linear    | 49.2 K
+2 | layer        | Linear    | 65
+3 | criterion    | BCELoss   | 0
+-------------------------------------------
+7.1 M     Trainable params
+82.0 M    Non-trainable params
+89.2 M    Total params
+356.650   Total estimated model params size (MB)
+
+Sanity Checking DataLoader 0:  50% 1/2 [00:46<00:46, 46.92s/it]
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:280: PossibleUserWarning: The number of training batches (5) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+
+
+
+
+
+Epoch 0: 100% 5/5 [04:01<00:00, 48.30s/it, v_num=042n, train/loss=0.556]
+
+Validation DataLoader 0:  50% 1/2 [00:39<00:39, 39.98s/it]
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 393, in main
+    trainer.fit(model, data_module)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 529, in fit
+    call._call_and_handle_interrupt(
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 568, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 973, in _run
+    results = self._run_stage()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 1016, in _run_stage
+    self.fit_loop.run()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py", line 202, in run
+    self.on_advance_end()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py", line 368, in on_advance_end
+    call._call_lightning_module_hook(trainer, "on_train_epoch_end")
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 144, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 215, in on_train_epoch_end
+    epoch_preds.veiw(-1)
+AttributeError: 'Tensor' object has no attribute 'veiw'
+        [0.5516],
+        [0.5656],
+        [0.5541],
+        [0.5687],
+        [0.5469],
+        [0.5503],
+        [0.5227],
+        [0.5491],
+        [0.5539],
+        [0.5381],
+        [0.5161],
+        [0.5411],
+        [0.5489],
+        [0.5433],
+        [0.5355]], grad_fn=<SigmoidBackward0>), tensor([[0.4701],
+        [0.5415],
+        [0.5733],
+        [0.5499],
+        [0.5427],
+        [0.5469],
+        [0.5590],
+        [0.5138],
+        [0.5630],
+        [0.5725],
+        [0.5573],
+        [0.5719],
+        [0.5399],
+        [0.5640],
+        [0.5744],
+        [0.5458]], grad_fn=<SigmoidBackward0>), tensor([[0.5376],
+        [0.5504],
+        [0.5795],
+        [0.5821],
+        [0.5764],
+        [0.5941],
+        [0.5721],
+        [0.5614],
+        [0.5616],
+        [0.5462],
+        [0.5422],
+        [0.5545],
+        [0.5562],
+        [0.5557],
+        [0.5053],
+        [0.5625]], grad_fn=<SigmoidBackward0>), tensor([[0.5838],
+        [0.5652],
+        [0.5947],
+        [0.5865],
+        [0.5645],
+        [0.5068],
+        [0.5855],
+        [0.5799],
+        [0.5181],
+        [0.6046],
+        [0.5691],
+        [0.6072],
+        [0.5676],
+        [0.5656],
+        [0.6190],
+        [0.5887]], grad_fn=<SigmoidBackward0>), tensor([[0.5824],
+        [0.5990],
+        [0.5959],
+        [0.5954],
+        [0.5716],
+        [0.6014],
+        [0.6153],
+        [0.6017],
+        [0.5745],
+        [0.5611],
+        [0.6095],
+        [0.5986]], grad_fn=<SigmoidBackward0>)]
+[tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]), tensor([1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]), tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]), tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1]), tensor([1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1])]
