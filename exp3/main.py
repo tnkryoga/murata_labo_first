@@ -143,15 +143,15 @@ class BinaryClassifierModel(pl.LightningModule):
         self.layer = nn.Linear(hidden_size, 1)  # 二値分類
         self.n_epochs = n_epochs
         self.criterion = nn.BCELoss()
-        # self.metrics = torchmetrics.MetricCollection(
-        #     [
-        #         torchmetrics.Accuracy(task="binary", threshold=self.THRESHOLD),
-        #         torchmetrics.Precision(task="binary", threshold=self.THRESHOLD),
-        #         torchmetrics.Recall(task="binary", threshold=self.THRESHOLD),
-        #         torchmetrics.F1Score(task="binary", threshold=self.THRESHOLD),
-        #         torchmetrics.MatthewsCorrCoef(task="binary", threshold=self.THRESHOLD),
-        #     ]
-        # )
+        self.metrics = torchmetrics.MetricCollection(
+            [
+                torchmetrics.Accuracy(task="binary", threshold=self.THRESHOLD),
+                torchmetrics.Precision(task="binary", threshold=self.THRESHOLD),
+                torchmetrics.Recall(task="binary", threshold=self.THRESHOLD),
+                torchmetrics.F1Score(task="binary", threshold=self.THRESHOLD),
+                torchmetrics.MatthewsCorrCoef(task="binary", threshold=self.THRESHOLD),
+            ]
+        )
 
         # BertLayerモジュールの最後を勾配計算ありに変更
         for param in self.bert.parameters():
@@ -209,8 +209,6 @@ class BinaryClassifierModel(pl.LightningModule):
 
     # epoch終了時にtrainのlossを記録
     def on_train_epoch_end(self, mode="train"):
-        print(self.train_step_outputs_preds)
-        print(self.train_step_outputs_labels)
         epoch_preds = torch.cat(self.train_step_outputs_preds)
         epoch_preds = epoch_preds.squeeze()
         epoch_labels = torch.cat(self.train_step_outputs_labels)
@@ -218,12 +216,9 @@ class BinaryClassifierModel(pl.LightningModule):
         epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
-        # epoch_average = torch.stack(self.train_step_outputs).mean()
-        # self.log(f"{mode}_loss", epoch_average, logger=True)
-
-        # with open("train_step_outputs.txt", "w") as train_file:
-        #     for item in self.train_step_outputs:
-        #         train_file.write("%s\n" % item)
+        metrics = self.metrics(epoch_preds, epoch_labels)
+        for metric in metrics.keys():
+            self.log(f"{mode}/{metric.lower()}", metrics[metric].item(), logger=True)
 
         self.train_step_outputs_preds.clear()  # free memory
         self.train_step_outputs_labels.clear()  # free memory
@@ -233,37 +228,41 @@ class BinaryClassifierModel(pl.LightningModule):
         self, mode="val"
     ):  # https://github.com/Lightning-AI/lightning/pull/16520
         # loss計算
-        # epoch_preds = torch.cat(
-        #     [x["batch_preds"][0] for x in self.validation_step_outputs]
-        # )
-        # epoch_labels = torch.cat(
-        #     [x["batch_labels"] for x in self.validation_step_outputs]
-        # )
-        # epoch_loss = self.criterion(epoch_preds, epoch_labels)
-        # self.log(f"{mode}_loss", epoch_loss, logger=True)
+        epoch_preds = torch.cat(self.validation_step_outputs_preds)
+        epoch_preds = epoch_preds.squeeze()
+        epoch_labels = torch.cat(self.validation_step_outputs_labels)
+        epoch_labels = epoch_labels.squeeze()
+        epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
+        self.log(f"{mode}_loss", epoch_loss, logger=True)
+
+        metrics = self.metrics(epoch_preds, epoch_labels)
+        for metric in metrics.keys():
+            self.log(f"{mode}/{metric.lower()}", metrics[metric].item(), logger=True)
 
         self.validation_step_outputs_preds.clear()  # free memory
         self.validation_step_outputs_labels.clear()  # free memory
 
     # testデータのlossとaccuracyを算出
     def on_test_epoch_end(self, mode="test"):
-        preds = torch.stack(self.train_step_outputs_preds)
-        labels = torch.stack(self.train_step_outputs_labels)
-        loss = self.criterion(preds, labels)
-        self.log(f"{mode}_loss", loss, logger=True)
+        epoch_preds = torch.cat(self.test_step_outputs_preds)
+        epoch_preds = epoch_preds.squeeze()
+        epoch_labels = torch.cat(self.test_step_outputs_labels)
+        epoch_labels = epoch_labels.squeeze()
+        epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
+        self.log(f"{mode}_loss", epoch_loss, logger=True)
 
-        preds, labels = (
-            preds.cpu().numpy(),  # cpu上に移動し、numpy配列に変換
-            labels.cpu().numpy(),
+        epoch_preds, epoch_labels = (
+            epoch_preds.cpu().numpy(),  # cpu上に移動し、numpy配列に変換
+            epoch_labels.cpu().numpy(),
         )
-        preds_binary = np.where(preds > self.THRESHOLD, 1, 0)
+        preds_binary = np.where(epoch_preds > self.THRESHOLD, 1, 0)
 
         # 混同行列
         wandb.log(
             {
                 "test/confusion_matrix": plot.confusion_matrix(
                     probs=None,
-                    y_true=labels,
+                    y_true=epoch_labels,
                     preds=preds_binary,
                     class_names=["応答なし", "応答あり"],
                 ),
@@ -274,8 +273,8 @@ class BinaryClassifierModel(pl.LightningModule):
         wandb.log(
             {
                 "test/pr": plot.pr_curve(
-                    y_true=labels,
-                    y_probas=self.score_to_complement_pairs(preds),
+                    y_true=epoch_labels,
+                    y_probas=self.score_to_complement_pairs(epoch_preds),
                     labels=["応答なし", "応答あり"],
                 ),
             }
@@ -285,8 +284,8 @@ class BinaryClassifierModel(pl.LightningModule):
         wandb.log(
             {
                 "test/lf/roc": plot.roc_curve(
-                    y_true=labels,
-                    y_probas=self.score_to_complement_pairs(preds),
+                    y_true=epoch_labels,
+                    y_probas=self.score_to_complement_pairs(epoch_preds),
                     labels=["応答なし", "応答あり"],
                 ),
             }
