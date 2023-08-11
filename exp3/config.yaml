@@ -12,7 +12,7 @@ model:
 training:
   val_test_size: 0.3
   test_size: 0.15
-  n_epochs: 8
+  n_epochs: 2
   seed: 40
   batch_size: 16
   max_length: 64
