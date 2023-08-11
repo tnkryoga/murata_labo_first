@@ -1,0 +1,104 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name         | Type      | Params
+-------------------------------------------
+0 | bert         | BertModel | 89.1 M
+1 | hidden_layer | Linear    | 49.2 K
+2 | layer        | Linear    | 65
+3 | criterion    | BCELoss   | 0
+-------------------------------------------
+7.1 M     Trainable params
+82.0 M    Non-trainable params
+89.2 M    Total params
+356.650   Total estimated model params size (MB)
+
+Epoch 0:   0% 0/3 [00:00<?, ?it/s]
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:280: PossibleUserWarning: The number of training batches (3) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+
+
+Epoch 0: 100% 3/3 [01:58<00:00, 39.35s/it, v_num=wdhm, train/loss=0.750]
+Validation DataLoader 0:   0% 0/1 [00:00<?, ?it/s]
+        [0.4750],
+        [0.4424],
+        [0.4224],
+        [0.4444],
+        [0.4529],
+        [0.4467],
+        [0.4386],
+        [0.4363],
+        [0.4585],
+        [0.4740],
+        [0.4554],
+        [0.4526],
+        [0.4412],
+        [0.4620],
+        [0.4402]], grad_fn=<SigmoidBackward0>), tensor([[0.4593],
+        [0.4722],
+        [0.4537],
+        [0.4620],
+        [0.4685],
+        [0.4511],
+        [0.4308],
+        [0.4388],
+        [0.4423],
+        [0.4584],
+        [0.4517],
+        [0.4586],
+        [0.4714],
+        [0.4636],
+        [0.4759],
+        [0.4475]], grad_fn=<SigmoidBackward0>), tensor([[0.4693],
+        [0.4410],
+        [0.4566],
+        [0.4587],
+        [0.4836],
+        [0.4701]], grad_fn=<SigmoidBackward0>)]
+[tensor([1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]), tensor([1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1]), tensor([1, 1, 1, 1, 1, 0])]
+
+
+Epoch 1: 100% 3/3 [02:05<00:00, 41.72s/it, v_num=wdhm, train/loss=0.720]
+
+Validation DataLoader 0:   0% 0/1 [00:00<?, ?it/s]
+Epoch 1: 100% 3/3 [02:36<00:00, 52.24s/it, v_num=wdhm, train/loss=0.720][tensor([[0.4767],
+        [0.4784],
+        [0.4679],
+        [0.4746],
+        [0.4762],
+        [0.4710],
+        [0.4595],
+        [0.4905],
+        [0.4672],
+        [0.5039],
+        [0.4519],
+        [0.4731],
+        [0.4831],
+        [0.4922],
+        [0.4667],
+        [0.4703]], grad_fn=<SigmoidBackward0>), tensor([[0.5110],
+        [0.4863],
+        [0.5080],
+        [0.4899],
+        [0.5138],
+        [0.4958],
+        [0.4958],
+        [0.4820],
+        [0.4918],
+        [0.4762],
+        [0.4842],
+        [0.4921],
+        [0.4702],
+        [0.4797],
+        [0.4909],
+        [0.4867]], grad_fn=<SigmoidBackward0>), tensor([[0.4905],
+        [0.4977],
+        [0.4857],
+        [0.4796],
+        [0.4733],
+        [0.4938]], grad_fn=<SigmoidBackward0>)]
+[tensor([1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1]), tensor([1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]), tensor([1, 1, 1, 1, 1, 1])]
+`Trainer.fit` stopped: `max_epochs=2` reached.
+Epoch 1: 100% 3/3 [02:39<00:00, 53.04s/it, v_num=wdhm, train/loss=0.720]
