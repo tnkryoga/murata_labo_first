@@ -1,0 +1,36 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name         | Type             | Params
+--------------------------------------------------
+0 | bert         | BertModel        | 89.1 M
+1 | hidden_layer | Linear           | 49.2 K
+2 | layer        | Linear           | 65
+3 | criterion    | BCELoss          | 0
+4 | metrics      | MetricCollection | 0
+--------------------------------------------------
+7.1 M     Trainable params
+82.0 M    Non-trainable params
+89.2 M    Total params
+356.650   Total estimated model params size (MB)
+Sanity Checking DataLoader 0:   0% 0/1 [00:00<?, ?it/s]
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:280: PossibleUserWarning: The number of training batches (3) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+
+
+
+Epoch 0: 100% 3/3 [01:57<00:00, 39.21s/it, v_num=u313, train/loss=0.672]
+
+Validation DataLoader 0:   0% 0/1 [00:00<?, ?it/s]
+
+
+
+
+Epoch 1: 100% 3/3 [01:51<00:00, 37.07s/it, v_num=u313, train/loss=0.637]
+Validation DataLoader 0:   0% 0/1 [00:00<?, ?it/s]
+
+
+Epoch 1: 100% 3/3 [02:26<00:00, 48.85s/it, v_num=u313, train/loss=0.637]
+`Trainer.fit` stopped: `max_epochs=2` reached.
