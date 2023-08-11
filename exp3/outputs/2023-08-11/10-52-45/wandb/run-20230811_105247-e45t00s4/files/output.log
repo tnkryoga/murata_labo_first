@@ -1,0 +1,104 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name         | Type      | Params
+-------------------------------------------
+0 | bert         | BertModel | 89.1 M
+1 | hidden_layer | Linear    | 49.2 K
+2 | layer        | Linear    | 65
+3 | criterion    | BCELoss   | 0
+-------------------------------------------
+7.1 M     Trainable params
+82.0 M    Non-trainable params
+89.2 M    Total params
+356.650   Total estimated model params size (MB)
+Sanity Checking DataLoader 0:   0% 0/1 [00:00<?, ?it/s]
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:280: PossibleUserWarning: The number of training batches (3) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+
+
+
+Epoch 0: 100% 3/3 [01:58<00:00, 39.55s/it, v_num=00s4, train/loss=0.687]
+Validation DataLoader 0:   0% 0/1 [00:00<?, ?it/s]
+        [0.5021],
+        [0.4736],
+        [0.5063],
+        [0.4910],
+        [0.4891],
+        [0.5052],
+        [0.4946],
+        [0.5101],
+        [0.4926],
+        [0.4888],
+        [0.5058],
+        [0.4620],
+        [0.5153],
+        [0.4908],
+        [0.5245]], grad_fn=<SigmoidBackward0>), tensor([[0.4577],
+        [0.4921],
+        [0.4952],
+        [0.5060],
+        [0.5172],
+        [0.5502],
+        [0.5023],
+        [0.5064],
+        [0.5038],
+        [0.5008],
+        [0.5176],
+        [0.4879],
+        [0.5354],
+        [0.4835],
+        [0.5344],
+        [0.5166]], grad_fn=<SigmoidBackward0>), tensor([[0.5173],
+        [0.5124],
+        [0.4938],
+        [0.4823],
+        [0.5350],
+        [0.5047]], grad_fn=<SigmoidBackward0>)]
+[tensor([1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1]), tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]), tensor([1, 0, 1, 1, 1, 1])]
+
+
+Epoch 1: 100% 3/3 [02:11<00:00, 43.89s/it, v_num=00s4, train/loss=0.607]
+Validation DataLoader 0:   0% 0/1 [00:00<?, ?it/s]
+        [0.5001],
+        [0.5615],
+        [0.5105],
+        [0.5291],
+        [0.5355],
+        [0.5164],
+        [0.5322],
+        [0.5299],
+        [0.5364],
+        [0.4986],
+        [0.5526],
+        [0.5124],
+        [0.5399],
+        [0.5592],
+        [0.5345]], grad_fn=<SigmoidBackward0>), tensor([[0.5406],
+        [0.5143],
+        [0.5266],
+        [0.5450],
+        [0.5517],
+        [0.5251],
+        [0.5481],
+        [0.4990],
+        [0.5555],
+        [0.5716],
+        [0.5530],
+        [0.5275],
+        [0.5541],
+        [0.5382],
+        [0.5357],
+        [0.5430]], grad_fn=<SigmoidBackward0>), tensor([[0.5459],
+        [0.5767],
+        [0.5461],
+        [0.5894],
+        [0.4738],
+        [0.5454]], grad_fn=<SigmoidBackward0>)]
+[tensor([1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1]), tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1]), tensor([1, 1, 1, 1, 1, 1])]
+
+Epoch 2:  33% 1/3 [00:50<01:40, 50.31s/it, v_num=00s4, train/loss=0.605]
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py:52: UserWarning: Detected KeyboardInterrupt, attempting graceful shutdown...
+  rank_zero_warn("Detected KeyboardInterrupt, attempting graceful shutdown...")
