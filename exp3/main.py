@@ -10,7 +10,7 @@ import torch.optim as optim
 from omegaconf import DictConfig
 import wandb
 from wandb import plot
-from pytorch_lightning.callbacks import EarlyStopping, ModelCheckpoint
+from pytorch_lightning.callbacks import EarlyStopping, ModelCheckpoint, RichProgressBar
 from pytorch_lightning.loggers import WandbLogger
 from sklearn.model_selection import train_test_split
 from torch import nn
