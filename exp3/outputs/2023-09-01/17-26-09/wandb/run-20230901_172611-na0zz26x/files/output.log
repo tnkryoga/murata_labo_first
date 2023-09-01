@@ -1,0 +1,10 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:398: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 377, in main
+    call_backs = make_callbacks(
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 327, in make_callbacks
+    progress_bar = RichProgressBar()
+NameError: name 'RichProgressBar' is not defined
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
