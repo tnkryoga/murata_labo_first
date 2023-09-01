@@ -1,0 +1,59 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:398: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+┏━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m   [22m┃[1m Name         [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0 │ bert         │ BertModel        │ 89.1 M │
+│ 1 │ hidden_layer │ Linear           │ 49.2 K │
+│ 2 │ layer        │ Linear           │     65 │
+│ 3 │ criterion    │ BCELoss          │      0 │
+│ 4 │ metrics      │ MetricCollection │      0 │
+└───┴──────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 7.1 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 89.2 M
+[1mTotal estimated model params size (MB)[22m: 356
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:281:
+PossibleUserWarning: The number of training batches (5) is smaller than the
+logging interval Trainer(log_every_n_steps=50). Set a lower value for
+log_every_n_steps if you want to see logs for the training epoch.
+  rank_zero_warn(
+[37mEpoch 0/3 [39m [35m━━━╸[90m━━━━━━━━━━━━━━[39m [37m1/5[39m [37m0:00:56 • -:--:--[39m [37m0.00it/s[39m [37mv_num: ys8a        
+
+
+
+
+                                                             [37mtrain/loss: 0.595  
+
+[37mValidation[39m [35m━━━━━━━━━[90m╺━━━━━━━━[39m [37m1/2[39m [37m0:00:42 • -:--:--[39m [37m0.00it/s
+
+
+
+
+
+                                                             [37mtrain/loss: 0.508  
+
+[37mValidation[39m [35m━━━━━━━━━[90m╺━━━━━━━━[39m [37m1/2[39m [37m0:00:41 • -:--:--[39m [37m0.00it/s
+
+
+
+
+
+                                                             [37mtrain/loss: 0.442  
+[37mValidation[39m [35m━━━━━━━━━[90m╺━━━━━━━━[39m [37m1/2[39m [37m0:00:39 • -:--:--[39m [37m0.00it/s
+
+
+
+
+
+
+                                                             [37mtrain/loss: 0.38   
+[37mValidation[39m [35m━━━━━━━━━[90m╺━━━━━━━━[39m [37m1/2[39m [37m0:00:40 • -:--:--[39m [37m0.00it/s
+
+Epoch 3, global step 20: 'val_loss' reached 0.48659 (best 0.48659), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-09-01/17-28-58/wandb/run-20230901_172900-6lfiys8a/files/checkpoints/epoch=3.ckpt' as top 1
+`Trainer.fit` stopped: `max_epochs=4` reached.
+[?25h
