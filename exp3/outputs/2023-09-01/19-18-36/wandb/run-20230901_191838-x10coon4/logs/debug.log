@@ -1,0 +1,30 @@
+2023-09-01 19:18:38,506 INFO    MainThread:56108 [wandb_setup.py:_flush():76] Current SDK version is 0.15.9
+2023-09-01 19:18:38,507 INFO    MainThread:56108 [wandb_setup.py:_flush():76] Configure stats pid to 56108
+2023-09-01 19:18:38,507 INFO    MainThread:56108 [wandb_setup.py:_flush():76] Loading settings from /root/.config/wandb/settings
+2023-09-01 19:18:38,508 INFO    MainThread:56108 [wandb_setup.py:_flush():76] Loading settings from /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-09-01/19-18-36/wandb/settings
+2023-09-01 19:18:38,508 INFO    MainThread:56108 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-09-01 19:18:38,508 INFO    MainThread:56108 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-09-01 19:18:38,508 INFO    MainThread:56108 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'exp3/main.py', 'program': '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py'}
+2023-09-01 19:18:38,509 INFO    MainThread:56108 [wandb_init.py:_log_setup():524] Logging user logs to /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-09-01/19-18-36/wandb/run-20230901_191838-x10coon4/logs/debug.log
+2023-09-01 19:18:38,509 INFO    MainThread:56108 [wandb_init.py:_log_setup():525] Logging internal logs to /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-09-01/19-18-36/wandb/run-20230901_191838-x10coon4/logs/debug-internal.log
+2023-09-01 19:18:38,510 INFO    MainThread:56108 [wandb_init.py:init():564] calling init triggers
+2023-09-01 19:18:38,510 INFO    MainThread:56108 [wandb_init.py:init():571] wandb.init called with sweep_config: {}
+config: {}
+2023-09-01 19:18:38,510 INFO    MainThread:56108 [wandb_init.py:init():613] starting backend
+2023-09-01 19:18:38,510 INFO    MainThread:56108 [wandb_init.py:init():617] setting up manager
+2023-09-01 19:18:38,519 INFO    MainThread:56108 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-09-01 19:18:38,522 INFO    MainThread:56108 [wandb_init.py:init():623] backend started and connected
+2023-09-01 19:18:38,550 INFO    MainThread:56108 [wandb_init.py:init():714] updated telemetry
+2023-09-01 19:18:38,595 INFO    MainThread:56108 [wandb_init.py:init():747] communicating run to backend with 60.0 second timeout
+2023-09-01 19:18:38,983 INFO    MainThread:56108 [wandb_run.py:_on_init():2180] communicating current version
+2023-09-01 19:18:39,160 INFO    MainThread:56108 [wandb_run.py:_on_init():2189] got version response 
+2023-09-01 19:18:39,160 INFO    MainThread:56108 [wandb_init.py:init():798] starting run threads in backend
+2023-09-01 19:18:39,296 INFO    MainThread:56108 [wandb_run.py:_console_start():2159] atexit reg
+2023-09-01 19:18:39,297 INFO    MainThread:56108 [wandb_run.py:_redirect():2014] redirect: wrap_raw
+2023-09-01 19:18:39,300 INFO    MainThread:56108 [wandb_run.py:_redirect():2079] Wrapping output streams.
+2023-09-01 19:18:39,300 INFO    MainThread:56108 [wandb_run.py:_redirect():2104] Redirects installed.
+2023-09-01 19:18:39,303 INFO    MainThread:56108 [wandb_init.py:init():839] run started, returning control to user process
+2023-09-01 19:30:42,880 INFO    MainThread:56108 [wandb_run.py:_finish():1894] finishing run tanaryo-miyabi818/murata_exp/x10coon4
+2023-09-01 19:30:42,880 INFO    MainThread:56108 [wandb_run.py:_atexit_cleanup():2128] got exitcode: 0
+2023-09-01 19:30:42,882 INFO    MainThread:56108 [wandb_run.py:_restore():2111] restore
+2023-09-01 19:30:42,882 INFO    MainThread:56108 [wandb_run.py:_restore():2117] restore done
