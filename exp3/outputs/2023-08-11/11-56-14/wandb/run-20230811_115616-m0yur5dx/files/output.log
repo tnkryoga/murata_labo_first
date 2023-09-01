@@ -1,0 +1,47 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name         | Type             | Params
+--------------------------------------------------
+0 | bert         | BertModel        | 89.1 M
+1 | hidden_layer | Linear           | 49.2 K
+2 | layer        | Linear           | 65
+3 | criterion    | BCELoss          | 0
+4 | metrics      | MetricCollection | 0
+--------------------------------------------------
+7.1 M     Trainable params
+82.0 M    Non-trainable params
+89.2 M    Total params
+356.650   Total estimated model params size (MB)
+
+Epoch 0:   0% 0/3 [00:00<?, ?it/s]
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:280: PossibleUserWarning: The number of training batches (3) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+
+
+Epoch 0: 100% 3/3 [01:58<00:00, 39.58s/it, v_num=r5dx, train/loss=0.725]
+Validation DataLoader 0:   0% 0/1 [00:00<?, ?it/s]
+
+
+
+
+Epoch 1: 100% 3/3 [01:51<00:00, 37.09s/it, v_num=r5dx, train/loss=0.688]
+
+Validation DataLoader 0:   0% 0/1 [00:00<?, ?it/s]
+
+
+
+Epoch 2: 100% 3/3 [01:51<00:00, 37.03s/it, v_num=r5dx, train/loss=0.635]
+Validation DataLoader 0:   0% 0/1 [00:00<?, ?it/s]
+
+
+
+
+Epoch 3: 100% 3/3 [02:03<00:00, 41.12s/it, v_num=r5dx, train/loss=0.556]
+
+Validation DataLoader 0:   0% 0/1 [00:00<?, ?it/s]
+Epoch 3, global step 12: 'train_loss' reached 0.60749 (best 0.60749), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-08-11/11-56-14/wandb/run-20230811_115616-m0yur5dx/files/checkpoints/epoch=3.ckpt' as top 1
+
+Epoch 3: 100% 3/3 [02:40<00:00, 53.36s/it, v_num=r5dx, train/loss=0.556]
