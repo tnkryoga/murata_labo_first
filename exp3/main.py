@@ -251,6 +251,8 @@ class BinaryClassifierModel(pl.LightningModule):
         epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
+        print("実行済み")
+
         epoch_preds, epoch_labels = (
             epoch_preds.cpu().numpy(),  # cpu上に移動し、numpy配列に変換
             epoch_labels.cpu().numpy(),
