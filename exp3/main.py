@@ -316,15 +316,17 @@ def make_callbacks(min_delta, patience, checkpoint_path):
         filename="{epoch}",
         # save_top_k=1,  #save_best_only
         verbose=True,
-        monitor="train_loss",
+        monitor="val_loss",
         mode="min",
     )
 
     early_stop_callback = EarlyStopping(
-        monitor="train_loss", min_delta=min_delta, patience=patience, mode="min"
+        monitor="val_loss", min_delta=min_delta, patience=patience, mode="min"
     )
 
-    return [early_stop_callback, checkpoint_callback]
+    progress_bar = RichProgressBar()
+
+    return [early_stop_callback, checkpoint_callback, progress_bar]
 
 
 # Train Runner
