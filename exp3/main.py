@@ -348,7 +348,6 @@ def main(cfg: DictConfig):
         log_model=False,
     )
     # wandb_logger.watch(model, log="all")
-
     checkpoint_path = os.path.join(
         wandb_logger.experiment.dir, cfg.path.checkpoint_path
     )
@@ -356,7 +355,7 @@ def main(cfg: DictConfig):
     # dataModuleのインスタンス化
     train, val_test = train_test_split(
         pd.read_csv(cfg.path.data_file_name),
-        train_size=cfg.training.val_test_size,
+        train_size=cfg.training.train_size,
         random_state=cfg.training.seed,
     )
     val, test = train_test_split(
@@ -372,6 +371,9 @@ def main(cfg: DictConfig):
         cfg.model.max_length,
     )
     data_module.setup()
+
+    print("test:")
+    print(test)
 
     # callbackのインスタンス化
     call_backs = make_callbacks(

@@ -10,8 +10,8 @@ model:
   hidden_size: 64
   max_length: 512
 training:
-  val_test_size: 0.3
-  test_size: 0.15
+  train_size: 0.8
+  test_size: 0.1
   n_epochs: 4
   seed: 40
   batch_size: 16
