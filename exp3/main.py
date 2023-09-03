@@ -373,7 +373,7 @@ def main(cfg: DictConfig):
     data_module.setup()
 
     print("test:")
-    print(val_test)
+    print(test)
 
     # callbackのインスタンス化
     call_backs = make_callbacks(
