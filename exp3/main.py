@@ -276,7 +276,7 @@ class BinaryClassifierModel(pl.LightningModule):
             {
                 "test/pr": plot.pr_curve(
                     y_true=epoch_labels,
-                    y_probas=self.score_to_complement_pairs(epoch_preds),
+                    y_probas=preds_binary,
                     labels=["応答なし", "応答あり"],
                 ),
             }
@@ -287,7 +287,7 @@ class BinaryClassifierModel(pl.LightningModule):
             {
                 "test/lf/roc": plot.roc_curve(
                     y_true=epoch_labels,
-                    y_probas=self.score_to_complement_pairs(epoch_preds),
+                    y_probas=preds_binary,
                     labels=["応答なし", "応答あり"],
                 ),
             }
