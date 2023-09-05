@@ -393,6 +393,7 @@ def main(cfg: DictConfig):
         fast_dev_run=False,
     )
     trainer.fit(model, data_module)
+    trainer.test(model, data_module)
 
     wandb.finish()
 
