@@ -4,6 +4,7 @@ wandb:
   tags: [bert]
 path:
   data_file_name: /content/drive/MyDrive/murata_labo_exp/data/binary_classification_test.csv
+  test_file_name: /content/drive/MyDrive/murata_labo_exp/data/binary_classification_test2.csv
   checkpoint_path: checkpoints
 model:
   d_model: 768

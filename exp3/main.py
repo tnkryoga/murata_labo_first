@@ -353,16 +353,13 @@ def main(cfg: DictConfig):
     )
 
     # dataModuleのインスタンス化
-    train, val_test = train_test_split(
+    train, val = train_test_split(
         pd.read_csv(cfg.path.data_file_name),
         train_size=cfg.training.train_size,
         random_state=cfg.training.seed,
     )
-    val, test = train_test_split(
-        val_test,
-        train_size=cfg.training.test_size,
-        random_state=cfg.training.seed,
-    )
+    test = pd.read_csv(cfg.path.test_file_name)
+
     data_module = CreateDataModule(
         train,
         val,
