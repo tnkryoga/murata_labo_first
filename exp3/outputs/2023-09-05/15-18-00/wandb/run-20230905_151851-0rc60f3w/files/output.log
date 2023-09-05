@@ -1,0 +1,104 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:398: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+Downloading (…)solve/main/vocab.txt: 100% 15.7k/15.7k [00:00<00:00, 25.4MB/s]
+test:
+     Unnamed: 0  ... binary
+129         129  ...      0
+173         173  ...      0
+221         221  ...      1
+35           35  ...      1
+126         126  ...      1
+209         209  ...      1
+118         118  ...      0
+100         100  ...      1
+54           54  ...      1
+150         150  ...      1
+176         176  ...      1
+75           75  ...      1
+227         227  ...      0
+140         140  ...      1
+182         182  ...      1
+120         120  ...      1
+168         168  ...      1
+232         232  ...      1
+217         217  ...      0
+11           11  ...      1
+37           37  ...      1
+42           42  ...      1
+145         145  ...      1
+62           62  ...      1
+33           33  ...      0
+29           29  ...      0
+244         244  ...      1
+65           65  ...      1
+16           16  ...      1
+86           86  ...      1
+175         175  ...      1
+166         166  ...      1
+152         152  ...      1
+127         127  ...      1
+179         179  ...      1
+137         137  ...      1
+3             3  ...      1
+212         212  ...      1
+130         130  ...      0
+59           59  ...      1
+157         157  ...      1
+5             5  ...      1
+188         188  ...      1
+69           69  ...      1
+46           46  ...      0
+216         216  ...      0
+151         151  ...      1
+[47 rows x 3 columns]
+Downloading (…)okenizer_config.json: 100% 110/110 [00:00<00:00, 133kB/s]
+Downloading (…)lve/main/config.json: 100% 478/478 [00:00<00:00, 512kB/s]
+
+Downloading pytorch_model.bin: 100% 359M/359M [00:02<00:00, 172MB/s]
+┏━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m   [22m┃[1m Name         [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0 │ bert         │ BertModel        │ 89.1 M │
+│ 1 │ hidden_layer │ Linear           │ 49.2 K │
+│ 2 │ layer        │ Linear           │     65 │
+│ 3 │ criterion    │ BCELoss          │      0 │
+│ 4 │ metrics      │ MetricCollection │      0 │
+└───┴──────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 7.1 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 89.2 M
+[1mTotal estimated model params size (MB)[22m: 356
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:281:
+PossibleUserWarning: The number of training batches (13) is smaller than the
+logging interval Trainer(log_every_n_steps=50). Set a lower value for
+log_every_n_steps if you want to see logs for the training epoch.
+  rank_zero_warn(
+[37mEpoch 0/3 [39m [35m━[90m╺━━━━━━━━━━━━━━━━[39m [37m1/13[39m [37m0:00:46 • -:--:--[39m [37m0.00it/s[39m [37mv_num: 0f3w       
+
+
+
+
+
+
+
+
+
+
+
+
+                                                              [37mtrain/loss: 0.53  
+
+
+
+
+
+
+
+
+
+
+
