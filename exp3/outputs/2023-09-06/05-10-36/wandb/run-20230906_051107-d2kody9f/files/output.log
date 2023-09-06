@@ -1,0 +1,189 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:398: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+Downloading (…)solve/main/vocab.txt: 100% 15.7k/15.7k [00:00<00:00, 16.6MB/s]
+Downloading (…)okenizer_config.json: 100% 110/110 [00:00<00:00, 184kB/s]
+Downloading (…)lve/main/config.json: 100% 478/478 [00:00<00:00, 1.02MB/s]
+test:
+    Unnamed: 0  ... binary
+0          205  ...      1
+1          206  ...      1
+2          207  ...      1
+3          208  ...      1
+4          209  ...      1
+5          210  ...      1
+6          211  ...      1
+7          212  ...      1
+8          213  ...      1
+9          214  ...      1
+10         215  ...      1
+11         216  ...      0
+12         217  ...      0
+13         218  ...      0
+14         219  ...      1
+15         220  ...      1
+16         221  ...      1
+17         222  ...      1
+18         223  ...      1
+19         224  ...      1
+20         225  ...      0
+21         226  ...      0
+22         227  ...      0
+23         228  ...      1
+24         229  ...      1
+25         230  ...      1
+26         231  ...      1
+27         232  ...      1
+28         233  ...      1
+29         234  ...      1
+30         235  ...      0
+31         236  ...      0
+32         237  ...      1
+33         238  ...      1
+34         239  ...      1
+35         240  ...      1
+36         241  ...      1
+37         242  ...      1
+38         243  ...      1
+39         244  ...      1
+40         245  ...      1
+41         246  ...      1
+42         247  ...      1
+43         248  ...      1
+44         249  ...      1
+45         250  ...      1
+46         251  ...      1
+47         252  ...      1
+48         253  ...      1
+49         254  ...      0
+[50 rows x 3 columns]
+
+
+
+
+
+
+
+
+
+
+Downloading pytorch_model.bin: 100% 359M/359M [00:19<00:00, 18.6MB/s]
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+┏━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m   [22m┃[1m Name         [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0 │ bert         │ BertModel        │ 89.1 M │
+│ 1 │ hidden_layer │ Linear           │ 49.2 K │
+│ 2 │ layer        │ Linear           │     65 │
+│ 3 │ criterion    │ BCELoss          │      0 │
+│ 4 │ metrics      │ MetricCollection │      0 │
+└───┴──────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 7.1 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 89.2 M
+[1mTotal estimated model params size (MB)[22m: 356
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:281:
+PossibleUserWarning: The number of training batches (11) is smaller than the
+logging interval Trainer(log_every_n_steps=50). Set a lower value for
+log_every_n_steps if you want to see logs for the training epoch.
+  rank_zero_warn(
+[37mEpoch 0/3 [39m [35m━╸[90m━━━━━━━━━━━━━━━━[39m [37m1/11[39m [37m0:00:57 • -:--:--[39m [37m0.00it/s[39m [37mv_num: dy9f       
+
+
+
+
+
+
+
+
+
+
+                                                              [37mtrain/loss: 0.55  
+
+
+[37mValidation[39m [35m━━━━━━━━━━━[90m╺━━━━━[39m [37m2/3  [39m [37m0:01:19 • -:--:--[39m [37m0.00it/s
+
+
+
+
+
+
+
+
+
+
+
+
+                                                              [37mtrain/loss: 0.397 
+
+[37mValidation[39m [35m━━━━━━━━━━━[90m╺━━━━━[39m [37m2/3  [39m [37m0:01:23 • -:--:--[39m [37m0.00it/s
+
+
+
+
+
+
+
+
+
+
+
+
+                                                              [37mtrain/loss: 0.345 
+
+
+[37mValidation[39m [35m━━━━━━━━━━━[90m╺━━━━━[39m [37m2/3  [39m [37m0:01:22 • -:--:--[39m [37m0.00it/s
+
+
+
+
+
+
+
+
+
+
+                                                              [37mtrain/loss: 0.658 
+
+[37mValidation[39m [35m━━━━━━━━━━━[90m╺━━━━━[39m [37m2/3  [39m [37m0:01:22 • -:--:--[39m [37m0.00it/s
+
+Epoch 3, global step 44: 'val_loss' reached 0.52420 (best 0.52420), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-09-06/05-10-36/wandb/run-20230906_051107-d2kody9f/files/checkpoints/epoch=3.ckpt' as top 1
+`Trainer.fit` stopped: `max_epochs=4` reached.
+
+
+
+実行済み
+[37mTesting[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m4/4[39m [37m0:01:51 • 0:00:00[39m [37m0.28it/s
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 396, in main
+    trainer.test(model, data_module)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 742, in test
+    return call._call_and_handle_interrupt(
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 43, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 785, in _test_impl
+    results = self._run(model, ckpt_path=ckpt_path)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 980, in _run
+    results = self._run_stage()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 1016, in _run_stage
+    return self._evaluation_loop.run()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/utilities.py", line 181, in _decorator
+    return loop_run(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/evaluation_loop.py", line 122, in run
+    return self.on_run_end()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/evaluation_loop.py", line 244, in on_run_end
+    self._on_evaluation_epoch_end()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/evaluation_loop.py", line 326, in _on_evaluation_epoch_end
+    call._call_lightning_module_hook(trainer, hook_name)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 146, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 277, in on_test_epoch_end
+    "test/pr": plot.pr_curve(
+  File "/usr/local/lib/python3.10/dist-packages/wandb/plot/pr_curve.py", line 90, in pr_curve
+    y_true, y_probas[:, i], pos_label=classes[i]
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+[?25h
