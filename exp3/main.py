@@ -285,7 +285,7 @@ class BinaryClassifierModel(pl.LightningModule):
         # ROC曲線
         wandb.log(
             {
-                "test/lf/roc": plot.roc_curve(
+                "test/roc": plot.roc_curve(
                     y_true=epoch_labels,
                     y_probas=self.complement_score(preds_binary),
                     labels=["応答なし", "応答あり"],

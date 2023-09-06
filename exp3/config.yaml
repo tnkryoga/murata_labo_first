@@ -8,14 +8,13 @@ path:
   checkpoint_path: checkpoints
 model:
   d_model: 768
-  hidden_size: 64
+  hidden_size: 32
   max_length: 512
 training:
   train_size: 0.8
-  test_size: 0.1
   n_epochs: 4
   seed: 40
-  batch_size: 16
+  batch_size: 32
   max_length: 64
   learning_rate: 0.0001
   text_column_name: sentence
