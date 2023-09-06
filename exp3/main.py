@@ -276,8 +276,8 @@ class BinaryClassifierModel(pl.LightningModule):
             {
                 "test/pr": plot.pr_curve(
                     y_true=epoch_labels,
-                    y_probas=preds_binary,
-                    labels=["応答あり"],
+                    y_probas=complement_score(preds_binary),
+                    labels=["応答なし", "応答あり"],
                 ),
             }
         )
@@ -287,14 +287,25 @@ class BinaryClassifierModel(pl.LightningModule):
             {
                 "test/lf/roc": plot.roc_curve(
                     y_true=epoch_labels,
-                    y_probas=preds_binary,
-                    labels=["応答あり"],
+                    y_probas=self.complement_score(preds_binary),
+                    labels=["応答なし", "応答あり"],
                 ),
             }
         )
 
         self.test_step_outputs_preds.clear()
         self.test_step_outputs_labels.clear()  # free memory
+
+    # PR曲線,ROC曲線のy_probsの引数に必要な値を補完する関数
+    def complement_score(self, scores):
+        if isinstance(scores, np.ndarray):
+            y_complement = 1 - scores
+            return np.stack([y_complement, scores], axis=1)
+        elif isinstance(scores, torch.Tensor):
+            y_complement = 1 - scores
+            return torch.stack([y_complement, scores], dim=1).to(scores.device)
+        else:
+            raise ValueError("Input must be either a NumPy array or a PyTorch tensor")
 
     # optimizerの設定
     def configure_optimizers(self):
