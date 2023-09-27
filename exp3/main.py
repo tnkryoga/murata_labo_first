@@ -209,8 +209,9 @@ class BinaryClassifierModel(pl.LightningModule):
 
     # epoch終了時にtrainのlossを記録
     def on_train_epoch_end(self, mode="train"):
-        print(self.validation_step_outputs_preds)
+        print(self.train_step_outputs_preds)
         epoch_preds = torch.cat(self.train_step_outputs_preds)
+        print(epoch_preds)
         # epoch_preds = epoch_preds.squeeze()
         epoch_labels = torch.cat(self.train_step_outputs_labels)
         epoch_labels = epoch_labels.squeeze()
