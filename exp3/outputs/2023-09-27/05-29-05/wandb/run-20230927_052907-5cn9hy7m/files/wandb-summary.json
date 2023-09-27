@@ -1,0 +1,1 @@
+{"val_loss": 0.7255834937095642, "val/binaryaccuracy": 0.2195121943950653, "val/binaryprecision": 0.0, "val/binaryrecall": 0.0, "val/binaryf1score": 0.0, "val/binarymatthewscorrcoef": -0.21166041493415833, "epoch": 0, "trainer/global_step": 5, "_timestamp": 1695793342.8796904, "_runtime": 795.6839175224304, "_step": 0, "_wandb": {"runtime": 794}}
