@@ -1,0 +1,70 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:398: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+Downloading (…)solve/main/vocab.txt: 100% 15.7k/15.7k [00:00<00:00, 24.5MB/s]
+Downloading (…)okenizer_config.json: 100% 110/110 [00:00<00:00, 135kB/s]
+Downloading (…)lve/main/config.json: 100% 478/478 [00:00<00:00, 599kB/s]
+
+Downloading pytorch_model.bin: 100% 359M/359M [00:01<00:00, 202MB/s]
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+┏━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m   [22m┃[1m Name         [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0 │ bert         │ BertModel        │ 89.1 M │
+│ 1 │ hidden_layer │ Linear           │  6.2 K │
+│ 2 │ layer        │ Linear           │      9 │
+│ 3 │ criterion    │ BCELoss          │      0 │
+│ 4 │ metrics      │ MetricCollection │      0 │
+└───┴──────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 7.1 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 89.1 M
+[1mTotal estimated model params size (MB)[22m: 356
+
+[37mEpoch 0/3 [39m [90m━━━━━━━━━━━━━━━━━[39m [37m1/579[39m [37m0:02:03 • -:--:--[39m [37m0.00it/s[39m [37mv_num: 7ais       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+UserWarning: Detected KeyboardInterrupt, attempting graceful shutdown...
+  rank_zero_warn("Detected KeyboardInterrupt, attempting graceful shutdown...")
+[37mEpoch 0/3 [39m [35m━[90m╺━━━━━━━━━━━━━━━[39m [37m40/579[39m [37m1:21:19 • -:--:--[39m [37m0.00it/s[39m [37mv_num: 7ais      
+                                                               [37mtrain/loss: 0.483
+[37mTesting[39m [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m0/81[39m [37m0:00:08 • -:--:--[39m [37m0.00it/s
+[?25h
+[rank: 0] Received SIGTERM: 15
