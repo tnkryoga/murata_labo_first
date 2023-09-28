@@ -1,0 +1,108 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:398: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+┏━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m   [22m┃[1m Name         [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0 │ bert         │ BertModel        │ 89.1 M │
+│ 1 │ hidden_layer │ Linear           │  6.2 K │
+│ 2 │ layer        │ Linear           │      9 │
+│ 3 │ criterion    │ BCELoss          │      0 │
+│ 4 │ metrics      │ MetricCollection │      0 │
+└───┴──────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 7.1 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 89.1 M
+[1mTotal estimated model params size (MB)[22m: 356
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:281:
+PossibleUserWarning: The number of training batches (6) is smaller than the
+logging interval Trainer(log_every_n_steps=50). Set a lower value for
+log_every_n_steps if you want to see logs for the training epoch.
+  rank_zero_warn(
+[37mEpoch 0/3 [39m [35m━━━[90m╺━━━━━━━━━━━━━━[39m [37m1/6[39m [37m0:01:51 • -:--:--[39m [37m0.00it/s[39m [37mv_num: hy7m        
+
+
+
+
+
+                                                             [37mtrain/loss: 0.655  
+        [0.4123],
+        [0.3908],
+        [0.3806],
+        [0.4143],
+        [0.3902],
+        [0.4133],
+        [0.3864],
+        [0.4183],
+        [0.4033],
+        [0.3989],
+        [0.3874],
+        [0.3931],
+        [0.4173],
+        [0.4323],
+        [0.4095],
+        [0.4261],
+        [0.4274],
+        [0.4094],
+        [0.3941],
+        [0.3377],
+        [0.4103],
+        [0.3862],
+        [0.4214],
+        [0.4289],
+        [0.4247],
+        [0.4134],
+        [0.4178],
+        [0.3785],
+        [0.4176],
+        [0.4344]], grad_fn=<SigmoidBackward0>), tensor([[0.3994],
+        [0.4137],
+        [0.4394],
+        [0.4032],
+        [0.3866],
+        [0.4046],
+        [0.4105],
+        [0.4079],
+        [0.4320],
+        [0.3911],
+        [0.4360],
+        [0.4258],
+        [0.4080],
+        [0.4056],
+        [0.4155],
+        [0.4117],
+        [0.4246],
+        [0.3999],
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 405, in main
+    trainer.fit(model, data_module)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 532, in fit
+    call._call_and_handle_interrupt(
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 43, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 571, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 980, in _run
+    results = self._run_stage()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 1023, in _run_stage
+    self.fit_loop.run()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py", line 203, in run
+    self.on_advance_end()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py", line 369, in on_advance_end
+    call._call_lightning_module_hook(trainer, "on_train_epoch_end")
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 146, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 218, in on_train_epoch_end
+    epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/loss.py", line 619, in forward
+    return F.binary_cross_entropy(input, target, weight=self.weight, reduction=self.reduction)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 3089, in binary_cross_entropy
+    raise ValueError(
+ValueError: Using a target size (torch.Size([163])) that is different to the input size (torch.Size([163, 1])) is deprecated. Please ensure they have the same size.
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
