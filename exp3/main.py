@@ -124,6 +124,7 @@ class BinaryClassifierModel(pl.LightningModule):
     def __init__(
         self,
         hidden_size,
+        hidden_size2,
         n_epochs=None,
         pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking",
     ):
@@ -140,7 +141,9 @@ class BinaryClassifierModel(pl.LightningModule):
         self.hidden_layer = nn.Linear(
             self.bert.config.hidden_size, hidden_size
         )  # 入力BERT層、出力hidden_sizeの全結合層
-        self.layer = nn.Linear(hidden_size, 1)  # 二値分類
+        self.layer = nn.Linear(hidden_size, hidden_size)
+        self.layer = nn.Linear(hidden_size, hidden_size2)
+        self.layer = nn.Linear(hidden_size2, 1)  # 二値分類
         self.n_epochs = n_epochs
         self.criterion = nn.BCELoss()
         self.metrics = torchmetrics.MetricCollection(
@@ -388,6 +391,7 @@ def main(cfg: DictConfig):
     # modelのインスタンスの作成
     model = BinaryClassifierModel(
         hidden_size=cfg.model.hidden_size,
+        hidden_size2=cfg.model.hidden_size2,
         n_epochs=cfg.training.n_epochs,
     )
 
