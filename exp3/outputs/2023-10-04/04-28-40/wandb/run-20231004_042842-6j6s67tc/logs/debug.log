@@ -1,0 +1,36 @@
+2023-10-04 04:28:42,365 INFO    MainThread:26853 [wandb_setup.py:_flush():76] Current SDK version is 0.15.11
+2023-10-04 04:28:42,365 INFO    MainThread:26853 [wandb_setup.py:_flush():76] Configure stats pid to 26853
+2023-10-04 04:28:42,365 INFO    MainThread:26853 [wandb_setup.py:_flush():76] Loading settings from /root/.config/wandb/settings
+2023-10-04 04:28:42,366 INFO    MainThread:26853 [wandb_setup.py:_flush():76] Loading settings from /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-10-04/04-28-40/wandb/settings
+2023-10-04 04:28:42,366 INFO    MainThread:26853 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-10-04 04:28:42,366 INFO    MainThread:26853 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-10-04 04:28:42,366 INFO    MainThread:26853 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'exp3/main.py', 'program_abspath': '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py', 'program': '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py'}
+2023-10-04 04:28:42,367 INFO    MainThread:26853 [wandb_init.py:_log_setup():528] Logging user logs to /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-10-04/04-28-40/wandb/run-20231004_042842-6j6s67tc/logs/debug.log
+2023-10-04 04:28:42,367 INFO    MainThread:26853 [wandb_init.py:_log_setup():529] Logging internal logs to /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/outputs/2023-10-04/04-28-40/wandb/run-20231004_042842-6j6s67tc/logs/debug-internal.log
+2023-10-04 04:28:42,368 INFO    MainThread:26853 [wandb_init.py:init():568] calling init triggers
+2023-10-04 04:28:42,368 INFO    MainThread:26853 [wandb_init.py:init():575] wandb.init called with sweep_config: {}
+config: {}
+2023-10-04 04:28:42,368 INFO    MainThread:26853 [wandb_init.py:init():618] starting backend
+2023-10-04 04:28:42,368 INFO    MainThread:26853 [wandb_init.py:init():622] setting up manager
+2023-10-04 04:28:42,375 INFO    MainThread:26853 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-10-04 04:28:42,377 INFO    MainThread:26853 [wandb_init.py:init():628] backend started and connected
+2023-10-04 04:28:42,388 INFO    MainThread:26853 [wandb_init.py:init():720] updated telemetry
+2023-10-04 04:28:42,432 INFO    MainThread:26853 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2023-10-04 04:28:42,788 INFO    MainThread:26853 [wandb_run.py:_on_init():2220] communicating current version
+2023-10-04 04:28:42,976 INFO    MainThread:26853 [wandb_run.py:_on_init():2229] got version response 
+2023-10-04 04:28:42,976 INFO    MainThread:26853 [wandb_init.py:init():804] starting run threads in backend
+2023-10-04 04:28:43,121 INFO    MainThread:26853 [wandb_run.py:_console_start():2199] atexit reg
+2023-10-04 04:28:43,126 INFO    MainThread:26853 [wandb_run.py:_redirect():2054] redirect: wrap_raw
+2023-10-04 04:28:43,130 INFO    MainThread:26853 [wandb_run.py:_redirect():2119] Wrapping output streams.
+2023-10-04 04:28:43,134 INFO    MainThread:26853 [wandb_run.py:_redirect():2144] Redirects installed.
+2023-10-04 04:28:43,138 INFO    MainThread:26853 [wandb_init.py:init():845] run started, returning control to user process
+2023-10-04 05:28:53,442 INFO    MainThread:26853 [wandb_run.py:_config_callback():1324] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/confusion_matrix/v1', 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}}} None
+2023-10-04 05:28:53,856 INFO    MainThread:26853 [wandb_run.py:_config_callback():1324] config_cb ('_wandb', 'visualize', 'test/pr') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/area-under-curve/v0', 'fieldSettings': {'x': 'recall', 'y': 'precision', 'class': 'class'}, 'stringSettings': {'title': 'Precision v. Recall'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/pr_table'}], 'fields': []}]}]}}} None
+2023-10-04 05:28:54,036 INFO    MainThread:26853 [wandb_run.py:_config_callback():1324] config_cb ('_wandb', 'visualize', 'test/roc') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/area-under-curve/v0', 'fieldSettings': {'x': 'fpr', 'y': 'tpr', 'class': 'class'}, 'stringSettings': {'title': 'ROC', 'x-axis-title': 'False positive rate', 'y-axis-title': 'True positive rate'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/roc_table'}], 'fields': []}]}]}}} None
+2023-10-04 05:28:54,736 INFO    MainThread:26853 [wandb_run.py:_finish():1934] finishing run tanaryo-miyabi818/murata_exp/6j6s67tc
+2023-10-04 05:28:54,736 INFO    MainThread:26853 [wandb_run.py:_atexit_cleanup():2168] got exitcode: 0
+2023-10-04 05:28:54,738 INFO    MainThread:26853 [wandb_run.py:_restore():2151] restore
+2023-10-04 05:28:54,738 INFO    MainThread:26853 [wandb_run.py:_restore():2157] restore done
+2023-10-04 05:29:10,392 INFO    MainThread:26853 [wandb_run.py:_footer_history_summary_info():3554] rendering history
+2023-10-04 05:29:10,393 INFO    MainThread:26853 [wandb_run.py:_footer_history_summary_info():3586] rendering summary
+2023-10-04 05:29:10,402 INFO    MainThread:26853 [wandb_run.py:_footer_sync_info():3513] logging synced files
