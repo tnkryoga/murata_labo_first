@@ -142,8 +142,8 @@ class BinaryClassifierModel(pl.LightningModule):
             self.bert.config.hidden_size, hidden_size
         )  # 入力BERT層、出力hidden_sizeの全結合層
         self.layer = nn.Linear(hidden_size, hidden_size)
-        self.layer = nn.Linear(hidden_size, hidden_size2)
-        self.layer = nn.Linear(hidden_size2, 1)  # 二値分類
+        self.layer2 = nn.Linear(hidden_size, hidden_size2)
+        self.layer3 = nn.Linear(hidden_size2, 1)  # 二値分類
         self.n_epochs = n_epochs
         self.criterion = nn.BCELoss()
         self.metrics = torchmetrics.MetricCollection(
@@ -166,7 +166,7 @@ class BinaryClassifierModel(pl.LightningModule):
     def forward(self, input_ids, attention_mask, labels=None):
         output = self.bert(input_ids, attention_mask=attention_mask)
         outputs = torch.relu(self.hidden_layer(output.pooler_output))  # 活性化関数Relu
-        preds = torch.sigmoid(self.layer(outputs))  # sigmoidによる確率化
+        preds = torch.sigmoid(self.layer2(outputs))  # sigmoidによる確率化
         loss = 0
         if labels is not None:
             loss = self.criterion(
@@ -317,6 +317,8 @@ class BinaryClassifierModel(pl.LightningModule):
             [
                 {"params": self.bert.encoder.layer[-1].parameters(), "lr": 5e-5},
                 {"params": self.layer.parameters(), "lr": 1e-4},
+                {"params": self.layer2.parameters(), "lr": 1e-4},
+                {"params": self.layer3.parameters(), "lr": 1e-4},
             ]
         )
 
