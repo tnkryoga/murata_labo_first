@@ -166,8 +166,9 @@ class BinaryClassifierModel(pl.LightningModule):
     def forward(self, input_ids, attention_mask, labels=None):
         output = self.bert(input_ids, attention_mask=attention_mask)
         outputs = torch.relu(self.hidden_layer(output.pooler_output))  # 活性化関数Relu
-        print(outputs)
-        preds = torch.sigmoid(self.layer(outputs))  # sigmoidによる確率化
+        outputs = torch.relu(self.layer(outputs))
+        outputs = torch.relu(self.layer2(outputs))
+        preds = torch.sigmoid(self.layer3(outputs))  # sigmoidによる確率化
         loss = 0
         if labels is not None:
             loss = self.criterion(
