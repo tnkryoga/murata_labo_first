@@ -1,0 +1,72 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:398: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+Downloading (…)okenizer_config.json: 100% 110/110 [00:00<00:00, 246kB/s]
+Downloading (…)solve/main/vocab.txt: 100% 15.7k/15.7k [00:00<00:00, 36.6MB/s]
+Downloading (…)lve/main/config.json: 100% 478/478 [00:00<00:00, 1.45MB/s]
+
+
+
+
+
+
+
+Downloading pytorch_model.bin: 100% 359M/359M [00:14<00:00, 25.1MB/s]
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m   [22m┃[1m Name         [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0 │ bert         │ BertModel        │ 89.1 M │
+│ 1 │ hidden_layer │ Linear           │  787 K │
+│ 2 │ layer        │ Linear           │  1.0 M │
+│ 3 │ layer2       │ Linear           │  262 K │
+│ 4 │ layer3       │ Linear           │    257 │
+│ 5 │ criterion    │ BCELoss          │      0 │
+│ 6 │ metrics      │ MetricCollection │      0 │
+└───┴──────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 9.2 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 91.2 M
+[1mTotal estimated model params size (MB)[22m: 364
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 409, in main
+    trainer.fit(model, data_module)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 532, in fit
+    call._call_and_handle_interrupt(
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 43, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 571, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 980, in _run
+    results = self._run_stage()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 1021, in _run_stage
+    self._run_sanity_check()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 1050, in _run_sanity_check
+    val_loop.run()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/utilities.py", line 181, in _decorator
+    return loop_run(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/evaluation_loop.py", line 115, in run
+    self._evaluation_step(batch, batch_idx, dataloader_idx)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/evaluation_loop.py", line 376, in _evaluation_step
+    output = call._call_strategy_hook(trainer, hook_name, *step_kwargs.values())
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 294, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/strategies/strategy.py", line 393, in validation_step
+    return self.model.validation_step(*args, **kwargs)
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 192, in validation_step
+    loss, preds = self.forward(
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp3/main.py", line 172, in forward
+    loss = self.criterion(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/loss.py", line 619, in forward
+    return F.binary_cross_entropy(input, target, weight=self.weight, reduction=self.reduction)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 3089, in binary_cross_entropy
+    raise ValueError(
+ValueError: Using a target size (torch.Size([32])) that is different to the input size (torch.Size([8192])) is deprecated. Please ensure they have the same size.
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+[?25h
