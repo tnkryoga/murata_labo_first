@@ -180,7 +180,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         # outputs = torch.relu(self.layer2(outputs))
         # preds = torch.sigmoid(self.layer3(outputs))  # sigmoidによる確率化
         preds = [
-            torch.sigmoid(torch.tesor(classifier(outputs)))
+            torch.sigmoid(torch.tensor(classifier(outputs)))
             for classifier in self.classifiers
         ]
         loss = 0
