@@ -1,0 +1,67 @@
+
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:389: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+Downloading (…)okenizer_config.json: 100% 110/110 [00:00<00:00, 279kB/s]
+Downloading (…)solve/main/vocab.txt: 100% 15.7k/15.7k [00:00<00:00, 35.0MB/s]
+Downloading (…)lve/main/config.json: 100% 478/478 [00:00<00:00, 1.12MB/s]
+
+
+
+
+
+
+
+
+
+
+
+
+Downloading pytorch_model.bin: 100% 359M/359M [00:24<00:00, 14.7MB/s]
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m   [22m┃[1m Name         [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0 │ bert         │ BertModel        │ 89.1 M │
+│ 1 │ hidden_layer │ Linear           │  787 K │
+│ 2 │ layer        │ Linear           │  1.0 M │
+│ 3 │ layer2       │ Linear           │  262 K │
+│ 4 │ layer3       │ Linear           │    257 │
+│ 5 │ criterion    │ BCELoss          │      0 │
+│ 6 │ metrics      │ MetricCollection │      0 │
+└───┴──────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 9.2 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 91.2 M
+[1mTotal estimated model params size (MB)[22m: 364
+[37mEpoch 0/3 [39m [90m━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m2/579[39m [37m0:00:01 • 0:00:23[39m [37m25.65it/s[39m [37mv_num: rgax train/loss:     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+KeyboardInterrupt, attempting graceful shutdown...
+[37mEpoch 0/3 [39m [35m━[90m╺━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m33/579[39m [37m0:00:38 • 0:10:32[39m [37m0.86it/s[39m [37mv_num: rgax train/loss:     
+                                                                        [37m0.729                       
+[37mTesting[39m [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m0/81[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s
+
+
+
+
+
+
+[37mTesting[39m [35m━━━━━━━╸[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m16/81[39m [37m0:00:13 • 0:00:55[39m [37m1.18it/s
+[?25h
+[rank: 0] Received SIGTERM: 15
