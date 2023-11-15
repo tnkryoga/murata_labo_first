@@ -22,7 +22,7 @@ from transformers import BertJapaneseTokenizer
 # Dataset
 class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoaderに渡す関数
     TEXT_COLUMN = "chunk"
-    LABEL_COLUMN = "binary"
+    LABEL_COLUMN = "labels"
 
     def __init__(self, data, tokenizer, max_token_len):
         self.data = data
@@ -35,7 +35,12 @@ class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoader�
     def __getitem__(self, index):
         data_row = self.data.iloc[index]  # iloc(data-frameの列の取得)/行数の取得
         text = data_row[self.TEXT_COLUMN]  # 行数分のtextを取得
-        labels = data_row[self.LABEL_COLUMN]  # list形式にするのが良さそう？([0,0,...,0,1])
+        labels = data_row[self.LABEL_COLUMN]
+
+        labels = labels.replace("[", "").replace("]", "")  # "[", "]" を削除
+
+        # カンマで分割して各要素を取得し、int に変換して新しいリストに追加
+        labels = [int(x.strip()) for x in labels.split(",")]
 
         encoding = self.tokenizer.encode_plus(  # encodingの詳細設定
             text,
