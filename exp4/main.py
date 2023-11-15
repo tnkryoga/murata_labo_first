@@ -146,14 +146,11 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         # モデルの構造
         self.bert = BertModel.from_pretrained(pretrained_model, return_dict=True)
         self.classifiers = nn.ModuleList(
-            [
-                nn.Linear(self.bert.config.hidden_size, hidden_size)
-                for _ in range(num_classes)
-            ]
+            [nn.Linear(self.bert.config.hidden_size, 1) for _ in range(num_classes)]
         )  # 入力BERT層、出力hidden_sizeの全結合層
-        self.layer = nn.Linear(hidden_size, hidden_size)
-        self.layer2 = nn.Linear(hidden_size, hidden_size2)
-        self.layer3 = nn.Linear(hidden_size2, 1)  # 二値分類
+        # self.layer = nn.Linear(hidden_size, hidden_size)
+        # self.layer2 = nn.Linear(hidden_size, hidden_size2)
+        # self.layer3 = nn.Linear(hidden_size2, 1)  # 二値分類
         self.n_epochs = n_epochs
         self.criterion = nn.BCELoss()
         self.metrics = torchmetrics.MetricCollection(
@@ -179,9 +176,10 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             torch.relu(classifier(output.pooler_output))
             for classifier in self.classifiers
         ]  # 活性化関数Relu
-        outputs = torch.relu(self.layer(outputs))
-        outputs = torch.relu(self.layer2(outputs))
-        preds = torch.sigmoid(self.layer3(outputs))  # sigmoidによる確率化
+        # outputs = torch.relu(self.layer(outputs))
+        # outputs = torch.relu(self.layer2(outputs))
+        # preds = torch.sigmoid(self.layer3(outputs))  # sigmoidによる確率化
+        preds = [torch.sigmoid(classifier(output)) for classifier in self.classifiers]
         loss = 0
         if labels is not None:
             loss = self.criterion(
