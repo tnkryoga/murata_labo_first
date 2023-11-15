@@ -175,9 +175,10 @@ class MaltiLabelClassifierModel(pl.LightningModule):
     # 順伝搬
     def forward(self, input_ids, attention_mask, labels=None):
         output = self.bert(input_ids, attention_mask=attention_mask)
-        outputs = torch.relu(
-            [classifier(output.pooler_output) for classifier in self.classifiers]
-        )  # 活性化関数Relu
+        outputs = [
+            torch.relu(classifier(output.pooler_output))
+            for classifier in self.classifiers
+        ]  # 活性化関数Relu
         outputs = torch.relu(self.layer(outputs))
         outputs = torch.relu(self.layer2(outputs))
         preds = torch.sigmoid(self.layer3(outputs))  # sigmoidによる確率化
