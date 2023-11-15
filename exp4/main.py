@@ -401,6 +401,7 @@ def main(cfg: DictConfig):
     model = MaltiLabelClassifierModel(
         hidden_size=cfg.model.hidden_size,
         hidden_size2=cfg.model.hidden_size2,
+        num_classes=cfg.model.num_classes,
         n_epochs=cfg.training.n_epochs,
     )
 
