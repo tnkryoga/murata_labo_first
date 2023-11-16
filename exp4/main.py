@@ -186,7 +186,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         loss = 0
         if labels is not None:
             loss = self.criterion(
-                preds.view(-1), labels.float()
+                preds, labels.float()
             )  # predsの次元数を2次元から１次元にする/labelsをfloat型に変更する
         return loss, preds
 
