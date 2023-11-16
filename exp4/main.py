@@ -156,11 +156,13 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         self.criterion = nn.BCELoss()
         self.metrics = torchmetrics.MetricCollection(
             [
-                torchmetrics.Accuracy(task="binary", threshold=self.THRESHOLD),
-                torchmetrics.Precision(task="binary", threshold=self.THRESHOLD),
-                torchmetrics.Recall(task="binary", threshold=self.THRESHOLD),
-                torchmetrics.F1Score(task="binary", threshold=self.THRESHOLD),
-                torchmetrics.MatthewsCorrCoef(task="binary", threshold=self.THRESHOLD),
+                torchmetrics.Accuracy(task="maltilabel", threshold=self.THRESHOLD),
+                torchmetrics.Precision(task="maltilabel", threshold=self.THRESHOLD),
+                torchmetrics.Recall(task="maltilabel", threshold=self.THRESHOLD),
+                torchmetrics.F1Score(task="maltilabel", threshold=self.THRESHOLD),
+                torchmetrics.MatthewsCorrCoef(
+                    task="maltilabel", threshold=self.THRESHOLD
+                ),
             ]
         )
 
@@ -184,9 +186,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         preds = self.sigmoid(combine_outputs)
         loss = 0
         if labels is not None:
-            loss = self.criterion(
-                preds, labels.float()
-            )  # predsの次元数を2次元から１次元にする/labelsをfloat型に変更する
+            loss = self.criterion(preds, labels.float())  # labelsをfloat型に変更する
         return loss, preds
 
     # trainのミニバッチに対して行う処理
