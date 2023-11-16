@@ -277,7 +277,9 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
-        print("実行済み")
+        metrics = self.metrics(epoch_preds, epoch_labels)
+        for metric in metrics.keys():
+            self.log(f"{mode}/{metric.lower()}", metrics[metric].item(), logger=True)
 
         epoch_preds, epoch_labels = (
             epoch_preds.cpu().numpy(),  # cpu上に移動し、numpy配列に変換
@@ -285,6 +287,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         )
         preds_binary = np.where(epoch_preds > self.THRESHOLD, 1, 0)
 
+        """
         # 混同行列
         wandb.log(
             {
@@ -318,6 +321,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                 ),
             }
         )
+        """
 
         self.test_step_outputs_preds.clear()
         self.test_step_outputs_labels.clear()  # free memory
