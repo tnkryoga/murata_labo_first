@@ -156,12 +156,12 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         self.criterion = nn.BCELoss()
         self.metrics = torchmetrics.MetricCollection(
             [
-                torchmetrics.Accuracy(task="maltilabel", threshold=self.THRESHOLD),
-                torchmetrics.Precision(task="maltilabel", threshold=self.THRESHOLD),
-                torchmetrics.Recall(task="maltilabel", threshold=self.THRESHOLD),
-                torchmetrics.F1Score(task="maltilabel", threshold=self.THRESHOLD),
+                torchmetrics.Accuracy(task="multilabel", threshold=self.THRESHOLD),
+                torchmetrics.Precision(task="multilabel", threshold=self.THRESHOLD),
+                torchmetrics.Recall(task="multilabel", threshold=self.THRESHOLD),
+                torchmetrics.F1Score(task="multilabel", threshold=self.THRESHOLD),
                 torchmetrics.MatthewsCorrCoef(
-                    task="maltilabel", threshold=self.THRESHOLD
+                    task="multilabel", threshold=self.THRESHOLD
                 ),
             ]
         )
