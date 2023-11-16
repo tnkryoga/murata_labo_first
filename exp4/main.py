@@ -151,7 +151,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         # self.layer = nn.Linear(hidden_size, hidden_size)
         # self.layer2 = nn.Linear(hidden_size, hidden_size2)
         # self.layer3 = nn.Linear(hidden_size2, 1)  # 二値分類
-        self.sigmoid = nn.Sigmoid
+        self.sigmoid = nn.Sigmoid()
         self.n_epochs = n_epochs
         self.criterion = nn.BCELoss()
         self.metrics = torchmetrics.MetricCollection(
