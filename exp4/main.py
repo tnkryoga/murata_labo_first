@@ -182,7 +182,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         # preds = torch.sigmoid(self.layer3(outputs))  # sigmoidによる確率化
         combine_outputs = torch.cat(outputs, dim=1)  # 各クラスのバイナリ出力を結合
         preds = self.sigmoid(combine_outputs)
-        print(preds.view(-1))
+        print(labels)
         loss = 0
         if labels is not None:
             loss = self.criterion(
