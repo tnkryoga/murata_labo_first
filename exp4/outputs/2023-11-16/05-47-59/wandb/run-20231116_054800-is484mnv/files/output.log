@@ -1,0 +1,110 @@
+
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:389: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m   [22m┃[1m Name        [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0 │ bert        │ BertModel        │ 89.1 M │
+│ 1 │ classifiers │ ModuleList       │ 12.3 K │
+│ 2 │ sigmoid     │ Sigmoid          │      0 │
+│ 3 │ criterion   │ BCELoss          │      0 │
+│ 4 │ metrics     │ MetricCollection │      0 │
+└───┴─────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 7.1 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 89.1 M
+[1mTotal estimated model params size (MB)[22m: 356
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:293: The number of
+training batches (26) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a
+lower value for log_every_n_steps if you want to see logs for the training epoch.
+[37mEpoch 0/3 [39m [35m━━━━[90m╺━━━━━━━━━━━━━━━━━━━━━━━[39m [37m4/26[39m [37m0:00:03 • 0:00:17[39m [37m1.32it/s[39m [37mv_num: 4mnv train/loss:     
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.685                       
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━━[90m╺━━━[39m [37m6/7  [39m [37m0:00:03 • 0:00:01[39m [37m1.62it/s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.688                       
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━[90m╺━━━━━━━[39m [37m5/7  [39m [37m0:00:02 • 0:00:02[39m [37m1.77it/s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.689                       
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━[90m╺━━━━━━━[39m [37m5/7  [39m [37m0:00:02 • 0:00:02[39m [37m1.79it/s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.687                       
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━[90m╺━━━━━━━[39m [37m5/7  [39m [37m0:00:02 • 0:00:02[39m [37m1.80it/s
+Epoch 3, global step 104: 'val_loss' reached 0.68828 (best 0.68828), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-11-16/05-47-59/wandb/run-20231116_054800-is484mnv/files/checkpoints/epoch=3.ckpt' as top 1
+`Trainer.fit` stopped: `max_epochs=4` reached.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃[1m           Test metric           [22m┃[1m          DataLoader 0           [22m┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│[36m     test/multilabelaccuracy     [39m│[35m          0.9248046875           [39m│
+│[36m     test/multilabelf1score      [39m│[35m       0.4726027250289917        [39m│
+│[36m test/multilabelmatthewscorrcoef [39m│[35m       0.4476921558380127        [39m│
+│[36m    test/multilabelprecision     [39m│[35m       0.6106194853782654        [39m│
+│[36m      test/multilabelrecall      [39m│[35m       0.3854748606681824        [39m│
+│[36m            test_loss            [39m│[35m       0.6889034509658813        [39m│
+└─────────────────────────────────┴─────────────────────────────────┘
+[37mTesting[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m4/4[39m [37m0:00:01 • 0:00:00[39m [37m2.42it/s
+[?25h
