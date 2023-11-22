@@ -276,8 +276,8 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         for i in range(self.num_classes):
             label_preds = epoch_preds[:, i]
             label_labels = epoch_labels[:, i]
-            print(type(label_preds))
-            print(type(label_labels))
+            print(label_preds)
+            print(label_labels)
             wandb.log(
                 {
                     f"{mode}/accuracy_label_{i}": metrics_per_label[
