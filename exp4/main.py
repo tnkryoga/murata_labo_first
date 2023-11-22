@@ -257,7 +257,6 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         epoch_preds = epoch_preds.squeeze()
         epoch_labels = torch.cat(self.train_step_outputs_labels)
         epoch_labels = epoch_labels.squeeze()
-        print(epoch_labels)
         epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
@@ -265,6 +264,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         for metric in metrics.keys():
             self.log(f"{mode}/{metric.lower()}", metrics[metric].item(), logger=True)
 
+        metrics_per_label = self.metrics_per_label(epoch_preds, epoch_labels)
         """epoch_preds, epoch_labels = (
             epoch_preds.detach().cpu().numpy(),
             epoch_labels.detach().cpu().numpy(),
@@ -278,9 +278,9 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             label_labels = epoch_labels[:, i]
             wandb.log(
                 {
-                    f"{mode}/accuracy_label_{i}": metrics[f"accuracy_label_{i}"](
-                        label_preds, label_labels
-                    )
+                    f"{mode}/accuracy_label_{i}": metrics_per_label[
+                        f"accuracy_label_{i}"
+                    ](label_preds, label_labels)
                 },
                 commit=False,
             )
