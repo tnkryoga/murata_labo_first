@@ -157,6 +157,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         self.sigmoid = nn.Sigmoid()
         self.n_epochs = n_epochs
         self.criterion = nn.BCELoss()
+
         self.metrics = torchmetrics.MetricCollection(
             [
                 torchmetrics.Accuracy(
@@ -175,6 +176,27 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                     task="multilabel", num_labels=16, threshold=self.THRESHOLD
                 ),
             ]
+        )
+
+        self.metrics_per_label = torchmetrics.MetricCollection(
+            {
+                f"accuracy_label_{i}": torchmetrics.Accuracy(
+                    task="binary", num_labels=1, threshold=self.THRESHOLD
+                )
+                for i in range(num_classes)
+            },
+            {
+                f"recall_label_{i}": torchmetrics.Recall(
+                    task="binary", num_labels=1, threshold=self.THRESHOLD
+                )
+                for i in range(num_classes)
+            },
+            {
+                f"f1score_label_{i}": torchmetrics.F1Score(
+                    task="binary", num_labels=1, threshold=self.THRESHOLD
+                )
+                for i in range(num_classes)
+            },
         )
 
         # BertLayerモジュールの最後を勾配計算ありに変更
@@ -253,6 +275,41 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         metrics = self.metrics(epoch_preds, epoch_labels)
         for metric in metrics.keys():
             self.log(f"{mode}/{metric.lower()}", metrics[metric].item(), logger=True)
+
+        epoch_preds, epoch_labels = (
+            epoch_preds.cpu().numpy(),
+            epoch_labels.cpu().numpy(),
+        )
+        preds_binary = np.where(epoch_preds > self.THRESHOLD, 1, 0)
+        metrics = self.metrics_per_label(epoch_preds, epoch_labels)
+
+        for i in range(self.num_classes):
+            label_preds = preds_binary[:, i]
+            label_labels = epoch_labels[:, i]
+            wandb.log(
+                {
+                    f"{mode}/accuracy_label_{i}": metrics[f"accuracy_label_{i}"](
+                        label_preds, label_labels
+                    )
+                },
+                commit=False,
+            )
+            wandb.log(
+                {
+                    f"{mode}/recall_label_{i}": metrics[f"recall_label_{i}"](
+                        label_preds, label_labels
+                    )
+                },
+                commit=False,
+            )
+            wandb.log(
+                {
+                    f"{mode}/f1score_label_{i}": metrics[f"f1score_label_{i}"](
+                        label_preds, label_labels
+                    )
+                },
+                commit=False,
+            )
 
         self.train_step_outputs_preds.clear()  # free memory
         self.train_step_outputs_labels.clear()  # free memory
