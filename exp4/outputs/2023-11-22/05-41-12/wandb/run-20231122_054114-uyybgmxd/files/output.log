@@ -1,0 +1,100 @@
+
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:389: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m   [22m┃[1m Name              [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0 │ bert              │ BertModel        │ 89.1 M │
+│ 1 │ classifiers       │ ModuleList       │ 12.6 M │
+│ 2 │ hidden_layer      │ ModuleList       │ 16.4 K │
+│ 3 │ sigmoid           │ Sigmoid          │      0 │
+│ 4 │ criterion         │ BCELoss          │      0 │
+│ 5 │ metrics           │ MetricCollection │      0 │
+│ 6 │ metrics_per_label │ MetricCollection │      0 │
+└───┴───────────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 19.7 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 101 M
+[1mTotal estimated model params size (MB)[22m: 406
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:293: The number of
+training batches (26) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a
+lower value for log_every_n_steps if you want to see logs for the training epoch.
+[37mEpoch 0/3 [39m [35m━━[90m╺━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m2/26[39m [37m0:00:01 • 0:00:01[39m [37m24.01it/s[39m [37mv_num: gmxd train/loss:     
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.692                       
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━━[90m╺━━━[39m [37m6/7  [39m [37m0:00:03 • 0:00:01[39m [37m1.41it/s
+        [1, 1, 0,  ..., 0, 0, 0],
+        ...,
+        [1, 0, 0,  ..., 0, 0, 0],
+        [1, 0, 0,  ..., 0, 0, 0],
+        [0, 1, 0,  ..., 0, 0, 0]], device='cuda:0')
+[37mEpoch 0/3 [39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m26/26[39m [37m0:00:27 • 0:00:00[39m [37m0.94it/s[39m [37mv_num: gmxd train/loss:     
+                                                                        [37m0.692                       
+[?25h
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/main.py", line 491, in main
+    trainer.fit(model, data_module)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 544, in fit
+    call._call_and_handle_interrupt(
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 580, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 989, in _run
+    results = self._run_stage()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 1035, in _run_stage
+    self.fit_loop.run()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py", line 203, in run
+    self.on_advance_end()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py", line 373, in on_advance_end
+    call._call_lightning_module_hook(trainer, "on_train_epoch_end")
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 157, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/main.py", line 273, in on_train_epoch_end
+    metrics = self.metrics_per_label(preds_binary, epoch_labels)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torchmetrics/collections.py", line 198, in forward
+    return self._compute_and_reduce("forward", *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torchmetrics/collections.py", line 334, in _compute_and_reduce
+    res = m(*args, **m._filter_kwargs(**kwargs))
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torchmetrics/metric.py", line 298, in forward
+    self._forward_cache = self._forward_reduce_state_update(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torchmetrics/metric.py", line 367, in _forward_reduce_state_update
+    self.update(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torchmetrics/metric.py", line 457, in wrapped_func
+    update(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torchmetrics/classification/stat_scores.py", line 181, in update
+    _binary_stat_scores_tensor_validation(preds, target, self.multidim_average, self.ignore_index)
+  File "/usr/local/lib/python3.10/dist-packages/torchmetrics/functional/classification/stat_scores.py", line 66, in _binary_stat_scores_tensor_validation
+    unique_values = torch.unique(target)
+  File "/usr/local/lib/python3.10/dist-packages/torch/_jit_internal.py", line 488, in fn
+    return if_false(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/_jit_internal.py", line 488, in fn
+    return if_false(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/functional.py", line 976, in _return_output
+    output, _, _ = _unique_impl(input, sorted, return_inverse, return_counts, dim)
+  File "/usr/local/lib/python3.10/dist-packages/torch/functional.py", line 890, in _unique_impl
+    output, inverse_indices, counts = torch._unique2(
+TypeError: _unique2(): argument 'input' (position 1) must be Tensor, not numpy.ndarray
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
