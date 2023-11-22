@@ -185,7 +185,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                 )
                 for i in range(num_classes)
             },
-            {
+            """{
                 f"recall_label_{i}": torchmetrics.Recall(
                     task="binary", num_labels=1, threshold=self.THRESHOLD
                 )
@@ -196,7 +196,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                     task="binary", num_labels=1, threshold=self.THRESHOLD
                 )
                 for i in range(num_classes)
-            },
+            },""",
         )
 
         # BertLayerモジュールの最後を勾配計算ありに変更
@@ -294,7 +294,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                 },
                 commit=False,
             )
-            wandb.log(
+            """wandb.log(
                 {
                     f"{mode}/recall_label_{i}": metrics[f"recall_label_{i}"](
                         label_preds, label_labels
@@ -309,7 +309,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                     )
                 },
                 commit=False,
-            )
+            )"""
 
         self.train_step_outputs_preds.clear()  # free memory
         self.train_step_outputs_labels.clear()  # free memory
