@@ -185,18 +185,6 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                 )
                 for i in range(num_classes)
             },
-            """{
-                f"recall_label_{i}": torchmetrics.Recall(
-                    task="binary", num_labels=1, threshold=self.THRESHOLD
-                )
-                for i in range(num_classes)
-            },
-            {
-                f"f1score_label_{i}": torchmetrics.F1Score(
-                    task="binary", num_labels=1, threshold=self.THRESHOLD
-                )
-                for i in range(num_classes)
-            },""",
         )
 
         # BertLayerモジュールの最後を勾配計算ありに変更
