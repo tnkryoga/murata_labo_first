@@ -265,8 +265,8 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             self.log(f"{mode}/{metric.lower()}", metrics[metric].item(), logger=True)
 
         epoch_preds, epoch_labels = (
-            epoch_preds.detach().numpy(),
-            epoch_labels.detach().numpy(),
+            epoch_preds.detach().cpu().numpy(),
+            epoch_labels.detach().cpu().numpy(),
         )
         preds_binary = np.where(epoch_preds > self.THRESHOLD, 1, 0)
         metrics = self.metrics_per_label(epoch_preds, epoch_labels)
