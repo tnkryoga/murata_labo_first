@@ -186,6 +186,24 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                 )
                 for i in range(num_classes)
             },
+            {
+                f"precision_label_{i}": torchmetrics.Precision(
+                    task="binary", num_labels=1, threshold=self.THRESHOLD
+                )
+                for i in range(num_classes)
+            },
+            {
+                f"Recall_label_{i}": torchmetrics.Recall(
+                    task="binary", num_labels=1, threshold=self.THRESHOLD
+                )
+                for i in range(num_classes)
+            },
+            {
+                f"f1score_label_{i}": torchmetrics.F1Score(
+                    task="binary", num_labels=1, threshold=self.THRESHOLD
+                )
+                for i in range(num_classes)
+            },
         )
 
         # BertLayerモジュールの最後を勾配計算ありに変更
@@ -202,11 +220,6 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             binary_output = torch.relu(classifier(output.pooler_output))
             hidden_output = torch.relu(hidden_layer(binary_output))
             hidden_outputs.append(hidden_output)
-
-        """outputs = [
-            torch.relu(classifier(output.pooler_output))
-            for classifier in self.classifiers
-        ]  # 活性化関数Relu"""
 
         combine_outputs = torch.cat(hidden_outputs, dim=1)  # 各クラスのバイナリ出力を結合
         preds = self.sigmoid(combine_outputs)
@@ -260,18 +273,10 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
-        # metrics = self.metrics(epoch_preds, epoch_labels)
+        metrics = self.metrics(epoch_preds, epoch_labels)
         # print(metrics.keys())
-        """for metric in metrics.keys():
-            self.log(f"{mode}/{metric.lower()}", metrics[metric].item(), logger=True)"""
-
-        """epoch_preds, epoch_labels = (
-            epoch_preds.detach().cpu().numpy(),
-            epoch_labels.detach().cpu().numpy(),
-        )
-        preds_binary = np.where(epoch_preds > self.THRESHOLD, 1, 0)"""
-        # print(type(epoch_labels))
-        # print(type(epoch_labels))
+        for metric in metrics.keys():
+            self.log(f"{mode}/{metric.lower()}", metrics[metric].item(), logger=True)
 
         for i in range(self.num_classes):
             label_preds = epoch_preds[:, i]  # i番目の要素のみを抽出
@@ -284,22 +289,21 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                 metrics_per_label[f"accuracy_label_{i}"].item(),
                 logger=True,
             )
-            """wandb.log(
-                {
-                    f"{mode}/recall_label_{i}": metrics[f"recall_label_{i}"](
-                        label_preds, label_labels
-                    )
-                },
-                commit=False,
+            self.log(
+                f"{mode}/presicion_label_{i}",
+                metrics_per_label[f"presicion_label_{i}"].item(),
+                logger=True,
             )
-            wandb.log(
-                {
-                    f"{mode}/f1score_label_{i}": metrics[f"f1score_label_{i}"](
-                        label_preds, label_labels
-                    )
-                },
-                commit=False,
-            )"""
+            self.log(
+                f"{mode}/recall_label_{i}",
+                metrics_per_label[f"recall_label_{i}"].item(),
+                logger=True,
+            )
+            self.log(
+                f"{mode}/f1score_label_{i}",
+                metrics_per_label[f"f1score_label_{i}"].item(),
+                logger=True,
+            )
 
         self.train_step_outputs_preds.clear()  # free memory
         self.train_step_outputs_labels.clear()  # free memory
