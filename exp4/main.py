@@ -199,7 +199,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
 
         self.metrics_per_label_recall = torchmetrics.MetricCollection(
             {
-                f"Recall_label_{i}": torchmetrics.Recall(
+                f"recall_label_{i}": torchmetrics.Recall(
                     task="binary", num_labels=1, threshold=self.THRESHOLD
                 )
                 for i in range(num_classes)
