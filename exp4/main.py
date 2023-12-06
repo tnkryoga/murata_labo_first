@@ -180,30 +180,32 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         )
 
         self.metrics_per_label = torchmetrics.MetricCollection(
-            {
-                f"accuracy_label_{i}": torchmetrics.Accuracy(
-                    task="binary", num_labels=1, threshold=self.THRESHOLD
-                )
-                for i in range(num_classes)
-            },
-            {
-                f"precision_label_{i}": torchmetrics.Precision(
-                    task="binary", num_labels=1, threshold=self.THRESHOLD
-                )
-                for i in range(num_classes)
-            },
-            {
-                f"Recall_label_{i}": torchmetrics.Recall(
-                    task="binary", num_labels=1, threshold=self.THRESHOLD
-                )
-                for i in range(num_classes)
-            },
-            {
-                f"f1score_label_{i}": torchmetrics.F1Score(
-                    task="binary", num_labels=1, threshold=self.THRESHOLD
-                )
-                for i in range(num_classes)
-            },
+            [
+                {
+                    f"accuracy_label_{i}": torchmetrics.Accuracy(
+                        task="binary", num_labels=1, threshold=self.THRESHOLD
+                    )
+                    for i in range(num_classes)
+                },
+                {
+                    f"precision_label_{i}": torchmetrics.Precision(
+                        task="binary", num_labels=1, threshold=self.THRESHOLD
+                    )
+                    for i in range(num_classes)
+                },
+                {
+                    f"Recall_label_{i}": torchmetrics.Recall(
+                        task="binary", num_labels=1, threshold=self.THRESHOLD
+                    )
+                    for i in range(num_classes)
+                },
+                {
+                    f"f1score_label_{i}": torchmetrics.F1Score(
+                        task="binary", num_labels=1, threshold=self.THRESHOLD
+                    )
+                    for i in range(num_classes)
+                },
+            ]
         )
 
         # BertLayerモジュールの最後を勾配計算ありに変更
@@ -274,7 +276,6 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
         metrics = self.metrics(epoch_preds, epoch_labels)
-        # print(metrics.keys())
         for metric in metrics.keys():
             self.log(f"{mode}/{metric.lower()}", metrics[metric].item(), logger=True)
 
@@ -284,7 +285,13 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             print(label_preds)
             print(label_labels)
             metrics_per_label = self.metrics_per_label(label_preds, label_labels)
-            self.log(
+            for metric_label in metrics_per_label.keys():
+                self.log(
+                    f"{mode}/{metric.lower()}",
+                    metrics[metric_label].item(),
+                    logger=True,
+                )
+            """self.log(
                 f"{mode}/accuracy_label_{i}",
                 metrics_per_label[f"accuracy_label_{i}"].item(),
                 logger=True,
@@ -303,7 +310,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                 f"{mode}/f1score_label_{i}",
                 metrics_per_label[f"f1score_label_{i}"].item(),
                 logger=True,
-            )
+            )"""
 
         self.train_step_outputs_preds.clear()  # free memory
         self.train_step_outputs_labels.clear()  # free memory
