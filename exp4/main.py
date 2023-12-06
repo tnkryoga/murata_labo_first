@@ -264,7 +264,6 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         for metric in metrics.keys():
             self.log(f"{mode}/{metric.lower()}", metrics[metric].item(), logger=True)"""
 
-        metrics_per_label = self.metrics_per_label(epoch_preds, epoch_labels)
         """epoch_preds, epoch_labels = (
             epoch_preds.detach().cpu().numpy(),
             epoch_labels.detach().cpu().numpy(),
@@ -274,10 +273,11 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         # print(type(epoch_labels))
 
         for i in range(self.num_classes):
-            label_preds = epoch_preds[:, i]
+            label_preds = epoch_preds[:, i]  # i番目の要素のみを抽出
             label_labels = epoch_labels[:, i]
             print(label_preds)
             print(label_labels)
+            metrics_per_label = self.metrics_per_label(label_preds, label_labels)
             wandb.log(
                 {
                     f"{mode}/accuracy_label_{i}": metrics_per_label[
