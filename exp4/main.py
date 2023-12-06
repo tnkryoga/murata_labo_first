@@ -179,33 +179,40 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             ]
         )
 
-        self.metrics_per_label = torchmetrics.MetricCollection(
-            [
-                {
-                    f"accuracy_label_{i}": torchmetrics.Accuracy(
-                        task="binary", num_labels=1, threshold=self.THRESHOLD
-                    )
-                    for i in range(num_classes)
-                },
-                {
-                    f"precision_label_{i}": torchmetrics.Precision(
-                        task="binary", num_labels=1, threshold=self.THRESHOLD
-                    )
-                    for i in range(num_classes)
-                },
-                {
-                    f"Recall_label_{i}": torchmetrics.Recall(
-                        task="binary", num_labels=1, threshold=self.THRESHOLD
-                    )
-                    for i in range(num_classes)
-                },
-                {
-                    f"f1score_label_{i}": torchmetrics.F1Score(
-                        task="binary", num_labels=1, threshold=self.THRESHOLD
-                    )
-                    for i in range(num_classes)
-                },
-            ]
+        self.metrics_per_label_accuracy = torchmetrics.MetricCollection(
+            {
+                f"accuracy_label_{i}": torchmetrics.Accuracy(
+                    task="binary", num_labels=1, threshold=self.THRESHOLD
+                )
+                for i in range(num_classes)
+            },
+        )
+
+        self.metrics_per_label_precision = torchmetrics.MetricCollection(
+            {
+                f"precision_label_{i}": torchmetrics.Precision(
+                    task="binary", num_labels=1, threshold=self.THRESHOLD
+                )
+                for i in range(num_classes)
+            },
+        )
+
+        self.metrics_per_label_recall = torchmetrics.MetricCollection(
+            {
+                f"Recall_label_{i}": torchmetrics.Recall(
+                    task="binary", num_labels=1, threshold=self.THRESHOLD
+                )
+                for i in range(num_classes)
+            },
+        )
+
+        self.metrics_per_label_f1score = torchmetrics.MetricCollection(
+            {
+                f"f1score_label_{i}": torchmetrics.F1Score(
+                    task="binary", num_labels=1, threshold=self.THRESHOLD
+                )
+                for i in range(num_classes)
+            },
         )
 
         # BertLayerモジュールの最後を勾配計算ありに変更
@@ -284,33 +291,36 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             label_labels = epoch_labels[:, i]
             print(label_preds)
             print(label_labels)
-            metrics_per_label = self.metrics_per_label(label_preds, label_labels)
-            for metric_label in metrics_per_label.keys():
-                self.log(
-                    f"{mode}/{metric.lower()}",
-                    metrics[metric_label].item(),
-                    logger=True,
-                )
-            """self.log(
+            metrics_per_label_accuracy = self.metrics_per_label(
+                label_preds, label_labels
+            )
+            metrics_per_label_precision = self.metrics_per_label(
+                label_preds, label_labels
+            )
+            metrics_per_label_recall = self.metrics_per_label(label_preds, label_labels)
+            metrics_per_label_f1score = self.metrics_per_label(
+                label_preds, label_labels
+            )
+            self.log(
                 f"{mode}/accuracy_label_{i}",
-                metrics_per_label[f"accuracy_label_{i}"].item(),
+                metrics_per_label_accuracy[f"accuracy_label_{i}"].item(),
                 logger=True,
             )
             self.log(
                 f"{mode}/presicion_label_{i}",
-                metrics_per_label[f"presicion_label_{i}"].item(),
+                metrics_per_label_precision[f"presicion_label_{i}"].item(),
                 logger=True,
             )
             self.log(
                 f"{mode}/recall_label_{i}",
-                metrics_per_label[f"recall_label_{i}"].item(),
+                metrics_per_label_recall[f"recall_label_{i}"].item(),
                 logger=True,
             )
             self.log(
                 f"{mode}/f1score_label_{i}",
-                metrics_per_label[f"f1score_label_{i}"].item(),
+                metrics_per_label_f1score[f"f1score_label_{i}"].item(),
                 logger=True,
-            )"""
+            )
 
         self.train_step_outputs_preds.clear()  # free memory
         self.train_step_outputs_labels.clear()  # free memory
