@@ -281,8 +281,8 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             metrics_per_label = self.metrics_per_label(label_preds, label_labels)
             self.log(
                 f"{mode}/accuracy_label_{i}",
-                metrics_per_label[f"accuracy_label_{i}"],
-                commit=False,
+                metrics_per_label[f"accuracy_label_{i}"].item(),
+                logger=True,
             )
             """wandb.log(
                 {
