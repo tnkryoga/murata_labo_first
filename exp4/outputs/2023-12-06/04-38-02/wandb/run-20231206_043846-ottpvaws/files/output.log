@@ -1,0 +1,22 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:389: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+tokenizer_config.json: 100% 110/110 [00:00<00:00, 232kB/s]
+vocab.txt: 100% 15.7k/15.7k [00:00<00:00, 27.6MB/s]
+config.json: 100% 478/478 [00:00<00:00, 540kB/s]
+
+
+
+
+
+pytorch_model.bin: 100% 359M/359M [00:11<00:00, 30.2MB/s]
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/main.py", line 480, in main
+    model = MaltiLabelClassifierModel(
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/main.py", line 182, in __init__
+    self.metrics_per_label = torchmetrics.MetricCollection(
+  File "/usr/local/lib/python3.10/dist-packages/torchmetrics/collections.py", line 188, in __init__
+    self.add_metrics(metrics, *additional_metrics)
+  File "/usr/local/lib/python3.10/dist-packages/torchmetrics/collections.py", line 409, in add_metrics
+    raise ValueError(
+ValueError: You have passes extra arguments ({'precision_label_0': BinaryPrecision(), 'precision_label_1': BinaryPrecision(), 'precision_label_2': BinaryPrecision(), 'precision_label_3': BinaryPrecision(), 'precision_label_4': BinaryPrecision(), 'precision_label_5': BinaryPrecision(), 'precision_label_6': BinaryPrecision(), 'precision_label_7': BinaryPrecision(), 'precision_label_8': BinaryPrecision(), 'precision_label_9': BinaryPrecision(), 'precision_label_10': BinaryPrecision(), 'precision_label_11': BinaryPrecision(), 'precision_label_12': BinaryPrecision(), 'precision_label_13': BinaryPrecision(), 'precision_label_14': BinaryPrecision(), 'precision_label_15': BinaryPrecision()}, {'Recall_label_0': BinaryRecall(), 'Recall_label_1': BinaryRecall(), 'Recall_label_2': BinaryRecall(), 'Recall_label_3': BinaryRecall(), 'Recall_label_4': BinaryRecall(), 'Recall_label_5': BinaryRecall(), 'Recall_label_6': BinaryRecall(), 'Recall_label_7': BinaryRecall(), 'Recall_label_8': BinaryRecall(), 'Recall_label_9': BinaryRecall(), 'Recall_label_10': BinaryRecall(), 'Recall_label_11': BinaryRecall(), 'Recall_label_12': BinaryRecall(), 'Recall_label_13': BinaryRecall(), 'Recall_label_14': BinaryRecall(), 'Recall_label_15': BinaryRecall()}, {'f1score_label_0': BinaryF1Score(), 'f1score_label_1': BinaryF1Score(), 'f1score_label_2': BinaryF1Score(), 'f1score_label_3': BinaryF1Score(), 'f1score_label_4': BinaryF1Score(), 'f1score_label_5': BinaryF1Score(), 'f1score_label_6': BinaryF1Score(), 'f1score_label_7': BinaryF1Score(), 'f1score_label_8': BinaryF1Score(), 'f1score_label_9': BinaryF1Score(), 'f1score_label_10': BinaryF1Score(), 'f1score_label_11': BinaryF1Score(), 'f1score_label_12': BinaryF1Score(), 'f1score_label_13': BinaryF1Score(), 'f1score_label_14': BinaryF1Score(), 'f1score_label_15': BinaryF1Score()}) which are not compatible with first passed dictionary {'accuracy_label_0': BinaryAccuracy(), 'accuracy_label_1': BinaryAccuracy(), 'accuracy_label_2': BinaryAccuracy(), 'accuracy_label_3': BinaryAccuracy(), 'accuracy_label_4': BinaryAccuracy(), 'accuracy_label_5': BinaryAccuracy(), 'accuracy_label_6': BinaryAccuracy(), 'accuracy_label_7': BinaryAccuracy(), 'accuracy_label_8': BinaryAccuracy(), 'accuracy_label_9': BinaryAccuracy(), 'accuracy_label_10': BinaryAccuracy(), 'accuracy_label_11': BinaryAccuracy(), 'accuracy_label_12': BinaryAccuracy(), 'accuracy_label_13': BinaryAccuracy(), 'accuracy_label_14': BinaryAccuracy(), 'accuracy_label_15': BinaryAccuracy()} so they will be ignored.
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
