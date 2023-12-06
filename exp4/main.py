@@ -291,14 +291,16 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             label_labels = epoch_labels[:, i]
             print(label_preds)
             print(label_labels)
-            metrics_per_label_accuracy = self.metrics_per_label(
+            metrics_per_label_accuracy = self.metrics_per_label_accuracy(
                 label_preds, label_labels
             )
-            metrics_per_label_precision = self.metrics_per_label(
+            metrics_per_label_precision = self.metrics_per_label_presicion(
                 label_preds, label_labels
             )
-            metrics_per_label_recall = self.metrics_per_label(label_preds, label_labels)
-            metrics_per_label_f1score = self.metrics_per_label(
+            metrics_per_label_recall = self.metrics_per_label_recall(
+                label_preds, label_labels
+            )
+            metrics_per_label_f1score = self.metrics_per_label_f1score(
                 label_preds, label_labels
             )
             self.log(
