@@ -294,7 +294,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             metrics_per_label_accuracy = self.metrics_per_label_accuracy(
                 label_preds, label_labels
             )
-            metrics_per_label_precision = self.metrics_per_label_presicion(
+            metrics_per_label_precision = self.metrics_per_label_precision(
                 label_preds, label_labels
             )
             metrics_per_label_recall = self.metrics_per_label_recall(
@@ -310,7 +310,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             )
             self.log(
                 f"{mode}/presicion_label_{i}",
-                metrics_per_label_precision[f"presicion_label_{i}"].item(),
+                metrics_per_label_precision[f"precision_label_{i}"].item(),
                 logger=True,
             )
             self.log(
