@@ -380,15 +380,17 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         for i in range(self.num_classes):
             label_preds = epoch_preds[:, i]  # i番目の要素のみを抽出
             label_labels = epoch_labels[:, i]
-            n = 0
+            print(label_labels)
+            """n = 0
             for j in range(len(label_labels)):
                 if label_labels[j] == 1:
                     n += 1
-                print("正解データに" + str(j) + "クラスがいくつあるかの確認：" + str(n))
+                print("正解データに" + str(j) + "クラスがいくつあるかの確認：" + str(n))"""
             preds_binary = np.where(label_preds > self.THRESHOLD, 1, 0)
             wandb.log(
                 {
                     f"test/confusion_matrix_{i}": plot.confusion_matrix(
+                        probs=None,
                         y_true=label_labels,
                         y_probas=self.complement_score(preds_binary),
                         labels=["応答なし", "応答あり"],
