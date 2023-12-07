@@ -374,7 +374,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             epoch_preds.cpu().numpy(),  # cpu上に移動し、numpy配列に変換
             epoch_labels.cpu().numpy(),
         )
-        preds_binary = np.where(epoch_preds > self.THRESHOLD, 1, 0)
+        preds_binary = torch.tensor(np.where(epoch_preds > self.THRESHOLD, 1, 0))
 
         # 混同行列
         wandb.log(
@@ -382,7 +382,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                 f"test/confusion_matrix": plot.confusion_matrix(
                     probs=None,
                     y_true=epoch_labels,
-                    preds=preds_binary.any(),
+                    preds=preds_binary,
                     class_names=[
                         "あいづち",
                         "感心",
