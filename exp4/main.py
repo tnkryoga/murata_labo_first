@@ -382,7 +382,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                 f"test/confusion_matrix": plot.confusion_matrix(
                     probs=None,
                     y_true=epoch_labels,
-                    preds=preds_binary,
+                    preds=preds_binary.any(),
                     class_names=[
                         "あいづち",
                         "感心",
