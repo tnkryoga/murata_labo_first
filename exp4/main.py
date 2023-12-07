@@ -355,12 +355,8 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
-        print(epoch_preds)
-        print(epoch_labels)
-
-        metrics = self.metrics(epoch_preds, epoch_labels)
-        for metric in metrics.keys():
-            self.log(f"{mode}/{metric.lower()}", metrics[metric].item(), logger=True)
+        # print(epoch_preds)
+        # print(epoch_labels)
 
         epoch_preds, epoch_labels = (
             epoch_preds.cpu().numpy(),  # cpu上に移動し、numpy配列に変換
@@ -368,8 +364,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         )
         preds_binary = np.where(epoch_preds > self.THRESHOLD, 1, 0)
 
-        """
-        # 混同行列
+        """# 混同行列
         wandb.log(
             {
                 "test/confusion_matrix": plot.confusion_matrix(
@@ -390,7 +385,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                     labels=["応答なし", "応答あり"],
                 ),
             }
-        )
+        )"""
 
         # ROC曲線
         wandb.log(
@@ -398,11 +393,27 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                 "test/roc": plot.roc_curve(
                     y_true=epoch_labels,
                     y_probas=self.complement_score(preds_binary),
-                    labels=["応答なし", "応答あり"],
+                    labels=[
+                        "あいづち",
+                        "感心",
+                        "評価",
+                        "繰り返し応答",
+                        "同意",
+                        "納得",
+                        "驚き",
+                        "言い換え",
+                        "意見",
+                        "考えている最中",
+                        "不同意",
+                        "補完",
+                        "あいさつ",
+                        "想起",
+                        "驚きといぶかり",
+                        "その他",
+                    ],
                 ),
             }
         )
-        """
 
         self.test_step_outputs_preds.clear()
         self.test_step_outputs_labels.clear()  # free memory
