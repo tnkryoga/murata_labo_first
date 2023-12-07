@@ -379,7 +379,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         # 混同行列
         wandb.log(
             {
-                f"test/confusion_matrix_{i}": plot.confusion_matrix(
+                f"test/confusion_matrix": plot.confusion_matrix(
                     probs=None,
                     y_true=epoch_labels,
                     preds=preds_binary,
