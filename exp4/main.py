@@ -397,9 +397,9 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                         y_true=epoch_labels,
                         y_probas=self.complement_score(preds_binary),
                         labels=["応答なし", "応答あり"],
-                        commit=False,
                     ),
-                }
+                },
+                commit=False,
             )
         wandb.log({})
 
