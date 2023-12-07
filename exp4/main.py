@@ -384,7 +384,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             for j in range(len(label_labels)):
                 if label_labels[j] == 1:
                     n += 1
-            print("正解データに" + str(j) + "クラスがいくつあるかの確認：" + str(n))
+                print("正解データに" + str(j) + "クラスがいくつあるかの確認：" + str(n))
             preds_binary = np.where(label_preds > self.THRESHOLD, 1, 0)
             wandb.log(
                 {
