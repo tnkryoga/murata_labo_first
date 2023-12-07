@@ -388,32 +388,20 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         )"""
 
         # ROC曲線
-        wandb.log(
-            {
-                "test/roc": plot.roc_curve(
-                    y_true=epoch_labels,
-                    y_probas=self.complement_score(preds_binary),
-                    labels=[
-                        "あいづち",
-                        "感心",
-                        "評価",
-                        "繰り返し応答",
-                        "同意",
-                        "納得",
-                        "驚き",
-                        "言い換え",
-                        "意見",
-                        "考えている最中",
-                        "不同意",
-                        "補完",
-                        "あいさつ",
-                        "想起",
-                        "驚きといぶかり",
-                        "その他",
-                    ],
-                ),
-            }
-        )
+        for i in range(self.num_classes):
+            label_preds = epoch_preds[:, i]  # i番目の要素のみを抽出
+            label_labels = epoch_labels[:, i]
+            wandb.log(
+                {
+                    f"test/roc_{i}": plot.roc_curve(
+                        y_true=epoch_labels,
+                        y_probas=self.complement_score(preds_binary),
+                        labels=["応答なし", "応答あり"],
+                        commit=False,
+                    ),
+                }
+            )
+        wandb.log({})
 
         self.test_step_outputs_preds.clear()
         self.test_step_outputs_labels.clear()  # free memory
