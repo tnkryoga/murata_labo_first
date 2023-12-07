@@ -301,8 +301,6 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         for i in range(self.num_classes):
             label_preds = epoch_preds[:, i]  # i番目の要素のみを抽出
             label_labels = epoch_labels[:, i]
-            print(label_preds)
-            print(label_labels)
             metrics_per_label_accuracy = self.metrics_per_label_accuracy(
                 label_preds, label_labels
             )
@@ -367,14 +365,14 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
-        # print(epoch_preds)
-        # print(epoch_labels)
-
         epoch_preds, epoch_labels = (
             epoch_preds.cpu().numpy(),  # cpu上に移動し、numpy配列に変換
             epoch_labels.cpu().numpy(),
         )
-        preds_binary = torch.tensor(np.where(epoch_preds > self.THRESHOLD, 1, 0))
+        preds_binary = np.where(epoch_preds > self.THRESHOLD, 1, 0)
+
+        print(preds_binary)
+        print(epoch_labels)
 
         # 混同行列
         wandb.log(
