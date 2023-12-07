@@ -377,7 +377,34 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         preds_binary = np.where(epoch_preds > self.THRESHOLD, 1, 0)
 
         # 混同行列
-        for i in range(self.num_classes):
+        wandb.log(
+            {
+                f"test/confusion_matrix_{i}": plot.confusion_matrix(
+                    probs=None,
+                    y_true=epoch_labels,
+                    preds=preds_binary,
+                    class_names=[
+                        "あいづち",
+                        "感心",
+                        "評価",
+                        "繰り返し応答",
+                        "同意",
+                        "納得",
+                        "驚き",
+                        "言い換え",
+                        "意見",
+                        "考えている最中",
+                        "不同意",
+                        "補完",
+                        "あいさつ",
+                        "想起",
+                        "驚きといぶかり",
+                        "その他",
+                    ],
+                ),
+            }
+        )
+        """for i in range(self.num_classes):
             label_preds = epoch_preds[:, i]  # i番目の要素のみを抽出
             label_labels = epoch_labels[:, i]
             preds_binary = np.where(label_preds > self.THRESHOLD, 1, 0)
@@ -406,10 +433,8 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                             "その他",
                         ],
                     ),
-                },
-                commit=False,
-            )
-        wandb.log({})
+                }
+            )"""
 
         """# PR曲線
         wandb.log(
