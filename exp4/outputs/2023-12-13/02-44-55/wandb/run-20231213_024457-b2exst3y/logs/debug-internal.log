@@ -1,0 +1,677 @@
+2023-12-13 02:44:57,250 INFO    StreamThr :11975 [internal.py:wandb_internal():86] W&B internal server running at pid: 11975, started at: 2023-12-13 02:44:57.247353
+2023-12-13 02:44:57,256 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status
+2023-12-13 02:44:57,265 INFO    WriterThread:11975 [datastore.py:open_for_write():85] open: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/run-b2exst3y.wandb
+2023-12-13 02:44:57,268 DEBUG   SenderThread:11975 [sender.py:send():382] send: header
+2023-12-13 02:44:57,302 DEBUG   SenderThread:11975 [sender.py:send():382] send: run
+2023-12-13 02:44:58,885 INFO    SenderThread:11975 [dir_watcher.py:__init__():211] watching files in: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files
+2023-12-13 02:44:58,886 INFO    SenderThread:11975 [sender.py:_start_run_threads():1136] run started: b2exst3y with start time 1702435497.247446
+2023-12-13 02:44:58,906 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: check_version
+2023-12-13 02:44:58,906 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: check_version
+2023-12-13 02:44:59,047 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: run_start
+2023-12-13 02:44:59,055 DEBUG   HandlerThread:11975 [system_info.py:__init__():32] System info init
+2023-12-13 02:44:59,055 DEBUG   HandlerThread:11975 [system_info.py:__init__():47] System info init done
+2023-12-13 02:44:59,055 INFO    HandlerThread:11975 [system_monitor.py:start():194] Starting system monitor
+2023-12-13 02:44:59,055 INFO    SystemMonitor:11975 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-12-13 02:44:59,056 INFO    HandlerThread:11975 [system_monitor.py:probe():214] Collecting system info
+2023-12-13 02:44:59,057 INFO    SystemMonitor:11975 [interfaces.py:start():190] Started cpu monitoring
+2023-12-13 02:44:59,059 INFO    SystemMonitor:11975 [interfaces.py:start():190] Started disk monitoring
+2023-12-13 02:44:59,061 INFO    SystemMonitor:11975 [interfaces.py:start():190] Started gpu monitoring
+2023-12-13 02:44:59,061 INFO    SystemMonitor:11975 [interfaces.py:start():190] Started memory monitoring
+2023-12-13 02:44:59,062 INFO    SystemMonitor:11975 [interfaces.py:start():190] Started network monitoring
+2023-12-13 02:44:59,064 DEBUG   HandlerThread:11975 [system_info.py:probe():196] Probing system
+2023-12-13 02:44:59,075 DEBUG   HandlerThread:11975 [system_info.py:_probe_git():181] Probing git
+2023-12-13 02:44:59,111 DEBUG   HandlerThread:11975 [system_info.py:_probe_git():189] Probing git done
+2023-12-13 02:44:59,111 DEBUG   HandlerThread:11975 [system_info.py:probe():244] Probing system done
+2023-12-13 02:44:59,111 DEBUG   HandlerThread:11975 [system_monitor.py:probe():223] {'os': 'Linux-5.15.120+-x86_64-with-glibc2.35', 'python': '3.10.12', 'heartbeatAt': '2023-12-13T02:44:59.064745', 'startedAt': '2023-12-13T02:44:57.174269', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/main.py', 'codePathLocal': None, 'codePath': 'exp4/main.py', 'git': {'remote': 'https://tnkryoga:@github.com/tnkryoga/murata_labo_first.git', 'commit': '5ca223bb99cade834052b4b56d0bc99a2c28d623'}, 'email': 'tanaryo-miyabi818@outlook.jp', 'root': '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src', 'host': 'e12385732a85', 'username': 'root', 'executable': '/usr/bin/python3', 'cpu_count': 1, 'cpu_count_logical': 2, 'cpu_freq': {'current': 2000.144, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2000.144, 'min': 0.0, 'max': 0.0}, {'current': 2000.144, 'min': 0.0, 'max': 0.0}], 'disk': {'/': {'total': 78.1898422241211, 'used': 27.58428192138672}}, 'gpu': 'Tesla T4', 'gpu_count': 1, 'gpu_devices': [{'name': 'Tesla T4', 'memory_total': 16106127360}], 'memory': {'total': 12.6783447265625}}
+2023-12-13 02:44:59,112 INFO    HandlerThread:11975 [system_monitor.py:probe():224] Finished collecting system info
+2023-12-13 02:44:59,112 INFO    HandlerThread:11975 [system_monitor.py:probe():227] Publishing system info
+2023-12-13 02:44:59,112 DEBUG   HandlerThread:11975 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-12-13 02:44:59,116 DEBUG   HandlerThread:11975 [system_info.py:_save_pip():68] Saving pip packages done
+2023-12-13 02:44:59,120 INFO    HandlerThread:11975 [system_monitor.py:probe():229] Finished publishing system info
+2023-12-13 02:44:59,126 DEBUG   SenderThread:11975 [sender.py:send():382] send: files
+2023-12-13 02:44:59,127 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file wandb-metadata.json with policy now
+2023-12-13 02:44:59,140 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-13 02:44:59,140 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: stop_status
+2023-12-13 02:44:59,143 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-13 02:44:59,542 DEBUG   SenderThread:11975 [sender.py:send():382] send: telemetry
+2023-12-13 02:44:59,890 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:44:59,890 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/requirements.txt
+2023-12-13 02:44:59,891 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/wandb-metadata.json
+2023-12-13 02:45:00,056 INFO    wandb-upload_0:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/d1vbcw5s-wandb-metadata.json
+2023-12-13 02:45:02,275 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:45:03,897 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:04,902 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:06,913 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:08,098 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:45:08,918 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:10,923 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:12,930 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:13,748 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:45:14,141 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-13 02:45:14,142 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-13 02:45:14,142 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: stop_status
+2023-12-13 02:45:14,935 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:16,939 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:18,944 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:19,482 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:45:20,949 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:24,958 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:25,275 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:45:28,969 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:29,140 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-13 02:45:29,141 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: stop_status
+2023-12-13 02:45:29,144 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-13 02:45:30,974 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:31,159 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:45:31,976 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/config.yaml
+2023-12-13 02:45:32,978 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:36,989 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:37,370 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:45:38,996 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:41,001 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:41,199 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:45:41,202 DEBUG   SenderThread:11975 [sender.py:send():382] send: history
+2023-12-13 02:45:41,202 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: summary_record
+2023-12-13 02:45:41,206 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file wandb-summary.json with policy end
+2023-12-13 02:45:42,004 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/wandb-summary.json
+2023-12-13 02:45:42,670 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:45:43,009 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:43,010 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/checkpoints
+2023-12-13 02:45:44,016 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:44,017 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/checkpoints/epoch=0.ckpt
+2023-12-13 02:45:44,018 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/checkpoints
+2023-12-13 02:45:44,142 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-13 02:45:44,143 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: stop_status
+2023-12-13 02:45:44,143 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-13 02:45:44,751 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:45:44,765 DEBUG   SenderThread:11975 [sender.py:send():382] send: history
+2023-12-13 02:45:44,769 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: summary_record
+2023-12-13 02:45:44,781 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file wandb-summary.json with policy end
+2023-12-13 02:45:45,218 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/wandb-summary.json
+2023-12-13 02:45:45,220 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/checkpoints/epoch=0.ckpt
+2023-12-13 02:45:45,220 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/checkpoints
+2023-12-13 02:45:48,514 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:45:51,242 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:53,249 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:45:53,543 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:45:59,063 DEBUG   SystemMonitor:11975 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-12-13 02:45:59,064 DEBUG   SenderThread:11975 [sender.py:send():382] send: stats
+2023-12-13 02:45:59,065 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:45:59,141 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-13 02:45:59,141 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: stop_status
+2023-12-13 02:45:59,142 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-13 02:46:04,563 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:46:09,709 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:46:14,141 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-13 02:46:14,142 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: stop_status
+2023-12-13 02:46:14,142 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-13 02:46:14,772 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:46:14,812 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:46:14,813 DEBUG   SenderThread:11975 [sender.py:send():382] send: history
+2023-12-13 02:46:14,813 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: summary_record
+2023-12-13 02:46:14,820 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file wandb-summary.json with policy end
+2023-12-13 02:46:15,372 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/wandb-summary.json
+2023-12-13 02:46:17,384 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:46:19,402 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:46:20,049 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:46:21,410 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:46:23,417 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:46:24,246 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:46:24,248 DEBUG   SenderThread:11975 [sender.py:send():382] send: history
+2023-12-13 02:46:24,248 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: summary_record
+2023-12-13 02:46:24,254 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file wandb-summary.json with policy end
+2023-12-13 02:46:24,422 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/wandb-summary.json
+2023-12-13 02:46:25,257 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:46:25,426 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:46:26,434 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:46:26,435 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/checkpoints/epoch=1.ckpt
+2023-12-13 02:46:26,435 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/checkpoints
+2023-12-13 02:46:27,475 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/checkpoints/epoch=1.ckpt
+2023-12-13 02:46:27,887 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:46:27,893 DEBUG   SenderThread:11975 [sender.py:send():382] send: history
+2023-12-13 02:46:27,895 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: summary_record
+2023-12-13 02:46:27,902 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file wandb-summary.json with policy end
+2023-12-13 02:46:28,482 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/wandb-summary.json
+2023-12-13 02:46:28,489 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/checkpoints
+2023-12-13 02:46:29,065 DEBUG   SenderThread:11975 [sender.py:send():382] send: stats
+2023-12-13 02:46:29,141 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-13 02:46:29,143 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-13 02:46:29,143 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: stop_status
+2023-12-13 02:46:30,444 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:46:30,491 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:46:35,754 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:46:38,522 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:46:41,111 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:46:42,539 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:46:44,141 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-13 02:46:44,142 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: stop_status
+2023-12-13 02:46:44,145 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-13 02:46:46,557 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:46:46,577 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:46:48,576 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:46:52,127 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:46:52,598 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:46:54,606 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:46:56,613 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:46:57,726 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:46:59,066 DEBUG   SenderThread:11975 [sender.py:send():382] send: stats
+2023-12-13 02:46:59,141 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-13 02:46:59,141 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: stop_status
+2023-12-13 02:46:59,145 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-13 02:47:00,629 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:02,635 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:03,030 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:47:04,644 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:06,651 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:08,623 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:47:08,665 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:10,672 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:10,686 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:47:10,687 DEBUG   SenderThread:11975 [sender.py:send():382] send: history
+2023-12-13 02:47:10,687 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: summary_record
+2023-12-13 02:47:10,696 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file wandb-summary.json with policy end
+2023-12-13 02:47:11,681 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/wandb-summary.json
+2023-12-13 02:47:13,689 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/checkpoints/epoch=2.ckpt
+2023-12-13 02:47:13,967 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/checkpoints
+2023-12-13 02:47:14,081 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:47:14,142 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-13 02:47:14,146 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-13 02:47:14,148 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: stop_status
+2023-12-13 02:47:14,604 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:47:14,607 DEBUG   SenderThread:11975 [sender.py:send():382] send: history
+2023-12-13 02:47:14,608 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: summary_record
+2023-12-13 02:47:14,618 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file wandb-summary.json with policy end
+2023-12-13 02:47:14,793 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:14,794 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/wandb-summary.json
+2023-12-13 02:47:14,795 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/checkpoints/epoch=2.ckpt
+2023-12-13 02:47:14,795 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/checkpoints
+2023-12-13 02:47:16,804 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:18,811 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:19,838 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:47:22,826 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:24,835 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:25,122 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:47:26,859 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:28,881 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:29,067 DEBUG   SenderThread:11975 [sender.py:send():382] send: stats
+2023-12-13 02:47:29,142 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-13 02:47:29,142 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: stop_status
+2023-12-13 02:47:29,146 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-13 02:47:30,459 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:47:30,891 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:32,898 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:34,905 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:35,640 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:47:38,920 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:40,924 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:47:40,928 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:42,936 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:43,877 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:47:43,878 DEBUG   SenderThread:11975 [sender.py:send():382] send: history
+2023-12-13 02:47:43,878 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: summary_record
+2023-12-13 02:47:43,887 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file wandb-summary.json with policy end
+2023-12-13 02:47:43,939 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/wandb-summary.json
+2023-12-13 02:47:44,142 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-13 02:47:44,142 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: stop_status
+2023-12-13 02:47:44,149 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-13 02:47:44,947 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:46,253 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:47:46,964 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:48,972 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:50,981 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:51,898 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:47:52,988 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:54,996 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:56,229 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:47:56,230 DEBUG   SenderThread:11975 [sender.py:send():382] send: history
+2023-12-13 02:47:56,231 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: summary_record
+2023-12-13 02:47:56,235 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file wandb-summary.json with policy end
+2023-12-13 02:47:57,005 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/wandb-summary.json
+2023-12-13 02:47:57,238 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:47:58,010 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/checkpoints/epoch=3.ckpt
+2023-12-13 02:47:58,011 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/checkpoints
+2023-12-13 02:47:59,014 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:47:59,015 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/checkpoints/epoch=3.ckpt
+2023-12-13 02:47:59,067 DEBUG   SenderThread:11975 [sender.py:send():382] send: stats
+2023-12-13 02:47:59,144 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-13 02:47:59,147 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-13 02:47:59,148 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: stop_status
+2023-12-13 02:47:59,680 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:47:59,685 DEBUG   SenderThread:11975 [sender.py:send():382] send: history
+2023-12-13 02:47:59,685 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: summary_record
+2023-12-13 02:47:59,694 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file wandb-summary.json with policy end
+2023-12-13 02:48:00,137 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/wandb-summary.json
+2023-12-13 02:48:00,138 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/checkpoints
+2023-12-13 02:48:01,141 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:02,145 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:02,612 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:48:05,158 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:05,326 DEBUG   SenderThread:11975 [sender.py:send():382] send: config
+2023-12-13 02:48:05,805 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: log_artifact
+2023-12-13 02:48:05,805 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: log_artifact
+2023-12-13 02:48:06,165 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_0_table_10_651c021aead6e2de7386.table.json
+2023-12-13 02:48:06,167 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table
+2023-12-13 02:48:06,168 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test
+2023-12-13 02:48:06,169 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media
+2023-12-13 02:48:06,370 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:48:06,713 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: log_artifact
+2023-12-13 02:48:06,740 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:48:06,769 INFO    wandb-upload_0:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/bswqkl0p-media/table/test/confusion_matrix_0_table_10_651c021aead6e2de7386.table.json
+2023-12-13 02:48:07,135 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: log_artifact
+2023-12-13 02:48:07,167 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:48:07,179 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:07,179 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_1_table_10_c641d15d1edf369e4615.table.json
+2023-12-13 02:48:07,182 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_2_table_10_f887c834b6ad705ce360.table.json
+2023-12-13 02:48:07,196 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test
+2023-12-13 02:48:07,582 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: log_artifact
+2023-12-13 02:48:07,619 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:48:07,841 INFO    wandb-upload_1:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/5pl89mox-media/table/test/confusion_matrix_1_table_10_c641d15d1edf369e4615.table.json
+2023-12-13 02:48:07,860 INFO    wandb-upload_0:11975 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmpyp950uk2
+2023-12-13 02:48:07,977 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: log_artifact
+2023-12-13 02:48:08,002 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:48:08,075 INFO    wandb-upload_2:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/g0ldkm7y-media/table/test/confusion_matrix_2_table_10_f887c834b6ad705ce360.table.json
+2023-12-13 02:48:08,189 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_4_table_10_0c43b547c24a6c242c08.table.json
+2023-12-13 02:48:08,192 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_3_table_10_b61803c8efcbf89790ab.table.json
+2023-12-13 02:48:08,338 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: log_artifact
+2023-12-13 02:48:08,366 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:48:08,703 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: log_artifact
+2023-12-13 02:48:08,732 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:48:09,073 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: log_artifact
+2023-12-13 02:48:09,099 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:48:09,198 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_5_table_10_e39e74a0b98767cec95f.table.json
+2023-12-13 02:48:09,201 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_7_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:09,205 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_6_table_10_56362edaec100a827296.table.json
+2023-12-13 02:48:09,210 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test
+2023-12-13 02:48:09,289 INFO    SenderThread:11975 [sender.py:send_request_log_artifact():1458] logged artifact run-b2exst3y-testconfusion_matrix_0_table - {'id': 'QXJ0aWZhY3Q6NjY1NjU0Mzg5', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyMzE3ODMzMQ==', 'latestArtifact': None}}
+2023-12-13 02:48:09,290 DEBUG   SenderThread:11975 [sender.py:send():382] send: files
+2023-12-13 02:48:09,290 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:48:09,290 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file media/table/test/confusion_matrix_0_table_10_651c021aead6e2de7386.table.json with policy now
+2023-12-13 02:48:09,294 DEBUG   SenderThread:11975 [sender.py:send():382] send: config
+2023-12-13 02:48:09,294 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: log_artifact
+2023-12-13 02:48:09,448 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: log_artifact
+2023-12-13 02:48:09,492 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:48:09,872 INFO    wandb-upload_2:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/16ei38ao-media/table/test/confusion_matrix_7_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:09,877 INFO    wandb-upload_0:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/tgayg7dw-media/table/test/confusion_matrix_3_table_10_b61803c8efcbf89790ab.table.json
+2023-12-13 02:48:09,937 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: log_artifact
+2023-12-13 02:48:09,984 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:48:10,205 INFO    wandb-upload_1:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/uhp64z7e-media/table/test/confusion_matrix_4_table_10_0c43b547c24a6c242c08.table.json
+2023-12-13 02:48:10,210 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_9_table_10_c20d2e3138994b1790ee.table.json
+2023-12-13 02:48:10,213 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_8_table_10_1777ea67d152950c873d.table.json
+2023-12-13 02:48:10,395 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: log_artifact
+2023-12-13 02:48:10,419 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:48:10,615 INFO    wandb-upload_5:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/kw13xvoq-media/table/test/confusion_matrix_0_table_10_651c021aead6e2de7386.table.json
+2023-12-13 02:48:10,671 INFO    wandb-upload_4:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/n387eb4w-media/table/test/confusion_matrix_6_table_10_56362edaec100a827296.table.json
+2023-12-13 02:48:10,707 INFO    wandb-upload_3:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/dutwhacj-media/table/test/confusion_matrix_5_table_10_e39e74a0b98767cec95f.table.json
+2023-12-13 02:48:10,790 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: log_artifact
+2023-12-13 02:48:10,815 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:48:10,943 INFO    wandb-upload_1:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/l2wvorl5-media/table/test/confusion_matrix_8_table_10_1777ea67d152950c873d.table.json
+2023-12-13 02:48:10,990 INFO    wandb-upload_2:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/4wtckvcl-media/table/test/confusion_matrix_9_table_10_c20d2e3138994b1790ee.table.json
+2023-12-13 02:48:11,193 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: log_artifact
+2023-12-13 02:48:11,219 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:11,221 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_12_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:11,223 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_10_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:11,224 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:48:11,233 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_11_table_10_1777ea67d152950c873d.table.json
+2023-12-13 02:48:11,238 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test
+2023-12-13 02:48:11,328 INFO    wandb-upload_0:11975 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmp63v61cpz
+2023-12-13 02:48:11,580 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: log_artifact
+2023-12-13 02:48:11,604 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:48:11,826 INFO    wandb-upload_5:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/xuw5w3dp-media/table/test/confusion_matrix_12_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:11,842 INFO    wandb-upload_2:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/813r4fp5-media/table/test/confusion_matrix_11_table_10_1777ea67d152950c873d.table.json
+2023-12-13 02:48:11,846 INFO    wandb-upload_3:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/u8qpgm1l-media/table/test/confusion_matrix_10_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:11,929 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: log_artifact
+2023-12-13 02:48:11,953 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:48:12,243 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_14_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:12,246 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_13_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:12,295 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: log_artifact
+2023-12-13 02:48:12,321 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:48:12,322 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-13 02:48:12,401 INFO    SenderThread:11975 [sender.py:send_request_log_artifact():1458] logged artifact run-b2exst3y-testconfusion_matrix_1_table - {'id': 'QXJ0aWZhY3Q6NjY1NjU0NDEx', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyMzE3ODMzNg==', 'latestArtifact': None}}
+2023-12-13 02:48:12,402 DEBUG   SenderThread:11975 [sender.py:send():382] send: files
+2023-12-13 02:48:12,403 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file media/table/test/confusion_matrix_1_table_10_c641d15d1edf369e4615.table.json with policy now
+2023-12-13 02:48:12,407 DEBUG   SenderThread:11975 [sender.py:send():382] send: config
+2023-12-13 02:48:12,407 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: log_artifact
+2023-12-13 02:48:12,986 INFO    wandb-upload_4:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/gr8vq4jm-media/table/test/confusion_matrix_13_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:12,997 INFO    wandb-upload_1:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/r561cbd5-media/table/test/confusion_matrix_14_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:13,174 INFO    wandb-upload_5:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/25mtdo8o-media/table/test/confusion_matrix_1_table_10_c641d15d1edf369e4615.table.json
+2023-12-13 02:48:13,255 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:13,256 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_15_table_10_982f7d070c978daa607b.table.json
+2023-12-13 02:48:13,259 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test
+2023-12-13 02:48:13,848 INFO    wandb-upload_2:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/1jj2hja9-media/table/test/confusion_matrix_15_table_10_982f7d070c978daa607b.table.json
+2023-12-13 02:48:13,901 INFO    wandb-upload_3:11975 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmpvnuyfmv9
+2023-12-13 02:48:13,924 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:48:15,171 INFO    SenderThread:11975 [sender.py:send_request_log_artifact():1458] logged artifact run-b2exst3y-testconfusion_matrix_2_table - {'id': 'QXJ0aWZhY3Q6NjY1NjU0NDI2', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyMzE3ODMzNw==', 'latestArtifact': None}}
+2023-12-13 02:48:15,178 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:48:15,446 DEBUG   SenderThread:11975 [sender.py:send():382] send: files
+2023-12-13 02:48:15,446 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file media/table/test/confusion_matrix_2_table_10_f887c834b6ad705ce360.table.json with policy now
+2023-12-13 02:48:15,454 DEBUG   SenderThread:11975 [sender.py:send():382] send: config
+2023-12-13 02:48:15,467 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: log_artifact
+2023-12-13 02:48:16,164 INFO    wandb-upload_4:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/2njq5o88-media/table/test/confusion_matrix_2_table_10_f887c834b6ad705ce360.table.json
+2023-12-13 02:48:16,297 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/config.yaml
+2023-12-13 02:48:17,010 INFO    wandb-upload_5:11975 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmp7r0zoiv6
+2023-12-13 02:48:17,308 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:18,045 INFO    SenderThread:11975 [sender.py:send_request_log_artifact():1458] logged artifact run-b2exst3y-testconfusion_matrix_3_table - {'id': 'QXJ0aWZhY3Q6NjY1NjU0NDYz', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyMzE3ODM0Nw==', 'latestArtifact': None}}
+2023-12-13 02:48:18,045 DEBUG   SenderThread:11975 [sender.py:send():382] send: files
+2023-12-13 02:48:18,046 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file media/table/test/confusion_matrix_3_table_10_b61803c8efcbf89790ab.table.json with policy now
+2023-12-13 02:48:18,049 DEBUG   SenderThread:11975 [sender.py:send():382] send: config
+2023-12-13 02:48:18,049 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: log_artifact
+2023-12-13 02:48:18,748 INFO    wandb-upload_2:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/6lno5kna-media/table/test/confusion_matrix_3_table_10_b61803c8efcbf89790ab.table.json
+2023-12-13 02:48:18,926 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-13 02:48:19,330 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:19,551 INFO    wandb-upload_1:11975 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmpjla5zl77
+2023-12-13 02:48:20,674 INFO    SenderThread:11975 [sender.py:send_request_log_artifact():1458] logged artifact run-b2exst3y-testconfusion_matrix_4_table - {'id': 'QXJ0aWZhY3Q6NjY1NjU0NDg4', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyMzE3ODM1Mg==', 'latestArtifact': None}}
+2023-12-13 02:48:20,674 DEBUG   SenderThread:11975 [sender.py:send():382] send: files
+2023-12-13 02:48:20,675 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:48:20,675 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file media/table/test/confusion_matrix_4_table_10_0c43b547c24a6c242c08.table.json with policy now
+2023-12-13 02:48:20,679 DEBUG   SenderThread:11975 [sender.py:send():382] send: config
+2023-12-13 02:48:20,679 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: log_artifact
+2023-12-13 02:48:21,390 INFO    wandb-upload_4:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/u6y6i1wd-media/table/test/confusion_matrix_4_table_10_0c43b547c24a6c242c08.table.json
+2023-12-13 02:48:22,209 INFO    wandb-upload_3:11975 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmpdb4ki0rj
+2023-12-13 02:48:23,257 INFO    SenderThread:11975 [sender.py:send_request_log_artifact():1458] logged artifact run-b2exst3y-testconfusion_matrix_5_table - {'id': 'QXJ0aWZhY3Q6NjY1NjU0NTE4', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyMzE3ODM2Ng==', 'latestArtifact': None}}
+2023-12-13 02:48:23,257 DEBUG   SenderThread:11975 [sender.py:send():382] send: files
+2023-12-13 02:48:23,257 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file media/table/test/confusion_matrix_5_table_10_e39e74a0b98767cec95f.table.json with policy now
+2023-12-13 02:48:23,261 DEBUG   SenderThread:11975 [sender.py:send():382] send: config
+2023-12-13 02:48:23,261 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: log_artifact
+2023-12-13 02:48:23,387 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:23,927 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-13 02:48:23,951 INFO    wandb-upload_2:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/wcm5z1z5-media/table/test/confusion_matrix_5_table_10_e39e74a0b98767cec95f.table.json
+2023-12-13 02:48:24,735 INFO    wandb-upload_5:11975 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmpq5433wz6
+2023-12-13 02:48:25,413 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:25,751 INFO    SenderThread:11975 [sender.py:send_request_log_artifact():1458] logged artifact run-b2exst3y-testconfusion_matrix_6_table - {'id': 'QXJ0aWZhY3Q6NjY1NjU0NTQy', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyMzE3ODM3MA==', 'latestArtifact': None}}
+2023-12-13 02:48:25,752 DEBUG   SenderThread:11975 [sender.py:send():382] send: files
+2023-12-13 02:48:25,752 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file media/table/test/confusion_matrix_6_table_10_56362edaec100a827296.table.json with policy now
+2023-12-13 02:48:25,752 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:48:25,756 DEBUG   SenderThread:11975 [sender.py:send():382] send: config
+2023-12-13 02:48:25,756 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: log_artifact
+2023-12-13 02:48:26,526 INFO    wandb-upload_4:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/vyyu4d3i-media/table/test/confusion_matrix_6_table_10_56362edaec100a827296.table.json
+2023-12-13 02:48:27,302 INFO    wandb-upload_1:11975 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmpgd1c3bq_
+2023-12-13 02:48:27,438 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:28,334 INFO    SenderThread:11975 [sender.py:send_request_log_artifact():1458] logged artifact run-b2exst3y-testconfusion_matrix_7_table - {'id': 'QXJ0aWZhY3Q6NjY1NjU0NTY0', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyMzE3ODM3Mg==', 'latestArtifact': None}}
+2023-12-13 02:48:28,335 DEBUG   SenderThread:11975 [sender.py:send():382] send: files
+2023-12-13 02:48:28,335 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file media/table/test/confusion_matrix_7_table_10_cc505653699a95ece36c.table.json with policy now
+2023-12-13 02:48:28,338 DEBUG   SenderThread:11975 [sender.py:send():382] send: config
+2023-12-13 02:48:28,339 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: log_artifact
+2023-12-13 02:48:28,928 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-13 02:48:29,088 INFO    wandb-upload_2:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/ahjyjsug-media/table/test/confusion_matrix_7_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:29,472 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:29,889 INFO    wandb-upload_3:11975 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmptq_zh3e1
+2023-12-13 02:48:30,900 INFO    SenderThread:11975 [sender.py:send_request_log_artifact():1458] logged artifact run-b2exst3y-testconfusion_matrix_8_table - {'id': 'QXJ0aWZhY3Q6NjY1NjU0NTg1', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyMzE3ODM3NA==', 'latestArtifact': None}}
+2023-12-13 02:48:30,901 DEBUG   SenderThread:11975 [sender.py:send():382] send: files
+2023-12-13 02:48:30,901 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file media/table/test/confusion_matrix_8_table_10_1777ea67d152950c873d.table.json with policy now
+2023-12-13 02:48:30,901 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:48:30,904 DEBUG   SenderThread:11975 [sender.py:send():382] send: config
+2023-12-13 02:48:30,905 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: log_artifact
+2023-12-13 02:48:31,608 INFO    wandb-upload_4:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/kl05fwfw-media/table/test/confusion_matrix_8_table_10_1777ea67d152950c873d.table.json
+2023-12-13 02:48:32,476 INFO    wandb-upload_5:11975 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmp5v79llqk
+2023-12-13 02:48:33,517 INFO    SenderThread:11975 [sender.py:send_request_log_artifact():1458] logged artifact run-b2exst3y-testconfusion_matrix_9_table - {'id': 'QXJ0aWZhY3Q6NjY1NjU0NjEw', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyMzE3ODM4Mw==', 'latestArtifact': None}}
+2023-12-13 02:48:33,517 DEBUG   SenderThread:11975 [sender.py:send():382] send: files
+2023-12-13 02:48:33,518 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file media/table/test/confusion_matrix_9_table_10_c20d2e3138994b1790ee.table.json with policy now
+2023-12-13 02:48:33,522 DEBUG   SenderThread:11975 [sender.py:send():382] send: config
+2023-12-13 02:48:33,523 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: log_artifact
+2023-12-13 02:48:33,539 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:33,929 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-13 02:48:34,285 INFO    wandb-upload_2:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/2jxbukam-media/table/test/confusion_matrix_9_table_10_c20d2e3138994b1790ee.table.json
+2023-12-13 02:48:34,980 INFO    wandb-upload_1:11975 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmpg7k01ktg
+2023-12-13 02:48:35,563 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:36,161 INFO    SenderThread:11975 [sender.py:send_request_log_artifact():1458] logged artifact run-b2exst3y-testconfusion_matrix_10_table - {'id': 'QXJ0aWZhY3Q6NjY1NjU0NjQ0', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyMzE3ODQwMw==', 'latestArtifact': None}}
+2023-12-13 02:48:36,161 DEBUG   SenderThread:11975 [sender.py:send():382] send: files
+2023-12-13 02:48:36,162 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:48:36,162 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file media/table/test/confusion_matrix_10_table_10_cc505653699a95ece36c.table.json with policy now
+2023-12-13 02:48:36,166 DEBUG   SenderThread:11975 [sender.py:send():382] send: config
+2023-12-13 02:48:36,166 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: log_artifact
+2023-12-13 02:48:36,872 INFO    wandb-upload_4:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/j1f0s504-media/table/test/confusion_matrix_10_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:37,590 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:37,620 INFO    wandb-upload_3:11975 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmpjqp63sy5
+2023-12-13 02:48:38,634 INFO    SenderThread:11975 [sender.py:send_request_log_artifact():1458] logged artifact run-b2exst3y-testconfusion_matrix_11_table - {'id': 'QXJ0aWZhY3Q6NjY1NjU0NjY3', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyMzE3ODQwNw==', 'latestArtifact': None}}
+2023-12-13 02:48:38,634 DEBUG   SenderThread:11975 [sender.py:send():382] send: files
+2023-12-13 02:48:38,634 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file media/table/test/confusion_matrix_11_table_10_1777ea67d152950c873d.table.json with policy now
+2023-12-13 02:48:38,638 DEBUG   SenderThread:11975 [sender.py:send():382] send: config
+2023-12-13 02:48:38,638 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: log_artifact
+2023-12-13 02:48:38,930 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-13 02:48:39,311 INFO    wandb-upload_2:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/16a9fche-media/table/test/confusion_matrix_11_table_10_1777ea67d152950c873d.table.json
+2023-12-13 02:48:40,130 INFO    wandb-upload_5:11975 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmpsu9_2qr9
+2023-12-13 02:48:41,217 INFO    SenderThread:11975 [sender.py:send_request_log_artifact():1458] logged artifact run-b2exst3y-testconfusion_matrix_12_table - {'id': 'QXJ0aWZhY3Q6NjY1NjU0Njg3', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyMzE3ODQxMg==', 'latestArtifact': None}}
+2023-12-13 02:48:41,217 DEBUG   SenderThread:11975 [sender.py:send():382] send: files
+2023-12-13 02:48:41,218 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file media/table/test/confusion_matrix_12_table_10_cc505653699a95ece36c.table.json with policy now
+2023-12-13 02:48:41,218 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:48:41,221 DEBUG   SenderThread:11975 [sender.py:send():382] send: config
+2023-12-13 02:48:41,222 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: log_artifact
+2023-12-13 02:48:41,644 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:41,967 INFO    wandb-upload_4:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/9rlrdn1x-media/table/test/confusion_matrix_12_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:42,913 INFO    wandb-upload_1:11975 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmpnh3pt6gc
+2023-12-13 02:48:43,678 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:43,932 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-13 02:48:43,942 INFO    SenderThread:11975 [sender.py:send_request_log_artifact():1458] logged artifact run-b2exst3y-testconfusion_matrix_13_table - {'id': 'QXJ0aWZhY3Q6NjY1NjU0NzA2', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyMzE3ODQxNQ==', 'latestArtifact': None}}
+2023-12-13 02:48:43,943 DEBUG   SenderThread:11975 [sender.py:send():382] send: files
+2023-12-13 02:48:43,943 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file media/table/test/confusion_matrix_13_table_10_cc505653699a95ece36c.table.json with policy now
+2023-12-13 02:48:43,946 DEBUG   SenderThread:11975 [sender.py:send():382] send: config
+2023-12-13 02:48:43,946 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: log_artifact
+2023-12-13 02:48:44,686 INFO    wandb-upload_2:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/sramyt98-media/table/test/confusion_matrix_13_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:45,496 INFO    wandb-upload_3:11975 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmpgk122k_4
+2023-12-13 02:48:45,700 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:46,560 INFO    SenderThread:11975 [sender.py:send_request_log_artifact():1458] logged artifact run-b2exst3y-testconfusion_matrix_14_table - {'id': 'QXJ0aWZhY3Q6NjY1NjU0NzI1', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyMzE3ODQxOA==', 'latestArtifact': None}}
+2023-12-13 02:48:46,564 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:48:46,877 DEBUG   SenderThread:11975 [sender.py:send():382] send: files
+2023-12-13 02:48:46,878 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file media/table/test/confusion_matrix_14_table_10_cc505653699a95ece36c.table.json with policy now
+2023-12-13 02:48:46,881 DEBUG   SenderThread:11975 [sender.py:send():382] send: config
+2023-12-13 02:48:46,882 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: log_artifact
+2023-12-13 02:48:47,612 INFO    wandb-upload_4:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/4dq4jdz8-media/table/test/confusion_matrix_14_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:47,731 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/config.yaml
+2023-12-13 02:48:48,529 INFO    wandb-upload_5:11975 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmpfboc74_i
+2023-12-13 02:48:48,746 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:48,932 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-13 02:48:49,612 INFO    SenderThread:11975 [sender.py:send_request_log_artifact():1458] logged artifact run-b2exst3y-testconfusion_matrix_15_table - {'id': 'QXJ0aWZhY3Q6NjY1NjU0NzU3', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyMzE3ODQyNQ==', 'latestArtifact': None}}
+2023-12-13 02:48:49,612 DEBUG   SenderThread:11975 [sender.py:send():382] send: files
+2023-12-13 02:48:49,613 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file media/table/test/confusion_matrix_15_table_10_982f7d070c978daa607b.table.json with policy now
+2023-12-13 02:48:49,616 DEBUG   SenderThread:11975 [sender.py:send():382] send: history
+2023-12-13 02:48:49,616 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: summary_record
+2023-12-13 02:48:49,641 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file wandb-summary.json with policy end
+2023-12-13 02:48:49,643 DEBUG   SenderThread:11975 [sender.py:send():382] send: telemetry
+2023-12-13 02:48:49,643 DEBUG   SenderThread:11975 [sender.py:send():382] send: exit
+2023-12-13 02:48:49,643 INFO    SenderThread:11975 [sender.py:send_exit():589] handling exit code: 0
+2023-12-13 02:48:49,645 INFO    SenderThread:11975 [sender.py:send_exit():591] handling runtime: 193
+2023-12-13 02:48:49,649 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file wandb-summary.json with policy end
+2023-12-13 02:48:49,650 INFO    SenderThread:11975 [sender.py:send_exit():597] send defer
+2023-12-13 02:48:49,650 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:48:49,650 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: defer
+2023-12-13 02:48:49,651 INFO    HandlerThread:11975 [handler.py:handle_request_defer():172] handle defer: 0
+2023-12-13 02:48:49,651 DEBUG   SenderThread:11975 [sender.py:send():382] send: stats
+2023-12-13 02:48:49,652 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: defer
+2023-12-13 02:48:49,652 INFO    SenderThread:11975 [sender.py:send_request_defer():613] handle sender defer: 0
+2023-12-13 02:48:49,652 INFO    SenderThread:11975 [sender.py:transition_state():617] send defer: 1
+2023-12-13 02:48:49,652 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: defer
+2023-12-13 02:48:49,653 INFO    HandlerThread:11975 [handler.py:handle_request_defer():172] handle defer: 1
+2023-12-13 02:48:49,653 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: defer
+2023-12-13 02:48:49,653 INFO    SenderThread:11975 [sender.py:send_request_defer():613] handle sender defer: 1
+2023-12-13 02:48:49,653 INFO    SenderThread:11975 [sender.py:transition_state():617] send defer: 2
+2023-12-13 02:48:49,653 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: defer
+2023-12-13 02:48:49,654 INFO    HandlerThread:11975 [handler.py:handle_request_defer():172] handle defer: 2
+2023-12-13 02:48:49,654 INFO    HandlerThread:11975 [system_monitor.py:finish():203] Stopping system monitor
+2023-12-13 02:48:49,654 DEBUG   SystemMonitor:11975 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-12-13 02:48:49,654 DEBUG   SystemMonitor:11975 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-12-13 02:48:49,654 INFO    HandlerThread:11975 [interfaces.py:finish():202] Joined cpu monitor
+2023-12-13 02:48:49,659 INFO    HandlerThread:11975 [interfaces.py:finish():202] Joined disk monitor
+2023-12-13 02:48:49,661 INFO    HandlerThread:11975 [interfaces.py:finish():202] Joined gpu monitor
+2023-12-13 02:48:49,662 INFO    HandlerThread:11975 [interfaces.py:finish():202] Joined memory monitor
+2023-12-13 02:48:49,662 INFO    HandlerThread:11975 [interfaces.py:finish():202] Joined network monitor
+2023-12-13 02:48:49,662 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: defer
+2023-12-13 02:48:49,663 INFO    SenderThread:11975 [sender.py:send_request_defer():613] handle sender defer: 2
+2023-12-13 02:48:49,663 INFO    SenderThread:11975 [sender.py:transition_state():617] send defer: 3
+2023-12-13 02:48:49,663 DEBUG   SenderThread:11975 [sender.py:send():382] send: stats
+2023-12-13 02:48:49,663 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: defer
+2023-12-13 02:48:49,664 INFO    HandlerThread:11975 [handler.py:handle_request_defer():172] handle defer: 3
+2023-12-13 02:48:49,664 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: defer
+2023-12-13 02:48:49,664 INFO    SenderThread:11975 [sender.py:send_request_defer():613] handle sender defer: 3
+2023-12-13 02:48:49,664 INFO    SenderThread:11975 [sender.py:transition_state():617] send defer: 4
+2023-12-13 02:48:49,664 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: defer
+2023-12-13 02:48:49,665 INFO    HandlerThread:11975 [handler.py:handle_request_defer():172] handle defer: 4
+2023-12-13 02:48:49,665 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: defer
+2023-12-13 02:48:49,665 INFO    SenderThread:11975 [sender.py:send_request_defer():613] handle sender defer: 4
+2023-12-13 02:48:49,665 INFO    SenderThread:11975 [sender.py:transition_state():617] send defer: 5
+2023-12-13 02:48:49,665 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: defer
+2023-12-13 02:48:49,666 INFO    HandlerThread:11975 [handler.py:handle_request_defer():172] handle defer: 5
+2023-12-13 02:48:49,667 DEBUG   SenderThread:11975 [sender.py:send():382] send: summary
+2023-12-13 02:48:49,671 INFO    SenderThread:11975 [sender.py:_save_file():1392] saving file wandb-summary.json with policy end
+2023-12-13 02:48:49,673 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: defer
+2023-12-13 02:48:49,673 INFO    SenderThread:11975 [sender.py:send_request_defer():613] handle sender defer: 5
+2023-12-13 02:48:49,673 INFO    SenderThread:11975 [sender.py:transition_state():617] send defer: 6
+2023-12-13 02:48:49,673 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: defer
+2023-12-13 02:48:49,674 INFO    HandlerThread:11975 [handler.py:handle_request_defer():172] handle defer: 6
+2023-12-13 02:48:49,674 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: defer
+2023-12-13 02:48:49,674 INFO    SenderThread:11975 [sender.py:send_request_defer():613] handle sender defer: 6
+2023-12-13 02:48:49,678 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:48:49,759 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/wandb-summary.json
+2023-12-13 02:48:49,933 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:48:49,999 INFO    SenderThread:11975 [sender.py:transition_state():617] send defer: 7
+2023-12-13 02:48:50,000 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:48:50,000 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: defer
+2023-12-13 02:48:50,001 INFO    HandlerThread:11975 [handler.py:handle_request_defer():172] handle defer: 7
+2023-12-13 02:48:50,001 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: defer
+2023-12-13 02:48:50,002 INFO    SenderThread:11975 [sender.py:send_request_defer():613] handle sender defer: 7
+2023-12-13 02:48:50,335 INFO    wandb-upload_2:11975 [upload_job.py:push():131] Uploaded file /tmp/tmpt3rb5eauwandb/1avtfo1b-media/table/test/confusion_matrix_15_table_10_982f7d070c978daa607b.table.json
+2023-12-13 02:48:50,739 INFO    SenderThread:11975 [sender.py:transition_state():617] send defer: 8
+2023-12-13 02:48:50,740 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: defer
+2023-12-13 02:48:50,741 INFO    HandlerThread:11975 [handler.py:handle_request_defer():172] handle defer: 8
+2023-12-13 02:48:50,741 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: defer
+2023-12-13 02:48:50,741 INFO    SenderThread:11975 [sender.py:send_request_defer():613] handle sender defer: 8
+2023-12-13 02:48:50,742 INFO    SenderThread:11975 [job_builder.py:build():298] Attempting to build job artifact
+2023-12-13 02:48:50,745 INFO    SenderThread:11975 [job_builder.py:_get_source_type():428] is repo sourced job
+2023-12-13 02:48:50,747 INFO    SenderThread:11975 [job_builder.py:build():404] adding wandb-job metadata file
+2023-12-13 02:48:50,759 INFO    SenderThread:11975 [sender.py:transition_state():617] send defer: 9
+2023-12-13 02:48:50,759 DEBUG   SenderThread:11975 [sender.py:send():382] send: artifact
+2023-12-13 02:48:50,759 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: defer
+2023-12-13 02:48:50,765 INFO    HandlerThread:11975 [handler.py:handle_request_defer():172] handle defer: 9
+2023-12-13 02:48:50,777 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:50,778 INFO    Thread-12 :11975 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/config.yaml
+2023-12-13 02:48:50,934 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:48:51,829 INFO    wandb-upload_1:11975 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpfjbvr9az
+2023-12-13 02:48:52,288 INFO    wandb-upload_0:11975 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmpes1fg58v
+2023-12-13 02:48:53,844 INFO    SenderThread:11975 [sender.py:send_artifact():1470] sent artifact job-https___tnkryoga__github.com_tnkryoga_murata_labo_first.git_exp4_main.py - {'id': 'QXJ0aWZhY3Q6NjY1NjU0Nzkz', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExNTg5MDI0OA==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NjY1NjQ2ODcw', 'versionIndex': 74}}}
+2023-12-13 02:48:53,844 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: defer
+2023-12-13 02:48:53,844 INFO    SenderThread:11975 [sender.py:send_request_defer():613] handle sender defer: 9
+2023-12-13 02:48:53,845 INFO    SenderThread:11975 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-12-13 02:48:54,792 INFO    SenderThread:11975 [dir_watcher.py:finish():388] scan: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files
+2023-12-13 02:48:54,793 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/config.yaml config.yaml
+2023-12-13 02:48:54,795 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/requirements.txt requirements.txt
+2023-12-13 02:48:54,798 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/wandb-metadata.json wandb-metadata.json
+2023-12-13 02:48:54,799 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log output.log
+2023-12-13 02:48:54,802 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/wandb-summary.json wandb-summary.json
+2023-12-13 02:48:54,808 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/checkpoints/epoch=3.ckpt checkpoints/epoch=3.ckpt
+2023-12-13 02:48:54,815 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_0_table_10_651c021aead6e2de7386.table.json media/table/test/confusion_matrix_0_table_10_651c021aead6e2de7386.table.json
+2023-12-13 02:48:54,815 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_1_table_10_c641d15d1edf369e4615.table.json media/table/test/confusion_matrix_1_table_10_c641d15d1edf369e4615.table.json
+2023-12-13 02:48:54,816 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_2_table_10_f887c834b6ad705ce360.table.json media/table/test/confusion_matrix_2_table_10_f887c834b6ad705ce360.table.json
+2023-12-13 02:48:54,816 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_3_table_10_b61803c8efcbf89790ab.table.json media/table/test/confusion_matrix_3_table_10_b61803c8efcbf89790ab.table.json
+2023-12-13 02:48:54,816 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_4_table_10_0c43b547c24a6c242c08.table.json media/table/test/confusion_matrix_4_table_10_0c43b547c24a6c242c08.table.json
+2023-12-13 02:48:54,817 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_5_table_10_e39e74a0b98767cec95f.table.json media/table/test/confusion_matrix_5_table_10_e39e74a0b98767cec95f.table.json
+2023-12-13 02:48:54,817 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_6_table_10_56362edaec100a827296.table.json media/table/test/confusion_matrix_6_table_10_56362edaec100a827296.table.json
+2023-12-13 02:48:54,817 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_7_table_10_cc505653699a95ece36c.table.json media/table/test/confusion_matrix_7_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:54,817 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_8_table_10_1777ea67d152950c873d.table.json media/table/test/confusion_matrix_8_table_10_1777ea67d152950c873d.table.json
+2023-12-13 02:48:54,818 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_9_table_10_c20d2e3138994b1790ee.table.json media/table/test/confusion_matrix_9_table_10_c20d2e3138994b1790ee.table.json
+2023-12-13 02:48:54,818 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_10_table_10_cc505653699a95ece36c.table.json media/table/test/confusion_matrix_10_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:54,818 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_11_table_10_1777ea67d152950c873d.table.json media/table/test/confusion_matrix_11_table_10_1777ea67d152950c873d.table.json
+2023-12-13 02:48:54,818 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_12_table_10_cc505653699a95ece36c.table.json media/table/test/confusion_matrix_12_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:54,818 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_13_table_10_cc505653699a95ece36c.table.json media/table/test/confusion_matrix_13_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:54,819 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_14_table_10_cc505653699a95ece36c.table.json media/table/test/confusion_matrix_14_table_10_cc505653699a95ece36c.table.json
+2023-12-13 02:48:54,819 INFO    SenderThread:11975 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/media/table/test/confusion_matrix_15_table_10_982f7d070c978daa607b.table.json media/table/test/confusion_matrix_15_table_10_982f7d070c978daa607b.table.json
+2023-12-13 02:48:54,819 INFO    SenderThread:11975 [sender.py:transition_state():617] send defer: 10
+2023-12-13 02:48:54,820 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:48:54,820 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: defer
+2023-12-13 02:48:54,820 INFO    HandlerThread:11975 [handler.py:handle_request_defer():172] handle defer: 10
+2023-12-13 02:48:54,821 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: defer
+2023-12-13 02:48:54,821 INFO    SenderThread:11975 [sender.py:send_request_defer():613] handle sender defer: 10
+2023-12-13 02:48:54,821 INFO    SenderThread:11975 [file_pusher.py:finish():175] shutting down file pusher
+2023-12-13 02:48:54,935 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:48:54,936 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:48:55,390 INFO    wandb-upload_3:11975 [upload_job.py:push():131] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/wandb-summary.json
+2023-12-13 02:48:55,401 INFO    wandb-upload_5:11975 [upload_job.py:push():131] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/config.yaml
+2023-12-13 02:48:55,403 INFO    wandb-upload_1:11975 [upload_job.py:push():131] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/output.log
+2023-12-13 02:48:55,408 INFO    wandb-upload_2:11975 [upload_job.py:push():131] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/requirements.txt
+2023-12-13 02:48:55,936 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:48:55,937 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:48:56,937 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:48:56,938 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:48:57,937 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:48:57,938 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:48:58,939 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:48:58,939 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:48:58,939 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:48:59,940 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:48:59,940 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:49:00,940 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:49:00,941 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:49:01,941 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:49:01,942 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:49:02,941 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:49:02,942 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:49:03,942 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:49:03,943 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:49:03,943 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:49:04,943 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:49:04,943 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:49:05,943 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:49:05,944 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:49:06,944 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:49:06,944 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:49:07,944 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:49:07,945 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:49:08,945 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:49:08,945 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:49:08,946 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:49:09,945 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:49:09,946 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:49:10,946 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:49:10,947 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:49:11,947 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:49:11,948 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:49:12,948 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:49:12,948 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:49:13,949 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: status_report
+2023-12-13 02:49:13,950 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:49:13,951 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:49:14,950 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:49:14,951 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:49:15,951 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:49:15,952 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:49:16,457 INFO    wandb-upload_0:11975 [upload_job.py:push():131] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/files/checkpoints/epoch=3.ckpt
+2023-12-13 02:49:16,658 INFO    Thread-11 (_thread_body):11975 [sender.py:transition_state():617] send defer: 11
+2023-12-13 02:49:16,659 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: defer
+2023-12-13 02:49:16,659 INFO    HandlerThread:11975 [handler.py:handle_request_defer():172] handle defer: 11
+2023-12-13 02:49:16,659 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: defer
+2023-12-13 02:49:16,660 INFO    SenderThread:11975 [sender.py:send_request_defer():613] handle sender defer: 11
+2023-12-13 02:49:16,660 INFO    SenderThread:11975 [file_pusher.py:join():181] waiting for file pusher
+2023-12-13 02:49:16,660 INFO    SenderThread:11975 [sender.py:transition_state():617] send defer: 12
+2023-12-13 02:49:16,660 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: defer
+2023-12-13 02:49:16,660 INFO    HandlerThread:11975 [handler.py:handle_request_defer():172] handle defer: 12
+2023-12-13 02:49:16,661 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: defer
+2023-12-13 02:49:16,661 INFO    SenderThread:11975 [sender.py:send_request_defer():613] handle sender defer: 12
+2023-12-13 02:49:16,661 INFO    SenderThread:11975 [file_stream.py:finish():595] file stream finish called
+2023-12-13 02:49:16,952 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:49:17,029 INFO    SenderThread:11975 [file_stream.py:finish():599] file stream finish is done
+2023-12-13 02:49:17,029 INFO    SenderThread:11975 [sender.py:transition_state():617] send defer: 13
+2023-12-13 02:49:17,030 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:49:17,030 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: defer
+2023-12-13 02:49:17,031 INFO    HandlerThread:11975 [handler.py:handle_request_defer():172] handle defer: 13
+2023-12-13 02:49:17,031 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: defer
+2023-12-13 02:49:17,031 INFO    SenderThread:11975 [sender.py:send_request_defer():613] handle sender defer: 13
+2023-12-13 02:49:17,031 INFO    SenderThread:11975 [sender.py:transition_state():617] send defer: 14
+2023-12-13 02:49:17,032 DEBUG   SenderThread:11975 [sender.py:send():382] send: final
+2023-12-13 02:49:17,032 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: defer
+2023-12-13 02:49:17,032 DEBUG   SenderThread:11975 [sender.py:send():382] send: footer
+2023-12-13 02:49:17,032 INFO    HandlerThread:11975 [handler.py:handle_request_defer():172] handle defer: 14
+2023-12-13 02:49:17,033 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: defer
+2023-12-13 02:49:17,033 INFO    SenderThread:11975 [sender.py:send_request_defer():613] handle sender defer: 14
+2023-12-13 02:49:17,034 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-13 02:49:17,034 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: poll_exit
+2023-12-13 02:49:17,035 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-13 02:49:17,037 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: server_info
+2023-12-13 02:49:17,037 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: server_info
+2023-12-13 02:49:17,077 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: get_summary
+2023-12-13 02:49:17,078 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: sampled_history
+2023-12-13 02:49:17,080 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: job_info
+2023-12-13 02:49:17,258 DEBUG   SenderThread:11975 [sender.py:send_request():409] send_request: job_info
+2023-12-13 02:49:17,260 DEBUG   HandlerThread:11975 [handler.py:handle_request():146] handle_request: shutdown
+2023-12-13 02:49:17,260 INFO    HandlerThread:11975 [handler.py:finish():866] shutting down handler
+2023-12-13 02:49:18,080 INFO    WriterThread:11975 [datastore.py:close():294] close: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2023-12-13/02-44-55/wandb/run-20231213_024457-b2exst3y/run-b2exst3y.wandb
+2023-12-13 02:49:18,259 INFO    SenderThread:11975 [sender.py:finish():1548] shutting down sender
+2023-12-13 02:49:18,260 INFO    SenderThread:11975 [file_pusher.py:finish():175] shutting down file pusher
+2023-12-13 02:49:18,260 INFO    SenderThread:11975 [file_pusher.py:join():181] waiting for file pusher
