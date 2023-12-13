@@ -294,6 +294,24 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         epoch_labels = epoch_labels.squeeze()
         epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
         self.log(f"{mode}_loss", epoch_loss, logger=True)
+        class_names = [
+            "あいづち",
+            "感心",
+            "評価",
+            "繰り返し応答",
+            "同意",
+            "納得",
+            "驚き",
+            "言い換え",
+            "意見",
+            "考えている最中",
+            "不同意",
+            "補完",
+            "あいさつ",
+            "想起",
+            "驚きといぶかり",
+            "その他",
+        ]
 
         metrics = self.metrics(epoch_preds, epoch_labels)
         for metric in metrics.keys():
@@ -315,22 +333,22 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                 label_preds, label_labels
             )
             self.log(
-                f"{mode}/accuracy_label_{i}",
+                f"{mode}/accuracy_label_{class_names[i]}",
                 metrics_per_label_accuracy[f"accuracy_label_{i}"].item(),
                 logger=True,
             )
             self.log(
-                f"{mode}/presicion_label_{i}",
+                f"{mode}/presicion_label_{class_names[i]}",
                 metrics_per_label_precision[f"precision_label_{i}"].item(),
                 logger=True,
             )
             self.log(
-                f"{mode}/recall_label_{i}",
+                f"{mode}/recall_label_{class_names[i]}",
                 metrics_per_label_recall[f"recall_label_{i}"].item(),
                 logger=True,
             )
             self.log(
-                f"{mode}/f1score_label_{i}",
+                f"{mode}/f1score_label_{class_names[i]}",
                 metrics_per_label_f1score[f"f1score_label_{i}"].item(),
                 logger=True,
             )
