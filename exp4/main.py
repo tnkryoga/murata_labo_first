@@ -408,6 +408,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             label_labels = epoch_labels[:, i]
             preds_binary = np.where(label_preds > self.THRESHOLD, 1, 0)
             judg = False if i != self.num_classes else True
+            print(judg)
             wandb.log(
                 {
                     f"test/confusion_matrix_{i}": plot.confusion_matrix(
