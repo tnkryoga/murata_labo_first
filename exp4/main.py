@@ -412,8 +412,8 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         wandb.log(
             {
                 "test/pr": plot.pr_curve(
-                    y_true=epoch_labels,
-                    predictions=self.complement_score(preds_binary),
+                    epoch_labels,
+                    self.complement_score(preds_binary),
                     labels=[
                         "あいづち",
                         "感心",
