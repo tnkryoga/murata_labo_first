@@ -13,6 +13,7 @@ from wandb import plot
 from pytorch_lightning.callbacks import EarlyStopping, ModelCheckpoint, RichProgressBar
 from pytorch_lightning.loggers import WandbLogger
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import multilabel_confusion_matrix
 from torch import nn
 from torch.utils.data import DataLoader, Dataset
 from transformers import BertModel
@@ -375,7 +376,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         print(epoch_labels)
 
         # 混同行列
-        wandb.log(
+        """wandb.log(
             {
                 f"test/confusion_matrix": plot.confusion_matrix(
                     probs=None,
@@ -401,11 +402,12 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                     ],
                 ),
             }
-        )
-        """for i in range(self.num_classes):
+        )"""
+        for i in range(self.num_classes):
             label_preds = epoch_preds[:, i]  # i番目の要素のみを抽出
             label_labels = epoch_labels[:, i]
             preds_binary = np.where(label_preds > self.THRESHOLD, 1, 0)
+            judg = False if i != self.num_classes else True
             wandb.log(
                 {
                     f"test/confusion_matrix_{i}": plot.confusion_matrix(
@@ -431,8 +433,9 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                             "その他",
                         ],
                     ),
-                }
-            )"""
+                },
+                commit=judg,
+            )
 
         """# PR曲線
         wandb.log(
