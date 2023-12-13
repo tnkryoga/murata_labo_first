@@ -407,7 +407,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             label_preds = epoch_preds[:, i]  # i番目の要素のみを抽出
             label_labels = epoch_labels[:, i]
             preds_binary = np.where(label_preds > self.THRESHOLD, 1, 0)
-            judg = False if i != self.num_classes else True
+            judg = False if i != self.num_classes - 1 else True
             print(judg)
             wandb.log(
                 {
