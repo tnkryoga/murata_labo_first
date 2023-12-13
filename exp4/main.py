@@ -372,37 +372,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         )
         preds_binary = np.where(epoch_preds > self.THRESHOLD, 1, 0)
 
-        print(preds_binary)
-        print(epoch_labels)
-
-        # 混同行列
-        """wandb.log(
-            {
-                f"test/confusion_matrix": plot.confusion_matrix(
-                    probs=None,
-                    y_true=epoch_labels,
-                    preds=preds_binary,
-                    class_names=[
-                        "あいづち",
-                        "感心",
-                        "評価",
-                        "繰り返し応答",
-                        "同意",
-                        "納得",
-                        "驚き",
-                        "言い換え",
-                        "意見",
-                        "考えている最中",
-                        "不同意",
-                        "補完",
-                        "あいさつ",
-                        "想起",
-                        "驚きといぶかり",
-                        "その他",
-                    ],
-                ),
-            }
-        )"""
+        """# 混同行列
         for i in range(self.num_classes):
             label_preds = epoch_preds[:, i]  # i番目の要素のみを抽出
             label_labels = epoch_labels[:, i]
@@ -436,20 +406,37 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                     ),
                 },
                 commit=judg,
-            )
+            )"""
 
-        """# PR曲線
+        # PR曲線
         wandb.log(
             {
                 "test/pr": plot.pr_curve(
                     y_true=epoch_labels,
-                    y_probas=self.complement_score(preds_binary),
-                    labels=["応答なし", "応答あり"],
+                    predictions=self.complement_score(preds_binary),
+                    labels=[
+                        "あいづち",
+                        "感心",
+                        "評価",
+                        "繰り返し応答",
+                        "同意",
+                        "納得",
+                        "驚き",
+                        "言い換え",
+                        "意見",
+                        "考えている最中",
+                        "不同意",
+                        "補完",
+                        "あいさつ",
+                        "想起",
+                        "驚きといぶかり",
+                        "その他",
+                    ],
                 ),
             }
         )
 
-        # ROC曲線
+        """# ROC曲線
         for i in range(self.num_classes):
             label_preds = epoch_preds[:, i]  # i番目の要素のみを抽出
             label_labels = epoch_labels[:, i]
