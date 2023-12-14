@@ -1,0 +1,14 @@
+
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:389: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/main.py", line 601, in main
+    model = MaltiLabelClassifierModel(
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/main.py", line 176, in __init__
+    self.criterion = loss_fn()
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: Focal_MultiLabel_Loss.forward() missing 2 required positional arguments: 'outputs' and 'targets'
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
