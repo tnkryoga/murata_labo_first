@@ -439,6 +439,10 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
+        metrics = self.metrics(epoch_preds, epoch_labels)
+        for metric in metrics.keys():
+            self.log(f"{mode}/{metric.lower()}", metrics[metric].item(), logger=True)
+
         epoch_preds, epoch_labels = (
             epoch_preds.cpu().numpy(),  # cpu上に移動し、numpy配列に変換
             epoch_labels.cpu().numpy(),
@@ -447,7 +451,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
 
         """# 混同行列
         for i in range(self.num_classes):
-            label_preds = epoch_preds[:, i]  # i番目の要素のみを抽出
+            label_preds = epoch_preds[:, i]  # i番目のepochの要素のみを抽出
             label_labels = epoch_labels[:, i]
             preds_binary = np.where(label_preds > self.THRESHOLD, 1, 0)
             judg = False if i != self.num_classes - 1 else True
@@ -480,51 +484,6 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                 },
                 commit=judg,
             )"""
-
-        """# PR曲線
-        wandb.log(
-            {
-                "test/pr": plot.pr_curve(
-                    epoch_labels,
-                    self.complement_score(preds_binary),
-                    labels=[
-                        "あいづち",
-                        "感心",
-                        "評価",
-                        "繰り返し応答",
-                        "同意",
-                        "納得",
-                        "驚き",
-                        "言い換え",
-                        "意見",
-                        "考えている最中",
-                        "不同意",
-                        "補完",
-                        "あいさつ",
-                        "想起",
-                        "驚きといぶかり",
-                        "その他",
-                    ],
-                ),
-            }
-        )
-
-        # ROC曲線
-        for i in range(self.num_classes):
-            label_preds = epoch_preds[:, i]  # i番目の要素のみを抽出
-            label_labels = epoch_labels[:, i]
-            preds_binary = np.where(label_preds > self.THRESHOLD, 1, 0)
-            wandb.log(
-                {
-                    f"test/roc_{i}": plot.roc_curve(
-                        y_true=label_labels,
-                        y_probas=self.complement_score(preds_binary),
-                        labels=["応答なし", "応答あり"],
-                    ),
-                },
-                commit=False,
-            )
-        wandb.log({})"""
 
         self.test_step_outputs_preds.clear()
         self.test_step_outputs_labels.clear()  # free memory
