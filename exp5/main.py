@@ -147,6 +147,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         hidden_size,
         hidden_size2,
         num_classes,
+        loss_fn,
         n_epochs=None,
         pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking",
     ):
@@ -172,7 +173,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         )  # classifierの隠れ層の追加
         self.sigmoid = nn.Sigmoid()
         self.n_epochs = n_epochs
-        self.criterion = nn.BCELoss()
+        self.criterion = loss_fn()
 
         self.metrics = torchmetrics.MetricCollection(
             [
@@ -261,7 +262,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         preds = self.sigmoid(combine_outputs)
         loss = 0
         if labels is not None:
-            loss = Focal_MultiLabel_Loss(gamma=4)  # labelsをfloat型に変更する
+            loss = self.criterion(preds, labels.float())  # labelsをfloat型に変更する
         return loss, preds
 
     # trainのミニバッチに対して行う処理
@@ -593,11 +594,15 @@ def main(cfg: DictConfig):
         cfg.callbacks.patience_min_delta, cfg.callbacks.patience, checkpoint_path
     )
 
+    # loss関数のインスタンス作成
+    criterion = Focal_MultiLabel_Loss(cfg.model.focal_loss_gamma)
+
     # modelのインスタンスの作成
     model = MaltiLabelClassifierModel(
         hidden_size=cfg.model.hidden_size,
         hidden_size2=cfg.model.hidden_size2,
         num_classes=cfg.model.num_classes,
+        loss_fn=criterion,
         n_epochs=cfg.training.n_epochs,
     )
 
