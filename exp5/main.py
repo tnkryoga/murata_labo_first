@@ -173,7 +173,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         )  # classifierの隠れ層の追加
         self.sigmoid = nn.Sigmoid()
         self.n_epochs = n_epochs
-        self.criterion = loss_fn()
+        self.criterion = loss_fn
 
         self.metrics = torchmetrics.MetricCollection(
             [
