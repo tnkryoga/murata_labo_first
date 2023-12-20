@@ -261,8 +261,6 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         combine_outputs = torch.cat(hidden_outputs, dim=1)  # 各クラスのバイナリ出力を結合
         preds = self.sigmoid(combine_outputs)
         loss = 0
-        print(preds)
-        print(labels)
         if labels is not None:
             loss = self.criterion(preds, labels.float())  # labelsをfloat型に変更する
         return loss, preds
