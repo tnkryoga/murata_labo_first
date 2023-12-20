@@ -1,0 +1,80 @@
+
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:389: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m   [22m┃[1m Name                        [22m┃[1m Type                 [22m┃[1m Params [22m┃
+┡━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0 │ bert                        │ BertModel            │ 89.1 M │
+│ 1 │ classifiers                 │ ModuleList           │ 12.6 M │
+│ 2 │ hidden_layer                │ ModuleList           │ 16.4 K │
+│ 3 │ sigmoid                     │ Sigmoid              │      0 │
+│ 4 │ criterion                   │ Dice_MultiLabel_Loss │      0 │
+│ 5 │ metrics                     │ MetricCollection     │      0 │
+│ 6 │ metrics_per_label_accuracy  │ MetricCollection     │      0 │
+│ 7 │ metrics_per_label_precision │ MetricCollection     │      0 │
+│ 8 │ metrics_per_label_recall    │ MetricCollection     │      0 │
+│ 9 │ metrics_per_label_f1score   │ MetricCollection     │      0 │
+└───┴─────────────────────────────┴──────────────────────┴────────┘
+[1mTrainable params[22m: 19.7 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 101 M
+[1mTotal estimated model params size (MB)[22m: 406
+損失関数は実行されました
+損失関数は実行されました
+損失関数は実行されました
+[37mSanity Checking[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m2/2[39m [37m0:00:01 • 0:00:00[39m [37m34.70it/s
+[?25h
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/main.py", line 625, in main
+    trainer.fit(model, data_module)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 544, in fit
+    call._call_and_handle_interrupt(
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 580, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 989, in _run
+    results = self._run_stage()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 1033, in _run_stage
+    self._run_sanity_check()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 1062, in _run_sanity_check
+    val_loop.run()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/utilities.py", line 182, in _decorator
+    return loop_run(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/evaluation_loop.py", line 141, in run
+    return self.on_run_end()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/evaluation_loop.py", line 253, in on_run_end
+    self._on_evaluation_epoch_end()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/evaluation_loop.py", line 329, in _on_evaluation_epoch_end
+    call._call_lightning_module_hook(trainer, hook_name)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 157, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/main.py", line 391, in on_validation_epoch_end
+    self.log(f"{mode}_loss", epoch_loss, logger=True)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/core/module.py", line 454, in log
+    value = apply_to_collection(value, (Tensor, numbers.Number), self.__to_tensor, name)
+  File "/usr/local/lib/python3.10/dist-packages/lightning_utilities/core/apply_func.py", line 64, in apply_to_collection
+    return function(data, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/core/module.py", line 627, in __to_tensor
+    raise ValueError(
+ValueError: `self.log(val_loss, tensor([[0.7639, 0.7773, 0.7773,  ..., 0.7773, 0.7846, 0.7922],
+        [0.7773, 0.7773, 0.7773,  ..., 0.7773, 0.7773, 0.7822],
+        [0.7773, 0.7851, 0.7777,  ..., 0.8029, 0.7773, 0.7884],
+        ...,
+        [0.7773, 0.7773, 0.7944,  ..., 0.8065, 0.7891, 0.7780],
+        [0.7728, 0.7773, 0.7773,  ..., 0.7947, 0.7773, 0.8001],
+        [0.7773, 0.7898, 0.7839,  ..., 0.8223, 0.7773, 0.8003]],
+       device='cuda:0'))` was called, but the tensor must have a single element. You can try doing `self.log(val_loss, tensor([[0.7639, 0.7773, 0.7773,  ..., 0.7773, 0.7846, 0.7922],
+        [0.7773, 0.7773, 0.7773,  ..., 0.7773, 0.7773, 0.7822],
+        [0.7773, 0.7851, 0.7777,  ..., 0.8029, 0.7773, 0.7884],
+        ...,
+        [0.7773, 0.7773, 0.7944,  ..., 0.8065, 0.7891, 0.7780],
+        [0.7728, 0.7773, 0.7773,  ..., 0.7947, 0.7773, 0.8001],
+        [0.7773, 0.7898, 0.7839,  ..., 0.8223, 0.7773, 0.8003]],
+       device='cuda:0').mean())`
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
