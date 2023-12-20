@@ -126,9 +126,8 @@ class CreateDataModule(pl.LightningDataModule):
 
 # 損失関数の定義
 class Dice_MultiLabel_Loss(nn.Module):
-    def __init__(self, gamma):
+    def __init__(self):
         super(Dice_MultiLabel_Loss, self).__init__()
-        self.gamma = gamma
         self.bceloss = nn.BCELoss(reduction="none")
 
     def forward(self, outputs, targets):
@@ -141,6 +140,7 @@ class Dice_MultiLabel_Loss(nn.Module):
         denominator = torch.sum(y_true_flat) + torch.sum(y_pred_flat) + smooth  # 分母
         score = nominator / denominator
         dice = 1.0 - score
+        print("損失関数は実行されました\n")
 
         return 0.5 * (self.bceloss(outputs, targets) + dice)
 
@@ -152,7 +152,6 @@ class MaltiLabelClassifierModel(pl.LightningModule):
     def __init__(
         self,
         hidden_size,
-        hidden_size2,
         num_classes,
         loss_fn,
         n_epochs=None,
@@ -316,6 +315,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         epoch_labels = epoch_labels.squeeze()
         epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
         self.log(f"{mode}_loss", epoch_loss, logger=True)
+
         class_names = [
             "あいづち",
             "感心",
@@ -602,12 +602,12 @@ def main(cfg: DictConfig):
     )
 
     # loss関数のインスタンス作成
-    criterion = Dice_MultiLabel_Loss(cfg.model.focal_loss_gamma)
+    criterion = Dice_MultiLabel_Loss()
 
     # modelのインスタンスの作成
     model = MaltiLabelClassifierModel(
         hidden_size=cfg.model.hidden_size,
-        hidden_size2=cfg.model.hidden_size2,
+        # hidden_size2=cfg.model.hidden_size2,
         num_classes=cfg.model.num_classes,
         loss_fn=criterion,
         n_epochs=cfg.training.n_epochs,
