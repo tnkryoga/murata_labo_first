@@ -263,6 +263,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         loss = 0
         if labels is not None:
             loss = self.criterion(preds, labels.float())  # labelsをfloat型に変更する
+            print(loss)
         return loss, preds
 
     # trainのミニバッチに対して行う処理
