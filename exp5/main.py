@@ -135,7 +135,6 @@ class Focal_MultiLabel_Loss(nn.Module):
         bce = self.bceloss(outputs, targets)
         bce_exp = torch.exp(-bce)
         focal_loss = (1 - bce_exp) ** self.gamma * bce
-        print("損失関数は実行されました\n")
         return focal_loss.mean()
 
 
