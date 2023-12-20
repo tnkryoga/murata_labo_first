@@ -128,8 +128,8 @@ class CreateDataModule(pl.LightningDataModule):
 # 損失関数の定義/Dice Loss
 def dice_loss(y_true, y_pred):
     smooth = 1.0  # ゼロ除算回避のための定数
-    y_true_flat = torch.reshape(y_true, [-1])  # 1次元に変換
-    y_pred_flat = torch.reshape(y_pred, [-1])  # 1次元に変換
+    y_true_flat = y_true.view(-1)  # 1次元に変換
+    y_pred_flat = y_pred.view(-1)  # 1次元に変換
 
     tp = torch.sum(y_true_flat * y_pred_flat)  # True Positive
     nominator = 2 * tp + smooth  # 分子
