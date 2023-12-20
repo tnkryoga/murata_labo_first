@@ -15,7 +15,6 @@ from pytorch_lightning.loggers import WandbLogger
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import multilabel_confusion_matrix
 from torch import nn
-import torch.nn.functional as F
 from torch.utils.data import DataLoader, Dataset
 from transformers import BertModel
 from transformers import BertJapaneseTokenizer
@@ -125,18 +124,25 @@ class CreateDataModule(pl.LightningDataModule):
         )
 
 
-# 損失関数の定義/Dice Loss
-def dice_loss(y_true, y_pred):
-    smooth = 1.0  # ゼロ除算回避のための定数
-    y_true_flat = y_true.view(-1)  # 1次元に変換
-    y_pred_flat = y_pred.view(-1)  # 1次元に変換
+# 損失関数の定義
+class Dice_MultiLabel_Loss(nn.Module):
+    def __init__(self, gamma):
+        super(Dice_MultiLabel_Loss, self).__init__()
+        self.gamma = gamma
+        self.bceloss = nn.BCELoss(reduction="none")
 
-    tp = torch.sum(y_true_flat * y_pred_flat)  # True Positive
-    nominator = 2 * tp + smooth  # 分子
-    denominator = torch.sum(y_true_flat) + torch.sum(y_pred_flat) + smooth  # 分母
-    score = nominator / denominator
-    print("損失関数は実行されました\n")
-    return 1.0 - score
+    def forward(self, outputs, targets):
+        smooth = 1.0  # ゼロ除算回避のための定数
+        y_true_flat = torch.reshape(outputs, [-1])  # 1次元に変換
+        y_pred_flat = torch.reshape(targets, [-1])  # 同様
+
+        tp = torch.sum(y_true_flat * y_pred_flat)  # True Positive
+        nominator = 2 * tp + smooth  # 分子
+        denominator = torch.sum(y_true_flat) + torch.sum(y_pred_flat) + smooth  # 分母
+        score = nominator / denominator
+        dice = 1.0 - score
+
+        return 0.5 * (self.bceloss(outputs, targets) + dice)
 
 
 # Model
@@ -148,6 +154,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         hidden_size,
         hidden_size2,
         num_classes,
+        loss_fn,
         n_epochs=None,
         pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking",
     ):
@@ -173,7 +180,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         )  # classifierの隠れ層の追加
         self.sigmoid = nn.Sigmoid()
         self.n_epochs = n_epochs
-        self.criterion = nn.BCELoss()
+        self.criterion = loss_fn
 
         self.metrics = torchmetrics.MetricCollection(
             [
@@ -262,9 +269,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         preds = self.sigmoid(combine_outputs)
         loss = 0
         if labels is not None:
-            loss = 0.5 * (
-                self.criterion(labels.float(), preds) + dice_loss(labels.float(), preds)
-            )  # labelsをfloat型に変更する/BCE Dice Loss
+            loss = self.criterion(preds, labels.float())  # labelsをfloat型に変更する
         return loss, preds
 
     # trainのミニバッチに対して行う処理
@@ -596,11 +601,15 @@ def main(cfg: DictConfig):
         cfg.callbacks.patience_min_delta, cfg.callbacks.patience, checkpoint_path
     )
 
+    # loss関数のインスタンス作成
+    criterion = Dice_MultiLabel_Loss(cfg.model.focal_loss_gamma)
+
     # modelのインスタンスの作成
     model = MaltiLabelClassifierModel(
         hidden_size=cfg.model.hidden_size,
         hidden_size2=cfg.model.hidden_size2,
         num_classes=cfg.model.num_classes,
+        loss_fn=criterion,
         n_epochs=cfg.training.n_epochs,
     )
 
