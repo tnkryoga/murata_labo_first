@@ -140,8 +140,6 @@ class Dice_MultiLabel_Loss(nn.Module):
         denominator = torch.sum(y_true_flat) + torch.sum(y_pred_flat) + smooth  # 分母
         score = nominator / denominator
         dice = 1.0 - score
-        print("損失関数は実行されました\n")
-
         return 0.5 * (self.bceloss(outputs, targets) + dice)
 
 
@@ -269,7 +267,6 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         loss = 0
         if labels is not None:
             loss = self.criterion(preds, labels.float())  # labelsをfloat型に変更する
-            print(loss)
         return loss, preds
 
     # trainのミニバッチに対して行う処理
