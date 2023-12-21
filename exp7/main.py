@@ -185,7 +185,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         )  # classifierの隠れ層の追加
         self.sigmoid = nn.Sigmoid()
         self.n_epochs = n_epochs
-        self.criterion = loss_fn(self.num_classes)
+        self.criterion = loss_fn
 
         self.metrics = torchmetrics.MetricCollection(
             [
@@ -608,7 +608,7 @@ def main(cfg: DictConfig):
     )
 
     # loss関数のインスタンス作成
-    criterion = InverseClassFrequencyLoss()
+    criterion = InverseClassFrequencyLoss(cfg.model.num_classes)
     # modelのインスタンスの作成
     model = MaltiLabelClassifierModel(
         hidden_size=cfg.model.hidden_size,
