@@ -134,19 +134,20 @@ class InverseClassFrequencyLoss(nn.Module):
         self.epsilon = 1e-8  # ゼロ割を防ぐための小さな値
 
     def forward(self, input, target):
-        input_binary = torch.where(input > self.THRESHOLD, 1, 0)
-
         # 各クラスの出現頻度を計算
-        class_frequencies = torch.bincount(
-            input_binary, minlength=self.num_classes
-        ).float()
+        class_frequencies = [0] * 16
+        for i in range(target.size()[0]):
+            for j in range(self.num_classes):
+                if target[i][j] == 1:
+                    class_frequencies[j] += 1
+
         print(class_frequencies, "\n")
 
         # クラスの逆頻度を計算
         class_inverse_frequencies = 1 / (class_frequencies + self.epsilon)
 
         # ターゲットごとに逆クラス頻度を適用
-        weights = class_inverse_frequencies[target]
+        weights = class_inverse_frequencies
         print(weights, "\n")
 
         # クロスエントロピー損失を計算
