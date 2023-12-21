@@ -131,7 +131,7 @@ class InverseClassFrequencyLoss(nn.Module):
         super(InverseClassFrequencyLoss, self).__init__()
         self.THRESHOLD = 0.5
         self.num_classes = num_classes
-        self.epsilon = 1e-8  # ゼロ割を防ぐための小さな値
+        self.epsilon = 1e-3  # ゼロ割を防ぐための小さな値
 
     def forward(self, input, target):
         # 各クラスの出現頻度を計算
@@ -149,7 +149,7 @@ class InverseClassFrequencyLoss(nn.Module):
             class_inverse_frequencies.append(1 / (class_frequencies[i] + self.epsilon))
 
         # ターゲットごとに逆クラス頻度を適用
-        weights = class_inverse_frequencies
+        weights = torch.tensor(class_inverse_frequencies)
         print(weights, "\n")
 
         # クロスエントロピー損失を計算
