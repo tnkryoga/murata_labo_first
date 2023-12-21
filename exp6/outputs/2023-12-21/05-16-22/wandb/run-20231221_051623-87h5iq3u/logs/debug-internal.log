@@ -1,0 +1,19 @@
+2023-12-21 05:16:23,662 INFO    StreamThr :16632 [internal.py:wandb_internal():86] W&B internal server running at pid: 16632, started at: 2023-12-21 05:16:23.652256
+2023-12-21 05:16:23,678 DEBUG   HandlerThread:16632 [handler.py:handle_request():146] handle_request: status
+2023-12-21 05:16:23,685 INFO    WriterThread:16632 [datastore.py:open_for_write():85] open: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2023-12-21/05-16-22/wandb/run-20231221_051623-87h5iq3u/run-87h5iq3u.wandb
+2023-12-21 05:16:23,690 DEBUG   SenderThread:16632 [sender.py:send():382] send: header
+2023-12-21 05:16:23,721 DEBUG   SenderThread:16632 [sender.py:send():382] send: run
+2023-12-21 05:16:23,838 DEBUG   HandlerThread:16632 [handler.py:handle_request():146] handle_request: shutdown
+2023-12-21 05:16:23,838 INFO    HandlerThread:16632 [handler.py:finish():866] shutting down handler
+2023-12-21 05:16:24,187 INFO    SenderThread:16632 [dir_watcher.py:__init__():211] watching files in: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2023-12-21/05-16-22/wandb/run-20231221_051623-87h5iq3u/files
+2023-12-21 05:16:24,187 INFO    SenderThread:16632 [sender.py:_start_run_threads():1136] run started: 87h5iq3u with start time 1703135783.652862
+2023-12-21 05:16:24,187 INFO    SenderThread:16632 [sender.py:finish():1548] shutting down sender
+2023-12-21 05:16:24,187 INFO    SenderThread:16632 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-12-21 05:16:24,721 INFO    WriterThread:16632 [datastore.py:close():294] close: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2023-12-21/05-16-22/wandb/run-20231221_051623-87h5iq3u/run-87h5iq3u.wandb
+2023-12-21 05:16:25,190 INFO    SenderThread:16632 [dir_watcher.py:finish():388] scan: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2023-12-21/05-16-22/wandb/run-20231221_051623-87h5iq3u/files
+2023-12-21 05:16:25,191 INFO    SenderThread:16632 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2023-12-21/05-16-22/wandb/run-20231221_051623-87h5iq3u/files/config.yaml config.yaml
+2023-12-21 05:16:25,193 INFO    SenderThread:16632 [file_pusher.py:finish():175] shutting down file pusher
+2023-12-21 05:16:25,193 INFO    SenderThread:16632 [file_pusher.py:join():181] waiting for file pusher
+2023-12-21 05:16:25,752 INFO    wandb-upload_0:16632 [upload_job.py:push():131] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2023-12-21/05-16-22/wandb/run-20231221_051623-87h5iq3u/files/config.yaml
+2023-12-21 05:16:26,195 INFO    SenderThread:16632 [file_stream.py:finish():595] file stream finish called
+2023-12-21 05:16:26,448 INFO    SenderThread:16632 [file_stream.py:finish():599] file stream finish is done
