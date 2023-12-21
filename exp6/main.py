@@ -134,10 +134,12 @@ class Dice_MultiLabel_Loss(nn.Module):
         smooth = 1.0  # ゼロ除算回避のための定数
         y_true_flat = torch.reshape(outputs, [-1])  # 1次元に変換
         y_pred_flat = torch.reshape(targets, [-1])  # 同様
+        preds = y_pred_flat.cpu().numpy()  # cpu上に移動し、numpy配列に変換
+        preds_binary = np.where(preds > self.THRESHOLD, 1, 0)
 
-        tp = torch.sum(y_true_flat * y_pred_flat)  # True Positive
+        tp = torch.sum(y_true_flat * preds_binary)  # True Positive
         nominator = 2 * tp + smooth  # 分子
-        denominator = torch.sum(y_true_flat) + torch.sum(y_pred_flat) + smooth  # 分母
+        denominator = torch.sum(y_true_flat) + torch.sum(preds_binary) + smooth  # 分母
         score = nominator / denominator
         dice = 1.0 - score
         return 0.5 * (self.bceloss(outputs, targets) + dice)
@@ -265,10 +267,8 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         combine_outputs = torch.cat(hidden_outputs, dim=1)  # 各クラスのバイナリ出力を結合
         preds = self.sigmoid(combine_outputs)
         loss = 0
-        preds = (preds.cpu().numpy(),)  # cpu上に移動し、numpy配列に変換
-        preds_binary = np.where(preds > self.THRESHOLD, 1, 0)
         if labels is not None:
-            loss = self.criterion(preds_binary, labels.float())  # labelsをfloat型に変更する
+            loss = self.criterion(preds, labels.float())  # labelsをfloat型に変更する
         return loss, preds
 
     # trainのミニバッチに対して行う処理
