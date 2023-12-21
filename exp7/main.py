@@ -149,7 +149,7 @@ class InverseClassFrequencyLoss(nn.Module):
             class_inverse_frequencies.append(1 / (class_frequencies[i] + self.epsilon))
 
         # ターゲットごとに逆クラス頻度を適用
-        weights = torch.tensor(class_inverse_frequencies)
+        weights = torch.tensor(class_inverse_frequencies, device="cuda:0")
         print(weights, "\n")
 
         # クロスエントロピー損失を計算
