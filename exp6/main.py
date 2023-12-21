@@ -135,8 +135,7 @@ class Dice_MultiLabel_Loss(nn.Module):
         smooth = 1.0  # ゼロ除算回避のための定数
         y_true_flat = torch.reshape(outputs, [-1])  # 1次元に変換
         y_pred_flat = torch.reshape(targets, [-1])  # 同様
-        preds = y_pred_flat.cpu().numpy()  # cpu上に移動し、numpy配列に変換
-        preds_binary = np.where(preds > self.THRESHOLD, 1, 0)
+        preds_binary = torch.where(y_pred_flat > self.THRESHOLD, 1, 0)
 
         tp = torch.sum(y_true_flat * preds_binary)  # True Positive
         nominator = 2 * tp + smooth  # 分子
