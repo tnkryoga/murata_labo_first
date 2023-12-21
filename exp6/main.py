@@ -129,6 +129,7 @@ class Dice_MultiLabel_Loss(nn.Module):
     def __init__(self):
         super(Dice_MultiLabel_Loss, self).__init__()
         self.bceloss = nn.BCELoss()
+        self.THRESHOLD = 0.5
 
     def forward(self, outputs, targets):
         smooth = 1.0  # ゼロ除算回避のための定数
