@@ -308,6 +308,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         epoch_preds = epoch_preds.squeeze()
         epoch_labels = torch.cat(self.train_step_outputs_labels)
         epoch_labels = epoch_labels.squeeze()
+        print(epoch_labels, "\n")
         epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
         self.log(f"{mode}_loss", epoch_loss, logger=True)
         class_names = [
