@@ -129,6 +129,7 @@ class CreateDataModule(pl.LightningDataModule):
 class InverseClassFrequencyLoss(nn.Module):
     def __init__(self, num_classes):
         super(InverseClassFrequencyLoss, self).__init__()
+        self.THRESHOLD = 0.5
         self.num_classes = num_classes
         self.epsilon = 1e-8  # ゼロ割を防ぐための小さな値
 
