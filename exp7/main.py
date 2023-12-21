@@ -136,6 +136,7 @@ class InverseClassFrequencyLoss(nn.Module):
     def forward(self, input, target):
         # 各クラスの出現頻度を計算
         class_frequencies = [0] * 16
+        class_inverse_frequencies = []
         for i in range(target.size()[0]):
             for j in range(self.num_classes):
                 if target[i][j] == 1:
@@ -144,7 +145,8 @@ class InverseClassFrequencyLoss(nn.Module):
         print(class_frequencies, "\n")
 
         # クラスの逆頻度を計算
-        class_inverse_frequencies = 1 / (class_frequencies + self.epsilon)
+        for i in range(self.num_classes):
+            class_inverse_frequencies.append(1 / (class_frequencies[i] + self.epsilon))
 
         # ターゲットごとに逆クラス頻度を適用
         weights = class_inverse_frequencies
