@@ -1,0 +1,33 @@
+2024-01-09 13:38:27,866 INFO    MainThread:7331 [wandb_setup.py:_flush():76] Current SDK version is 0.16.1
+2024-01-09 13:38:27,867 INFO    MainThread:7331 [wandb_setup.py:_flush():76] Configure stats pid to 7331
+2024-01-09 13:38:27,867 INFO    MainThread:7331 [wandb_setup.py:_flush():76] Loading settings from /root/.config/wandb/settings
+2024-01-09 13:38:27,868 INFO    MainThread:7331 [wandb_setup.py:_flush():76] Loading settings from /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-01-09/13-38-24/wandb/settings
+2024-01-09 13:38:27,868 INFO    MainThread:7331 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-01-09 13:38:27,868 INFO    MainThread:7331 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-01-09 13:38:27,868 INFO    MainThread:7331 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'exp4/main.py', 'program_abspath': '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/main.py', 'program': '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/main.py'}
+2024-01-09 13:38:27,869 INFO    MainThread:7331 [wandb_init.py:_log_setup():524] Logging user logs to /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-01-09/13-38-24/wandb/run-20240109_133827-z74vhrmm/logs/debug.log
+2024-01-09 13:38:27,870 INFO    MainThread:7331 [wandb_init.py:_log_setup():525] Logging internal logs to /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-01-09/13-38-24/wandb/run-20240109_133827-z74vhrmm/logs/debug-internal.log
+2024-01-09 13:38:27,870 INFO    MainThread:7331 [wandb_init.py:init():564] calling init triggers
+2024-01-09 13:38:27,870 INFO    MainThread:7331 [wandb_init.py:init():571] wandb.init called with sweep_config: {}
+config: {}
+2024-01-09 13:38:27,870 INFO    MainThread:7331 [wandb_init.py:init():614] starting backend
+2024-01-09 13:38:27,870 INFO    MainThread:7331 [wandb_init.py:init():618] setting up manager
+2024-01-09 13:38:27,879 INFO    MainThread:7331 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-01-09 13:38:27,881 INFO    MainThread:7331 [wandb_init.py:init():624] backend started and connected
+2024-01-09 13:38:27,912 INFO    MainThread:7331 [wandb_init.py:init():716] updated telemetry
+2024-01-09 13:38:27,953 INFO    MainThread:7331 [wandb_init.py:init():749] communicating run to backend with 90.0 second timeout
+2024-01-09 13:38:28,559 INFO    MainThread:7331 [wandb_run.py:_on_init():2254] communicating current version
+2024-01-09 13:38:28,802 INFO    MainThread:7331 [wandb_run.py:_on_init():2263] got version response 
+2024-01-09 13:38:28,802 INFO    MainThread:7331 [wandb_init.py:init():800] starting run threads in backend
+2024-01-09 13:38:28,929 INFO    MainThread:7331 [wandb_run.py:_console_start():2233] atexit reg
+2024-01-09 13:38:28,930 INFO    MainThread:7331 [wandb_run.py:_redirect():2088] redirect: wrap_raw
+2024-01-09 13:38:28,931 INFO    MainThread:7331 [wandb_run.py:_redirect():2153] Wrapping output streams.
+2024-01-09 13:38:28,934 INFO    MainThread:7331 [wandb_run.py:_redirect():2178] Redirects installed.
+2024-01-09 13:38:28,936 INFO    MainThread:7331 [wandb_init.py:init():841] run started, returning control to user process
+2024-01-09 13:40:18,706 INFO    MainThread:7331 [wandb_run.py:_finish():1962] finishing run tanaryo-miyabi818/murata_exp/z74vhrmm
+2024-01-09 13:40:18,707 INFO    MainThread:7331 [wandb_run.py:_atexit_cleanup():2202] got exitcode: 0
+2024-01-09 13:40:18,709 INFO    MainThread:7331 [wandb_run.py:_restore():2185] restore
+2024-01-09 13:40:18,709 INFO    MainThread:7331 [wandb_run.py:_restore():2191] restore done
+2024-01-09 13:40:44,081 INFO    MainThread:7331 [wandb_run.py:_footer_history_summary_info():3837] rendering history
+2024-01-09 13:40:44,085 INFO    MainThread:7331 [wandb_run.py:_footer_history_summary_info():3869] rendering summary
+2024-01-09 13:40:44,131 INFO    MainThread:7331 [wandb_run.py:_footer_sync_info():3796] logging synced files
