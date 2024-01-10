@@ -1,10 +1,10 @@
 wandb:
   project: murata_exp
-  exp_num: 5
+  exp_num: 4
   tags: [bert]
 path:
-  data_file_name: /content/drive/MyDrive/murata_labo_exp/data/multi_classification_chunk_labels.csv
-  test_file_name: /content/drive/MyDrive/murata_labo_exp/data/multi_classification_chunk_labels_test.csv
+  data_file_name: /content/drive/MyDrive/murata_labo_exp/data/multi_classification_chunk_other_labels.csv
+  test_file_name: /content/drive/MyDrive/murata_labo_exp/data/multi_classification_chunk_other_labels_test.csv
   checkpoint_path: checkpoints
 model:
   d_model: 768
@@ -12,7 +12,6 @@ model:
   hidden_size2: 256
   max_length: 512
   num_classes: 16
-  focal_loss_gamma: 1.5
 training:
   train_size: 0.8
   n_epochs: 4
