@@ -16,7 +16,7 @@ training:
   train_size: 0.8
   n_epochs: 4
   seed: 40
-  batch_size: 16
+  batch_size: 1024
   max_length: 64
   learning_rate: 0.0001
   text_column_name: chunk
