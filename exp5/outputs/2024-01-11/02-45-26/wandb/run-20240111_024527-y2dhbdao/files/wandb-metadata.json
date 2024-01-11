@@ -1,0 +1,88 @@
+{
+    "os": "Linux-6.1.58+-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "heartbeatAt": "2024-01-11T02:45:28.632519",
+    "startedAt": "2024-01-11T02:45:27.931108",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/main.py",
+    "codePathLocal": null,
+    "codePath": "exp5/main.py",
+    "git": {
+        "remote": "https://tnkryoga:@github.com/tnkryoga/murata_labo_first.git",
+        "commit": "f92aa6c7038bcbeec4745dbeb8888454f574fe57"
+    },
+    "email": "tanaryo-miyabi818@outlook.jp",
+    "root": "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src",
+    "host": "486fc98cc7a9",
+    "username": "root",
+    "executable": "/usr/bin/python3",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 2000.1900000000003,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2000.19,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.19,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.19,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.19,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.19,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.19,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.19,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.19,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 166.77415084838867,
+            "used": 27.099517822265625
+        }
+    },
+    "gpu": "Tesla T4",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "Tesla T4",
+            "memory_total": 16106127360
+        }
+    ],
+    "memory": {
+        "total": 50.993690490722656
+    }
+}

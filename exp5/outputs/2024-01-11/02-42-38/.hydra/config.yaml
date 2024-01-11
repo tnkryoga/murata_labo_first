@@ -1,0 +1,28 @@
+wandb:
+  project: murata_exp
+  exp_num: 5
+  tags:
+  - bert
+path:
+  data_file_name: /content/drive/MyDrive/murata_labo_exp/data/multi_classification_sentence_labels.csv
+  test_file_name: /content/drive/MyDrive/murata_labo_exp/data/multi_classification_sentence_labels_test.csv
+  checkpoint_path: checkpoints
+model:
+  d_model: 768
+  hidden_size: 1024
+  hidden_size2: 256
+  max_length: 512
+  num_classes: 16
+  focal_loss_gamma: 1.5
+training:
+  train_size: 0.8
+  n_epochs: 8
+  seed: 40
+  batch_size: 32
+  max_length: 64
+  learning_rate: 0.0001
+  text_column_name: chunk
+  label_column_name: label
+callbacks:
+  patience: 3
+  patience_min_delta: 0
