@@ -3,8 +3,8 @@ wandb:
   exp_num: 6
   tags: [bert]
 path:
-  data_file_name: /content/drive/MyDrive/murata_labo_exp/data/multi_classification_sentence_labels.csv
-  test_file_name: /content/drive/MyDrive/murata_labo_exp/data/multi_classification_sentence_labels_test.csv
+  data_file_name: /content/drive/MyDrive/murata_labo_exp/data/multi_classification_chunk_labels.csv
+  test_file_name: /content/drive/MyDrive/murata_labo_exp/data/multi_classification_chunk_labels_test.csv
   checkpoint_path: checkpoints
 model:
   d_model: 768
