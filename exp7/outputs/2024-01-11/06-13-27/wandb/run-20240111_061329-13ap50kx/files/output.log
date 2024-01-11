@@ -1,0 +1,1129 @@
+
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:389: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m   [22m┃[1m Name                        [22m┃[1m Type                      [22m┃[1m Params [22m┃
+┡━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0 │ bert                        │ BertModel                 │ 89.1 M │
+│ 1 │ classifiers                 │ ModuleList                │  6.3 M │
+│ 2 │ hidden_layer                │ ModuleList                │  8.2 K │
+│ 3 │ sigmoid                     │ Sigmoid                   │      0 │
+│ 4 │ criterion                   │ InverseClassFrequencyLoss │      0 │
+│ 5 │ metrics                     │ MetricCollection          │      0 │
+│ 6 │ metrics_per_label_accuracy  │ MetricCollection          │      0 │
+│ 7 │ metrics_per_label_precision │ MetricCollection          │      0 │
+│ 8 │ metrics_per_label_recall    │ MetricCollection          │      0 │
+│ 9 │ metrics_per_label_f1score   │ MetricCollection          │      0 │
+└───┴─────────────────────────────┴───────────────────────────┴────────┘
+[1mTrainable params[22m: 13.4 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 95.4 M
+[1mTotal estimated model params size (MB)[22m: 381
+[31, 27, 9, 20, 7, 10, 4, 16]
+tensor([0.0323, 0.0370, 0.1111, 0.0500, 0.1428, 0.1000, 0.2499, 0.0625],
+       device='cuda:0')
+tensor(0.0684, device='cuda:0')
+[29, 28, 15, 18, 12, 16, 11, 15]
+tensor([0.0345, 0.0357, 0.0667, 0.0556, 0.0833, 0.0625, 0.0909, 0.0667],
+       device='cuda:0')
+tensor(0.0430, device='cuda:0')
+[60, 55, 24, 38, 19, 26, 15, 31]
+tensor([0.0167, 0.0182, 0.0417, 0.0263, 0.0526, 0.0385, 0.0667, 0.0323],
+       device='cuda:0')
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:293: The number of
+training batches (46) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a
+lower value for log_every_n_steps if you want to see logs for the training epoch.
+[31, 27, 12, 22, 10, 10, 4, 17]
+tensor([0.0323, 0.0370, 0.0833, 0.0455, 0.1000, 0.1000, 0.2499, 0.0588],
+       device='cuda:0')
+tensor(0.0613, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 26, 13, 23, 9, 12, 8, 18]
+[37mEpoch 0/3 [39m [35m╸[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m1/46[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: 50kx train/loss:     
+       device='cuda:0')
+tensor(0.0490, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 25, 9, 13, 9, 8, 4, 18]
+tensor([0.0333, 0.0400, 0.1111, 0.0769, 0.1111, 0.1250, 0.2499, 0.0556],
+       device='cuda:0')
+tensor(0.0698, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 26, 11, 20, 12, 7, 6, 17]
+tensor([0.0345, 0.0385, 0.0909, 0.0500, 0.0833, 0.1428, 0.1666, 0.0588],
+       device='cuda:0')
+tensor(0.0575, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 28, 12, 15, 9, 11, 4, 16]
+tensor([0.0345, 0.0357, 0.0833, 0.0667, 0.1111, 0.0909, 0.2499, 0.0625],
+       device='cuda:0')
+tensor(0.0636, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 25, 13, 18, 11, 10, 9, 17]
+tensor([0.0345, 0.0400, 0.0769, 0.0556, 0.0909, 0.1000, 0.1111, 0.0588],
+       device='cuda:0')
+tensor(0.0489, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 28, 11, 20, 11, 11, 5, 17]
+tensor([0.0333, 0.0357, 0.0909, 0.0500, 0.0909, 0.0909, 0.2000, 0.0588],
+       device='cuda:0')
+tensor(0.0560, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[37mEpoch 0/3 [39m [35m━━━━[90m╺━━━━━━━━━━━━━━━━━━━━━━━[39m [37m7/46[39m [37m0:00:02 • 0:00:14[39m [37m2.81it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.056                       
+tensor([0.0333, 0.0370, 0.0667, 0.0455, 0.0909, 0.1111, 0.1250, 0.0526],
+       device='cuda:0')
+tensor(0.0482, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 28, 11, 20, 10, 11, 2, 16]
+tensor([0.0323, 0.0357, 0.0909, 0.0500, 0.1000, 0.0909, 0.4998, 0.0625],
+       device='cuda:0')
+tensor(0.0829, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 27, 9, 18, 12, 13, 5, 15]
+tensor([0.0323, 0.0370, 0.1111, 0.0556, 0.0833, 0.0769, 0.2000, 0.0667],
+       device='cuda:0')
+tensor(0.0569, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 27, 8, 20, 11, 10, 9, 17]
+tensor([0.0323, 0.0370, 0.1250, 0.0500, 0.0909, 0.1000, 0.1111, 0.0588],
+       device='cuda:0')
+tensor(0.0518, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 27, 12, 12, 5, 5, 6, 17]
+tensor([0.0312, 0.0370, 0.0833, 0.0833, 0.2000, 0.2000, 0.1666, 0.0588],
+       device='cuda:0')
+tensor(0.0742, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 28, 13, 22, 9, 9, 11, 20]
+tensor([0.0345, 0.0357, 0.0769, 0.0455, 0.1111, 0.1111, 0.0909, 0.0500],
+       device='cuda:0')
+tensor(0.0473, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[37mEpoch 0/3 [39m [35m━━━━━━━╸[90m━━━━━━━━━━━━━━━━━━━[39m [37m13/46[39m [37m0:00:04 • 0:00:12[39m [37m2.78it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.047                       
+tensor([0.0333, 0.0370, 0.0833, 0.0455, 0.0625, 0.0833, 0.1666, 0.0526],
+       device='cuda:0')
+tensor(0.0481, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[28, 24, 9, 17, 8, 5, 7, 14]
+tensor([0.0357, 0.0417, 0.1111, 0.0588, 0.1250, 0.2000, 0.1428, 0.0714],
+       device='cuda:0')
+tensor(0.0675, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 22, 10, 18, 13, 7, 3, 16]
+tensor([0.0333, 0.0455, 0.1000, 0.0556, 0.0769, 0.1428, 0.3332, 0.0625],
+       device='cuda:0')
+tensor(0.0730, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 24, 9, 14, 9, 8, 8, 16]
+tensor([0.0323, 0.0417, 0.1111, 0.0714, 0.1111, 0.1250, 0.1250, 0.0625],
+       device='cuda:0')
+tensor(0.0587, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 29, 14, 18, 12, 10, 8, 20]
+tensor([0.0345, 0.0345, 0.0714, 0.0556, 0.0833, 0.1000, 0.1250, 0.0500],
+       device='cuda:0')
+tensor(0.0472, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[37mEpoch 0/3 [39m [35m━━━━━━━━━━╸[90m━━━━━━━━━━━━━━━━[39m [37m18/46[39m [37m0:00:06 • 0:00:11[39m [37m2.77it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.047                       
+tensor([0.0323, 0.0357, 0.0714, 0.0500, 0.0833, 0.1000, 0.1250, 0.0625],
+       device='cuda:0')
+tensor(0.0475, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 26, 12, 21, 8, 7, 4, 19]
+tensor([0.0345, 0.0385, 0.0833, 0.0476, 0.1250, 0.1428, 0.2499, 0.0526],
+       device='cuda:0')
+tensor(0.0662, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 26, 12, 16, 7, 6, 5, 16]
+tensor([0.0345, 0.0385, 0.0833, 0.0625, 0.1428, 0.1666, 0.2000, 0.0625],
+       device='cuda:0')
+tensor(0.0676, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 25, 15, 24, 13, 12, 12, 16]
+tensor([0.0333, 0.0400, 0.0667, 0.0417, 0.0769, 0.0833, 0.0833, 0.0625],
+       device='cuda:0')
+tensor(0.0411, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[28, 22, 9, 14, 15, 8, 3, 13]
+tensor([0.0357, 0.0455, 0.1111, 0.0714, 0.0667, 0.1250, 0.3332, 0.0769],
+       device='cuda:0')
+tensor(0.0743, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 29, 10, 18, 15, 11, 7, 15]
+tensor([0.0323, 0.0345, 0.1000, 0.0556, 0.0667, 0.0909, 0.1428, 0.0667],
+       device='cuda:0')
+tensor(0.0499, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[37mEpoch 0/3 [39m [35m━━━━━━━━━━━━━━[90m╺━━━━━━━━━━━━[39m [37m24/46[39m [37m0:00:08 • 0:00:08[39m [37m2.77it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.045                       
+tensor([0.0333, 0.0345, 0.0909, 0.0526, 0.1666, 0.0909, 0.1111, 0.0588],
+       device='cuda:0')
+tensor(0.0542, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 25, 11, 16, 13, 8, 4, 14]
+tensor([0.0345, 0.0400, 0.0909, 0.0625, 0.0769, 0.1250, 0.2499, 0.0714],
+       device='cuda:0')
+tensor(0.0642, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 24, 13, 20, 10, 11, 5, 13]
+tensor([0.0345, 0.0417, 0.0769, 0.0500, 0.1000, 0.0909, 0.2000, 0.0769],
+       device='cuda:0')
+tensor(0.0571, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 26, 11, 18, 9, 10, 5, 17]
+tensor([0.0345, 0.0385, 0.0909, 0.0556, 0.1111, 0.1000, 0.2000, 0.0588],
+       device='cuda:0')
+tensor(0.0585, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 28, 13, 21, 10, 12, 12, 13]
+tensor([0.0312, 0.0357, 0.0769, 0.0476, 0.1000, 0.0833, 0.0833, 0.0769],
+       device='cuda:0')
+tensor(0.0451, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 27, 8, 11, 9, 7, 3, 13]
+tensor([0.0323, 0.0370, 0.1250, 0.0909, 0.1111, 0.1428, 0.3332, 0.0769],
+       device='cuda:0')
+tensor(0.0818, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[37mEpoch 0/3 [39m [35m━━━━━━━━━━━━━━━━━╸[90m━━━━━━━━━[39m [37m30/46[39m [37m0:00:10 • 0:00:06[39m [37m2.77it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.045                       
+tensor([0.0312, 0.0357, 0.0833, 0.0500, 0.1250, 0.1250, 0.1250, 0.0714],
+       device='cuda:0')
+tensor(0.0546, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 22, 7, 16, 8, 8, 5, 14]
+tensor([0.0345, 0.0455, 0.1428, 0.0625, 0.1250, 0.1250, 0.2000, 0.0714],
+       device='cuda:0')
+tensor(0.0688, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 27, 14, 21, 11, 12, 11, 20]
+tensor([0.0323, 0.0370, 0.0714, 0.0476, 0.0909, 0.0833, 0.0909, 0.0500],
+       device='cuda:0')
+tensor(0.0422, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 29, 11, 22, 12, 10, 4, 20]
+tensor([0.0323, 0.0345, 0.0909, 0.0455, 0.0833, 0.1000, 0.2499, 0.0500],
+       device='cuda:0')
+tensor(0.0580, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 31, 13, 19, 11, 13, 7, 23]
+tensor([0.0312, 0.0323, 0.0769, 0.0526, 0.0909, 0.0769, 0.1428, 0.0435],
+       device='cuda:0')
+tensor(0.0459, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[37mEpoch 0/3 [39m [35m━━━━━━━━━━━━━━━━━━━━╸[90m━━━━━━[39m [37m35/46[39m [37m0:00:12 • 0:00:04[39m [37m2.77it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.046                       
+tensor([0.0345, 0.0455, 0.1428, 0.0667, 0.2499, 0.1111, 0.1666, 0.0588],
+       device='cuda:0')
+tensor(0.0752, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 24, 6, 14, 8, 4, 7, 13]
+tensor([0.0323, 0.0417, 0.1666, 0.0714, 0.1250, 0.2499, 0.1428, 0.0769],
+       device='cuda:0')
+tensor(0.0778, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 30, 16, 19, 13, 8, 6, 16]
+tensor([0.0333, 0.0333, 0.0625, 0.0526, 0.0769, 0.1250, 0.1666, 0.0625],
+       device='cuda:0')
+tensor(0.0514, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 30, 13, 23, 15, 13, 8, 20]
+tensor([0.0323, 0.0333, 0.0769, 0.0435, 0.0667, 0.0769, 0.1250, 0.0500],
+       device='cuda:0')
+tensor(0.0417, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 27, 10, 18, 6, 7, 9, 14]
+tensor([0.0345, 0.0370, 0.1000, 0.0556, 0.1666, 0.1428, 0.1111, 0.0714],
+       device='cuda:0')
+tensor(0.0608, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 28, 13, 18, 10, 12, 9, 21]
+tensor([0.0312, 0.0357, 0.0769, 0.0556, 0.1000, 0.0833, 0.1111, 0.0476],
+       device='cuda:0')
+tensor(0.0450, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[37mEpoch 0/3 [39m [35m━━━━━━━━━━━━━━━━━━━━━━━━[90m╺━━[39m [37m41/46[39m [37m0:00:15 • 0:00:02[39m [37m2.77it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.045                       
+tensor([0.0333, 0.0345, 0.0833, 0.0556, 0.0714, 0.1000, 0.1111, 0.0435],
+       device='cuda:0')
+tensor(0.0444, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 26, 12, 17, 10, 11, 7, 21]
+tensor([0.0323, 0.0385, 0.0833, 0.0588, 0.1000, 0.0909, 0.1428, 0.0476],
+       device='cuda:0')
+tensor(0.0499, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 29, 21, 22, 16, 11, 13, 19]
+tensor([0.0333, 0.0345, 0.0476, 0.0455, 0.0625, 0.0909, 0.0769, 0.0526],
+       device='cuda:0')
+tensor(0.0365, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 25, 14, 14, 8, 9, 7, 14]
+tensor([0.0345, 0.0400, 0.0714, 0.0714, 0.1250, 0.1111, 0.1428, 0.0714],
+       device='cuda:0')
+tensor(0.0562, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[25, 25, 4, 22, 5, 9, 7, 15]
+tensor([0.0400, 0.0400, 0.2499, 0.0455, 0.2000, 0.1111, 0.1428, 0.0667],
+       device='cuda:0')
+tensor(0.0748, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[37mEpoch 0/3 [39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:16 • 0:00:00[39m [37m2.77it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.075                       
+tensor([0.0323, 0.0370, 0.1111, 0.0500, 0.1428, 0.1000, 0.2499, 0.0625],
+       device='cuda:0')
+tensor(0.0657, device='cuda:0')
+[29, 28, 15, 18, 12, 16, 11, 15]
+tensor([0.0345, 0.0357, 0.0667, 0.0556, 0.0833, 0.0625, 0.0909, 0.0667],
+       device='cuda:0')
+tensor(0.0406, device='cuda:0')
+[30, 25, 12, 18, 14, 9, 5, 16]
+tensor([0.0333, 0.0400, 0.0833, 0.0556, 0.0714, 0.1111, 0.2000, 0.0625],
+       device='cuda:0')
+tensor(0.0549, device='cuda:0')
+[29, 27, 8, 15, 11, 8, 4, 17]
+tensor([0.0345, 0.0370, 0.1250, 0.0667, 0.0909, 0.1250, 0.2499, 0.0588],
+       device='cuda:0')
+tensor(0.0662, device='cuda:0')
+[31, 30, 10, 18, 13, 11, 6, 16]
+tensor([0.0323, 0.0333, 0.1000, 0.0556, 0.0769, 0.0909, 0.1666, 0.0625],
+       device='cuda:0')
+tensor(0.0512, device='cuda:0')
+[28, 21, 7, 13, 8, 4, 5, 10]
+tensor([0.0357, 0.0476, 0.1428, 0.0769, 0.1250, 0.2499, 0.2000, 0.1000],
+       device='cuda:0')
+tensor(0.0833, device='cuda:0')
+[37mEpoch 0/3 [39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:16 • 0:00:00[39m [37m2.77it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.075                       
+       device='cuda:0')
+       device='cuda:0')
+tensor(0.0572, device='cuda:0')
+[31, 29, 13, 19, 14, 8, 7, 16]
+tensor([0.0323, 0.0345, 0.0769, 0.0526, 0.0714, 0.1250, 0.1428, 0.0625],
+       device='cuda:0')
+tensor(0.0494, device='cuda:0')
+[31, 28, 15, 22, 14, 10, 8, 22]
+tensor([0.0323, 0.0357, 0.0667, 0.0455, 0.0714, 0.1000, 0.1250, 0.0455],
+       device='cuda:0')
+tensor(0.0430, device='cuda:0')
+[29, 25, 14, 21, 12, 9, 9, 16]
+tensor([0.0345, 0.0400, 0.0714, 0.0476, 0.0833, 0.1111, 0.1111, 0.0625],
+       device='cuda:0')
+tensor(0.0464, device='cuda:0')
+[29, 30, 14, 23, 12, 12, 7, 18]
+tensor([0.0345, 0.0333, 0.0714, 0.0435, 0.0833, 0.0833, 0.1428, 0.0556],
+       device='cuda:0')
+tensor(0.0450, device='cuda:0')
+[14, 15, 4, 10, 4, 4, 5, 7]
+tensor([0.0714, 0.0667, 0.2499, 0.1000, 0.2499, 0.2499, 0.2000, 0.1428],
+       device='cuda:0')
+tensor(0.1105, device='cuda:0')
+[342, 313, 133, 216, 130, 110, 76, 186]
+tensor([0.0029, 0.0032, 0.0075, 0.0046, 0.0077, 0.0091, 0.0132, 0.0054],
+       device='cuda:0')
+tensor([[1, 1, 0,  ..., 0, 0, 1],
+        [1, 1, 1,  ..., 1, 1, 1],
+        [1, 0, 0,  ..., 0, 0, 0],
+        ...,
+        [1, 1, 0,  ..., 0, 0, 1],
+        [1, 1, 0,  ..., 0, 0, 1],
+        [1, 1, 1,  ..., 0, 1, 0]], device='cuda:0')
+[37mEpoch 0/3 [39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:16 • 0:00:00[39m [37m2.77it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.075                       
+Epoch 0, global step 46: 'val_loss' reached 0.00445 (best 0.00445), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp7/outputs/2024-01-11/06-13-27/wandb/run-20240111_061329-13ap50kx/files/checkpoints/epoch=0.ckpt' as top 1
+tensor([0.0007, 0.0008, 0.0019, 0.0012, 0.0021, 0.0023, 0.0032, 0.0013],
+       device='cuda:0')
+Epoch 1/3  [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m0/46[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.075                       
+tensor([0.0333, 0.0357, 0.0667, 0.0500, 0.1250, 0.0909, 0.2499, 0.0714],
+       device='cuda:0')
+tensor(0.0605, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 30, 10, 21, 11, 11, 7, 20]
+tensor([0.0312, 0.0333, 0.1000, 0.0476, 0.0909, 0.0909, 0.1428, 0.0500],
+       device='cuda:0')
+tensor(0.0485, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 28, 12, 22, 13, 14, 6, 20]
+tensor([0.0323, 0.0357, 0.0833, 0.0455, 0.0769, 0.0714, 0.1666, 0.0500],
+       device='cuda:0')
+tensor(0.0464, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 27, 11, 19, 12, 14, 6, 17]
+tensor([0.0333, 0.0370, 0.0909, 0.0526, 0.0833, 0.0714, 0.1666, 0.0588],
+       device='cuda:0')
+tensor(0.0492, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 26, 11, 16, 11, 11, 10, 18]
+Epoch 1/3  [35m━━[90m╺━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m4/46[39m [37m0:00:01 • 0:00:16[39m [37m2.76it/s[39m [37mv_num: 50kx train/loss:     
+tensor([0.0333, 0.0385, 0.0909, 0.0625, 0.0909, 0.0909, 0.1000, 0.0556],
+       device='cuda:0')
+tensor(0.0470, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 30, 8, 19, 13, 11, 5, 18]
+tensor([0.0312, 0.0333, 0.1250, 0.0526, 0.0769, 0.0909, 0.2000, 0.0556],
+       device='cuda:0')
+tensor(0.0553, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 23, 13, 13, 14, 12, 7, 19]
+tensor([0.0333, 0.0435, 0.0769, 0.0769, 0.0714, 0.0833, 0.1428, 0.0526],
+       device='cuda:0')
+tensor(0.0488, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 30, 12, 23, 12, 5, 12, 19]
+tensor([0.0323, 0.0333, 0.0833, 0.0435, 0.0833, 0.2000, 0.0833, 0.0526],
+       device='cuda:0')
+tensor(0.0502, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 29, 8, 15, 10, 12, 7, 16]
+tensor([0.0323, 0.0345, 0.1250, 0.0667, 0.1000, 0.0833, 0.1428, 0.0625],
+       device='cuda:0')
+tensor(0.0538, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 25, 10, 22, 10, 12, 6, 16]
+tensor([0.0345, 0.0400, 0.1000, 0.0455, 0.1000, 0.0833, 0.1666, 0.0625],
+       device='cuda:0')
+tensor(0.0524, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 1/3  [35m━━━━━╸[90m━━━━━━━━━━━━━━━━━━━━━[39m [37m10/46[39m [37m0:00:03 • 0:00:14[39m [37m2.75it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.052                       
+tensor([0.0345, 0.0435, 0.0833, 0.0588, 0.1111, 0.1666, 0.1666, 0.0556],
+       device='cuda:0')
+tensor(0.0602, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 23, 12, 18, 8, 11, 8, 10]
+tensor([0.0333, 0.0435, 0.0833, 0.0556, 0.1250, 0.0909, 0.1250, 0.1000],
+       device='cuda:0')
+tensor(0.0546, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 28, 16, 21, 9, 9, 11, 22]
+tensor([0.0323, 0.0357, 0.0625, 0.0476, 0.1111, 0.1111, 0.0909, 0.0455],
+       device='cuda:0')
+tensor(0.0438, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[27, 25, 11, 19, 10, 7, 7, 14]
+tensor([0.0370, 0.0400, 0.0909, 0.0526, 0.1000, 0.1428, 0.1428, 0.0714],
+       device='cuda:0')
+tensor(0.0567, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 23, 4, 17, 9, 10, 6, 12]
+tensor([0.0345, 0.0435, 0.2499, 0.0588, 0.1111, 0.1000, 0.1666, 0.0833],
+       device='cuda:0')
+tensor(0.0713, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 1/3  [35m━━━━━━━━╸[90m━━━━━━━━━━━━━━━━━━[39m [37m15/46[39m [37m0:00:05 • 0:00:12[39m [37m2.74it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.057                       
+tensor([0.0323, 0.0357, 0.0714, 0.0556, 0.0833, 0.1000, 0.1111, 0.0667],
+       device='cuda:0')
+tensor(0.0454, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 27, 9, 21, 8, 13, 7, 20]
+tensor([0.0323, 0.0370, 0.1111, 0.0476, 0.1250, 0.0769, 0.1428, 0.0500],
+       device='cuda:0')
+tensor(0.0513, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 26, 10, 11, 12, 5, 7, 15]
+tensor([0.0345, 0.0385, 0.1000, 0.0909, 0.0833, 0.2000, 0.1428, 0.0667],
+       device='cuda:0')
+tensor(0.0641, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 29, 8, 20, 7, 5, 4, 15]
+tensor([0.0312, 0.0345, 0.1250, 0.0500, 0.1428, 0.2000, 0.2499, 0.0667],
+       device='cuda:0')
+tensor(0.0751, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 27, 13, 17, 9, 10, 5, 17]
+tensor([0.0345, 0.0370, 0.0769, 0.0588, 0.1111, 0.1000, 0.2000, 0.0588],
+       device='cuda:0')
+tensor(0.0561, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 1/3  [35m━━━━━━━━━━━╸[90m━━━━━━━━━━━━━━━[39m [37m20/46[39m [37m0:00:07 • 0:00:10[39m [37m2.74it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.056                       
+tensor([0.0357, 0.0400, 0.0909, 0.0625, 0.1000, 0.1111, 0.3332, 0.0909],
+       device='cuda:0')
+tensor(0.0726, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 24, 14, 19, 7, 10, 4, 19]
+tensor([0.0345, 0.0417, 0.0714, 0.0526, 0.1428, 0.1000, 0.2499, 0.0526],
+       device='cuda:0')
+tensor(0.0622, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 29, 11, 17, 10, 11, 9, 18]
+tensor([0.0333, 0.0345, 0.0909, 0.0588, 0.1000, 0.0909, 0.1111, 0.0556],
+       device='cuda:0')
+tensor(0.0470, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 25, 11, 19, 9, 7, 5, 17]
+tensor([0.0333, 0.0400, 0.0909, 0.0526, 0.1111, 0.1428, 0.2000, 0.0588],
+       device='cuda:0')
+tensor(0.0607, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 28, 16, 18, 11, 12, 7, 19]
+tensor([0.0333, 0.0357, 0.0625, 0.0556, 0.0909, 0.0833, 0.1428, 0.0526],
+       device='cuda:0')
+tensor(0.0455, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 28, 12, 14, 13, 12, 10, 24]
+tensor([0.0323, 0.0357, 0.0833, 0.0714, 0.0769, 0.0833, 0.1000, 0.0417],
+       device='cuda:0')
+tensor(0.0428, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 1/3  [35m━━━━━━━━━━━━━━━[90m╺━━━━━━━━━━━[39m [37m26/46[39m [37m0:00:09 • 0:00:08[39m [37m2.74it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.043                       
+tensor([0.0333, 0.0385, 0.0625, 0.0625, 0.0833, 0.0909, 0.1250, 0.0500],
+       device='cuda:0')
+tensor(0.0448, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 26, 8, 18, 10, 6, 7, 22]
+tensor([0.0345, 0.0385, 0.1250, 0.0556, 0.1000, 0.1666, 0.1428, 0.0455],
+       device='cuda:0')
+tensor(0.0589, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 28, 14, 19, 12, 8, 8, 13]
+tensor([0.0323, 0.0357, 0.0714, 0.0526, 0.0833, 0.1250, 0.1250, 0.0769],
+       device='cuda:0')
+tensor(0.0492, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 28, 12, 18, 14, 4, 4, 16]
+tensor([0.0323, 0.0357, 0.0833, 0.0556, 0.0714, 0.2499, 0.2499, 0.0625],
+       device='cuda:0')
+tensor(0.0700, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[27, 24, 12, 19, 8, 9, 7, 13]
+tensor([0.0370, 0.0417, 0.0833, 0.0526, 0.1250, 0.1111, 0.1428, 0.0769],
+       device='cuda:0')
+tensor(0.0555, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 1/3  [35m━━━━━━━━━━━━━━━━━━[90m╺━━━━━━━━[39m [37m31/46[39m [37m0:00:11 • 0:00:06[39m [37m2.74it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.056                       
+tensor([0.0333, 0.0400, 0.1111, 0.0667, 0.1111, 0.3332, 0.1428, 0.0769],
+       device='cuda:0')
+tensor(0.0768, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 27, 11, 20, 12, 12, 5, 17]
+tensor([0.0312, 0.0370, 0.0909, 0.0500, 0.0833, 0.0833, 0.2000, 0.0588],
+       device='cuda:0')
+tensor(0.0521, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 28, 18, 21, 16, 12, 14, 21]
+tensor([0.0312, 0.0357, 0.0556, 0.0476, 0.0625, 0.0833, 0.0714, 0.0476],
+       device='cuda:0')
+tensor(0.0345, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 28, 13, 19, 15, 9, 7, 18]
+tensor([0.0323, 0.0357, 0.0769, 0.0526, 0.0667, 0.1111, 0.1428, 0.0556],
+       device='cuda:0')
+tensor(0.0467, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 25, 11, 18, 4, 12, 6, 17]
+tensor([0.0312, 0.0400, 0.0909, 0.0556, 0.2499, 0.0833, 0.1666, 0.0588],
+       device='cuda:0')
+tensor(0.0644, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 27, 12, 19, 7, 7, 6, 20]
+tensor([0.0323, 0.0370, 0.0833, 0.0526, 0.1428, 0.1428, 0.1666, 0.0500],
+       device='cuda:0')
+tensor(0.0585, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 1/3  [35m━━━━━━━━━━━━━━━━━━━━━╸[90m━━━━━[39m [37m37/46[39m [37m0:00:13 • 0:00:04[39m [37m2.74it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.058                       
+tensor([0.0345, 0.0357, 0.0833, 0.0435, 0.0833, 0.0714, 0.1250, 0.0500],
+       device='cuda:0')
+tensor(0.0425, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[27, 24, 9, 17, 8, 10, 7, 17]
+tensor([0.0370, 0.0417, 0.1111, 0.0588, 0.1250, 0.1000, 0.1428, 0.0588],
+       device='cuda:0')
+tensor(0.0556, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 25, 13, 21, 6, 7, 8, 16]
+tensor([0.0312, 0.0400, 0.0769, 0.0476, 0.1666, 0.1428, 0.1250, 0.0625],
+       device='cuda:0')
+tensor(0.0574, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 26, 8, 17, 8, 8, 2, 14]
+tensor([0.0333, 0.0385, 0.1250, 0.0588, 0.1250, 0.1250, 0.4998, 0.0714],
+       device='cuda:0')
+tensor(0.0904, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 26, 13, 20, 9, 11, 9, 15]
+tensor([0.0345, 0.0385, 0.0769, 0.0500, 0.1111, 0.0909, 0.1111, 0.0667],
+       device='cuda:0')
+tensor(0.0471, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 28, 9, 18, 11, 4, 9, 13]
+tensor([0.0333, 0.0357, 0.1111, 0.0556, 0.0909, 0.2499, 0.1111, 0.0769],
+       device='cuda:0')
+tensor(0.0634, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 1/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━╸[90m━━[39m [37m42/46[39m [37m0:00:15 • 0:00:02[39m [37m2.74it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.047                       
+tensor([0.0312, 0.0333, 0.0714, 0.0400, 0.0769, 0.0769, 0.1666, 0.0556],
+       device='cuda:0')
+tensor(0.0444, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 27, 11, 18, 11, 9, 2, 15]
+tensor([0.0333, 0.0370, 0.0909, 0.0556, 0.0909, 0.1111, 0.4998, 0.0667],
+       device='cuda:0')
+tensor(0.0826, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[24, 22, 8, 17, 9, 6, 5, 14]
+tensor([0.0417, 0.0455, 0.1250, 0.0588, 0.1111, 0.1666, 0.2000, 0.0714],
+       device='cuda:0')
+tensor(0.0675, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 27, 9, 20, 7, 10, 4, 16]
+tensor([0.0323, 0.0370, 0.1111, 0.0500, 0.1428, 0.1000, 0.2499, 0.0625],
+       device='cuda:0')
+tensor(0.0647, device='cuda:0')
+[29, 28, 15, 18, 12, 16, 11, 15]
+tensor([0.0345, 0.0357, 0.0667, 0.0556, 0.0833, 0.0625, 0.0909, 0.0667],
+       device='cuda:0')
+tensor(0.0398, device='cuda:0')
+Epoch 1/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:17 • 0:00:00[39m [37m2.75it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.068                       
+tensor([0.0333, 0.0400, 0.0833, 0.0556, 0.0714, 0.1111, 0.2000, 0.0625],
+       device='cuda:0')
+tensor(0.0541, device='cuda:0')
+[29, 27, 8, 15, 11, 8, 4, 17]
+tensor([0.0345, 0.0370, 0.1250, 0.0667, 0.0909, 0.1250, 0.2499, 0.0588],
+       device='cuda:0')
+tensor(0.0656, device='cuda:0')
+[31, 30, 10, 18, 13, 11, 6, 16]
+tensor([0.0323, 0.0333, 0.1000, 0.0556, 0.0769, 0.0909, 0.1666, 0.0625],
+       device='cuda:0')
+tensor(0.0503, device='cuda:0')
+[28, 21, 7, 13, 8, 4, 5, 10]
+tensor([0.0357, 0.0476, 0.1428, 0.0769, 0.1250, 0.2499, 0.2000, 0.1000],
+       device='cuda:0')
+tensor(0.0826, device='cuda:0')
+[30, 28, 12, 19, 9, 9, 5, 17]
+tensor([0.0333, 0.0357, 0.0833, 0.0526, 0.1111, 0.1111, 0.2000, 0.0588],
+       device='cuda:0')
+tensor(0.0562, device='cuda:0')
+[31, 29, 13, 19, 14, 8, 7, 16]
+tensor([0.0323, 0.0345, 0.0769, 0.0526, 0.0714, 0.1250, 0.1428, 0.0625],
+       device='cuda:0')
+tensor(0.0483, device='cuda:0')
+Epoch 1/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:17 • 0:00:00[39m [37m2.75it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.068                       
+tensor([0.0323, 0.0357, 0.0667, 0.0455, 0.0714, 0.1000, 0.1250, 0.0455],
+       device='cuda:0')
+tensor(0.0419, device='cuda:0')
+[29, 25, 14, 21, 12, 9, 9, 16]
+tensor([0.0345, 0.0400, 0.0714, 0.0476, 0.0833, 0.1111, 0.1111, 0.0625],
+       device='cuda:0')
+tensor(0.0454, device='cuda:0')
+[29, 30, 14, 23, 12, 12, 7, 18]
+tensor([0.0345, 0.0333, 0.0714, 0.0435, 0.0833, 0.0833, 0.1428, 0.0556],
+       device='cuda:0')
+tensor(0.0442, device='cuda:0')
+[14, 15, 4, 10, 4, 4, 5, 7]
+tensor([0.0714, 0.0667, 0.2499, 0.1000, 0.2499, 0.2499, 0.2000, 0.1428],
+       device='cuda:0')
+tensor(0.1084, device='cuda:0')
+[342, 313, 133, 216, 130, 110, 76, 186]
+tensor([0.0029, 0.0032, 0.0075, 0.0046, 0.0077, 0.0091, 0.0132, 0.0054],
+       device='cuda:0')
+tensor([[1, 1, 0,  ..., 1, 0, 0],
+        [1, 1, 1,  ..., 1, 0, 0],
+        [1, 0, 0,  ..., 0, 0, 1],
+        ...,
+        [1, 1, 0,  ..., 0, 0, 1],
+        [1, 1, 0,  ..., 0, 0, 1],
+        [1, 1, 0,  ..., 0, 0, 1]], device='cuda:0')
+[1381, 1222, 527, 850, 473, 435, 313, 775]
+tensor([0.0007, 0.0008, 0.0019, 0.0012, 0.0021, 0.0023, 0.0032, 0.0013],
+       device='cuda:0')
+Epoch 1/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:17 • 0:00:00[39m [37m2.75it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.068                       
+Epoch 1, global step 92: 'val_loss' reached 0.00437 (best 0.00437), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp7/outputs/2024-01-11/06-13-27/wandb/run-20240111_061329-13ap50kx/files/checkpoints/epoch=1.ckpt' as top 1
+tensor([0.0323, 0.0370, 0.0909, 0.0526, 0.1000, 0.1000, 0.2000, 0.0500],
+       device='cuda:0')
+tensor(0.0545, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 2/3  [35m╸[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m1/46[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.055                       
+tensor([0.0323, 0.0345, 0.0667, 0.0500, 0.0769, 0.0909, 0.1250, 0.0556],
+       device='cuda:0')
+tensor(0.0426, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 29, 13, 19, 7, 10, 8, 11]
+tensor([0.0333, 0.0345, 0.0769, 0.0526, 0.1428, 0.1000, 0.1250, 0.0909],
+       device='cuda:0')
+tensor(0.0539, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 30, 12, 20, 10, 10, 7, 18]
+tensor([0.0312, 0.0333, 0.0833, 0.0500, 0.1000, 0.1000, 0.1428, 0.0556],
+       device='cuda:0')
+tensor(0.0482, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 29, 9, 22, 10, 9, 11, 14]
+tensor([0.0323, 0.0345, 0.1111, 0.0455, 0.1000, 0.1111, 0.0909, 0.0714],
+       device='cuda:0')
+tensor(0.0483, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[28, 22, 11, 17, 14, 8, 5, 17]
+tensor([0.0357, 0.0455, 0.0909, 0.0588, 0.0714, 0.1250, 0.2000, 0.0588],
+       device='cuda:0')
+tensor(0.0577, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 2/3  [35m━━━╸[90m━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m6/46[39m [37m0:00:02 • 0:00:15[39m [37m2.77it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.058                       
+tensor([0.0333, 0.0357, 0.1111, 0.0435, 0.0769, 0.0833, 0.1000, 0.0625],
+       device='cuda:0')
+tensor(0.0437, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 24, 7, 16, 6, 9, 5, 16]
+tensor([0.0333, 0.0417, 0.1428, 0.0625, 0.1666, 0.1111, 0.2000, 0.0625],
+       device='cuda:0')
+tensor(0.0683, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 31, 16, 22, 12, 12, 5, 18]
+tensor([0.0312, 0.0323, 0.0625, 0.0455, 0.0833, 0.0833, 0.2000, 0.0556],
+       device='cuda:0')
+tensor(0.0479, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 30, 13, 25, 11, 14, 10, 23]
+tensor([0.0312, 0.0333, 0.0769, 0.0400, 0.0909, 0.0714, 0.1000, 0.0435],
+       device='cuda:0')
+tensor(0.0385, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 27, 13, 20, 13, 9, 5, 17]
+tensor([0.0323, 0.0370, 0.0769, 0.0500, 0.0769, 0.1111, 0.2000, 0.0588],
+       device='cuda:0')
+tensor(0.0525, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 26, 18, 23, 14, 12, 8, 21]
+tensor([0.0333, 0.0385, 0.0556, 0.0435, 0.0714, 0.0833, 0.1250, 0.0476],
+       device='cuda:0')
+tensor(0.0396, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 2/3  [35m━━━━━━━[90m╺━━━━━━━━━━━━━━━━━━━[39m [37m12/46[39m [37m0:00:04 • 0:00:13[39m [37m2.76it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.040                       
+tensor([0.0345, 0.0385, 0.1000, 0.0476, 0.0909, 0.0769, 0.1111, 0.0625],
+       device='cuda:0')
+tensor(0.0455, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 23, 13, 13, 11, 7, 3, 16]
+tensor([0.0333, 0.0435, 0.0769, 0.0769, 0.0909, 0.1428, 0.3332, 0.0625],
+       device='cuda:0')
+tensor(0.0724, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 26, 11, 20, 10, 10, 10, 19]
+tensor([0.0345, 0.0385, 0.0909, 0.0500, 0.1000, 0.1000, 0.1000, 0.0526],
+       device='cuda:0')
+tensor(0.0461, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 29, 14, 20, 7, 11, 7, 22]
+tensor([0.0323, 0.0345, 0.0714, 0.0500, 0.1428, 0.0909, 0.1428, 0.0455],
+       device='cuda:0')
+tensor(0.0493, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[28, 22, 7, 16, 10, 9, 6, 19]
+tensor([0.0357, 0.0455, 0.1428, 0.0625, 0.1000, 0.1111, 0.1666, 0.0526],
+       device='cuda:0')
+tensor(0.0595, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 29, 14, 20, 10, 9, 6, 15]
+tensor([0.0312, 0.0345, 0.0714, 0.0500, 0.1000, 0.1111, 0.1666, 0.0667],
+       device='cuda:0')
+tensor(0.0515, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 2/3  [35m━━━━━━━━━━╸[90m━━━━━━━━━━━━━━━━[39m [37m18/46[39m [37m0:00:06 • 0:00:11[39m [37m2.76it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.051                       
+tensor([0.0345, 0.0385, 0.1428, 0.0625, 0.1111, 0.0833, 0.1666, 0.0556],
+       device='cuda:0')
+tensor(0.0572, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 27, 10, 19, 13, 10, 11, 19]
+tensor([0.0345, 0.0370, 0.1000, 0.0526, 0.0769, 0.1000, 0.0909, 0.0526],
+       device='cuda:0')
+tensor(0.0444, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 28, 12, 20, 10, 12, 8, 16]
+tensor([0.0333, 0.0357, 0.0833, 0.0500, 0.1000, 0.0833, 0.1250, 0.0625],
+       device='cuda:0')
+tensor(0.0469, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 27, 11, 18, 11, 9, 5, 15]
+tensor([0.0312, 0.0370, 0.0909, 0.0556, 0.0909, 0.1111, 0.2000, 0.0667],
+       device='cuda:0')
+tensor(0.0562, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 24, 11, 18, 8, 7, 4, 15]
+tensor([0.0323, 0.0417, 0.0909, 0.0556, 0.1250, 0.1428, 0.2499, 0.0667],
+       device='cuda:0')
+tensor(0.0667, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 2/3  [35m━━━━━━━━━━━━━╸[90m━━━━━━━━━━━━━[39m [37m23/46[39m [37m0:00:08 • 0:00:09[39m [37m2.75it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.067                       
+tensor([0.0357, 0.0435, 0.1428, 0.0833, 0.1666, 0.1000, 0.2000, 0.0714],
+       device='cuda:0')
+tensor(0.0717, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 27, 14, 22, 13, 9, 6, 20]
+tensor([0.0323, 0.0370, 0.0714, 0.0455, 0.0769, 0.1111, 0.1666, 0.0500],
+       device='cuda:0')
+tensor(0.0479, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 27, 12, 17, 8, 8, 7, 14]
+tensor([0.0323, 0.0370, 0.0833, 0.0588, 0.1250, 0.1250, 0.1428, 0.0714],
+       device='cuda:0')
+tensor(0.0556, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 22, 10, 16, 11, 5, 3, 17]
+tensor([0.0333, 0.0455, 0.1000, 0.0625, 0.0909, 0.2000, 0.3332, 0.0588],
+       device='cuda:0')
+tensor(0.0774, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[28, 26, 13, 14, 6, 5, 11, 15]
+tensor([0.0357, 0.0385, 0.0769, 0.0714, 0.1666, 0.2000, 0.0909, 0.0667],
+       device='cuda:0')
+tensor(0.0622, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 24, 11, 17, 13, 14, 8, 18]
+tensor([0.0333, 0.0417, 0.0909, 0.0588, 0.0769, 0.0714, 0.1250, 0.0556],
+       device='cuda:0')
+tensor(0.0452, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 2/3  [35m━━━━━━━━━━━━━━━━━[90m╺━━━━━━━━━[39m [37m29/46[39m [37m0:00:10 • 0:00:07[39m [37m2.75it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.045                       
+tensor([0.0323, 0.0385, 0.0909, 0.0769, 0.0714, 0.0909, 0.1666, 0.0556],
+       device='cuda:0')
+tensor(0.0514, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 31, 15, 22, 12, 12, 11, 24]
+tensor([0.0333, 0.0323, 0.0667, 0.0455, 0.0833, 0.0833, 0.0909, 0.0417],
+       device='cuda:0')
+tensor(0.0378, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 29, 9, 19, 9, 7, 8, 14]
+tensor([0.0323, 0.0345, 0.1111, 0.0526, 0.1111, 0.1428, 0.1250, 0.0714],
+       device='cuda:0')
+tensor(0.0558, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 24, 14, 19, 7, 8, 7, 15]
+tensor([0.0323, 0.0417, 0.0714, 0.0526, 0.1428, 0.1250, 0.1428, 0.0667],
+       device='cuda:0')
+tensor(0.0553, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 29, 14, 20, 10, 8, 5, 14]
+tensor([0.0323, 0.0345, 0.0714, 0.0500, 0.1000, 0.1250, 0.2000, 0.0714],
+       device='cuda:0')
+tensor(0.0562, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 2/3  [35m━━━━━━━━━━━━━━━━━━━╸[90m━━━━━━━[39m [37m34/46[39m [37m0:00:12 • 0:00:05[39m [37m2.75it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.056                       
+tensor([0.0370, 0.0417, 0.1111, 0.0714, 0.1666, 0.2000, 0.1666, 0.0714],
+       device='cuda:0')
+tensor(0.0725, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 27, 9, 18, 7, 3, 8, 12]
+tensor([0.0333, 0.0370, 0.1111, 0.0556, 0.1428, 0.3332, 0.1250, 0.0833],
+       device='cuda:0')
+tensor(0.0769, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 28, 11, 18, 11, 7, 7, 17]
+tensor([0.0323, 0.0357, 0.0909, 0.0556, 0.0909, 0.1428, 0.1428, 0.0588],
+       device='cuda:0')
+tensor(0.0531, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 27, 15, 19, 14, 11, 6, 18]
+tensor([0.0345, 0.0370, 0.0667, 0.0526, 0.0714, 0.0909, 0.1666, 0.0556],
+       device='cuda:0')
+tensor(0.0467, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 29, 10, 21, 14, 9, 6, 15]
+tensor([0.0333, 0.0345, 0.1000, 0.0476, 0.0714, 0.1111, 0.1666, 0.0667],
+       device='cuda:0')
+tensor(0.0516, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 2/3  [35m━━━━━━━━━━━━━━━━━━━━━━╸[90m━━━━[39m [37m39/46[39m [37m0:00:14 • 0:00:03[39m [37m2.75it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.052                       
+tensor([0.0333, 0.0370, 0.0909, 0.0526, 0.2499, 0.1428, 0.1428, 0.0769],
+       device='cuda:0')
+tensor(0.0685, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[27, 21, 10, 13, 8, 9, 4, 15]
+tensor([0.0370, 0.0476, 0.1000, 0.0769, 0.1250, 0.1111, 0.2499, 0.0667],
+       device='cuda:0')
+tensor(0.0685, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 27, 9, 21, 14, 12, 5, 18]
+tensor([0.0312, 0.0370, 0.1111, 0.0476, 0.0714, 0.0833, 0.2000, 0.0556],
+       device='cuda:0')
+tensor(0.0519, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 29, 11, 20, 10, 9, 8, 16]
+tensor([0.0312, 0.0345, 0.0909, 0.0500, 0.1000, 0.1111, 0.1250, 0.0625],
+       device='cuda:0')
+tensor(0.0493, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 27, 13, 18, 14, 11, 6, 22]
+tensor([0.0333, 0.0370, 0.0769, 0.0556, 0.0714, 0.0909, 0.1666, 0.0455],
+       device='cuda:0')
+tensor(0.0468, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 2/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━╸[90m━[39m [37m44/46[39m [37m0:00:16 • 0:00:01[39m [37m2.75it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.047                       
+tensor([0.0333, 0.0370, 0.0714, 0.0588, 0.0833, 0.0833, 0.1428, 0.0500],
+       device='cuda:0')
+tensor(0.0456, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[23, 22, 8, 14, 7, 8, 4, 13]
+tensor([0.0435, 0.0455, 0.1250, 0.0714, 0.1428, 0.1250, 0.2499, 0.0769],
+       device='cuda:0')
+tensor(0.0724, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 27, 9, 20, 7, 10, 4, 16]
+tensor([0.0323, 0.0370, 0.1111, 0.0500, 0.1428, 0.1000, 0.2499, 0.0625],
+       device='cuda:0')
+tensor(0.0644, device='cuda:0')
+[29, 28, 15, 18, 12, 16, 11, 15]
+tensor([0.0345, 0.0357, 0.0667, 0.0556, 0.0833, 0.0625, 0.0909, 0.0667],
+       device='cuda:0')
+tensor(0.0396, device='cuda:0')
+[30, 25, 12, 18, 14, 9, 5, 16]
+tensor([0.0333, 0.0400, 0.0833, 0.0556, 0.0714, 0.1111, 0.2000, 0.0625],
+       device='cuda:0')
+tensor(0.0538, device='cuda:0')
+[29, 27, 8, 15, 11, 8, 4, 17]
+tensor([0.0345, 0.0370, 0.1250, 0.0667, 0.0909, 0.1250, 0.2499, 0.0588],
+       device='cuda:0')
+tensor(0.0653, device='cuda:0')
+Epoch 2/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:16 • 0:00:00[39m [37m2.76it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.072                       
+tensor([0.0323, 0.0333, 0.1000, 0.0556, 0.0769, 0.0909, 0.1666, 0.0625],
+       device='cuda:0')
+tensor(0.0501, device='cuda:0')
+[28, 21, 7, 13, 8, 4, 5, 10]
+tensor([0.0357, 0.0476, 0.1428, 0.0769, 0.1250, 0.2499, 0.2000, 0.1000],
+       device='cuda:0')
+tensor(0.0823, device='cuda:0')
+[30, 28, 12, 19, 9, 9, 5, 17]
+tensor([0.0333, 0.0357, 0.0833, 0.0526, 0.1111, 0.1111, 0.2000, 0.0588],
+       device='cuda:0')
+tensor(0.0561, device='cuda:0')
+[31, 29, 13, 19, 14, 8, 7, 16]
+tensor([0.0323, 0.0345, 0.0769, 0.0526, 0.0714, 0.1250, 0.1428, 0.0625],
+       device='cuda:0')
+tensor(0.0481, device='cuda:0')
+[31, 28, 15, 22, 14, 10, 8, 22]
+tensor([0.0323, 0.0357, 0.0667, 0.0455, 0.0714, 0.1000, 0.1250, 0.0455],
+       device='cuda:0')
+tensor(0.0417, device='cuda:0')
+[29, 25, 14, 21, 12, 9, 9, 16]
+tensor([0.0345, 0.0400, 0.0714, 0.0476, 0.0833, 0.1111, 0.1111, 0.0625],
+       device='cuda:0')
+tensor(0.0453, device='cuda:0')
+Epoch 2/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:16 • 0:00:00[39m [37m2.76it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.072                       
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━╸[90m━━━━[39m [37m10/12[39m [37m0:00:03 • 0:00:01[39m [37m3.22it/s
+tensor([0.0345, 0.0333, 0.0714, 0.0435, 0.0833, 0.0833, 0.1428, 0.0556],
+       device='cuda:0')
+tensor(0.0441, device='cuda:0')
+[14, 15, 4, 10, 4, 4, 5, 7]
+tensor([0.0714, 0.0667, 0.2499, 0.1000, 0.2499, 0.2499, 0.2000, 0.1428],
+       device='cuda:0')
+tensor(0.1081, device='cuda:0')
+[342, 313, 133, 216, 130, 110, 76, 186]
+tensor([0.0029, 0.0032, 0.0075, 0.0046, 0.0077, 0.0091, 0.0132, 0.0054],
+       device='cuda:0')
+tensor([[1, 1, 0,  ..., 0, 0, 1],
+        [1, 1, 0,  ..., 0, 0, 1],
+        [1, 1, 0,  ..., 0, 0, 0],
+        ...,
+        [1, 1, 0,  ..., 0, 0, 1],
+        [1, 1, 0,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 1, 0, 0]], device='cuda:0')
+[1381, 1222, 527, 850, 473, 435, 313, 775]
+tensor([0.0007, 0.0008, 0.0019, 0.0012, 0.0021, 0.0023, 0.0032, 0.0013],
+       device='cuda:0')
+Epoch 2/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:16 • 0:00:00[39m [37m2.76it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.072                       
+tensor([0.0333, 0.0345, 0.0833, 0.0476, 0.1250, 0.0909, 0.1250, 0.0769],
+       device='cuda:0')
+tensor(0.0500, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 24, 15, 20, 10, 8, 7, 16]
+tensor([0.0312, 0.0417, 0.0667, 0.0500, 0.1000, 0.1250, 0.1428, 0.0625],
+       device='cuda:0')
+tensor(0.0504, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 3/3  [35m━[90m╺━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m2/46[39m [37m0:00:01 • 0:00:17[39m [37m2.72it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.050                       
+tensor([0.0323, 0.0370, 0.0833, 0.0500, 0.1000, 0.1111, 0.1250, 0.0556],
+       device='cuda:0')
+tensor(0.0484, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 27, 12, 17, 12, 8, 6, 19]
+tensor([0.0333, 0.0370, 0.0833, 0.0588, 0.0833, 0.1250, 0.1666, 0.0526],
+       device='cuda:0')
+tensor(0.0520, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 26, 17, 21, 13, 10, 9, 15]
+tensor([0.0345, 0.0385, 0.0588, 0.0476, 0.0769, 0.1000, 0.1111, 0.0667],
+       device='cuda:0')
+tensor(0.0430, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 26, 10, 18, 9, 5, 4, 18]
+tensor([0.0345, 0.0385, 0.1000, 0.0556, 0.1111, 0.2000, 0.2499, 0.0556],
+       device='cuda:0')
+tensor(0.0705, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 29, 10, 24, 13, 12, 6, 19]
+tensor([0.0312, 0.0345, 0.1000, 0.0417, 0.0769, 0.0833, 0.1666, 0.0526],
+       device='cuda:0')
+tensor(0.0475, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 26, 13, 17, 7, 7, 10, 19]
+tensor([0.0333, 0.0385, 0.0769, 0.0588, 0.1428, 0.1428, 0.1000, 0.0526],
+       device='cuda:0')
+tensor(0.0528, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 3/3  [35m━━━━╸[90m━━━━━━━━━━━━━━━━━━━━━━━[39m [37m8/46[39m [37m0:00:03 • 0:00:14[39m [37m2.73it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.053                       
+tensor([0.0323, 0.0370, 0.0833, 0.0455, 0.1000, 0.0909, 0.1250, 0.0667],
+       device='cuda:0')
+tensor(0.0465, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 26, 7, 18, 7, 8, 6, 15]
+tensor([0.0333, 0.0385, 0.1428, 0.0556, 0.1428, 0.1250, 0.1666, 0.0667],
+       device='cuda:0')
+tensor(0.0638, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 28, 12, 19, 13, 12, 11, 22]
+tensor([0.0345, 0.0357, 0.0833, 0.0526, 0.0769, 0.0833, 0.0909, 0.0455],
+       device='cuda:0')
+tensor(0.0403, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 29, 19, 17, 12, 11, 8, 16]
+tensor([0.0333, 0.0345, 0.0526, 0.0588, 0.0833, 0.0909, 0.1250, 0.0625],
+       device='cuda:0')
+tensor(0.0435, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 26, 11, 21, 10, 13, 6, 21]
+tensor([0.0345, 0.0385, 0.0909, 0.0476, 0.1000, 0.0769, 0.1666, 0.0476],
+       device='cuda:0')
+tensor(0.0489, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 28, 16, 22, 12, 14, 11, 21]
+tensor([0.0333, 0.0357, 0.0625, 0.0455, 0.0833, 0.0714, 0.0909, 0.0476],
+       device='cuda:0')
+tensor(0.0374, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 3/3  [35m━━━━━━━━[90m╺━━━━━━━━━━━━━━━━━━[39m [37m14/46[39m [37m0:00:05 • 0:00:12[39m [37m2.73it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.049                       
+tensor([0.0323, 0.0370, 0.0909, 0.0588, 0.0833, 0.1666, 0.9990, 0.0556],
+       device='cuda:0')
+tensor(0.1292, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[28, 27, 10, 17, 10, 16, 7, 20]
+tensor([0.0357, 0.0370, 0.1000, 0.0588, 0.1000, 0.0625, 0.1428, 0.0500],
+       device='cuda:0')
+tensor(0.0477, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 27, 13, 21, 9, 8, 9, 22]
+tensor([0.0323, 0.0370, 0.0769, 0.0476, 0.1111, 0.1250, 0.1111, 0.0455],
+       device='cuda:0')
+tensor(0.0472, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 27, 11, 22, 9, 4, 9, 18]
+tensor([0.0312, 0.0370, 0.0909, 0.0455, 0.1111, 0.2499, 0.1111, 0.0556],
+       device='cuda:0')
+tensor(0.0597, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 30, 11, 18, 12, 11, 8, 16]
+tensor([0.0323, 0.0333, 0.0909, 0.0556, 0.0833, 0.0909, 0.1250, 0.0625],
+       device='cuda:0')
+tensor(0.0465, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 3/3  [35m━━━━━━━━━━━[90m╺━━━━━━━━━━━━━━━[39m [37m19/46[39m [37m0:00:07 • 0:00:10[39m [37m2.73it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.046                       
+tensor([0.0323, 0.0333, 0.0714, 0.0417, 0.0667, 0.0909, 0.2000, 0.0625],
+       device='cuda:0')
+tensor(0.0483, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 23, 11, 16, 10, 11, 4, 14]
+tensor([0.0323, 0.0435, 0.0909, 0.0625, 0.1000, 0.0909, 0.2499, 0.0714],
+       device='cuda:0')
+tensor(0.0617, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 25, 9, 19, 9, 11, 6, 16]
+tensor([0.0345, 0.0400, 0.1111, 0.0526, 0.1111, 0.0909, 0.1666, 0.0625],
+       device='cuda:0')
+tensor(0.0549, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 27, 15, 16, 8, 9, 9, 17]
+tensor([0.0333, 0.0370, 0.0667, 0.0625, 0.1250, 0.1111, 0.1111, 0.0588],
+       device='cuda:0')
+tensor(0.0498, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 31, 9, 22, 13, 8, 6, 15]
+tensor([0.0333, 0.0323, 0.1111, 0.0455, 0.0769, 0.1250, 0.1666, 0.0667],
+       device='cuda:0')
+tensor(0.0533, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 26, 8, 21, 8, 10, 7, 14]
+tensor([0.0345, 0.0385, 0.1250, 0.0476, 0.1250, 0.1000, 0.1428, 0.0714],
+       device='cuda:0')
+tensor(0.0561, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 3/3  [35m━━━━━━━━━━━━━━╸[90m━━━━━━━━━━━━[39m [37m25/46[39m [37m0:00:09 • 0:00:08[39m [37m2.74it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.056                       
+tensor([0.0312, 0.0357, 0.0833, 0.0500, 0.1000, 0.1000, 0.2499, 0.0500],
+       device='cuda:0')
+tensor(0.0571, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[29, 27, 10, 19, 10, 12, 7, 16]
+tensor([0.0345, 0.0370, 0.1000, 0.0526, 0.1000, 0.0833, 0.1428, 0.0625],
+       device='cuda:0')
+tensor(0.0500, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 28, 15, 19, 11, 6, 6, 19]
+tensor([0.0333, 0.0357, 0.0667, 0.0526, 0.0909, 0.1666, 0.1666, 0.0526],
+       device='cuda:0')
+tensor(0.0544, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 25, 13, 15, 11, 8, 7, 17]
+tensor([0.0333, 0.0400, 0.0769, 0.0667, 0.0909, 0.1250, 0.1428, 0.0588],
+       device='cuda:0')
+tensor(0.0522, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 27, 7, 17, 11, 8, 5, 13]
+tensor([0.0323, 0.0370, 0.1428, 0.0588, 0.0909, 0.1250, 0.2000, 0.0769],
+       device='cuda:0')
+tensor(0.0633, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 3/3  [35m━━━━━━━━━━━━━━━━━╸[90m━━━━━━━━━[39m [37m30/46[39m [37m0:00:11 • 0:00:06[39m [37m2.74it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.063                       
+tensor([0.0333, 0.0385, 0.0714, 0.0833, 0.1000, 0.0714, 0.1666, 0.0625],
+       device='cuda:0')
+tensor(0.0521, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 28, 10, 16, 15, 11, 8, 13]
+tensor([0.0333, 0.0357, 0.1000, 0.0625, 0.0667, 0.0909, 0.1250, 0.0769],
+       device='cuda:0')
+tensor(0.0479, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 26, 9, 24, 11, 11, 2, 19]
+tensor([0.0323, 0.0385, 0.1111, 0.0417, 0.0909, 0.0909, 0.4998, 0.0526],
+       device='cuda:0')
+tensor(0.0794, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[27, 21, 10, 16, 8, 4, 9, 12]
+tensor([0.0370, 0.0476, 0.1000, 0.0625, 0.1250, 0.2499, 0.1111, 0.0833],
+       device='cuda:0')
+tensor(0.0683, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 25, 9, 17, 8, 7, 5, 15]
+tensor([0.0333, 0.0400, 0.1111, 0.0588, 0.1250, 0.1428, 0.2000, 0.0667],
+       device='cuda:0')
+tensor(0.0646, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[27, 25, 7, 18, 6, 10, 6, 13]
+tensor([0.0370, 0.0400, 0.1428, 0.0556, 0.1666, 0.1000, 0.1666, 0.0769],
+       device='cuda:0')
+tensor(0.0650, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 3/3  [35m━━━━━━━━━━━━━━━━━━━━━[90m╺━━━━━[39m [37m36/46[39m [37m0:00:13 • 0:00:04[39m [37m2.74it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.065                       
+tensor([0.0333, 0.0345, 0.0833, 0.0667, 0.1250, 0.1428, 0.1428, 0.0556],
+       device='cuda:0')
+tensor(0.0565, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 26, 9, 20, 6, 11, 8, 15]
+tensor([0.0312, 0.0385, 0.1111, 0.0500, 0.1666, 0.0909, 0.1250, 0.0667],
+       device='cuda:0')
+tensor(0.0555, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 25, 16, 19, 11, 9, 8, 22]
+tensor([0.0333, 0.0400, 0.0625, 0.0526, 0.0909, 0.1111, 0.1250, 0.0455],
+       device='cuda:0')
+tensor(0.0458, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 29, 15, 22, 16, 10, 11, 20]
+tensor([0.0323, 0.0345, 0.0667, 0.0455, 0.0625, 0.1000, 0.0909, 0.0500],
+       device='cuda:0')
+tensor(0.0384, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 26, 11, 17, 8, 12, 13, 17]
+tensor([0.0333, 0.0385, 0.0909, 0.0588, 0.1250, 0.0833, 0.0769, 0.0588],
+       device='cuda:0')
+tensor(0.0458, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[32, 29, 11, 18, 10, 7, 3, 13]
+tensor([0.0312, 0.0345, 0.0909, 0.0556, 0.1000, 0.1428, 0.3332, 0.0769],
+       device='cuda:0')
+Epoch 3/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━[90m╺━━[39m [37m41/46[39m [37m0:00:15 • 0:00:02[39m [37m2.74it/s[39m [37mv_num: 50kx train/loss:     
+[30, 26, 12, 15, 13, 11, 4, 17]
+tensor([0.0333, 0.0385, 0.0833, 0.0667, 0.0769, 0.0909, 0.2499, 0.0588],
+       device='cuda:0')
+tensor(0.0573, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[30, 26, 7, 13, 9, 6, 4, 16]
+tensor([0.0333, 0.0385, 0.1428, 0.0769, 0.1111, 0.1666, 0.2499, 0.0625],
+       device='cuda:0')
+tensor(0.0739, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[31, 21, 9, 16, 9, 7, 6, 15]
+tensor([0.0323, 0.0476, 0.1111, 0.0625, 0.1111, 0.1428, 0.1666, 0.0667],
+       device='cuda:0')
+tensor(0.0614, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+[23, 21, 9, 12, 11, 10, 5, 16]
+tensor([0.0435, 0.0476, 0.1111, 0.0833, 0.0909, 0.1000, 0.2000, 0.0625],
+       device='cuda:0')
+tensor(0.0610, device='cuda:0', grad_fn=<BinaryCrossEntropyBackward0>)
+Epoch 3/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:17 • 0:00:00[39m [37m2.75it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.061                       
+tensor([0.0323, 0.0370, 0.1111, 0.0500, 0.1428, 0.1000, 0.2499, 0.0625],
+       device='cuda:0')
+tensor(0.0644, device='cuda:0')
+[29, 28, 15, 18, 12, 16, 11, 15]
+tensor([0.0345, 0.0357, 0.0667, 0.0556, 0.0833, 0.0625, 0.0909, 0.0667],
+       device='cuda:0')
+tensor(0.0395, device='cuda:0')
+[30, 25, 12, 18, 14, 9, 5, 16]
+tensor([0.0333, 0.0400, 0.0833, 0.0556, 0.0714, 0.1111, 0.2000, 0.0625],
+       device='cuda:0')
+tensor(0.0538, device='cuda:0')
+[29, 27, 8, 15, 11, 8, 4, 17]
+tensor([0.0345, 0.0370, 0.1250, 0.0667, 0.0909, 0.1250, 0.2499, 0.0588],
+       device='cuda:0')
+tensor(0.0652, device='cuda:0')
+[31, 30, 10, 18, 13, 11, 6, 16]
+tensor([0.0323, 0.0333, 0.1000, 0.0556, 0.0769, 0.0909, 0.1666, 0.0625],
+       device='cuda:0')
+tensor(0.0500, device='cuda:0')
+Epoch 3/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:17 • 0:00:00[39m [37m2.75it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.061                       
+tensor([0.0357, 0.0476, 0.1428, 0.0769, 0.1250, 0.2499, 0.2000, 0.1000],
+       device='cuda:0')
+tensor(0.0821, device='cuda:0')
+[30, 28, 12, 19, 9, 9, 5, 17]
+tensor([0.0333, 0.0357, 0.0833, 0.0526, 0.1111, 0.1111, 0.2000, 0.0588],
+       device='cuda:0')
+tensor(0.0561, device='cuda:0')
+[31, 29, 13, 19, 14, 8, 7, 16]
+tensor([0.0323, 0.0345, 0.0769, 0.0526, 0.0714, 0.1250, 0.1428, 0.0625],
+       device='cuda:0')
+tensor(0.0480, device='cuda:0')
+[31, 28, 15, 22, 14, 10, 8, 22]
+tensor([0.0323, 0.0357, 0.0667, 0.0455, 0.0714, 0.1000, 0.1250, 0.0455],
+       device='cuda:0')
+tensor(0.0417, device='cuda:0')
+[29, 25, 14, 21, 12, 9, 9, 16]
+tensor([0.0345, 0.0400, 0.0714, 0.0476, 0.0833, 0.1111, 0.1111, 0.0625],
+       device='cuda:0')
+tensor(0.0452, device='cuda:0')
+[29, 30, 14, 23, 12, 12, 7, 18]
+tensor([0.0345, 0.0333, 0.0714, 0.0435, 0.0833, 0.0833, 0.1428, 0.0556],
+       device='cuda:0')
+tensor(0.0441, device='cuda:0')
+[14, 15, 4, 10, 4, 4, 5, 7]
+tensor([0.0714, 0.0667, 0.2499, 0.1000, 0.2499, 0.2499, 0.2000, 0.1428],
+       device='cuda:0')
+tensor(0.1083, device='cuda:0')
+[342, 313, 133, 216, 130, 110, 76, 186]
+tensor([0.0029, 0.0032, 0.0075, 0.0046, 0.0077, 0.0091, 0.0132, 0.0054],
+       device='cuda:0')
+Epoch 3/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:17 • 0:00:00[39m [37m2.75it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.061                       
+        [1, 1, 0,  ..., 0, 0, 0],
+        [1, 1, 0,  ..., 1, 0, 1],
+        ...,
+        [1, 1, 1,  ..., 0, 1, 1],
+        [1, 1, 1,  ..., 1, 0, 1],
+        [1, 1, 0,  ..., 1, 0, 0]], device='cuda:0')
+[1381, 1222, 527, 850, 473, 435, 313, 775]
+tensor([0.0007, 0.0008, 0.0019, 0.0012, 0.0021, 0.0023, 0.0032, 0.0013],
+       device='cuda:0')
+Epoch 3/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:17 • 0:00:00[39m [37m2.75it/s[39m [37mv_num: 50kx train/loss:     
+                                                                        [37m0.061                       
+`Trainer.fit` stopped: `max_epochs=4` reached.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+[32, 29, 10, 16, 6, 14, 5, 13]
+tensor([0.0312, 0.0345, 0.1000, 0.0625, 0.1666, 0.0714, 0.2000, 0.0769],
+       device='cuda:0')
+tensor(0.0611, device='cuda:0')
+[32, 28, 7, 23, 10, 12, 4, 17]
+tensor([0.0312, 0.0357, 0.1428, 0.0435, 0.1000, 0.0833, 0.2499, 0.0588],
+       device='cuda:0')
+tensor(0.0613, device='cuda:0')
+[29, 25, 14, 25, 11, 16, 3, 18]
+tensor([0.0345, 0.0400, 0.0714, 0.0400, 0.0909, 0.0625, 0.3332, 0.0556],
+       device='cuda:0')
+tensor(0.0597, device='cuda:0')
+[30, 26, 13, 24, 5, 9, 5, 21]
+tensor([0.0333, 0.0385, 0.0769, 0.0417, 0.2000, 0.1111, 0.2000, 0.0476],
+       device='cuda:0')
+tensor(0.0617, device='cuda:0')
+[31, 30, 16, 21, 12, 16, 5, 21]
+tensor([0.0323, 0.0333, 0.0625, 0.0476, 0.0833, 0.0625, 0.2000, 0.0476],
+       device='cuda:0')
+tensor(0.0456, device='cuda:0')
+[32, 31, 14, 25, 13, 14, 8, 14]
+tensor([0.0312, 0.0323, 0.0714, 0.0400, 0.0769, 0.0714, 0.1250, 0.0714],
+       device='cuda:0')
+tensor(0.0411, device='cuda:0')
+[27, 26, 11, 16, 11, 8, 1, 13]
+tensor([0.0370, 0.0385, 0.0909, 0.0625, 0.0909, 0.1250, 0.9990, 0.0769],
+       device='cuda:0')
+tensor(0.1285, device='cuda:0')
+[32, 30, 10, 12, 11, 6, 5, 15]
+tensor([0.0312, 0.0333, 0.1000, 0.0833, 0.0909, 0.1666, 0.2000, 0.0667],
+       device='cuda:0')
+tensor(0.0639, device='cuda:0')
+[29, 26, 10, 17, 8, 7, 4, 12]
+tensor([0.0345, 0.0385, 0.1000, 0.0588, 0.1250, 0.1428, 0.2499, 0.0833],
+       device='cuda:0')
+tensor(0.0692, device='cuda:0')
+[30, 27, 16, 18, 13, 13, 6, 13]
+tensor([0.0333, 0.0370, 0.0625, 0.0556, 0.0769, 0.0769, 0.1666, 0.0769],
+       device='cuda:0')
+tensor(0.0472, device='cuda:0')
+[2, 2, 1, 1, 2, 1, 1, 2]
+tensor([0.4998, 0.4998, 0.9990, 0.9990, 0.4998, 0.9990, 0.9990, 0.4998],
+       device='cuda:0')
+tensor(0.4569, device='cuda:0')
+[306, 280, 122, 198, 102, 116, 47, 159]
+tensor([0.0033, 0.0036, 0.0082, 0.0051, 0.0098, 0.0086, 0.0213, 0.0063],
+       device='cuda:0')
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃[1m           Test metric           [22m┃[1m          DataLoader 0           [22m┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│[36m     test/multilabelaccuracy     [39m│[35m        0.734083890914917        [39m│
+│[36m     test/multilabelf1score      [39m│[35m        0.339575856924057        [39m│
+│[36m test/multilabelmatthewscorrcoef [39m│[35m       0.5090106129646301        [39m│
+│[36m    test/multilabelprecision     [39m│[35m       0.3250243663787842        [39m│
+│[36m      test/multilabelrecall      [39m│[35m       0.35619959235191345       [39m│
+│[36m            test_loss            [39m│[35m      0.005386968143284321       [39m│
+└─────────────────────────────────┴─────────────────────────────────┘
+[37mTesting[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m11/11[39m [37m0:00:03 • 0:00:00[39m [37m3.64it/s
+[?25h
