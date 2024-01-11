@@ -1,0 +1,238 @@
+
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:389: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m    [22m┃[1m Name                        [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0  │ bert                        │ BertModel        │ 89.1 M │
+│ 1  │ classifiers                 │ ModuleList       │ 12.6 M │
+│ 2  │ hidden_layer1               │ ModuleList       │  4.2 M │
+│ 3  │ hidden_layer2               │ ModuleList       │  4.1 K │
+│ 4  │ sigmoid                     │ Sigmoid          │      0 │
+│ 5  │ criterion                   │ Focal_Loss       │      0 │
+│ 6  │ metrics                     │ MetricCollection │      0 │
+│ 7  │ metrics_per_label_accuracy  │ MetricCollection │      0 │
+│ 8  │ metrics_per_label_precision │ MetricCollection │      0 │
+│ 9  │ metrics_per_label_recall    │ MetricCollection │      0 │
+│ 10 │ metrics_per_label_f1score   │ MetricCollection │      0 │
+└────┴─────────────────────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 23.9 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 105 M
+[1mTotal estimated model params size (MB)[22m: 423
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:293: The number of
+training batches (46) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a
+lower value for log_every_n_steps if you want to see logs for the training epoch.
+[37mEpoch 0/7 [39m [35m━[90m╺━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m2/46[39m [37m0:00:01 • 0:00:02[39m [37m34.29it/s[39m [37mv_num: qum6 train/loss:     
+
+
+
+                                                                        [37m0.245                       
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━╸[90m━━[39m [37m11/12[39m [37m0:00:08 • 0:00:01[39m [37m1.18it/s
+Epoch 0, global step 46: 'val_loss' reached 0.24502 (best 0.24502), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-51-35/wandb/run-20240111_025136-5mvhqum6/files/checkpoints/epoch=0.ckpt' as top 1
+[37mEpoch 0/7 [39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:48 • 0:00:00[39m [37m0.91it/s[39m [37mv_num: qum6 train/loss:     
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.238                       
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━╸[90m━━[39m [37m11/12[39m [37m0:00:08 • 0:00:01[39m [37m1.14it/s
+Epoch 1/7  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:52 • 0:00:00[39m [37m0.85it/s[39m [37mv_num: qum6 train/loss:     
+                                                                        [37m0.238                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.238                       
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━╸[90m━━[39m [37m11/12[39m [37m0:00:08 • 0:00:01[39m [37m1.13it/s
+Epoch 2/7  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:52 • 0:00:00[39m [37m0.85it/s[39m [37mv_num: qum6 train/loss:     
+                                                                        [37m0.238                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.237                       
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━╸[90m━━━━[39m [37m10/12[39m [37m0:00:07 • 0:00:02[39m [37m1.14it/s
+Epoch 3, global step 184: 'val_loss' reached 0.23695 (best 0.23695), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-51-35/wandb/run-20240111_025136-5mvhqum6/files/checkpoints/epoch=3.ckpt' as top 1
+Epoch 3/7  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:52 • 0:00:00[39m [37m0.85it/s[39m [37mv_num: qum6 train/loss:     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.238                       
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━╸[90m━━[39m [37m11/12[39m [37m0:00:08 • 0:00:01[39m [37m1.13it/s
+Epoch 4/7  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:52 • 0:00:00[39m [37m0.86it/s[39m [37mv_num: qum6 train/loss:     
+                                                                        [37m0.238                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.238                       
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━╸[90m━━━━[39m [37m10/12[39m [37m0:00:07 • 0:00:02[39m [37m1.15it/s
+Epoch 5/7  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:52 • 0:00:00[39m [37m0.85it/s[39m [37mv_num: qum6 train/loss:     
+                                                                        [37m0.238                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.236                       
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━╸[90m━━[39m [37m11/12[39m [37m0:00:08 • 0:00:01[39m [37m1.13it/s
+Epoch 6, global step 322: 'val_loss' reached 0.23657 (best 0.23657), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-51-35/wandb/run-20240111_025136-5mvhqum6/files/checkpoints/epoch=6.ckpt' as top 1
+Epoch 6/7  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:52 • 0:00:00[39m [37m0.85it/s[39m [37mv_num: qum6 train/loss:     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.235                       
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━╸[90m━━[39m [37m11/12[39m [37m0:00:08 • 0:00:01[39m [37m1.13it/s
+Epoch 7/7  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:52 • 0:00:00[39m [37m0.85it/s[39m [37mv_num: qum6 train/loss:     
+                                                                        [37m0.235                       
+Epoch 7, global step 368: 'val_loss' reached 0.23649 (best 0.23649), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-51-35/wandb/run-20240111_025136-5mvhqum6/files/checkpoints/epoch=7.ckpt' as top 1
+`Trainer.fit` stopped: `max_epochs=8` reached.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+
+
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃[1m           Test metric           [22m┃[1m          DataLoader 0           [22m┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│[36m     test/multilabelaccuracy     [39m│[35m        0.783088207244873        [39m│
+│[36m     test/multilabelf1score      [39m│[35m       0.12564384937286377       [39m│
+│[36m test/multilabelmatthewscorrcoef [39m│[35m       0.3826484978199005        [39m│
+│[36m    test/multilabelprecision     [39m│[35m       0.12828552722930908       [39m│
+│[36m      test/multilabelrecall      [39m│[35m       0.13285139203071594       [39m│
+│[36m            test_loss            [39m│[35m        0.236184224486351        [39m│
+└─────────────────────────────────┴─────────────────────────────────┘
+[37mTesting[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m11/11[39m [37m0:00:09 • 0:00:00[39m [37m1.02it/s
+[?25h
