@@ -1,0 +1,295 @@
+
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:389: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m    [22m┃[1m Name                        [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0  │ bert                        │ BertModel        │ 89.1 M │
+│ 1  │ classifiers                 │ ModuleList       │  6.3 M │
+│ 2  │ hidden_layer1               │ ModuleList       │  2.1 M │
+│ 3  │ hidden_layer2               │ ModuleList       │  2.1 K │
+│ 4  │ sigmoid                     │ Sigmoid          │      0 │
+│ 5  │ criterion                   │ Focal_Loss       │      0 │
+│ 6  │ metrics                     │ MetricCollection │      0 │
+│ 7  │ metrics_per_label_accuracy  │ MetricCollection │      0 │
+│ 8  │ metrics_per_label_precision │ MetricCollection │      0 │
+│ 9  │ metrics_per_label_recall    │ MetricCollection │      0 │
+│ 10 │ metrics_per_label_f1score   │ MetricCollection │      0 │
+└────┴─────────────────────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 15.5 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 97.5 M
+[1mTotal estimated model params size (MB)[22m: 390
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:293: The number of
+training batches (46) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a
+lower value for log_every_n_steps if you want to see logs for the training epoch.
+[37mEpoch 0/7 [39m [35m━[90m╺━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m2/46[39m [37m0:00:01 • 0:00:02[39m [37m32.40it/s[39m [37mv_num: e528 train/loss:     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.225                       
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━╸[90m━━[39m [37m11/12[39m [37m0:00:07 • 0:00:01[39m [37m1.26it/s
+[37mEpoch 0/7 [39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:49 • 0:00:00[39m [37m0.91it/s[39m [37mv_num: e528 train/loss:     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.221                       
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━╸[90m━━[39m [37m11/12[39m [37m0:00:08 • 0:00:01[39m [37m1.23it/s
+Epoch 1, global step 92: 'val_loss' reached 0.22032 (best 0.22032), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/04-30-13/wandb/run-20240111_043014-r5kge528/files/checkpoints/epoch=1.ckpt' as top 1
+Epoch 1/7  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:51 • 0:00:00[39m [37m0.87it/s[39m [37mv_num: e528 train/loss:     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.214                       
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━╸[90m━━━━[39m [37m10/12[39m [37m0:00:07 • 0:00:02[39m [37m1.25it/s
+Epoch 2/7  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:52 • 0:00:00[39m [37m0.86it/s[39m [37mv_num: e528 train/loss:     
+                                                                        [37m0.214                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.215                       
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━╸[90m━━[39m [37m11/12[39m [37m0:00:08 • 0:00:01[39m [37m1.22it/s
+Epoch 3, global step 184: 'val_loss' reached 0.21798 (best 0.21798), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/04-30-13/wandb/run-20240111_043014-r5kge528/files/checkpoints/epoch=3.ckpt' as top 1
+Epoch 3/7  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:52 • 0:00:00[39m [37m0.86it/s[39m [37mv_num: e528 train/loss:     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.220                       
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━╸[90m━━━━[39m [37m10/12[39m [37m0:00:07 • 0:00:02[39m [37m1.25it/s
+Epoch 4/7  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:52 • 0:00:00[39m [37m0.85it/s[39m [37mv_num: e528 train/loss:     
+                                                                        [37m0.220                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.219                       
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━╸[90m━━[39m [37m11/12[39m [37m0:00:08 • 0:00:01[39m [37m1.22it/s
+Epoch 5, global step 276: 'val_loss' reached 0.21699 (best 0.21699), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/04-30-13/wandb/run-20240111_043014-r5kge528/files/checkpoints/epoch=5.ckpt' as top 1
+Epoch 5/7  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:52 • 0:00:00[39m [37m0.86it/s[39m [37mv_num: e528 train/loss:     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.213                       
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━╸[90m━━━━[39m [37m10/12[39m [37m0:00:07 • 0:00:02[39m [37m1.25it/s
+Epoch 6, global step 322: 'val_loss' reached 0.21681 (best 0.21681), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/04-30-13/wandb/run-20240111_043014-r5kge528/files/checkpoints/epoch=6.ckpt' as top 1
+Epoch 7/7  [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m0/46[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: e528 train/loss:     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.225                       
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━╸[90m━━[39m [37m11/12[39m [37m0:00:08 • 0:00:01[39m [37m1.23it/s
+Epoch 7, global step 368: 'val_loss' reached 0.21670 (best 0.21670), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/04-30-13/wandb/run-20240111_043014-r5kge528/files/checkpoints/epoch=7.ckpt' as top 1
+Epoch 7/7  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:52 • 0:00:00[39m [37m0.86it/s[39m [37mv_num: e528 train/loss:     
+                                                                        [37m0.225                       
+`Trainer.fit` stopped: `max_epochs=8` reached.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+
+
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃[1m           Test metric           [22m┃[1m          DataLoader 0           [22m┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│[36m     test/multilabelaccuracy     [39m│[35m       0.6801242232322693        [39m│
+│[36m     test/multilabelf1score      [39m│[35m       0.33160609006881714       [39m│
+│[36m test/multilabelmatthewscorrcoef [39m│[35m       0.38958823680877686       [39m│
+│[36m    test/multilabelprecision     [39m│[35m       0.3818935751914978        [39m│
+│[36m      test/multilabelrecall      [39m│[35m       0.36714741587638855       [39m│
+│[36m            test_loss            [39m│[35m       0.21677939593791962       [39m│
+└─────────────────────────────────┴─────────────────────────────────┘
+[37mTesting[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m11/11[39m [37m0:00:09 • 0:00:00[39m [37m1.02it/s
+[?25h
