@@ -1,0 +1,430 @@
+2024-01-11 02:33:00,355 INFO    StreamThr :12189 [internal.py:wandb_internal():86] W&B internal server running at pid: 12189, started at: 2024-01-11 02:33:00.352871
+2024-01-11 02:33:00,357 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status
+2024-01-11 02:33:00,367 INFO    WriterThread:12189 [datastore.py:open_for_write():87] open: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/run-vlei5atu.wandb
+2024-01-11 02:33:00,370 DEBUG   SenderThread:12189 [sender.py:send():382] send: header
+2024-01-11 02:33:00,400 DEBUG   SenderThread:12189 [sender.py:send():382] send: run
+2024-01-11 02:33:00,816 INFO    SenderThread:12189 [dir_watcher.py:__init__():211] watching files in: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files
+2024-01-11 02:33:00,817 INFO    SenderThread:12189 [sender.py:_start_run_threads():1136] run started: vlei5atu with start time 1704940380.353063
+2024-01-11 02:33:00,839 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: check_version
+2024-01-11 02:33:00,839 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: check_version
+2024-01-11 02:33:00,983 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: run_start
+2024-01-11 02:33:00,993 DEBUG   HandlerThread:12189 [system_info.py:__init__():27] System info init
+2024-01-11 02:33:00,993 DEBUG   HandlerThread:12189 [system_info.py:__init__():42] System info init done
+2024-01-11 02:33:00,993 INFO    HandlerThread:12189 [system_monitor.py:start():194] Starting system monitor
+2024-01-11 02:33:00,993 INFO    SystemMonitor:12189 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-01-11 02:33:00,994 INFO    HandlerThread:12189 [system_monitor.py:probe():214] Collecting system info
+2024-01-11 02:33:00,994 INFO    SystemMonitor:12189 [interfaces.py:start():190] Started cpu monitoring
+2024-01-11 02:33:00,995 INFO    SystemMonitor:12189 [interfaces.py:start():190] Started disk monitoring
+2024-01-11 02:33:00,996 INFO    SystemMonitor:12189 [interfaces.py:start():190] Started gpu monitoring
+2024-01-11 02:33:00,997 INFO    SystemMonitor:12189 [interfaces.py:start():190] Started memory monitoring
+2024-01-11 02:33:00,998 INFO    SystemMonitor:12189 [interfaces.py:start():190] Started network monitoring
+2024-01-11 02:33:01,009 DEBUG   HandlerThread:12189 [system_info.py:probe():151] Probing system
+2024-01-11 02:33:01,018 DEBUG   HandlerThread:12189 [system_info.py:_probe_git():136] Probing git
+2024-01-11 02:33:01,044 DEBUG   HandlerThread:12189 [system_info.py:_probe_git():144] Probing git done
+2024-01-11 02:33:01,044 DEBUG   HandlerThread:12189 [system_info.py:probe():199] Probing system done
+2024-01-11 02:33:01,044 DEBUG   HandlerThread:12189 [system_monitor.py:probe():223] {'os': 'Linux-6.1.58+-x86_64-with-glibc2.35', 'python': '3.10.12', 'heartbeatAt': '2024-01-11T02:33:01.009300', 'startedAt': '2024-01-11T02:33:00.313968', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/main.py', 'codePathLocal': None, 'codePath': 'exp5/main.py', 'git': {'remote': 'https://tnkryoga:@github.com/tnkryoga/murata_labo_first.git', 'commit': '05541a7fb0feedbdf49c447868a46ef7e6747856'}, 'email': 'tanaryo-miyabi818@outlook.jp', 'root': '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src', 'host': '486fc98cc7a9', 'username': 'root', 'executable': '/usr/bin/python3', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 2000.1900000000003, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2000.19, 'min': 0.0, 'max': 0.0}, {'current': 2000.19, 'min': 0.0, 'max': 0.0}, {'current': 2000.19, 'min': 0.0, 'max': 0.0}, {'current': 2000.19, 'min': 0.0, 'max': 0.0}, {'current': 2000.19, 'min': 0.0, 'max': 0.0}, {'current': 2000.19, 'min': 0.0, 'max': 0.0}, {'current': 2000.19, 'min': 0.0, 'max': 0.0}, {'current': 2000.19, 'min': 0.0, 'max': 0.0}], 'disk': {'/': {'total': 166.77415084838867, 'used': 26.966880798339844}}, 'gpu': 'Tesla T4', 'gpu_count': 1, 'gpu_devices': [{'name': 'Tesla T4', 'memory_total': 16106127360}], 'memory': {'total': 50.993690490722656}}
+2024-01-11 02:33:01,044 INFO    HandlerThread:12189 [system_monitor.py:probe():224] Finished collecting system info
+2024-01-11 02:33:01,044 INFO    HandlerThread:12189 [system_monitor.py:probe():227] Publishing system info
+2024-01-11 02:33:01,048 INFO    HandlerThread:12189 [system_monitor.py:probe():229] Finished publishing system info
+2024-01-11 02:33:01,053 DEBUG   SenderThread:12189 [sender.py:send():382] send: files
+2024-01-11 02:33:01,053 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-01-11 02:33:01,065 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: python_packages
+2024-01-11 02:33:01,066 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: python_packages
+2024-01-11 02:33:01,066 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-11 02:33:01,067 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-11 02:33:01,070 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: stop_status
+2024-01-11 02:33:01,311 DEBUG   SenderThread:12189 [sender.py:send():382] send: telemetry
+2024-01-11 02:33:01,599 INFO    wandb-upload_0:12189 [upload_job.py:push():131] Uploaded file /tmp/tmpstkytc58wandb/4hs4ubsu-wandb-metadata.json
+2024-01-11 02:33:01,822 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-metadata.json
+2024-01-11 02:33:01,823 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:01,823 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/requirements.txt
+2024-01-11 02:33:05,677 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:33:05,830 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:09,840 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:11,472 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:33:11,844 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:13,849 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:15,853 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:16,067 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-11 02:33:16,068 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-11 02:33:16,068 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: stop_status
+2024-01-11 02:33:17,354 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:33:17,858 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:18,185 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-11 02:33:18,189 DEBUG   SenderThread:12189 [sender.py:send():382] send: history
+2024-01-11 02:33:18,190 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: summary_record
+2024-01-11 02:33:18,194 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:33:18,862 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:33:18,863 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints
+2024-01-11 02:33:19,798 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-11 02:33:19,802 DEBUG   SenderThread:12189 [sender.py:send():382] send: history
+2024-01-11 02:33:19,803 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: summary_record
+2024-01-11 02:33:19,807 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:33:19,866 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:19,867 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:33:19,867 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints/epoch=0.ckpt
+2024-01-11 02:33:19,868 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints
+2024-01-11 02:33:21,874 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:22,360 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:33:23,882 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:25,890 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:27,676 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:33:27,898 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:29,906 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:31,067 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-11 02:33:31,068 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-11 02:33:31,068 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: stop_status
+2024-01-11 02:33:31,292 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-11 02:33:31,296 DEBUG   SenderThread:12189 [sender.py:send():382] send: history
+2024-01-11 02:33:31,296 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: summary_record
+2024-01-11 02:33:31,301 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:33:31,914 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:33:32,877 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-11 02:33:32,880 DEBUG   SenderThread:12189 [sender.py:send():382] send: history
+2024-01-11 02:33:32,885 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:33:32,918 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints/epoch=1.ckpt
+2024-01-11 02:33:32,919 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints
+2024-01-11 02:33:33,054 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: summary_record
+2024-01-11 02:33:33,057 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:33:33,922 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/config.yaml
+2024-01-11 02:33:33,923 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:33,924 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:33:35,930 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:37,937 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:38,606 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:33:39,946 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:41,954 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:43,962 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:44,440 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-11 02:33:44,442 DEBUG   SenderThread:12189 [sender.py:send():382] send: history
+2024-01-11 02:33:44,442 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: summary_record
+2024-01-11 02:33:44,443 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:33:44,447 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:33:44,965 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:33:45,970 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:45,971 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints/epoch=2.ckpt
+2024-01-11 02:33:45,972 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints
+2024-01-11 02:33:46,058 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-11 02:33:46,059 DEBUG   SenderThread:12189 [sender.py:send():382] send: history
+2024-01-11 02:33:46,060 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: summary_record
+2024-01-11 02:33:46,064 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:33:46,115 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-11 02:33:46,141 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-11 02:33:46,142 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: stop_status
+2024-01-11 02:33:46,974 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:33:46,975 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints
+2024-01-11 02:33:47,978 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:49,671 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:33:49,986 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:51,993 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:54,001 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:55,179 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:33:56,009 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:57,760 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-11 02:33:57,762 DEBUG   SenderThread:12189 [sender.py:send():382] send: history
+2024-01-11 02:33:57,763 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: summary_record
+2024-01-11 02:33:57,767 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:33:58,017 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:33:58,018 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:33:59,022 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints/epoch=3.ckpt
+2024-01-11 02:33:59,023 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints
+2024-01-11 02:33:59,381 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-11 02:33:59,383 DEBUG   SenderThread:12189 [sender.py:send():382] send: history
+2024-01-11 02:33:59,384 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: summary_record
+2024-01-11 02:33:59,388 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:34:00,068 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints/epoch=3.ckpt
+2024-01-11 02:34:00,068 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:00,069 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:34:00,069 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints
+2024-01-11 02:34:00,729 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:34:00,999 DEBUG   SystemMonitor:12189 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-01-11 02:34:01,000 DEBUG   SenderThread:12189 [sender.py:send():382] send: stats
+2024-01-11 02:34:01,091 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-11 02:34:01,118 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-11 02:34:01,119 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: stop_status
+2024-01-11 02:34:02,076 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:04,084 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:06,091 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:06,358 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:34:08,099 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:10,108 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:11,197 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-11 02:34:11,199 DEBUG   SenderThread:12189 [sender.py:send():382] send: history
+2024-01-11 02:34:11,199 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: summary_record
+2024-01-11 02:34:11,203 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:34:11,457 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:34:12,117 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:12,118 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:34:12,118 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints/epoch=4.ckpt
+2024-01-11 02:34:12,119 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints
+2024-01-11 02:34:12,779 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-11 02:34:12,781 DEBUG   SenderThread:12189 [sender.py:send():382] send: history
+2024-01-11 02:34:12,782 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: summary_record
+2024-01-11 02:34:12,786 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:34:13,121 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:34:14,125 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:16,091 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-11 02:34:16,118 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-11 02:34:16,118 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: stop_status
+2024-01-11 02:34:16,135 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:16,526 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:34:18,143 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:18,795 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-11 02:34:18,796 DEBUG   SenderThread:12189 [sender.py:send():382] send: history
+2024-01-11 02:34:18,797 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: summary_record
+2024-01-11 02:34:18,800 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:34:19,147 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:34:20,151 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:22,091 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:34:22,159 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:24,166 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:24,794 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-11 02:34:24,796 DEBUG   SenderThread:12189 [sender.py:send():382] send: history
+2024-01-11 02:34:24,797 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: summary_record
+2024-01-11 02:34:24,802 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:34:25,171 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:34:26,176 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:26,177 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints/epoch=5.ckpt
+2024-01-11 02:34:26,178 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints
+2024-01-11 02:34:26,395 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-11 02:34:26,397 DEBUG   SenderThread:12189 [sender.py:send():382] send: history
+2024-01-11 02:34:26,397 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: summary_record
+2024-01-11 02:34:26,401 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:34:27,220 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints/epoch=5.ckpt
+2024-01-11 02:34:27,221 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:34:27,222 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints
+2024-01-11 02:34:27,744 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:34:28,224 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:30,232 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:31,001 DEBUG   SenderThread:12189 [sender.py:send():382] send: stats
+2024-01-11 02:34:31,091 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-11 02:34:31,118 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-11 02:34:31,119 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: stop_status
+2024-01-11 02:34:32,240 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:33,526 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:34:34,248 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:36,258 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:38,266 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:38,618 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:34:38,629 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-11 02:34:38,631 DEBUG   SenderThread:12189 [sender.py:send():382] send: history
+2024-01-11 02:34:38,632 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: summary_record
+2024-01-11 02:34:38,636 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:34:39,271 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:34:40,200 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-11 02:34:40,202 DEBUG   SenderThread:12189 [sender.py:send():382] send: history
+2024-01-11 02:34:40,202 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: summary_record
+2024-01-11 02:34:40,228 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:34:40,325 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:40,325 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:34:40,326 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints/epoch=6.ckpt
+2024-01-11 02:34:40,327 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints
+2024-01-11 02:34:42,332 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:43,961 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:34:44,342 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:46,092 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-11 02:34:46,118 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-11 02:34:46,119 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: stop_status
+2024-01-11 02:34:46,351 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:48,360 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:49,915 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:34:50,369 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:52,377 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:52,744 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-11 02:34:52,746 DEBUG   SenderThread:12189 [sender.py:send():382] send: history
+2024-01-11 02:34:52,746 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: summary_record
+2024-01-11 02:34:52,751 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:34:53,380 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:34:54,294 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-11 02:34:54,297 DEBUG   SenderThread:12189 [sender.py:send():382] send: history
+2024-01-11 02:34:54,298 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: summary_record
+2024-01-11 02:34:54,301 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:34:54,426 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:54,427 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:34:54,428 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints/epoch=7.ckpt
+2024-01-11 02:34:54,429 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints
+2024-01-11 02:34:54,951 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:34:56,434 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:34:58,443 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:35:00,451 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:35:00,689 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:35:01,002 DEBUG   SenderThread:12189 [sender.py:send():382] send: stats
+2024-01-11 02:35:01,092 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-11 02:35:01,119 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-11 02:35:01,119 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: stop_status
+2024-01-11 02:35:02,459 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:35:04,468 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:35:05,367 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-11 02:35:05,369 DEBUG   SenderThread:12189 [sender.py:send():382] send: history
+2024-01-11 02:35:05,369 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: summary_record
+2024-01-11 02:35:05,374 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:35:05,472 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:35:05,997 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:35:05,997 DEBUG   SenderThread:12189 [sender.py:send():382] send: telemetry
+2024-01-11 02:35:05,999 DEBUG   SenderThread:12189 [sender.py:send():382] send: exit
+2024-01-11 02:35:05,999 INFO    SenderThread:12189 [sender.py:send_exit():589] handling exit code: 0
+2024-01-11 02:35:06,000 INFO    SenderThread:12189 [sender.py:send_exit():591] handling runtime: 125
+2024-01-11 02:35:06,003 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:35:06,004 INFO    SenderThread:12189 [sender.py:send_exit():597] send defer
+2024-01-11 02:35:06,005 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: defer
+2024-01-11 02:35:06,005 INFO    HandlerThread:12189 [handler.py:handle_request_defer():172] handle defer: 0
+2024-01-11 02:35:06,005 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: defer
+2024-01-11 02:35:06,006 INFO    SenderThread:12189 [sender.py:send_request_defer():613] handle sender defer: 0
+2024-01-11 02:35:06,006 INFO    SenderThread:12189 [sender.py:transition_state():617] send defer: 1
+2024-01-11 02:35:06,006 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: defer
+2024-01-11 02:35:06,006 INFO    HandlerThread:12189 [handler.py:handle_request_defer():172] handle defer: 1
+2024-01-11 02:35:06,006 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: defer
+2024-01-11 02:35:06,006 INFO    SenderThread:12189 [sender.py:send_request_defer():613] handle sender defer: 1
+2024-01-11 02:35:06,007 INFO    SenderThread:12189 [sender.py:transition_state():617] send defer: 2
+2024-01-11 02:35:06,007 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: defer
+2024-01-11 02:35:06,007 INFO    HandlerThread:12189 [handler.py:handle_request_defer():172] handle defer: 2
+2024-01-11 02:35:06,007 INFO    HandlerThread:12189 [system_monitor.py:finish():203] Stopping system monitor
+2024-01-11 02:35:06,008 INFO    HandlerThread:12189 [interfaces.py:finish():202] Joined cpu monitor
+2024-01-11 02:35:06,008 DEBUG   SystemMonitor:12189 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-01-11 02:35:06,008 INFO    HandlerThread:12189 [interfaces.py:finish():202] Joined disk monitor
+2024-01-11 02:35:06,008 DEBUG   SystemMonitor:12189 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-01-11 02:35:06,015 INFO    HandlerThread:12189 [interfaces.py:finish():202] Joined gpu monitor
+2024-01-11 02:35:06,016 INFO    HandlerThread:12189 [interfaces.py:finish():202] Joined memory monitor
+2024-01-11 02:35:06,016 INFO    HandlerThread:12189 [interfaces.py:finish():202] Joined network monitor
+2024-01-11 02:35:06,016 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: defer
+2024-01-11 02:35:06,017 INFO    SenderThread:12189 [sender.py:send_request_defer():613] handle sender defer: 2
+2024-01-11 02:35:06,017 INFO    SenderThread:12189 [sender.py:transition_state():617] send defer: 3
+2024-01-11 02:35:06,017 DEBUG   SenderThread:12189 [sender.py:send():382] send: stats
+2024-01-11 02:35:06,017 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: defer
+2024-01-11 02:35:06,017 INFO    HandlerThread:12189 [handler.py:handle_request_defer():172] handle defer: 3
+2024-01-11 02:35:06,018 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: defer
+2024-01-11 02:35:06,018 INFO    SenderThread:12189 [sender.py:send_request_defer():613] handle sender defer: 3
+2024-01-11 02:35:06,018 INFO    SenderThread:12189 [sender.py:transition_state():617] send defer: 4
+2024-01-11 02:35:06,018 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: defer
+2024-01-11 02:35:06,018 INFO    HandlerThread:12189 [handler.py:handle_request_defer():172] handle defer: 4
+2024-01-11 02:35:06,019 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: defer
+2024-01-11 02:35:06,019 INFO    SenderThread:12189 [sender.py:send_request_defer():613] handle sender defer: 4
+2024-01-11 02:35:06,019 INFO    SenderThread:12189 [sender.py:transition_state():617] send defer: 5
+2024-01-11 02:35:06,019 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: defer
+2024-01-11 02:35:06,019 INFO    HandlerThread:12189 [handler.py:handle_request_defer():172] handle defer: 5
+2024-01-11 02:35:06,020 DEBUG   SenderThread:12189 [sender.py:send():382] send: summary
+2024-01-11 02:35:06,024 INFO    SenderThread:12189 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-11 02:35:06,025 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: defer
+2024-01-11 02:35:06,025 INFO    SenderThread:12189 [sender.py:send_request_defer():613] handle sender defer: 5
+2024-01-11 02:35:06,025 INFO    SenderThread:12189 [sender.py:transition_state():617] send defer: 6
+2024-01-11 02:35:06,025 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: defer
+2024-01-11 02:35:06,026 INFO    HandlerThread:12189 [handler.py:handle_request_defer():172] handle defer: 6
+2024-01-11 02:35:06,026 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: defer
+2024-01-11 02:35:06,026 INFO    SenderThread:12189 [sender.py:send_request_defer():613] handle sender defer: 6
+2024-01-11 02:35:06,029 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:35:06,201 INFO    SenderThread:12189 [sender.py:transition_state():617] send defer: 7
+2024-01-11 02:35:06,202 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: defer
+2024-01-11 02:35:06,202 INFO    HandlerThread:12189 [handler.py:handle_request_defer():172] handle defer: 7
+2024-01-11 02:35:06,202 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: defer
+2024-01-11 02:35:06,202 INFO    SenderThread:12189 [sender.py:send_request_defer():613] handle sender defer: 7
+2024-01-11 02:35:06,477 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/config.yaml
+2024-01-11 02:35:06,478 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:35:07,000 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-11 02:35:07,850 INFO    SenderThread:12189 [sender.py:transition_state():617] send defer: 8
+2024-01-11 02:35:07,850 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: poll_exit
+2024-01-11 02:35:07,851 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: defer
+2024-01-11 02:35:07,851 INFO    HandlerThread:12189 [handler.py:handle_request_defer():172] handle defer: 8
+2024-01-11 02:35:07,852 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: defer
+2024-01-11 02:35:07,852 INFO    SenderThread:12189 [sender.py:send_request_defer():613] handle sender defer: 8
+2024-01-11 02:35:07,852 INFO    SenderThread:12189 [job_builder.py:build():296] Attempting to build job artifact
+2024-01-11 02:35:07,854 INFO    SenderThread:12189 [job_builder.py:_get_source_type():426] is repo sourced job
+2024-01-11 02:35:07,891 INFO    SenderThread:12189 [job_builder.py:build():402] adding wandb-job metadata file
+2024-01-11 02:35:07,903 INFO    SenderThread:12189 [sender.py:transition_state():617] send defer: 9
+2024-01-11 02:35:07,904 DEBUG   SenderThread:12189 [sender.py:send():382] send: artifact
+2024-01-11 02:35:07,904 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: defer
+2024-01-11 02:35:07,906 INFO    HandlerThread:12189 [handler.py:handle_request_defer():172] handle defer: 9
+2024-01-11 02:35:08,000 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-11 02:35:08,486 INFO    Thread-12 :12189 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:35:09,214 INFO    wandb-upload_0:12189 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmpryawo2sq
+2024-01-11 02:35:09,218 INFO    wandb-upload_1:12189 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmpb19yw60l
+2024-01-11 02:35:10,134 INFO    SenderThread:12189 [sender.py:send_artifact():1494] sent artifact job-https___tnkryoga__github.com_tnkryoga_murata_labo_first.git_exp5_main.py - {'id': 'QXJ0aWZhY3Q6Njg3Nzk0OTMw', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyMzQ2NTUwMQ==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6Njg2NjQ0NjQ1', 'versionIndex': 16}}}
+2024-01-11 02:35:10,134 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: defer
+2024-01-11 02:35:10,134 INFO    SenderThread:12189 [sender.py:send_request_defer():613] handle sender defer: 9
+2024-01-11 02:35:10,134 INFO    SenderThread:12189 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-01-11 02:35:10,491 INFO    SenderThread:12189 [dir_watcher.py:finish():388] scan: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files
+2024-01-11 02:35:10,492 INFO    SenderThread:12189 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/config.yaml config.yaml
+2024-01-11 02:35:10,493 INFO    SenderThread:12189 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-metadata.json wandb-metadata.json
+2024-01-11 02:35:10,493 INFO    SenderThread:12189 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/requirements.txt requirements.txt
+2024-01-11 02:35:10,496 INFO    SenderThread:12189 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log output.log
+2024-01-11 02:35:10,499 INFO    SenderThread:12189 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json wandb-summary.json
+2024-01-11 02:35:10,505 INFO    SenderThread:12189 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints/epoch=7.ckpt checkpoints/epoch=7.ckpt
+2024-01-11 02:35:10,506 INFO    SenderThread:12189 [sender.py:transition_state():617] send defer: 10
+2024-01-11 02:35:10,507 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: poll_exit
+2024-01-11 02:35:10,507 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: defer
+2024-01-11 02:35:10,507 INFO    HandlerThread:12189 [handler.py:handle_request_defer():172] handle defer: 10
+2024-01-11 02:35:10,510 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: defer
+2024-01-11 02:35:10,510 INFO    SenderThread:12189 [sender.py:send_request_defer():613] handle sender defer: 10
+2024-01-11 02:35:10,510 INFO    SenderThread:12189 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-11 02:35:10,827 INFO    wandb-upload_0:12189 [upload_job.py:push():131] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/config.yaml
+2024-01-11 02:35:11,002 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-11 02:35:11,002 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: poll_exit
+2024-01-11 02:35:11,231 INFO    wandb-upload_1:12189 [upload_job.py:push():131] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/requirements.txt
+2024-01-11 02:35:11,296 INFO    wandb-upload_3:12189 [upload_job.py:push():131] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/wandb-summary.json
+2024-01-11 02:35:11,458 INFO    wandb-upload_2:12189 [upload_job.py:push():131] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/output.log
+2024-01-11 02:35:12,002 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-11 02:35:12,003 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: poll_exit
+2024-01-11 02:35:13,003 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-11 02:35:13,003 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: poll_exit
+2024-01-11 02:35:14,003 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-11 02:35:14,004 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: poll_exit
+2024-01-11 02:35:15,004 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-11 02:35:15,004 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: poll_exit
+2024-01-11 02:35:16,005 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-11 02:35:16,005 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:35:16,005 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: poll_exit
+2024-01-11 02:35:17,005 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-11 02:35:17,006 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: poll_exit
+2024-01-11 02:35:18,006 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-11 02:35:18,006 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: poll_exit
+2024-01-11 02:35:19,006 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-11 02:35:19,007 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: poll_exit
+2024-01-11 02:35:20,007 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-11 02:35:20,008 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: poll_exit
+2024-01-11 02:35:21,008 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-11 02:35:21,008 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: poll_exit
+2024-01-11 02:35:21,009 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: status_report
+2024-01-11 02:35:22,008 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-11 02:35:22,009 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: poll_exit
+2024-01-11 02:35:23,009 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-11 02:35:23,010 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: poll_exit
+2024-01-11 02:35:23,087 INFO    wandb-upload_4:12189 [upload_job.py:push():131] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/files/checkpoints/epoch=7.ckpt
+2024-01-11 02:35:23,288 INFO    Thread-11 (_thread_body):12189 [sender.py:transition_state():617] send defer: 11
+2024-01-11 02:35:23,289 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: defer
+2024-01-11 02:35:23,289 INFO    HandlerThread:12189 [handler.py:handle_request_defer():172] handle defer: 11
+2024-01-11 02:35:23,289 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: defer
+2024-01-11 02:35:23,290 INFO    SenderThread:12189 [sender.py:send_request_defer():613] handle sender defer: 11
+2024-01-11 02:35:23,290 INFO    SenderThread:12189 [file_pusher.py:join():181] waiting for file pusher
+2024-01-11 02:35:23,290 INFO    SenderThread:12189 [sender.py:transition_state():617] send defer: 12
+2024-01-11 02:35:23,290 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: defer
+2024-01-11 02:35:23,290 INFO    HandlerThread:12189 [handler.py:handle_request_defer():172] handle defer: 12
+2024-01-11 02:35:23,290 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: defer
+2024-01-11 02:35:23,291 INFO    SenderThread:12189 [sender.py:send_request_defer():613] handle sender defer: 12
+2024-01-11 02:35:23,291 INFO    SenderThread:12189 [file_stream.py:finish():595] file stream finish called
+2024-01-11 02:35:23,430 INFO    SenderThread:12189 [file_stream.py:finish():599] file stream finish is done
+2024-01-11 02:35:23,430 INFO    SenderThread:12189 [sender.py:transition_state():617] send defer: 13
+2024-01-11 02:35:23,430 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: defer
+2024-01-11 02:35:23,431 INFO    HandlerThread:12189 [handler.py:handle_request_defer():172] handle defer: 13
+2024-01-11 02:35:23,431 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: defer
+2024-01-11 02:35:23,432 INFO    SenderThread:12189 [sender.py:send_request_defer():613] handle sender defer: 13
+2024-01-11 02:35:23,432 INFO    SenderThread:12189 [sender.py:transition_state():617] send defer: 14
+2024-01-11 02:35:23,432 DEBUG   SenderThread:12189 [sender.py:send():382] send: final
+2024-01-11 02:35:23,432 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: defer
+2024-01-11 02:35:23,432 DEBUG   SenderThread:12189 [sender.py:send():382] send: footer
+2024-01-11 02:35:23,433 INFO    HandlerThread:12189 [handler.py:handle_request_defer():172] handle defer: 14
+2024-01-11 02:35:23,433 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: defer
+2024-01-11 02:35:23,433 INFO    SenderThread:12189 [sender.py:send_request_defer():613] handle sender defer: 14
+2024-01-11 02:35:23,435 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-11 02:35:23,435 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: poll_exit
+2024-01-11 02:35:23,436 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-11 02:35:23,437 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: server_info
+2024-01-11 02:35:23,437 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: server_info
+2024-01-11 02:35:23,478 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: get_summary
+2024-01-11 02:35:23,479 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: sampled_history
+2024-01-11 02:35:23,482 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: job_info
+2024-01-11 02:35:23,557 DEBUG   SenderThread:12189 [sender.py:send_request():409] send_request: job_info
+2024-01-11 02:35:23,559 DEBUG   HandlerThread:12189 [handler.py:handle_request():146] handle_request: shutdown
+2024-01-11 02:35:23,559 INFO    HandlerThread:12189 [handler.py:finish():869] shutting down handler
+2024-01-11 02:35:24,483 INFO    WriterThread:12189 [datastore.py:close():296] close: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-11/02-32-59/wandb/run-20240111_023300-vlei5atu/run-vlei5atu.wandb
+2024-01-11 02:35:24,558 INFO    SenderThread:12189 [sender.py:finish():1572] shutting down sender
+2024-01-11 02:35:24,558 INFO    SenderThread:12189 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-11 02:35:24,558 INFO    SenderThread:12189 [file_pusher.py:join():181] waiting for file pusher
