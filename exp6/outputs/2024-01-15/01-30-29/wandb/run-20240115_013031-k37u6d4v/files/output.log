@@ -1,0 +1,90 @@
+
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:389: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m    [22m┃[1m Name                        [22m┃[1m Type                 [22m┃[1m Params [22m┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0  │ bert                        │ BertModel            │ 89.1 M │
+│ 1  │ classifiers                 │ ModuleList           │  6.3 M │
+│ 2  │ hidden_layer1               │ ModuleList           │  2.1 M │
+│ 3  │ hidden_layer2               │ ModuleList           │  2.1 K │
+│ 4  │ sigmoid                     │ Sigmoid              │      0 │
+│ 5  │ criterion                   │ Dice_MultiLabel_Loss │      0 │
+│ 6  │ metrics                     │ MetricCollection     │      0 │
+│ 7  │ metrics_per_label_accuracy  │ MetricCollection     │      0 │
+│ 8  │ metrics_per_label_precision │ MetricCollection     │      0 │
+│ 9  │ metrics_per_label_recall    │ MetricCollection     │      0 │
+│ 10 │ metrics_per_label_f1score   │ MetricCollection     │      0 │
+└────┴─────────────────────────────┴──────────────────────┴────────┘
+[1mTrainable params[22m: 15.5 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 97.5 M
+[1mTotal estimated model params size (MB)[22m: 390
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:293: The number of
+training batches (46) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a
+lower value for log_every_n_steps if you want to see logs for the training epoch.
+[37mEpoch 0/3 [39m [35m━[90m╺━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m2/46[39m [37m0:00:00 • 0:00:02[39m [37m40.27it/s[39m [37mv_num: 6d4v train/loss:     
+
+
+
+
+
+
+
+                                                                        [37m0.579                       
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━╸[90m━━[39m [37m11/12[39m [37m0:00:02 • 0:00:01[39m [37m4.53it/s
+
+
+
+
+
+
+
+
+                                                                        [37m0.571                       
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━╸[90m━━━━[39m [37m10/12[39m [37m0:00:01 • 0:00:01[39m [37m4.66it/s
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.552                       
+
+[37mValidation[39m [35m━━━━━━━━━━━━━╸[90m━━━━━━━━━━━━━[39m [37m6/12 [39m [37m0:00:00 • 0:00:02[39m [37m5.97it/s
+
+
+
+
+
+
+
+                                                                        [37m0.546                       
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━╸[90m━━━━[39m [37m10/12[39m [37m0:00:01 • 0:00:01[39m [37m4.64it/s
+
+Epoch 3, global step 184: 'val_loss' reached 0.54674 (best 0.54674), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-15/01-30-29/wandb/run-20240115_013031-k37u6d4v/files/checkpoints/epoch=3.ckpt' as top 1
+`Trainer.fit` stopped: `max_epochs=4` reached.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃[1m           Test metric           [22m┃[1m          DataLoader 0           [22m┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│[36m     test/multilabelaccuracy     [39m│[35m       0.7010869979858398        [39m│
+│[36m     test/multilabelf1score      [39m│[35m       0.4803742468357086        [39m│
+│[36m test/multilabelmatthewscorrcoef [39m│[35m       0.4010794758796692        [39m│
+│[36m    test/multilabelprecision     [39m│[35m       0.4190996289253235        [39m│
+│[36m      test/multilabelrecall      [39m│[35m       0.5839917063713074        [39m│
+│[36m            test_loss            [39m│[35m       0.5448768138885498        [39m│
+└─────────────────────────────────┴─────────────────────────────────┘
+[37mTesting[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m11/11[39m [37m0:00:02 • 0:00:00[39m [37m4.39it/s
+[?25h
