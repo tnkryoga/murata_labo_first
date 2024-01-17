@@ -1,0 +1,121 @@
+
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:389: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m    [22m┃[1m Name                        [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0  │ bert                        │ BertModel        │ 89.1 M │
+│ 1  │ classifiers                 │ ModuleList       │  6.3 M │
+│ 2  │ hidden_layer1               │ ModuleList       │  2.1 M │
+│ 3  │ hidden_layer2               │ ModuleList       │  2.1 K │
+│ 4  │ sigmoid                     │ Sigmoid          │      0 │
+│ 5  │ criterion                   │ BCELoss          │      0 │
+│ 6  │ metrics                     │ MetricCollection │      0 │
+│ 7  │ metrics_per_label_accuracy  │ MetricCollection │      0 │
+│ 8  │ metrics_per_label_precision │ MetricCollection │      0 │
+│ 9  │ metrics_per_label_recall    │ MetricCollection │      0 │
+│ 10 │ metrics_per_label_f1score   │ MetricCollection │      0 │
+└────┴─────────────────────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 15.5 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 97.5 M
+[1mTotal estimated model params size (MB)[22m: 390
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:293: The number of
+training batches (46) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a
+lower value for log_every_n_steps if you want to see logs for the training epoch.
+[37mEpoch 0/3 [39m [35m━╸[90m━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m3/46[39m [37m0:00:00 • 0:00:08[39m [37m5.40it/s[39m [37mv_num: aimh train/loss:     
+
+
+
+
+
+
+                                                                        [37m0.593                       
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━╸[90m━━[39m [37m11/12[39m [37m0:00:02 • 0:00:01[39m [37m4.44it/s
+
+
+
+
+
+
+
+
+
+                                                                        [37m0.546                       
+
+[37mValidation[39m [35m━━━━━━━━━━━━━╸[90m━━━━━━━━━━━━━[39m [37m6/12 [39m [37m0:00:00 • 0:00:02[39m [37m6.00it/s
+
+
+
+
+
+
+
+
+                                                                        [37m0.556                       
+
+[37mValidation[39m [35m━━━━━━━━━━━━━╸[90m━━━━━━━━━━━━━[39m [37m6/12 [39m [37m0:00:00 • 0:00:02[39m [37m5.97it/s
+
+
+
+
+
+
+
+
+                                                                        [37m0.571                       
+
+[37mValidation[39m [35m━━━━━━━━━━━━━╸[90m━━━━━━━━━━━━━[39m [37m6/12 [39m [37m0:00:00 • 0:00:02[39m [37m5.99it/s
+Epoch 3, global step 184: 'val_loss' reached 0.56635 (best 0.56635), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp8/outputs/2024-01-17/04-51-57/wandb/run-20240117_045159-6wpbaimh/files/checkpoints/epoch=3.ckpt' as top 1
+`Trainer.fit` stopped: `max_epochs=4` reached.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃[1m           Test metric           [22m┃[1m          DataLoader 0           [22m┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│[36m  test/accuracy_label_あいづち   [39m│[35m       0.9503105878829956        [39m│
+│[36m   test/accuracy_label_その他    [39m│[35m       0.5062111616134644        [39m│
+│[36m    test/accuracy_label_同意     [39m│[35m       0.6832298040390015        [39m│
+│[36m    test/accuracy_label_感心     [39m│[35m       0.8726708292961121        [39m│
+│[36m    test/accuracy_label_納得     [39m│[35m       0.6397515535354614        [39m│
+│[36m test/accuracy_label_繰り返し応… [39m│[35m       0.7453415989875793        [39m│
+│[36m    test/accuracy_label_評価     [39m│[35m       0.6211180090904236        [39m│
+│[36m    test/accuracy_label_驚き     [39m│[35m       0.8540372848510742        [39m│
+│[36m   test/f1score_label_あいづち   [39m│[35m       0.9743589758872986        [39m│
+│[36m    test/f1score_label_その他    [39m│[35m               0.0               [39m│
+│[36m     test/f1score_label_同意     [39m│[35m               0.0               [39m│
+│[36m     test/f1score_label_感心     [39m│[35m        0.928196132183075        [39m│
+│[36m     test/f1score_label_納得     [39m│[35m               0.0               [39m│
+│[36m test/f1score_label_繰り返し応答 [39m│[35m        0.800000011920929        [39m│
+│[36m     test/f1score_label_評価     [39m│[35m               0.0               [39m│
+│[36m     test/f1score_label_驚き     [39m│[35m               0.0               [39m│
+│[36m     test/multilabelaccuracy     [39m│[35m        0.734083890914917        [39m│
+│[36m     test/multilabelf1score      [39m│[35m       0.3378193974494934        [39m│
+│[36m test/multilabelmatthewscorrcoef [39m│[35m       0.5153113603591919        [39m│
+│[36m    test/multilabelprecision     [39m│[35m       0.3300265669822693        [39m│
+│[36m      test/multilabelrecall      [39m│[35m       0.34602195024490356       [39m│
+│[36m  test/presicion_label_あいづち  [39m│[35m        0.955974817276001        [39m│
+│[36m   test/presicion_label_その他   [39m│[35m               0.0               [39m│
+│[36m    test/presicion_label_同意    [39m│[35m               0.0               [39m│
+│[36m    test/presicion_label_感心    [39m│[35m       0.9106529355049133        [39m│
+│[36m    test/presicion_label_納得    [39m│[35m               0.0               [39m│
+│[36m test/presicion_label_繰り返し … [39m│[35m       0.7735849022865295        [39m│
+│[36m    test/presicion_label_評価    [39m│[35m               0.0               [39m│
+│[36m    test/presicion_label_驚き    [39m│[35m               0.0               [39m│
+│[36m   test/recall_label_あいづち    [39m│[35m       0.9934640526771545        [39m│
+│[36m    test/recall_label_その他     [39m│[35m               0.0               [39m│
+│[36m     test/recall_label_同意      [39m│[35m               0.0               [39m│
+│[36m     test/recall_label_感心      [39m│[35m       0.9464285969734192        [39m│
+│[36m     test/recall_label_納得      [39m│[35m               0.0               [39m│
+│[36m test/recall_label_繰り返し応答  [39m│[35m       0.8282828330993652        [39m│
+│[36m     test/recall_label_評価      [39m│[35m               0.0               [39m│
+│[36m     test/recall_label_驚き      [39m│[35m               0.0               [39m│
+│[36m            test_loss            [39m│[35m       0.5675873160362244        [39m│
+└─────────────────────────────────┴─────────────────────────────────┘
+[37mTesting[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m11/11[39m [37m0:00:02 • 0:00:00[39m [37m4.33it/s
+[?25h
