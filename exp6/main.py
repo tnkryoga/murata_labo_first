@@ -547,8 +547,8 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         optimizer = optim.Adam(
             [
                 {"params": self.bert.encoder.layer[-1].parameters(), "lr": 5e-5},
-                {"params": self.layer.parameters(), "lr": 1e-4},
-                {"params": self.layer2.parameters(), "lr": 1e-4},
+                {"params": self.hidden_layer1.parameters(), "lr": 1e-4},
+                {"params": self.hidden_layer2.parameters(), "lr": 1e-4},
                 # {"params": self.layer3.parameters(), "lr": 1e-4},
             ]
         )
