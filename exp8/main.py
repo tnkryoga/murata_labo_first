@@ -22,7 +22,7 @@ from transformers import BertJapaneseTokenizer
 
 # Dataset
 class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoaderに渡す関数
-    TEXT_COLUMN = "sentence"
+    TEXT_COLUMN = "chunk"
     LABEL_COLUMN = "labels"
 
     def __init__(self, data, tokenizer, max_token_len):
