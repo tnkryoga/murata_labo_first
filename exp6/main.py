@@ -263,9 +263,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
     def forward(self, input_ids, attention_mask, labels=None):
         output = self.bert(input_ids, attention_mask=attention_mask)
         hidden_outputs = []
-        for classifier, hidden_layer1, hidden_layer2 in zip(
-            self.classifiers, self.hidden_layer1, self.hidden_layer2
-        ):
+        for classifier, hidden_layer1 in zip(self.classifiers, self.hidden_layer1):
             binary_output = torch.relu(classifier(output.pooler_output))
             hidden_output1 = torch.relu(hidden_layer1(binary_output))
             # hidden_output2 = torch.relu(hidden_layer2(hidden_output1))
