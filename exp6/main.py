@@ -176,7 +176,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             ]
         )  # 入力BERT層、出力hidden_sizeの全結合層/二値分類器をクラス数分並べる
         self.hidden_layer1 = nn.ModuleList(
-            [nn.Linear(hidden_size, 1) for _ in range(num_classes)]
+            [nn.Linear(hidden_size, hidden_size2) for _ in range(num_classes)]
         )  # classifierの隠れ層の追加
         self.hidden_layer2 = nn.ModuleList(
             [nn.Linear(hidden_size2, 1) for _ in range(num_classes)]
