@@ -461,51 +461,64 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
+        class_names = [
+            "あいづち",
+            "感心",
+            "評価",
+            "繰り返し応答",
+            "同意",
+            "納得",
+            "驚き",
+            "言い換え",
+            "意見",
+            "考えている最中",
+            "不同意",
+            "補完",
+            "あいさつ",
+            "想起",
+            "驚きといぶかり",
+            "その他",
+        ]
+
         metrics = self.metrics(epoch_preds, epoch_labels)
         for metric in metrics.keys():
             self.log(f"{mode}/{metric.lower()}", metrics[metric].item(), logger=True)
 
-        epoch_preds, epoch_labels = (
-            epoch_preds.cpu().numpy(),  # cpu上に移動し、numpy配列に変換
-            epoch_labels.cpu().numpy(),
-        )
-        preds_binary = np.where(epoch_preds > self.THRESHOLD, 1, 0)
-
-        """# 混同行列
         for i in range(self.num_classes):
-            label_preds = epoch_preds[:, i]  # i番目のepochの要素のみを抽出
+            label_preds = epoch_preds[:, i]  # i番目の要素のみを抽出
             label_labels = epoch_labels[:, i]
-            preds_binary = np.where(label_preds > self.THRESHOLD, 1, 0)
-            judg = False if i != self.num_classes - 1 else True
-            print(judg)
-            wandb.log(
-                {
-                    f"test/confusion_matrix_{i}": plot.confusion_matrix(
-                        probs=None,
-                        y_true=label_labels,
-                        preds=preds_binary,
-                        class_names=[
-                            "あいづち",
-                            "感心",
-                            "評価",
-                            "繰り返し応答",
-                            "同意",
-                            "納得",
-                            "驚き",
-                            "言い換え",
-                            "意見",
-                            "考えている最中",
-                            "不同意",
-                            "補完",
-                            "あいさつ",
-                            "想起",
-                            "驚きといぶかり",
-                            "その他",
-                        ],
-                    ),
-                },
-                commit=judg,
-            )"""
+            metrics_per_label_accuracy = self.metrics_per_label_accuracy(
+                label_preds, label_labels
+            )
+            metrics_per_label_precision = self.metrics_per_label_precision(
+                label_preds, label_labels
+            )
+            metrics_per_label_recall = self.metrics_per_label_recall(
+                label_preds, label_labels
+            )
+            metrics_per_label_f1score = self.metrics_per_label_f1score(
+                label_preds, label_labels
+            )
+            self.log(
+                f"{mode}/accuracy_label_{class_names[i]}",
+                metrics_per_label_accuracy[f"accuracy_label_{i}"].item(),
+                logger=True,
+            )
+            self.log(
+                f"{mode}/presicion_label_{class_names[i]}",
+                metrics_per_label_precision[f"precision_label_{i}"].item(),
+                logger=True,
+            )
+            self.log(
+                f"{mode}/recall_label_{class_names[i]}",
+                metrics_per_label_recall[f"recall_label_{i}"].item(),
+                logger=True,
+            )
+            self.log(
+                f"{mode}/f1score_label_{class_names[i]}",
+                metrics_per_label_f1score[f"f1score_label_{i}"].item(),
+                logger=True,
+            )
 
         self.test_step_outputs_preds.clear()
         self.test_step_outputs_labels.clear()  # free memory

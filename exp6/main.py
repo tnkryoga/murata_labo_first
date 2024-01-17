@@ -178,9 +178,9 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         self.hidden_layer1 = nn.ModuleList(
             [nn.Linear(hidden_size, 1) for _ in range(num_classes)]
         )  # classifierの隠れ層の追加
-        """self.hidden_layer2 = nn.ModuleList(
+        self.hidden_layer2 = nn.ModuleList(
             [nn.Linear(hidden_size2, 1) for _ in range(num_classes)]
-        )  # classifierの隠れ層の追加"""
+        )  # classifierの隠れ層の追加
         self.sigmoid = nn.Sigmoid()
         self.n_epochs = n_epochs
         self.criterion = loss_fn
@@ -263,11 +263,13 @@ class MaltiLabelClassifierModel(pl.LightningModule):
     def forward(self, input_ids, attention_mask, labels=None):
         output = self.bert(input_ids, attention_mask=attention_mask)
         hidden_outputs = []
-        for classifier, hidden_layer1 in zip(self.classifiers, self.hidden_layer1):
+        for classifier, hidden_layer1, hidden_layer2 in zip(
+            self.classifiers, self.hidden_layer1, self.hidden_layer2
+        ):
             binary_output = torch.relu(classifier(output.pooler_output))
             hidden_output1 = torch.relu(hidden_layer1(binary_output))
-            # hidden_output2 = torch.relu(hidden_layer2(hidden_output1))
-            hidden_outputs.append(hidden_output1)
+            hidden_output2 = torch.relu(hidden_layer2(hidden_output1))
+            hidden_outputs.append(hidden_output2)
 
         combine_outputs = torch.cat(hidden_outputs, dim=1)  # 各クラスのバイナリ出力を結合
         preds = self.sigmoid(combine_outputs)
