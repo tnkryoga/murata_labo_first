@@ -1,0 +1,88 @@
+{
+    "os": "Linux-6.1.58+-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "heartbeatAt": "2024-01-18T02:33:56.982532",
+    "startedAt": "2024-01-18T02:33:56.239902",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/main.py",
+    "codePathLocal": null,
+    "codePath": "exp4/main.py",
+    "git": {
+        "remote": "https://tnkryoga:@github.com/tnkryoga/murata_labo_first.git",
+        "commit": "a2791582aed8c83328448e185eb7cc7bf56470e7"
+    },
+    "email": "tanaryo-miyabi818@outlook.jp",
+    "root": "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src",
+    "host": "5f922e2b591c",
+    "username": "root",
+    "executable": "/usr/bin/python3",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 2000.17,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2000.17,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.17,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.17,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.17,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.17,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.17,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.17,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.17,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 166.77415084838867,
+            "used": 30.132217407226562
+        }
+    },
+    "gpu": "Tesla V100-SXM2-16GB",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "Tesla V100-SXM2-16GB",
+            "memory_total": 17179869184
+        }
+    ],
+    "memory": {
+        "total": 50.993690490722656
+    }
+}
