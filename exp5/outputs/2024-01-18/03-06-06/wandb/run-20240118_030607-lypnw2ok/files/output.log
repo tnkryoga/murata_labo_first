@@ -1,0 +1,168 @@
+
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:389: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m    [22m┃[1m Name                        [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0  │ bert                        │ BertModel        │ 89.1 M │
+│ 1  │ classifiers                 │ ModuleList       │  6.3 M │
+│ 2  │ hidden_layer1               │ ModuleList       │  2.1 M │
+│ 3  │ hidden_layer2               │ ModuleList       │  2.1 K │
+│ 4  │ sigmoid                     │ Sigmoid          │      0 │
+│ 5  │ criterion                   │ Focal_Loss       │      0 │
+│ 6  │ metrics                     │ MetricCollection │      0 │
+│ 7  │ metrics_per_label_accuracy  │ MetricCollection │      0 │
+│ 8  │ metrics_per_label_precision │ MetricCollection │      0 │
+│ 9  │ metrics_per_label_recall    │ MetricCollection │      0 │
+│ 10 │ metrics_per_label_f1score   │ MetricCollection │      0 │
+└────┴─────────────────────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 15.5 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 97.5 M
+[1mTotal estimated model params size (MB)[22m: 390
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:293: The number of
+training batches (46) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a
+lower value for log_every_n_steps if you want to see logs for the training epoch.
+[37mEpoch 0/7 [39m [35m━╸[90m━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m3/46[39m [37m0:00:00 • 0:00:08[39m [37m5.52it/s[39m [37mv_num: w2ok train/loss:     
+
+
+
+
+
+
+
+                                                                        [37m0.161                       
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━╸[90m━━━━━━━━━━━[39m [37m7/12 [39m [37m0:00:01 • 0:00:01[39m [37m5.53it/s
+Epoch 0, global step 46: 'val_loss' reached 0.15410 (best 0.15410), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-18/03-06-06/wandb/run-20240118_030607-lypnw2ok/files/checkpoints/epoch=0.ckpt' as top 1
+Epoch 1/7  [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m0/46[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: w2ok train/loss:     
+
+
+
+
+
+
+
+
+                                                                        [37m0.147                       
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━╸[90m━━━━[39m [37m10/12[39m [37m0:00:01 • 0:00:01[39m [37m4.71it/s
+Epoch 1/7  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:15 • 0:00:00[39m [37m2.95it/s[39m [37mv_num: w2ok train/loss:     
+
+
+
+
+
+
+
+
+                                                                        [37m0.147                       
+
+[37mValidation[39m [35m━━━━━━━━━━━[90m╺━━━━━━━━━━━━━━━[39m [37m5/12 [39m [37m0:00:00 • 0:00:01[39m [37m7.46it/s
+Epoch 2, global step 138: 'val_loss' reached 0.14950 (best 0.14950), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-18/03-06-06/wandb/run-20240118_030607-lypnw2ok/files/checkpoints/epoch=2.ckpt' as top 1
+Epoch 2/7  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:15 • 0:00:00[39m [37m2.95it/s[39m [37mv_num: w2ok train/loss:     
+
+
+
+
+
+
+
+
+                                                                        [37m0.153                       
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━╸[90m━━━━━━━━━━━[39m [37m7/12 [39m [37m0:00:01 • 0:00:01[39m [37m5.50it/s
+Epoch 3, global step 184: 'val_loss' reached 0.14905 (best 0.14905), saving model to '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/outputs/2024-01-18/03-06-06/wandb/run-20240118_030607-lypnw2ok/files/checkpoints/epoch=3.ckpt' as top 1
+Epoch 4/7  [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m0/46[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: w2ok train/loss:     
+
+
+
+
+
+
+                                                                        [37m0.148                       
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━╸[90m━━━━[39m [37m10/12[39m [37m0:00:01 • 0:00:01[39m [37m4.67it/s
+Epoch 4/7  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:15 • 0:00:00[39m [37m2.94it/s[39m [37mv_num: w2ok train/loss:     
+
+
+
+
+
+
+                                                                        [37m0.146                       
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━╸[90m━━━━[39m [37m10/12[39m [37m0:00:01 • 0:00:01[39m [37m4.67it/s
+Epoch 6/7  [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m0/46[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: w2ok train/loss:     
+
+
+
+
+
+
+
+
+                                                                        [37m0.150                       
+Epoch 6/7  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:15 • 0:00:00[39m [37m2.94it/s[39m [37mv_num: w2ok train/loss:     
+                                                                        [37m0.150                       
+
+
+
+
+
+
+
+
+                                                                        [37m0.146                       
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━╸[90m━━━━[39m [37m10/12[39m [37m0:00:01 • 0:00:01[39m [37m4.68it/s
+Epoch 7/7  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m46/46[39m [37m0:00:15 • 0:00:00[39m [37m2.94it/s[39m [37mv_num: w2ok train/loss:     
+                                                                        [37m0.146                       
+`Trainer.fit` stopped: `max_epochs=8` reached.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃[1m           Test metric           [22m┃[1m          DataLoader 0           [22m┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│[36m  test/accuracy_label_あいづち   [39m│[35m       0.9503105878829956        [39m│
+│[36m    test/accuracy_label_同意     [39m│[35m       0.6832298040390015        [39m│
+│[36m    test/accuracy_label_感心     [39m│[35m       0.8695651888847351        [39m│
+│[36m    test/accuracy_label_納得     [39m│[35m       0.6739130616188049        [39m│
+│[36m test/accuracy_label_繰り返し応… [39m│[35m       0.7453415989875793        [39m│
+│[36m  test/accuracy_label_言い換え   [39m│[35m       0.5807453393936157        [39m│
+│[36m    test/accuracy_label_評価     [39m│[35m       0.5465838313102722        [39m│
+│[36m    test/accuracy_label_驚き     [39m│[35m       0.8540372848510742        [39m│
+│[36m   test/f1score_label_あいづち   [39m│[35m       0.9743589758872986        [39m│
+│[36m     test/f1score_label_同意     [39m│[35m               0.0               [39m│
+│[36m     test/f1score_label_感心     [39m│[35m       0.9273356199264526        [39m│
+│[36m     test/f1score_label_納得     [39m│[35m        0.626334547996521        [39m│
+│[36m test/f1score_label_繰り返し応答 [39m│[35m       0.8255318999290466        [39m│
+│[36m   test/f1score_label_言い換え   [39m│[35m        0.669926643371582        [39m│
+│[36m     test/f1score_label_評価     [39m│[35m       0.5654761791229248        [39m│
+│[36m     test/f1score_label_驚き     [39m│[35m               0.0               [39m│
+│[36m     test/multilabelaccuracy     [39m│[35m       0.7379658222198486        [39m│
+│[36m     test/multilabelf1score      [39m│[35m       0.5736204981803894        [39m│
+│[36m test/multilabelmatthewscorrcoef [39m│[35m       0.47799989581108093       [39m│
+│[36m    test/multilabelprecision     [39m│[35m       0.5117247104644775        [39m│
+│[36m      test/multilabelrecall      [39m│[35m       0.6661686897277832        [39m│
+│[36m  test/presicion_label_あいづち  [39m│[35m        0.955974817276001        [39m│
+│[36m    test/presicion_label_同意    [39m│[35m               0.0               [39m│
+│[36m    test/presicion_label_感心    [39m│[35m        0.899328887462616        [39m│
+│[36m    test/presicion_label_納得    [39m│[35m       0.5333333611488342        [39m│
+│[36m test/presicion_label_繰り返し … [39m│[35m       0.7132353186607361        [39m│
+│[36m  test/presicion_label_言い換え  [39m│[35m       0.5479999780654907        [39m│
+│[36m    test/presicion_label_評価    [39m│[35m       0.44392523169517517       [39m│
+│[36m    test/presicion_label_驚き    [39m│[35m               0.0               [39m│
+│[36m   test/recall_label_あいづち    [39m│[35m       0.9934640526771545        [39m│
+│[36m     test/recall_label_同意      [39m│[35m               0.0               [39m│
+│[36m     test/recall_label_感心      [39m│[35m       0.9571428298950195        [39m│
+│[36m     test/recall_label_納得      [39m│[35m       0.7586206793785095        [39m│
+│[36m test/recall_label_繰り返し応答  [39m│[35m       0.9797979593276978        [39m│
+│[36m   test/recall_label_言い換え    [39m│[35m       0.8616352081298828        [39m│
+│[36m     test/recall_label_評価      [39m│[35m       0.7786885499954224        [39m│
+│[36m     test/recall_label_驚き      [39m│[35m               0.0               [39m│
+│[36m            test_loss            [39m│[35m       0.14773596823215485       [39m│
+└─────────────────────────────────┴─────────────────────────────────┘
+[37mTesting[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m11/11[39m [37m0:00:02 • 0:00:00[39m [37m4.39it/s
+[?25h
