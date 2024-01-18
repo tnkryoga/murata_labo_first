@@ -22,7 +22,7 @@ from transformers import BertJapaneseTokenizer
 
 # Dataset
 class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoaderに渡す関数
-    TEXT_COLUMN = "chunk"
+    TEXT_COLUMN = "sentence"
     LABEL_COLUMN = "labels"
 
     def __init__(self, data, tokenizer, max_token_len):
@@ -182,30 +182,30 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             [
                 torchmetrics.Accuracy(
                     task="multilabel",
-                    num_labels=16,
+                    num_labels=8,
                     threshold=self.THRESHOLD,
                     average="macro",
                 ),
                 torchmetrics.Precision(
                     task="multilabel",
-                    num_labels=16,
+                    num_labels=8,
                     threshold=self.THRESHOLD,
                     average="macro",
                 ),
                 torchmetrics.Recall(
                     task="multilabel",
-                    num_labels=16,
+                    num_labels=8,
                     threshold=self.THRESHOLD,
                     average="macro",
                 ),
                 torchmetrics.F1Score(
                     task="multilabel",
-                    num_labels=16,
+                    num_labels=8,
                     threshold=self.THRESHOLD,
                     average="macro",
                 ),
                 torchmetrics.MatthewsCorrCoef(
-                    task="multilabel", num_labels=16, threshold=self.THRESHOLD
+                    task="multilabel", num_labels=8, threshold=self.THRESHOLD
                 ),
             ]
         )
