@@ -1,0 +1,627 @@
+2024-01-18 07:28:40,010 INFO    StreamThr :54114 [internal.py:wandb_internal():86] W&B internal server running at pid: 54114, started at: 2024-01-18 07:28:40.007779
+2024-01-18 07:28:40,014 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status
+2024-01-18 07:28:40,022 INFO    WriterThread:54114 [datastore.py:open_for_write():87] open: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/run-tgkgs22q.wandb
+2024-01-18 07:28:40,025 DEBUG   SenderThread:54114 [sender.py:send():382] send: header
+2024-01-18 07:28:40,105 DEBUG   SenderThread:54114 [sender.py:send():382] send: run
+2024-01-18 07:28:40,391 INFO    SenderThread:54114 [dir_watcher.py:__init__():211] watching files in: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files
+2024-01-18 07:28:40,391 INFO    SenderThread:54114 [sender.py:_start_run_threads():1136] run started: tgkgs22q with start time 1705562920.007924
+2024-01-18 07:28:40,413 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: check_version
+2024-01-18 07:28:40,414 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: check_version
+2024-01-18 07:28:40,556 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: run_start
+2024-01-18 07:28:40,565 DEBUG   HandlerThread:54114 [system_info.py:__init__():27] System info init
+2024-01-18 07:28:40,565 DEBUG   HandlerThread:54114 [system_info.py:__init__():42] System info init done
+2024-01-18 07:28:40,565 INFO    HandlerThread:54114 [system_monitor.py:start():194] Starting system monitor
+2024-01-18 07:28:40,565 INFO    SystemMonitor:54114 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-01-18 07:28:40,566 INFO    HandlerThread:54114 [system_monitor.py:probe():214] Collecting system info
+2024-01-18 07:28:40,566 INFO    SystemMonitor:54114 [interfaces.py:start():190] Started cpu monitoring
+2024-01-18 07:28:40,567 INFO    SystemMonitor:54114 [interfaces.py:start():190] Started disk monitoring
+2024-01-18 07:28:40,568 INFO    SystemMonitor:54114 [interfaces.py:start():190] Started gpu monitoring
+2024-01-18 07:28:40,569 INFO    SystemMonitor:54114 [interfaces.py:start():190] Started memory monitoring
+2024-01-18 07:28:40,570 INFO    SystemMonitor:54114 [interfaces.py:start():190] Started network monitoring
+2024-01-18 07:28:40,578 DEBUG   HandlerThread:54114 [system_info.py:probe():151] Probing system
+2024-01-18 07:28:40,588 DEBUG   HandlerThread:54114 [system_info.py:_probe_git():136] Probing git
+2024-01-18 07:28:40,666 DEBUG   HandlerThread:54114 [system_info.py:_probe_git():144] Probing git done
+2024-01-18 07:28:40,666 DEBUG   HandlerThread:54114 [system_info.py:probe():199] Probing system done
+2024-01-18 07:28:40,666 DEBUG   HandlerThread:54114 [system_monitor.py:probe():223] {'os': 'Linux-6.1.58+-x86_64-with-glibc2.35', 'python': '3.10.12', 'heartbeatAt': '2024-01-18T07:28:40.578626', 'startedAt': '2024-01-18T07:28:39.822167', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/main.py', 'codePathLocal': None, 'codePath': 'exp6/main.py', 'git': {'remote': 'https://tnkryoga:@github.com/tnkryoga/murata_labo_first.git', 'commit': 'c189d89fea51db2957356983138d460af8178c35'}, 'email': 'tanaryo-miyabi818@outlook.jp', 'root': '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src', 'host': '5e78db6fb10e', 'username': 'root', 'executable': '/usr/bin/python3', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 2199.998, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2199.998, 'min': 0.0, 'max': 0.0}, {'current': 2199.998, 'min': 0.0, 'max': 0.0}, {'current': 2199.998, 'min': 0.0, 'max': 0.0}, {'current': 2199.998, 'min': 0.0, 'max': 0.0}, {'current': 2199.998, 'min': 0.0, 'max': 0.0}, {'current': 2199.998, 'min': 0.0, 'max': 0.0}, {'current': 2199.998, 'min': 0.0, 'max': 0.0}, {'current': 2199.998, 'min': 0.0, 'max': 0.0}], 'disk': {'/': {'total': 166.77415084838867, 'used': 34.80506134033203}}, 'gpu': 'Tesla V100-SXM2-16GB', 'gpu_count': 1, 'gpu_devices': [{'name': 'Tesla V100-SXM2-16GB', 'memory_total': 17179869184}], 'memory': {'total': 50.993690490722656}}
+2024-01-18 07:28:40,667 INFO    HandlerThread:54114 [system_monitor.py:probe():224] Finished collecting system info
+2024-01-18 07:28:40,667 INFO    HandlerThread:54114 [system_monitor.py:probe():227] Publishing system info
+2024-01-18 07:28:40,672 INFO    HandlerThread:54114 [system_monitor.py:probe():229] Finished publishing system info
+2024-01-18 07:28:40,677 DEBUG   SenderThread:54114 [sender.py:send():382] send: files
+2024-01-18 07:28:40,677 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-01-18 07:28:40,691 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: python_packages
+2024-01-18 07:28:40,691 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: python_packages
+2024-01-18 07:28:40,691 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 07:28:40,692 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 07:28:40,696 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: stop_status
+2024-01-18 07:28:40,860 DEBUG   SenderThread:54114 [sender.py:send():382] send: telemetry
+2024-01-18 07:28:40,993 INFO    wandb-upload_0:54114 [upload_job.py:push():131] Uploaded file /tmp/tmp6s1o5aa4wandb/k0w6ligs-wandb-metadata.json
+2024-01-18 07:28:41,396 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:28:41,397 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/requirements.txt
+2024-01-18 07:28:41,397 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-metadata.json
+2024-01-18 07:28:45,402 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:28:45,428 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:28:46,405 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:28:48,410 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:28:50,404 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:28:50,406 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:28:50,406 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:28:50,413 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:28:50,417 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:28:50,418 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:28:50,433 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:28:52,422 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:28:54,428 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:28:55,107 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:28:55,108 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:28:55,109 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:28:55,114 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:28:55,452 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:28:55,482 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:28:55,692 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 07:28:55,693 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 07:28:55,693 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: stop_status
+2024-01-18 07:28:56,455 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:28:58,459 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:28:59,806 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:28:59,807 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:28:59,807 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:28:59,812 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:29:00,465 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:00,465 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:29:00,484 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:29:02,470 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:04,475 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:05,485 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:29:06,480 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:06,919 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:29:06,923 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:29:06,923 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:29:06,928 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:29:07,483 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:29:07,484 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints
+2024-01-18 07:29:08,498 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:29:08,505 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:29:08,506 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:29:08,528 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:29:08,531 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:08,532 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints/epoch=0.ckpt
+2024-01-18 07:29:08,533 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints
+2024-01-18 07:29:09,535 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:09,536 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:29:10,250 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:29:10,251 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:29:10,251 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:29:10,256 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:29:10,537 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:29:10,542 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:10,543 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:29:10,692 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 07:29:10,693 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: stop_status
+2024-01-18 07:29:10,693 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 07:29:11,552 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/config.yaml
+2024-01-18 07:29:12,556 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:14,562 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:14,950 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:29:14,951 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:29:14,951 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:29:14,957 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:29:15,565 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:29:15,704 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:29:16,570 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:18,577 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:19,678 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:29:19,682 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:29:19,682 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:29:19,688 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:29:20,584 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:20,585 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:29:20,710 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:29:22,591 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:24,373 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:29:24,374 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:29:24,375 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:29:24,381 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:29:24,599 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:24,599 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:29:25,692 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 07:29:25,692 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: stop_status
+2024-01-18 07:29:25,694 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 07:29:25,830 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:29:26,606 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:28,614 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:29,983 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:29:29,985 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:29:29,985 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:29:29,992 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:29:30,623 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:30,624 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:29:31,283 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:29:31,550 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:29:31,552 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:29:31,552 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:29:31,558 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:29:31,690 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:31,690 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:29:31,691 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints/epoch=1.ckpt
+2024-01-18 07:29:31,691 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints
+2024-01-18 07:29:32,693 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:33,697 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:34,858 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:29:34,859 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:29:34,859 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:29:34,867 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:29:35,705 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:35,706 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:29:36,295 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:29:37,712 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:39,577 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:29:39,578 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:29:39,578 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:29:39,585 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:29:39,718 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:39,719 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:29:40,570 DEBUG   SystemMonitor:54114 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-01-18 07:29:40,572 DEBUG   SenderThread:54114 [sender.py:send():382] send: stats
+2024-01-18 07:29:40,692 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 07:29:40,693 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 07:29:40,693 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: stop_status
+2024-01-18 07:29:41,726 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:43,686 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:29:44,305 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:29:44,306 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:29:44,307 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:29:44,312 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:29:44,738 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:29:45,742 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:47,750 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:48,741 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:29:49,024 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:29:49,025 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:29:49,026 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:29:49,032 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:29:49,757 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:49,757 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:29:51,764 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:53,161 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:29:53,163 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:29:53,163 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:29:53,170 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:29:53,772 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:53,773 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:29:54,506 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:29:54,776 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints/epoch=2.ckpt
+2024-01-18 07:29:54,776 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints
+2024-01-18 07:29:54,792 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:29:54,794 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:29:54,795 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:29:54,801 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:29:55,693 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 07:29:55,693 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: stop_status
+2024-01-18 07:29:55,693 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 07:29:55,779 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:55,780 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:29:57,787 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:59,512 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:29:59,583 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:29:59,584 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:29:59,584 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:29:59,618 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:29:59,796 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:29:59,796 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:30:01,803 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:03,810 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:04,317 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:30:04,318 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:30:04,319 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:30:04,325 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:30:04,534 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:30:04,814 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:30:05,817 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:07,824 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:09,027 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:30:09,028 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:30:09,028 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:30:09,035 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:30:09,593 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:30:09,831 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:09,832 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:30:10,572 DEBUG   SenderThread:54114 [sender.py:send():382] send: stats
+2024-01-18 07:30:10,692 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 07:30:10,693 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: stop_status
+2024-01-18 07:30:10,693 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 07:30:11,838 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:13,845 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:14,623 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:30:15,854 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:16,397 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:30:16,399 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:30:16,400 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:30:16,405 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:30:16,857 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:30:17,861 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:17,862 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints/epoch=3.ckpt
+2024-01-18 07:30:17,862 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints
+2024-01-18 07:30:17,982 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:30:17,984 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:30:17,984 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:30:17,989 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:30:18,865 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:30:19,576 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:30:19,577 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:30:19,577 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:30:19,583 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:30:19,670 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:30:19,868 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:19,869 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:30:21,875 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:23,883 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:24,297 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:30:24,298 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:30:24,299 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:30:24,305 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:30:24,670 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:30:24,887 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:30:25,693 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 07:30:25,694 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: stop_status
+2024-01-18 07:30:25,694 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 07:30:25,891 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:27,900 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:29,039 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:30:29,040 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:30:29,041 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:30:29,047 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:30:29,702 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:30:29,907 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:29,908 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:30:31,918 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:33,760 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:30:33,761 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:30:33,762 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:30:33,767 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:30:33,925 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:33,925 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:30:34,706 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:30:35,932 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:37,940 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:39,616 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:30:39,619 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:30:39,620 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:30:39,626 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:30:39,938 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:30:39,949 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:39,950 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:30:40,573 DEBUG   SenderThread:54114 [sender.py:send():382] send: stats
+2024-01-18 07:30:40,693 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 07:30:40,694 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 07:30:40,694 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: stop_status
+2024-01-18 07:30:40,955 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints/epoch=4.ckpt
+2024-01-18 07:30:40,957 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints
+2024-01-18 07:30:41,216 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:30:41,218 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:30:41,219 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:30:41,269 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:30:42,026 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints/epoch=4.ckpt
+2024-01-18 07:30:42,027 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:42,028 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:30:42,028 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints
+2024-01-18 07:30:44,033 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:44,332 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:30:44,334 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:30:44,334 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:30:44,341 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:30:44,996 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:30:45,039 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:30:46,044 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:48,051 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:49,061 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:30:49,062 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:30:49,063 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:30:49,069 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:30:50,011 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:30:50,059 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:50,060 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:30:52,067 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:53,798 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:30:53,799 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:30:53,800 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:30:53,806 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:30:54,092 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:54,096 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:30:55,033 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:30:55,695 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 07:30:55,696 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 07:30:55,696 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: stop_status
+2024-01-18 07:30:56,098 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:58,106 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:30:58,519 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:30:58,520 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:30:58,520 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:30:58,525 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:30:59,110 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:31:00,102 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:31:00,114 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:02,122 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:02,845 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:31:02,847 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:31:02,847 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:31:02,854 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:31:03,126 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:31:04,130 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:04,131 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints/epoch=5.ckpt
+2024-01-18 07:31:04,132 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints
+2024-01-18 07:31:04,388 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:31:04,390 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:31:04,390 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:31:04,397 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:31:05,123 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:31:05,196 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints/epoch=5.ckpt
+2024-01-18 07:31:05,197 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:05,197 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:31:05,198 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints
+2024-01-18 07:31:08,206 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:09,012 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:31:09,014 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:31:09,014 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:31:09,021 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:31:09,211 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:31:10,152 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:31:10,214 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:10,574 DEBUG   SenderThread:54114 [sender.py:send():382] send: stats
+2024-01-18 07:31:10,695 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 07:31:10,696 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 07:31:10,697 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: stop_status
+2024-01-18 07:31:12,222 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:13,745 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:31:13,746 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:31:13,746 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:31:13,751 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:31:14,230 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:14,231 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:31:15,163 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:31:16,237 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:18,244 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:18,470 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:31:18,471 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:31:18,472 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:31:18,477 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:31:19,252 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:31:20,171 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:31:20,256 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:22,264 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:24,272 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:25,236 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:31:25,695 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 07:31:25,696 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 07:31:25,696 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: stop_status
+2024-01-18 07:31:26,026 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:31:26,028 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:31:26,028 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:31:26,034 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:31:26,279 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:26,280 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:31:27,285 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:27,286 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints/epoch=6.ckpt
+2024-01-18 07:31:27,287 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints
+2024-01-18 07:31:27,575 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:31:27,577 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:31:27,577 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:31:27,583 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:31:28,328 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints/epoch=6.ckpt
+2024-01-18 07:31:28,328 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:31:28,329 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints
+2024-01-18 07:31:28,970 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:31:28,971 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:31:28,972 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:31:28,978 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:31:29,332 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:31:30,285 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:31:30,335 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:32,342 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:33,689 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:31:33,690 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:31:33,691 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:31:33,697 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:31:34,351 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:34,352 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:31:35,303 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:31:36,360 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:38,367 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:38,424 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:31:38,425 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:31:38,426 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:31:38,431 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:31:39,371 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:31:40,313 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:31:40,375 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:40,574 DEBUG   SenderThread:54114 [sender.py:send():382] send: stats
+2024-01-18 07:31:40,695 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 07:31:40,695 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 07:31:40,696 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: stop_status
+2024-01-18 07:31:42,382 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:43,146 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:31:43,147 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:31:43,148 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:31:43,153 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:31:43,386 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:31:44,390 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:45,427 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:31:46,399 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:48,407 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:49,161 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:31:49,164 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:31:49,164 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:31:49,170 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:31:49,412 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:31:50,417 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:50,418 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_created():271] file/dir created: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints/epoch=7.ckpt
+2024-01-18 07:31:50,418 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints
+2024-01-18 07:31:50,456 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:31:50,729 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:31:50,731 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:31:50,732 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:31:50,738 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:31:51,463 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:51,464 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:31:51,464 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints/epoch=7.ckpt
+2024-01-18 07:31:51,465 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints
+2024-01-18 07:31:53,471 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:55,040 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 07:31:55,044 DEBUG   SenderThread:54114 [sender.py:send():382] send: history
+2024-01-18 07:31:55,044 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: summary_record
+2024-01-18 07:31:55,051 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:31:55,480 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:31:55,695 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 07:31:55,696 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 07:31:55,697 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: stop_status
+2024-01-18 07:31:55,883 DEBUG   SenderThread:54114 [sender.py:send():382] send: telemetry
+2024-01-18 07:31:55,883 DEBUG   SenderThread:54114 [sender.py:send():382] send: exit
+2024-01-18 07:31:55,883 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:31:55,884 INFO    SenderThread:54114 [sender.py:send_exit():589] handling exit code: 0
+2024-01-18 07:31:55,884 INFO    SenderThread:54114 [sender.py:send_exit():591] handling runtime: 195
+2024-01-18 07:31:55,894 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:31:55,895 INFO    SenderThread:54114 [sender.py:send_exit():597] send defer
+2024-01-18 07:31:55,895 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 07:31:55,895 INFO    HandlerThread:54114 [handler.py:handle_request_defer():172] handle defer: 0
+2024-01-18 07:31:55,896 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: defer
+2024-01-18 07:31:55,896 INFO    SenderThread:54114 [sender.py:send_request_defer():613] handle sender defer: 0
+2024-01-18 07:31:55,896 INFO    SenderThread:54114 [sender.py:transition_state():617] send defer: 1
+2024-01-18 07:31:55,896 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 07:31:55,896 INFO    HandlerThread:54114 [handler.py:handle_request_defer():172] handle defer: 1
+2024-01-18 07:31:55,896 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: defer
+2024-01-18 07:31:55,896 INFO    SenderThread:54114 [sender.py:send_request_defer():613] handle sender defer: 1
+2024-01-18 07:31:55,896 INFO    SenderThread:54114 [sender.py:transition_state():617] send defer: 2
+2024-01-18 07:31:55,897 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 07:31:55,897 INFO    HandlerThread:54114 [handler.py:handle_request_defer():172] handle defer: 2
+2024-01-18 07:31:55,897 INFO    HandlerThread:54114 [system_monitor.py:finish():203] Stopping system monitor
+2024-01-18 07:31:55,897 DEBUG   SystemMonitor:54114 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-01-18 07:31:55,897 INFO    HandlerThread:54114 [interfaces.py:finish():202] Joined cpu monitor
+2024-01-18 07:31:55,897 DEBUG   SystemMonitor:54114 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-01-18 07:31:55,898 INFO    HandlerThread:54114 [interfaces.py:finish():202] Joined disk monitor
+2024-01-18 07:31:55,904 INFO    HandlerThread:54114 [interfaces.py:finish():202] Joined gpu monitor
+2024-01-18 07:31:55,904 INFO    HandlerThread:54114 [interfaces.py:finish():202] Joined memory monitor
+2024-01-18 07:31:55,905 INFO    HandlerThread:54114 [interfaces.py:finish():202] Joined network monitor
+2024-01-18 07:31:55,905 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: defer
+2024-01-18 07:31:55,905 INFO    SenderThread:54114 [sender.py:send_request_defer():613] handle sender defer: 2
+2024-01-18 07:31:55,905 INFO    SenderThread:54114 [sender.py:transition_state():617] send defer: 3
+2024-01-18 07:31:55,906 DEBUG   SenderThread:54114 [sender.py:send():382] send: stats
+2024-01-18 07:31:55,906 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 07:31:55,906 INFO    HandlerThread:54114 [handler.py:handle_request_defer():172] handle defer: 3
+2024-01-18 07:31:55,906 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: defer
+2024-01-18 07:31:55,907 INFO    SenderThread:54114 [sender.py:send_request_defer():613] handle sender defer: 3
+2024-01-18 07:31:55,907 INFO    SenderThread:54114 [sender.py:transition_state():617] send defer: 4
+2024-01-18 07:31:55,907 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 07:31:55,907 INFO    HandlerThread:54114 [handler.py:handle_request_defer():172] handle defer: 4
+2024-01-18 07:31:55,907 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: defer
+2024-01-18 07:31:55,907 INFO    SenderThread:54114 [sender.py:send_request_defer():613] handle sender defer: 4
+2024-01-18 07:31:55,907 INFO    SenderThread:54114 [sender.py:transition_state():617] send defer: 5
+2024-01-18 07:31:55,908 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 07:31:55,908 INFO    HandlerThread:54114 [handler.py:handle_request_defer():172] handle defer: 5
+2024-01-18 07:31:55,909 DEBUG   SenderThread:54114 [sender.py:send():382] send: summary
+2024-01-18 07:31:55,913 INFO    SenderThread:54114 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-18 07:31:55,914 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: defer
+2024-01-18 07:31:55,914 INFO    SenderThread:54114 [sender.py:send_request_defer():613] handle sender defer: 5
+2024-01-18 07:31:55,914 INFO    SenderThread:54114 [sender.py:transition_state():617] send defer: 6
+2024-01-18 07:31:55,915 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 07:31:55,915 INFO    HandlerThread:54114 [handler.py:handle_request_defer():172] handle defer: 6
+2024-01-18 07:31:55,915 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: defer
+2024-01-18 07:31:55,915 INFO    SenderThread:54114 [sender.py:send_request_defer():613] handle sender defer: 6
+2024-01-18 07:31:55,918 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:31:56,020 INFO    SenderThread:54114 [sender.py:transition_state():617] send defer: 7
+2024-01-18 07:31:56,021 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 07:31:56,021 INFO    HandlerThread:54114 [handler.py:handle_request_defer():172] handle defer: 7
+2024-01-18 07:31:56,021 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: defer
+2024-01-18 07:31:56,021 INFO    SenderThread:54114 [sender.py:send_request_defer():613] handle sender defer: 7
+2024-01-18 07:31:56,484 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:56,485 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/config.yaml
+2024-01-18 07:31:56,730 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-18 07:31:57,898 INFO    SenderThread:54114 [sender.py:transition_state():617] send defer: 8
+2024-01-18 07:31:57,898 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: poll_exit
+2024-01-18 07:31:57,899 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 07:31:57,899 INFO    HandlerThread:54114 [handler.py:handle_request_defer():172] handle defer: 8
+2024-01-18 07:31:57,899 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: defer
+2024-01-18 07:31:57,899 INFO    SenderThread:54114 [sender.py:send_request_defer():613] handle sender defer: 8
+2024-01-18 07:31:57,900 INFO    SenderThread:54114 [job_builder.py:build():296] Attempting to build job artifact
+2024-01-18 07:31:57,902 INFO    SenderThread:54114 [job_builder.py:_get_source_type():426] is repo sourced job
+2024-01-18 07:31:57,937 INFO    SenderThread:54114 [job_builder.py:build():402] adding wandb-job metadata file
+2024-01-18 07:31:57,949 INFO    SenderThread:54114 [sender.py:transition_state():617] send defer: 9
+2024-01-18 07:31:57,949 DEBUG   SenderThread:54114 [sender.py:send():382] send: artifact
+2024-01-18 07:31:57,950 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 07:31:57,951 INFO    HandlerThread:54114 [handler.py:handle_request_defer():172] handle defer: 9
+2024-01-18 07:31:58,491 INFO    Thread-12 :54114 [dir_watcher.py:_on_file_modified():288] file/dir modified: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:31:58,731 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-18 07:31:58,958 INFO    wandb-upload_0:54114 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpn3xpifrg
+2024-01-18 07:31:59,185 INFO    wandb-upload_1:54114 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmp8lvm40s1
+2024-01-18 07:31:59,793 INFO    SenderThread:54114 [sender.py:send_artifact():1494] sent artifact job-https___tnkryoga__github.com_tnkryoga_murata_labo_first.git_exp6_main.py - {'id': 'QXJ0aWZhY3Q6Njk0ODc1OTA1', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyNDc1NzMxMA==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6Njk0ODcwNDE0', 'versionIndex': 40}}}
+2024-01-18 07:31:59,793 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: defer
+2024-01-18 07:31:59,794 INFO    SenderThread:54114 [sender.py:send_request_defer():613] handle sender defer: 9
+2024-01-18 07:31:59,794 INFO    SenderThread:54114 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-01-18 07:32:00,496 INFO    SenderThread:54114 [dir_watcher.py:finish():388] scan: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files
+2024-01-18 07:32:01,335 INFO    SenderThread:54114 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/config.yaml config.yaml
+2024-01-18 07:32:01,339 INFO    SenderThread:54114 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-metadata.json wandb-metadata.json
+2024-01-18 07:32:01,339 INFO    SenderThread:54114 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/requirements.txt requirements.txt
+2024-01-18 07:32:01,344 INFO    SenderThread:54114 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log output.log
+2024-01-18 07:32:01,349 INFO    SenderThread:54114 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json wandb-summary.json
+2024-01-18 07:32:01,358 INFO    SenderThread:54114 [dir_watcher.py:finish():402] scan save: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints/epoch=7.ckpt checkpoints/epoch=7.ckpt
+2024-01-18 07:32:01,362 INFO    SenderThread:54114 [sender.py:transition_state():617] send defer: 10
+2024-01-18 07:32:01,362 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: poll_exit
+2024-01-18 07:32:01,363 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 07:32:01,363 INFO    HandlerThread:54114 [handler.py:handle_request_defer():172] handle defer: 10
+2024-01-18 07:32:01,365 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 07:32:01,365 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: defer
+2024-01-18 07:32:01,366 INFO    SenderThread:54114 [sender.py:send_request_defer():613] handle sender defer: 10
+2024-01-18 07:32:01,366 INFO    SenderThread:54114 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-18 07:32:01,523 INFO    wandb-upload_0:54114 [upload_job.py:push():131] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/config.yaml
+2024-01-18 07:32:01,703 INFO    wandb-upload_2:54114 [upload_job.py:push():131] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/output.log
+2024-01-18 07:32:01,732 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-18 07:32:01,732 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: poll_exit
+2024-01-18 07:32:01,838 INFO    wandb-upload_1:54114 [upload_job.py:push():131] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/requirements.txt
+2024-01-18 07:32:01,875 INFO    wandb-upload_3:54114 [upload_job.py:push():131] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/wandb-summary.json
+2024-01-18 07:32:02,733 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-18 07:32:02,733 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: poll_exit
+2024-01-18 07:32:03,733 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-18 07:32:03,734 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: poll_exit
+2024-01-18 07:32:04,734 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-18 07:32:04,735 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: poll_exit
+2024-01-18 07:32:05,734 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-18 07:32:05,735 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: poll_exit
+2024-01-18 07:32:05,756 INFO    wandb-upload_4:54114 [upload_job.py:push():131] Uploaded file /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/files/checkpoints/epoch=7.ckpt
+2024-01-18 07:32:05,957 INFO    Thread-11 (_thread_body):54114 [sender.py:transition_state():617] send defer: 11
+2024-01-18 07:32:05,957 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 07:32:05,957 INFO    HandlerThread:54114 [handler.py:handle_request_defer():172] handle defer: 11
+2024-01-18 07:32:05,958 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: defer
+2024-01-18 07:32:05,958 INFO    SenderThread:54114 [sender.py:send_request_defer():613] handle sender defer: 11
+2024-01-18 07:32:05,958 INFO    SenderThread:54114 [file_pusher.py:join():181] waiting for file pusher
+2024-01-18 07:32:05,958 INFO    SenderThread:54114 [sender.py:transition_state():617] send defer: 12
+2024-01-18 07:32:05,958 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 07:32:05,959 INFO    HandlerThread:54114 [handler.py:handle_request_defer():172] handle defer: 12
+2024-01-18 07:32:05,959 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: defer
+2024-01-18 07:32:05,959 INFO    SenderThread:54114 [sender.py:send_request_defer():613] handle sender defer: 12
+2024-01-18 07:32:05,959 INFO    SenderThread:54114 [file_stream.py:finish():595] file stream finish called
+2024-01-18 07:32:06,026 INFO    SenderThread:54114 [file_stream.py:finish():599] file stream finish is done
+2024-01-18 07:32:06,026 INFO    SenderThread:54114 [sender.py:transition_state():617] send defer: 13
+2024-01-18 07:32:06,026 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 07:32:06,026 INFO    HandlerThread:54114 [handler.py:handle_request_defer():172] handle defer: 13
+2024-01-18 07:32:06,027 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: defer
+2024-01-18 07:32:06,027 INFO    SenderThread:54114 [sender.py:send_request_defer():613] handle sender defer: 13
+2024-01-18 07:32:06,027 INFO    SenderThread:54114 [sender.py:transition_state():617] send defer: 14
+2024-01-18 07:32:06,028 DEBUG   SenderThread:54114 [sender.py:send():382] send: final
+2024-01-18 07:32:06,028 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 07:32:06,028 DEBUG   SenderThread:54114 [sender.py:send():382] send: footer
+2024-01-18 07:32:06,028 INFO    HandlerThread:54114 [handler.py:handle_request_defer():172] handle defer: 14
+2024-01-18 07:32:06,028 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: defer
+2024-01-18 07:32:06,028 INFO    SenderThread:54114 [sender.py:send_request_defer():613] handle sender defer: 14
+2024-01-18 07:32:06,029 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-18 07:32:06,030 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: poll_exit
+2024-01-18 07:32:06,031 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 07:32:06,032 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: server_info
+2024-01-18 07:32:06,032 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: server_info
+2024-01-18 07:32:06,072 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: get_summary
+2024-01-18 07:32:06,073 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: sampled_history
+2024-01-18 07:32:06,076 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: job_info
+2024-01-18 07:32:06,082 DEBUG   SenderThread:54114 [sender.py:send_request():409] send_request: job_info
+2024-01-18 07:32:06,116 DEBUG   HandlerThread:54114 [handler.py:handle_request():146] handle_request: shutdown
+2024-01-18 07:32:06,116 INFO    HandlerThread:54114 [handler.py:finish():869] shutting down handler
+2024-01-18 07:32:07,077 INFO    WriterThread:54114 [datastore.py:close():296] close: /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp6/outputs/2024-01-18/07-28-38/wandb/run-20240118_072839-tgkgs22q/run-tgkgs22q.wandb
+2024-01-18 07:32:07,082 INFO    SenderThread:54114 [sender.py:finish():1572] shutting down sender
+2024-01-18 07:32:07,083 INFO    SenderThread:54114 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-18 07:32:07,083 INFO    SenderThread:54114 [file_pusher.py:join():181] waiting for file pusher
