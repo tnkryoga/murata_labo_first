@@ -12,12 +12,12 @@ model:
   hidden_size2: 256
   max_length: 512
   num_classes: 8
-  focal_loss_gamma: 2
+  focal_loss_gamma: 2.3
 training:
   train_size: 0.8
   n_epochs: 8
   seed: 40
-  batch_size: 16
+  batch_size: 32
   max_length: 64
   learning_rate: 0.0001
   text_column_name: chunk
