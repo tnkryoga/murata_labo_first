@@ -12,7 +12,7 @@ model:
   hidden_size2: 256
   max_length: 512
   num_classes: 8
-  focal_loss_gamma: 1.5
+  focal_loss_gamma: 2
 training:
   train_size: 0.8
   n_epochs: 8
