@@ -504,7 +504,13 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                 logger=True,
             )
 
-        print(self.test_step_outputs_preds)
+        tensor_list = torch.cat(self.test_step_outputs_preds)
+        y_pred_flat = torch.reshape(tensor_list, [-1])  # 同様
+        preds_binary = torch.where(y_pred_flat > self.THRESHOLD, 1, 0)
+        preds = preds_binary.view(-1,16)
+        dff = preds.cpu()
+        df = pd.DataFrame(dff)
+        df.to_csv("table_exppp.csv", encoding="utf-8")
 
         self.test_step_outputs_preds.clear()
         self.test_step_outputs_labels.clear()  # free memory
