@@ -504,6 +504,8 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                 logger=True,
             )
 
+        print(self.test_step_outputs_preds)
+
         self.test_step_outputs_preds.clear()
         self.test_step_outputs_labels.clear()  # free memory
 
