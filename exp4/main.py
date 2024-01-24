@@ -511,6 +511,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         dff = preds.cpu()
         df = pd.DataFrame(dff)
         df.to_csv("table_exppp.csv", encoding="utf-8")
+        print('csv is done¥nß')
 
         self.test_step_outputs_preds.clear()
         self.test_step_outputs_labels.clear()  # free memory
