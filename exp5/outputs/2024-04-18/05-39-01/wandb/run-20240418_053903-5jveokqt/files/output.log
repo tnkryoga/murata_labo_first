@@ -1,0 +1,7 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:391: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp5/main.py", line 598, in main
+    val,test = train_test_split(
+TypeError: train_test_split() got an unexpected keyword argument 'val_size'
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
