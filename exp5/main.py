@@ -597,7 +597,7 @@ def main(cfg: DictConfig):
     train = pd.read_csv(cfg.path.train_file_name)
     val,test = train_test_split(
         pd.read_csv(cfg.path.val_test_file_name),
-        val_size=cfg.training.val_size,
+        test_size=cfg.training.val_size,
         random_state=cfg.training.seed,
     )
 
