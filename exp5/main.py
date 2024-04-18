@@ -1,3 +1,4 @@
+#Focal Loss
 import os
 import datetime
 import hydra
@@ -593,12 +594,12 @@ def main(cfg: DictConfig):
     )
 
     # dataModuleのインスタンス化
-    train, val = train_test_split(
-        pd.read_csv(cfg.path.data_file_name),
-        train_size=cfg.training.train_size,
+    train = pd.read_csv(cfg.path.train_file_name)
+    val,test = train_test_split(
+        pd.read_csv(cfg.path.val_test_file_name),
+        val_size=cfg.training.val_size,
         random_state=cfg.training.seed,
     )
-    test = pd.read_csv(cfg.path.test_file_name)
 
     data_module = CreateDataModule(
         train,
