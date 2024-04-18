@@ -206,7 +206,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                     average="macro",
                 ),
                 torchmetrics.MatthewsCorrCoef(
-                    task="multilabel", num_labels=8, threshold=self.THRESHOLD
+                    task="multilabel", num_labels=16, threshold=self.THRESHOLD
                 ),
             ]
         )
