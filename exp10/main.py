@@ -379,7 +379,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
 
         self.train_step_outputs_preds.clear()  # free memory
         self.train_step_outputs_labels.clear()  # free memory
-        return epoch_preds,epoch_labelss
+        return epoch_preds,epoch_labels
 
     # epoch終了時にvalidationのlossとaccuracyを記録
     def on_validation_epoch_end(
