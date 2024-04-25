@@ -1,0 +1,230 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:391: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+[32m[I 2024-04-25 06:44:31,996][39m A new study created in memory with name: no-name-661b3db6-0307-4e81-ad6a-465f3f1e64ad
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 4090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m    [22m┃[1m Name                        [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0  │ bert                        │ BertModel        │ 89.1 M │
+│ 1  │ classifiers                 │ ModuleList       │ 10.5 M │
+│ 2  │ hidden_layer1               │ ModuleList       │  2.2 M │
+│ 3  │ hidden_layer2               │ ModuleList       │  2.6 K │
+│ 4  │ sigmoid                     │ Sigmoid          │      0 │
+│ 5  │ criterion                   │ Focal_Loss       │      0 │
+│ 6  │ metrics                     │ MetricCollection │      0 │
+│ 7  │ metrics_per_label_accuracy  │ MetricCollection │      0 │
+│ 8  │ metrics_per_label_precision │ MetricCollection │      0 │
+│ 9  │ metrics_per_label_recall    │ MetricCollection │      0 │
+│ 10 │ metrics_per_label_f1score   │ MetricCollection │      0 │
+└────┴─────────────────────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 19.9 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 101 M
+[1mTotal estimated model params size (MB)[22m: 407
+[37mEpoch 0/3 [39m [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m9/571[39m [37m0:00:01 • 0:01:23[39m [37m6.78it/s[39m [37mv_num: n6up train/loss:     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                         [37m0.166                      
+
+
+
+
+
+[37mEpoch 0/3 [39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m571/571[39m [37m0:01:35 • 0:00:00[39m [37m5.97it/s[39m [37mv_num: n6up train/loss:    
+                                                                         [37m0.166                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                         [37m0.167                      
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━[90m╺━━━[39m [37m62/72  [39m [37m0:00:09 • 0:00:02[39m [37m6.78it/s
+Epoch 1/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m571/571[39m [37m0:01:36 • 0:00:00[39m [37m5.95it/s[39m [37mv_num: n6up train/loss:    
+                                                                         [37m0.167                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                         [37m0.165                      
+
+
+
+
+
+Epoch 2/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m571/571[39m [37m0:01:36 • 0:00:00[39m [37m5.96it/s[39m [37mv_num: n6up train/loss:    
+                                                                         [37m0.165                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                         [37m0.165                      
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━╸[90m━━━━[39m [37m60/72  [39m [37m0:00:08 • 0:00:02[39m [37m6.80it/s
+Epoch 3/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m571/571[39m [37m0:01:36 • 0:00:00[39m [37m5.96it/s[39m [37mv_num: n6up train/loss:    
+                                                                         [37m0.165                      
+Epoch 3, global step 2284: 'val_loss' reached 0.16596 (best 0.16596), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-25/06-44-30/wandb/run-20240425_064431-zhkpn6up/files/checkpoints/epoch=3.ckpt' as top 1
+[?25h
+`Trainer.fit` stopped: `max_epochs=4` reached.
+[33m[W 2024-04-25 06:52:01,192][39m Trial 0 failed with parameters: {'batch_size': 36, 'epoch': 8, 'hidden_size': 856, 'hidden_size2': 164, 'focal_loss_gamma': 2} because of the following error: NameError("name 'epoch_preds' is not defined").
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 651, in objective
+    return 1.0 - torchmetrics.F1Score(epoch_preds,epoch_labels)
+NameError: name 'epoch_preds' is not defined
+[33m[W 2024-04-25 06:52:01,193][39m Trial 0 failed with value None.
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 654, in main
+    study.optimize(objective,n_trials=10)
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 651, in objective
+    return 1.0 - torchmetrics.F1Score(epoch_preds,epoch_labels)
+NameError: name 'epoch_preds' is not defined
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
