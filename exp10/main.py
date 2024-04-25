@@ -647,6 +647,8 @@ def main(cfg: DictConfig):
             fast_dev_run=False,
         )
         trainer.fit(model, data_module)
+        epoch_preds = model.on_train_epoch_end(epoch_preds)
+        epoch_labels = model.on_train_epoch_end(epoch_labels)
 
         return 1.0 - torchmetrics.F1Score(epoch_preds,epoch_labels)
 
