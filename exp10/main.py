@@ -648,7 +648,7 @@ def main(cfg: DictConfig):
 
         return 1.0 - torchmetrics.F1Score(epoch_preds,epoch_labels)
 
-    study = opuna.create_study(direction='minimize')
+    study = optuna.create_study(direction='minimize')
     study.optimize(objective,n_trials=10)
 
     print(study.best_value)
