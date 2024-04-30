@@ -301,8 +301,8 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         self.validation_step_outputs_labels.append(batch["labels"])
 
         #objective
-        # self.validation_step_outputs_preds_return.append(preds)
-        # self.validation_step_outputs_labels_return.append(batch["labels"])
+        self.validation_step_outputs_preds_return.append(preds)
+        self.validation_step_outputs_labels_return.append(batch["labels"])
 
         # self.log("val_loss", loss, on_epoch=True, prog_bar=True)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
@@ -403,10 +403,10 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
         #obejective
-        # epoch_preds = torch.cat(self.validation_step_outputs_preds_return)
-        # epoch_preds = epoch_preds.squeeze()
-        # epoch_labels = torch.cat(self.validation_step_outputs_labels_return)
-        # epoch_labels = epoch_labels.squeeze()
+        epoch_preds = torch.cat(self.validation_step_outputs_preds_return)
+        epoch_preds = epoch_preds.squeeze()
+        epoch_labels = torch.cat(self.validation_step_outputs_labels_return)
+        epoch_labels = epoch_labels.squeeze()
 
         class_names = [
             "あいづち",
