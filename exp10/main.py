@@ -429,7 +429,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
 
         metrics = self.metrics(epoch_preds, epoch_labels)
         for metric in metrics.keys():
-            
+            print(metrics.keys())
             self.log(f"{mode}/{metric.lower()}", metrics[metric].item(), logger=True)
 
         for i in range(self.num_classes):
