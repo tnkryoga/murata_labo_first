@@ -685,25 +685,25 @@ def main(cfg: DictConfig):
     optuna.visualization.plot_optimization_history(study)
     
 
-    data_module = CreateDataModule(
-            train,
-            val,
-            test,
-            batch_size,
-            cfg.model.max_length,
-        )
-        data_module.setup()
-        
-    # Trainerの設定
-    trainer = pl.Trainer(
-        max_epochs=cfg.training.n_epochs,
-        devices="auto",
-        # progress_bar_refresh_rate=30,
-        callbacks=call_backs,
-        logger=wandb_logger,
-        fast_dev_run=False,
-    )
-    trainer.test(model, data_module)
+    # data_module = CreateDataModule(
+    #         train,
+    #         val,
+    #         test,
+    #         batch_size,
+    #         cfg.model.max_length,
+    #     )
+    #     data_module.setup()
+
+    # # Trainerの設定
+    # trainer = pl.Trainer(
+    #     max_epochs=cfg.training.n_epochs,
+    #     devices="auto",
+    #     # progress_bar_refresh_rate=30,
+    #     callbacks=call_backs,
+    #     logger=wandb_logger,
+    #     fast_dev_run=False,
+    # )
+    # trainer.test(model, data_module)
 
     wandb.finish()
 
