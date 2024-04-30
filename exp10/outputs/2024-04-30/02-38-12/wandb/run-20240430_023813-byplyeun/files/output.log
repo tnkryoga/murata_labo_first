@@ -1,0 +1,97 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:391: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+[32m[I 2024-04-30 02:38:14,818][39m A new study created in memory with name: no-name-de013d4a-4c81-4624-9597-b8bfef268d61
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 4090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m    [22m┃[1m Name                        [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0  │ bert                        │ BertModel        │ 89.1 M │
+│ 1  │ classifiers                 │ ModuleList       │  6.1 M │
+│ 2  │ hidden_layer1               │ ModuleList       │  6.6 M │
+│ 3  │ hidden_layer2               │ ModuleList       │ 13.4 K │
+│ 4  │ sigmoid                     │ Sigmoid          │      0 │
+│ 5  │ criterion                   │ Focal_Loss       │      0 │
+│ 6  │ metrics                     │ MetricCollection │      0 │
+│ 7  │ metrics_per_label_accuracy  │ MetricCollection │      0 │
+│ 8  │ metrics_per_label_precision │ MetricCollection │      0 │
+│ 9  │ metrics_per_label_recall    │ MetricCollection │      0 │
+│ 10 │ metrics_per_label_f1score   │ MetricCollection │      0 │
+└────┴─────────────────────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 19.8 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 101 M
+[1mTotal estimated model params size (MB)[22m: 407
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+training batches (18) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a
+lower value for log_every_n_steps if you want to see logs for the training epoch.
+[37mEpoch 0/3 [39m [35m━━━━━━━━━[90m╺━━━━━━━━━━━━━━━━━━[39m [37m6/18[39m [37m0:00:01 • 0:00:03[39m [37m4.69it/s[39m [37mv_num: yeun train/loss:     
+
+                                                                        [37m0.086                       
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━━[90m╺━━━[39m [37m39/45[39m [37m0:00:08 • 0:00:02[39m [37m4.48it/s
+Epoch 0, global step 18: 'val_loss' reached 0.08596 (best 0.08596), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/02-38-12/wandb/run-20240430_023813-byplyeun/files/checkpoints/epoch=0.ckpt' as top 1
+[37mEpoch 0/3 [39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m18/18[39m [37m0:00:04 • 0:00:00[39m [37m3.96it/s[39m [37mv_num: yeun train/loss:     
+
+                                                                        [37m0.085                       
+
+
+
+
+Epoch 1/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m18/18[39m [37m0:00:04 • 0:00:00[39m [37m3.71it/s[39m [37mv_num: yeun train/loss:     
+                                                                        [37m0.085                       
+
+                                                                        [37m0.084                       
+
+
+
+
+Epoch 2/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m18/18[39m [37m0:00:05 • 0:00:00[39m [37m3.53it/s[39m [37mv_num: yeun train/loss:     
+                                                                        [37m0.084                       
+
+                                                                        [37m0.085                       
+
+
+
+
+Epoch 3/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m18/18[39m [37m0:00:04 • 0:00:00[39m [37m3.66it/s[39m [37mv_num: yeun train/loss:     
+                                                                        [37m0.085                       
+Epoch 3, global step 72: 'val_loss' reached 0.08394 (best 0.08394), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/02-38-12/wandb/run-20240430_023813-byplyeun/files/checkpoints/epoch=3.ckpt' as top 1
+`Trainer.fit` stopped: `max_epochs=4` reached.
+[33m[W 2024-04-30 02:39:39,107][39m Trial 0 failed with parameters: {'batch_size': 58, 'epoch': 7, 'hidden_size': 493, 'hidden_size2': 835, 'focal_loss_gamma': 3} because of the following error: RuntimeError('Encountered different devices in metric calculation (see stacktrace for details). This could be due to the metric class not being on the same device as input. Instead of `metric=MultilabelF1Score(...)` try to do `metric=MultilabelF1Score(...).to(device)` where device corresponds to the device of the input.').
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/torchmetrics/metric.py", line 466, in wrapped_func
+    update(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torchmetrics/classification/stat_scores.py", line 486, in update
+    self._update_state(tp, fp, tn, fn)
+  File "/usr/local/lib/python3.10/dist-packages/torchmetrics/classification/stat_scores.py", line 77, in _update_state
+    self.tp += tp
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu!
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 668, in objective
+    f1_score = f1_score(epoch_preds, epoch_labels)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torchmetrics/metric.py", line 304, in forward
+    self._forward_cache = self._forward_reduce_state_update(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torchmetrics/metric.py", line 373, in _forward_reduce_state_update
+    self.update(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torchmetrics/metric.py", line 469, in wrapped_func
+    raise RuntimeError(
+RuntimeError: Encountered different devices in metric calculation (see stacktrace for details). This could be due to the metric class not being on the same device as input. Instead of `metric=MultilabelF1Score(...)` try to do `metric=MultilabelF1Score(...).to(device)` where device corresponds to the device of the input.
+[33m[W 2024-04-30 02:39:39,110][39m Trial 0 failed with value None.
+Error executing job with overrides: []
+Traceback (most recent call last):
+[?25h
