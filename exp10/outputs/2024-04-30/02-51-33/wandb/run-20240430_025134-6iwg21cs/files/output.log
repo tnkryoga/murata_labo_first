@@ -1,0 +1,103 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:391: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+[32m[I 2024-04-30 02:51:35,446][39m A new study created in memory with name: no-name-8cbc0ddb-41a9-4a59-bfb6-a90f753af440
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 4090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m    [22m┃[1m Name                        [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0  │ bert                        │ BertModel        │ 89.1 M │
+│ 1  │ classifiers                 │ ModuleList       │  5.3 M │
+│ 2  │ hidden_layer1               │ ModuleList       │  1.4 M │
+│ 3  │ hidden_layer2               │ ModuleList       │  3.3 K │
+│ 4  │ sigmoid                     │ Sigmoid          │      0 │
+│ 5  │ criterion                   │ Focal_Loss       │      0 │
+│ 6  │ metrics                     │ MetricCollection │      0 │
+│ 7  │ metrics_per_label_accuracy  │ MetricCollection │      0 │
+│ 8  │ metrics_per_label_precision │ MetricCollection │      0 │
+│ 9  │ metrics_per_label_recall    │ MetricCollection │      0 │
+│ 10 │ metrics_per_label_f1score   │ MetricCollection │      0 │
+└────┴─────────────────────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 13.9 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 95.9 M
+[1mTotal estimated model params size (MB)[22m: 383
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+training batches (44) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a
+lower value for log_every_n_steps if you want to see logs for the training epoch.
+[37mEpoch 0/3 [39m [35m━━━━━━━━━╸[90m━━━━━━━━━━━━━━━━━[39m [37m16/44[39m [37m0:00:01 • 0:00:03[39m [37m9.74it/s[39m [37mv_num: 21cs train/loss:     
+
+                                                                        [37m0.169                       
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━╸[90m━━━[39m [37m97/112[39m [37m0:00:08 • 0:00:02[39m [37m10.96it/s
+[37mEpoch 0/3 [39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m44/44[39m [37m0:00:04 • 0:00:00[39m [37m9.29it/s[39m [37mv_num: 21cs train/loss:     
+                                                                        [37m0.169                       
+
+
+
+                                                                         [37m0.166                      
+
+
+
+
+Epoch 1/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m44/44[39m [37m0:00:05 • 0:00:00[39m [37m8.91it/s[39m [37mv_num: 21cs train/loss:     
+                                                                        [37m0.166                       
+
+
+
+                                                                         [37m0.167                      
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━━━[90m╺━━[39m [37m100/112[39m [37m0:00:09 • 0:00:02[39m [37m10.97it/s
+Epoch 2/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m44/44[39m [37m0:00:05 • 0:00:00[39m [37m8.71it/s[39m [37mv_num: 21cs train/loss:     
+                                                                        [37m0.167                       
+
+
+                                                                        [37m0.165                       
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━[90m╺━━━━[39m [37m92/112[39m [37m0:00:08 • 0:00:02[39m [37m10.97it/s
+Epoch 3/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m44/44[39m [37m0:00:05 • 0:00:00[39m [37m8.88it/s[39m [37mv_num: 21cs train/loss:     
+                                                                        [37m0.165                       
+Epoch 3, global step 176: 'val_loss' reached 0.16632 (best 0.16632), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/02-51-33/wandb/run-20240430_025134-6iwg21cs/files/checkpoints/epoch=3.ckpt' as top 1
+[?25h
+`Trainer.fit` stopped: `max_epochs=4` reached.
+[33m[W 2024-04-30 02:53:00,270][39m Trial 0 failed with parameters: {'batch_size': 23, 'epoch': 7, 'hidden_size': 434, 'hidden_size2': 206, 'focal_loss_gamma': 2} because of the following error: NameError("name 'device' is not defined").
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 669, in objective
+    f1_score = torchmetrics.F1Score(task = "multilabel",num_labels = 16, threshold=0.5, average='macro').to(device)
+NameError: name 'device' is not defined
+[33m[W 2024-04-30 02:53:00,271][39m Trial 0 failed with value None.
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 675, in main
+    study.optimize(objective,n_trials=10)
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 669, in objective
+    f1_score = torchmetrics.F1Score(task = "multilabel",num_labels = 16, threshold=0.5, average='macro').to(device)
+NameError: name 'device' is not defined
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
