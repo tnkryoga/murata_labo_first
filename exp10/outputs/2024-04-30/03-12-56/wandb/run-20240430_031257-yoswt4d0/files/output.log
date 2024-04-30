@@ -1,0 +1,435 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:391: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+[32m[I 2024-04-30 03:12:58,972][39m A new study created in memory with name: no-name-1c62ee1b-9217-435c-a852-dcc8a95a9a83
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 4090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m    [22m┃[1m Name                        [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0  │ bert                        │ BertModel        │ 89.1 M │
+│ 1  │ classifiers                 │ ModuleList       │ 12.3 M │
+│ 2  │ hidden_layer1               │ ModuleList       │  7.9 M │
+│ 3  │ hidden_layer2               │ ModuleList       │  7.9 K │
+│ 4  │ sigmoid                     │ Sigmoid          │      0 │
+│ 5  │ criterion                   │ Focal_Loss       │      0 │
+│ 6  │ metrics                     │ MetricCollection │      0 │
+│ 7  │ metrics_per_label_accuracy  │ MetricCollection │      0 │
+│ 8  │ metrics_per_label_precision │ MetricCollection │      0 │
+│ 9  │ metrics_per_label_recall    │ MetricCollection │      0 │
+│ 10 │ metrics_per_label_f1score   │ MetricCollection │      0 │
+└────┴─────────────────────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 27.3 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 109 M
+[1mTotal estimated model params size (MB)[22m: 437
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+training batches (35) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a
+lower value for log_every_n_steps if you want to see logs for the training epoch.
+[37mEpoch 0/3 [39m [35m━━━━━━━━━[90m╺━━━━━━━━━━━━━━━━━[39m [37m12/35[39m [37m0:00:01 • 0:00:03[39m [37m8.03it/s[39m [37mv_num: t4d0 train/loss:     
+
+
+                                                                        [37m0.169                       
+Epoch 0, global step 35: 'val_loss' reached 0.16906 (best 0.16906), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=0.ckpt' as top 1
+[37mEpoch 0/3 [39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m35/35[39m [37m0:00:04 • 0:00:00[39m [37m7.49it/s[39m [37mv_num: t4d0 train/loss:     
+
+
+                                                                        [37m0.170                       
+Epoch 1, global step 70: 'val_loss' reached 0.16716 (best 0.16716), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=1.ckpt' as top 1
+Epoch 1/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m35/35[39m [37m0:00:05 • 0:00:00[39m [37m7.08it/s[39m [37mv_num: t4d0 train/loss:     
+
+
+
+                                                                        [37m0.165                       
+Epoch 2, global step 105: 'val_loss' reached 0.16616 (best 0.16616), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=2.ckpt' as top 1
+Epoch 2/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m35/35[39m [37m0:00:05 • 0:00:00[39m [37m7.10it/s[39m [37mv_num: t4d0 train/loss:     
+                                                                        [37m0.165                       
+Epoch 3/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m35/35[39m [37m0:00:05 • 0:00:00[39m [37m7.11it/s[39m [37mv_num: t4d0 train/loss:     
+                                                                        [37m0.165                       
+Epoch 3, global step 140: 'val_loss' reached 0.16566 (best 0.16566), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=3.ckpt' as top 1
+`Trainer.fit` stopped: `max_epochs=4` reached.
+[32m[I 2024-04-30 03:13:46,323][39m Trial 0 finished with value: 1.0 and parameters: {'batch_size': 29, 'epoch': 5, 'hidden_size': 1003, 'hidden_size2': 491, 'focal_loss_gamma': 2}. Best is trial 0 with value: 1.0.
+[?25h
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/callbacks/model_checkpoint.py:653: Checkpoint directory /content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints exists and is not empty.
+[?25h┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m    [22m┃[1m Name                        [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0  │ bert                        │ BertModel        │ 89.1 M │
+│ 1  │ classifiers                 │ ModuleList       │  2.8 M │
+│ 2  │ hidden_layer1               │ ModuleList       │  2.6 M │
+│ 3  │ hidden_layer2               │ ModuleList       │ 11.3 K │
+│ 4  │ sigmoid                     │ Sigmoid          │      0 │
+│ 5  │ criterion                   │ Focal_Loss       │      0 │
+│ 6  │ metrics                     │ MetricCollection │      0 │
+│ 7  │ metrics_per_label_accuracy  │ MetricCollection │      0 │
+│ 8  │ metrics_per_label_precision │ MetricCollection │      0 │
+│ 9  │ metrics_per_label_recall    │ MetricCollection │      0 │
+│ 10 │ metrics_per_label_f1score   │ MetricCollection │      0 │
+└────┴─────────────────────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 12.5 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 94.5 M
+[1mTotal estimated model params size (MB)[22m: 378
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+training batches (17) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a
+lower value for log_every_n_steps if you want to see logs for the training epoch.
+[37mEpoch 0/3 [39m [35m━━━━╸[90m━━━━━━━━━━━━━━━━━━━━━━━[39m [37m3/17[39m [37m0:00:00 • 0:00:04[39m [37m4.02it/s[39m [37mv_num: t4d0 train/loss:     
+
+
+                                                                        [37m0.173                       
+[37mEpoch 0/3 [39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m17/17[39m [37m0:00:04 • 0:00:00[39m [37m3.73it/s[39m [37mv_num: t4d0 train/loss:     
+                                                                        [37m0.173                       
+Epoch 0, global step 17: 'val_loss' reached 0.17305 (best 0.17305), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=0.ckpt' as top 1
+Epoch 1, global step 34: 'val_loss' reached 0.17258 (best 0.17258), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=1.ckpt' as top 1
+Epoch 1/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m17/17[39m [37m0:00:04 • 0:00:00[39m [37m3.53it/s[39m [37mv_num: t4d0 train/loss:     
+                                                                        [37m0.173                       
+Epoch 2/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m17/17[39m [37m0:00:04 • 0:00:00[39m [37m3.52it/s[39m [37mv_num: t4d0 train/loss:     
+                                                                        [37m0.173                       
+
+
+                                                                        [37m0.173                       
+Epoch 3, global step 68: 'val_loss' reached 0.17185 (best 0.17185), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=3-v1.ckpt' as top 1
+Epoch 3/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m17/17[39m [37m0:00:04 • 0:00:00[39m [37m3.61it/s[39m [37mv_num: t4d0 train/loss:     
+                                                                        [37m0.173                       
+`Trainer.fit` stopped: `max_epochs=4` reached.
+[32m[I 2024-04-30 03:14:30,211][39m Trial 1 finished with value: 1.0 and parameters: {'batch_size': 60, 'epoch': 7, 'hidden_size': 228, 'hidden_size2': 705, 'focal_loss_gamma': 2}. Best is trial 0 with value: 1.0.
+[?25h
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+[?25h┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m    [22m┃[1m Name                        [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0  │ bert                        │ BertModel        │ 89.1 M │
+│ 1  │ classifiers                 │ ModuleList       │ 10.1 M │
+│ 2  │ hidden_layer1               │ ModuleList       │  6.9 M │
+│ 3  │ hidden_layer2               │ ModuleList       │  8.4 K │
+│ 4  │ sigmoid                     │ Sigmoid          │      0 │
+│ 5  │ criterion                   │ Focal_Loss       │      0 │
+│ 6  │ metrics                     │ MetricCollection │      0 │
+│ 7  │ metrics_per_label_accuracy  │ MetricCollection │      0 │
+│ 8  │ metrics_per_label_precision │ MetricCollection │      0 │
+│ 9  │ metrics_per_label_recall    │ MetricCollection │      0 │
+│ 10 │ metrics_per_label_f1score   │ MetricCollection │      0 │
+└────┴─────────────────────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 24.0 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 106 M
+[1mTotal estimated model params size (MB)[22m: 424
+
+[?25l
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+training batches (19) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a
+lower value for log_every_n_steps if you want to see logs for the training epoch.
+[37mEpoch 0/3 [39m [35m━━━━━━━━━━━╸[90m━━━━━━━━━━━━━━━━[39m [37m8/19[39m [37m0:00:01 • 0:00:03[39m [37m4.25it/s[39m [37mv_num: t4d0 train/loss:     
+
+                                                                        [37m0.043                       
+Epoch 0, global step 19: 'val_loss' reached 0.04250 (best 0.04250), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=0.ckpt' as top 1
+[37mEpoch 0/3 [39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m19/19[39m [37m0:00:04 • 0:00:00[39m [37m4.20it/s[39m [37mv_num: t4d0 train/loss:     
+
+                                                                        [37m0.042                       
+Epoch 1, global step 38: 'val_loss' reached 0.04187 (best 0.04187), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=1.ckpt' as top 1
+Epoch 1/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m19/19[39m [37m0:00:05 • 0:00:00[39m [37m4.00it/s[39m [37mv_num: t4d0 train/loss:     
+                                                                        [37m0.042                       
+Epoch 2, global step 57: 'val_loss' reached 0.04162 (best 0.04162), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=2.ckpt' as top 1
+Epoch 2/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m19/19[39m [37m0:00:05 • 0:00:00[39m [37m4.06it/s[39m [37mv_num: t4d0 train/loss:     
+
+
+                                                                        [37m0.042                       
+Epoch 3/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m19/19[39m [37m0:00:05 • 0:00:00[39m [37m4.08it/s[39m [37mv_num: t4d0 train/loss:     
+                                                                        [37m0.042                       
+Epoch 3, global step 76: 'val_loss' reached 0.04142 (best 0.04142), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=3-v2.ckpt' as top 1
+`Trainer.fit` stopped: `max_epochs=4` reached.
+[32m[I 2024-04-30 03:15:13,883][39m Trial 2 finished with value: 1.0 and parameters: {'batch_size': 53, 'epoch': 4, 'hidden_size': 817, 'hidden_size2': 524, 'focal_loss_gamma': 4}. Best is trial 0 with value: 1.0.
+[?25h
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+[?25h┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m    [22m┃[1m Name                        [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0  │ bert                        │ BertModel        │ 89.1 M │
+│ 1  │ classifiers                 │ ModuleList       │  5.3 M │
+│ 2  │ hidden_layer1               │ ModuleList       │  3.4 M │
+│ 3  │ hidden_layer2               │ ModuleList       │  7.9 K │
+│ 4  │ sigmoid                     │ Sigmoid          │      0 │
+│ 5  │ criterion                   │ Focal_Loss       │      0 │
+│ 6  │ metrics                     │ MetricCollection │      0 │
+│ 7  │ metrics_per_label_accuracy  │ MetricCollection │      0 │
+│ 8  │ metrics_per_label_precision │ MetricCollection │      0 │
+│ 9  │ metrics_per_label_recall    │ MetricCollection │      0 │
+│ 10 │ metrics_per_label_f1score   │ MetricCollection │      0 │
+└────┴─────────────────────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 15.8 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 97.8 M
+[1mTotal estimated model params size (MB)[22m: 391
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+training batches (16) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a
+lower value for log_every_n_steps if you want to see logs for the training epoch.
+[37mEpoch 0/3 [39m [35m━━━╸[90m━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m2/16[39m [37m0:00:00 • 0:00:04[39m [37m3.75it/s[39m [37mv_num: t4d0 train/loss:     
+                                                                        [37m0.350                       
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+Epoch 0, global step 16: 'val_loss' reached 0.34536 (best 0.34536), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=0.ckpt' as top 1
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+                                                                        [37m0.347                       
+                                                                        [37m0.347                       
+                                                                        [37m0.347                       
+                                                                        [37m0.347                       
+                                                                        [37m0.347                       
+                                                                        [37m0.347                       
+                                                                        [37m0.345                       
+                                                                        [37m0.345                       
+                                                                        [37m0.345                       
+                                                                        [37m0.345                       
+                                                                        [37m0.345                       
+                                                                        [37m0.345                       
+                                                                        [37m0.344                       
+                                                                        [37m0.344                       
+`Trainer.fit` stopped: `max_epochs=4` reached.
+[32m[I 2024-04-30 03:15:59,202][39m Trial 3 finished with value: 1.0 and parameters: {'batch_size': 64, 'epoch': 6, 'hidden_size': 429, 'hidden_size2': 491, 'focal_loss_gamma': 1}. Best is trial 0 with value: 1.0.
+                                                                        [37m0.344                       
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+[37mSanity Checking[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m2/2[39m [37m0:00:00 • 0:00:00[39m [37m104.19it/s
+[37mEpoch 0/3 [39m [35m━━━━╸[90m━━━━━━━━━━━━━━━━━━━━━━━[39m [37m3/17[39m [37m0:00:00 • 0:00:04[39m [37m3.80it/s[39m [37mv_num: t4d0 train/loss:     
+[37mEpoch 0/3 [39m [35m━━━━╸[90m━━━━━━━━━━━━━━━━━━━━━━━[39m [37m3/17[39m [37m0:00:00 • 0:00:04[39m [37m3.80it/s[39m [37mv_num: t4d0 train/loss:     
+[37mEpoch 0/3 [39m [35m━━━━╸[90m━━━━━━━━━━━━━━━━━━━━━━━[39m [37m3/17[39m [37m0:00:00 • 0:00:04[39m [37m3.80it/s[39m [37mv_num: t4d0 train/loss:     
+                                                                        [37m0.344                       
+                                                                        [37m0.344                       
+Epoch 0, global step 17: 'val_loss' reached 0.34300 (best 0.34300), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=0.ckpt' as top 1
+                                                                        [37m0.344                       
+                                                                        [37m0.344                       
+                                                                        [37m0.344                       
+                                                                        [37m0.344                       
+                                                                        [37m0.341                       
+                                                                        [37m0.341                       
+                                                                        [37m0.341                       
+                                                                        [37m0.341                       
+                                                                        [37m0.341                       
+                                                                        [37m0.341                       
+                                                                        [37m0.339                       
+                                                                        [37m0.339                       
+                                                                        [37m0.339                       
+                                                                        [37m0.339                       
+                                                                        [37m0.339                       
+                                                                        [37m0.339                       
+                                                                        [37m0.336                       
+                                                                        [37m0.336                       
+`Trainer.fit` stopped: `max_epochs=4` reached.
+[32m[I 2024-04-30 03:16:45,167][39m Trial 4 finished with value: 1.0 and parameters: {'batch_size': 61, 'epoch': 4, 'hidden_size': 787, 'hidden_size2': 793, 'focal_loss_gamma': 1}. Best is trial 0 with value: 1.0.
+                                                                        [37m0.336                       
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+[?25l│ bert                        │ BertModel        │ 89.1 M │        [37m0.336                       
+[37mSanity Checking[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m2/2[39m [37m0:00:00 • 0:00:00[39m [37m94.36it/s
+[37mEpoch 0/3 [39m [35m━╸[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m1/22[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: t4d0
+[37mEpoch 0/3 [39m [35m━╸[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m1/22[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: t4d0
+[37mEpoch 0/3 [39m [35m━╸[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m1/22[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: t4d0
+[37mEpoch 0/3 [39m [35m━╸[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m1/22[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: t4d0
+                                                                        [37m0.347                       
+                                                                        [37m0.347                       
+Epoch 0, global step 22: 'val_loss' reached 0.34641 (best 0.34641), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=0.ckpt' as top 1
+                                                                        [37m0.347                       
+                                                                        [37m0.347                       
+                                                                        [37m0.347                       
+                                                                        [37m0.347                       
+                                                                        [37m0.346                       
+                                                                        [37m0.346                       
+                                                                        [37m0.346                       
+                                                                        [37m0.346                       
+                                                                        [37m0.346                       
+                                                                        [37m0.347                       
+                                                                        [37m0.347                       
+Epoch 2, global step 66: 'val_loss' reached 0.34433 (best 0.34433), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=2.ckpt' as top 1
+                                                                        [37m0.347                       
+                                                                        [37m0.347                       
+                                                                        [37m0.347                       
+                                                                        [37m0.347                       
+                                                                        [37m0.345                       
+                                                                        [37m0.345                       
+`Trainer.fit` stopped: `max_epochs=4` reached.
+[32m[I 2024-04-30 03:17:36,108][39m Trial 5 finished with value: 1.0 and parameters: {'batch_size': 47, 'epoch': 5, 'hidden_size': 165, 'hidden_size2': 804, 'focal_loss_gamma': 1}. Best is trial 0 with value: 1.0.
+                                                                        [37m0.345                       
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+[37mSanity Checking[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m2/2[39m [37m0:00:00 • 0:00:00[39m [37m94.98it/s
+
+[37mSanity Checking[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m2/2[39m [37m0:00:00 • 0:00:00[39m [37m94.98it/s
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+training batches (39) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a
+lower value for log_every_n_steps if you want to see logs for the training epoch.
+[37mEpoch 0/3 [39m [35m━━━━━━━╸[90m━━━━━━━━━━━━━━━━━━━[39m [37m11/39[39m [37m0:00:01 • 0:00:04[39m [37m7.57it/s[39m [37mv_num: t4d0 train/loss:     
+                                                                        [37m0.087                       
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+                                                                        [37m0.085                       
+                                                                        [37m0.085                       
+                                                                        [37m0.085                       
+                                                                        [37m0.085                       
+                                                                        [37m0.085                       
+                                                                        [37m0.083                       
+                                                                        [37m0.083                       
+Epoch 1, global step 78: 'val_loss' reached 0.08417 (best 0.08417), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=1.ckpt' as top 1
+                                                                        [37m0.083                       
+                                                                        [37m0.083                       
+                                                                        [37m0.083                       
+                                                                        [37m0.083                       
+                                                                        [37m0.085                       
+                                                                        [37m0.085                       
+                                                                        [37m0.085                       
+                                                                        [37m0.085                       
+                                                                        [37m0.085                       
+                                                                        [37m0.085                       
+                                                                        [37m0.085                       
+                                                                        [37m0.083                       
+                                                                        [37m0.083                       
+`Trainer.fit` stopped: `max_epochs=4` reached.
+[32m[I 2024-04-30 03:18:27,138][39m Trial 6 finished with value: 1.0 and parameters: {'batch_size': 26, 'epoch': 7, 'hidden_size': 897, 'hidden_size2': 135, 'focal_loss_gamma': 3}. Best is trial 0 with value: 1.0.
+                                                                        [37m0.083                       
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+[?25l│ bert                        │ BertModel        │ 89.1 M │        [37m0.083                       
+[37mSanity Checking[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m2/2[39m [37m0:00:00 • 0:00:00[39m [37m98.38it/s
+[37mEpoch 0/3 [39m [35m╸[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m1/42[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: t4d0 train/loss:     
+[37mEpoch 0/3 [39m [35m╸[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m1/42[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: t4d0 train/loss:     
+[37mEpoch 0/3 [39m [35m╸[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m1/42[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: t4d0 train/loss:     
+[37mEpoch 0/3 [39m [35m╸[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m1/42[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: t4d0 train/loss:     
+[37mEpoch 0/3 [39m [35m╸[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m1/42[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: t4d0 train/loss:     
+                                                                        [37m0.086                       
+                                                                        [37m0.086                       
+                                                                        [37m0.086                       
+                                                                        [37m0.086                       
+                                                                        [37m0.086                       
+                                                                        [37m0.086                       
+                                                                        [37m0.086                       
+Epoch 1, global step 84: 'val_loss' reached 0.08582 (best 0.08582), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=1.ckpt' as top 1
+                                                                        [37m0.086                       
+                                                                        [37m0.086                       
+                                                                        [37m0.086                       
+                                                                        [37m0.086                       
+                                                                        [37m0.087                       
+                                                                        [37m0.087                       
+Epoch 2, global step 126: 'val_loss' reached 0.08566 (best 0.08566), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=2.ckpt' as top 1
+                                                                        [37m0.087                       
+                                                                        [37m0.087                       
+                                                                        [37m0.087                       
+                                                                        [37m0.085                       
+                                                                        [37m0.085                       
+Epoch 3, global step 168: 'val_loss' reached 0.08558 (best 0.08558), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=3-v7.ckpt' as top 1
+`Trainer.fit` stopped: `max_epochs=4` reached.
+[32m[I 2024-04-30 03:19:18,890][39m Trial 7 finished with value: 1.0 and parameters: {'batch_size': 24, 'epoch': 6, 'hidden_size': 404, 'hidden_size2': 176, 'focal_loss_gamma': 3}. Best is trial 0 with value: 1.0.
+                                                                        [37m0.085                       
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+[?25l│ bert                        │ BertModel        │ 89.1 M │        [37m0.085                       
+
+[?25l│ bert                        │ BertModel        │ 89.1 M │        [37m0.085                       
+[37mEpoch 0/3 [39m [35m━━━━━━━╸[90m━━━━━━━━━━━━━━━━━━[39m [37m18/59[39m [37m0:00:01 • 0:00:04[39m [37m12.23it/s[39m [37mv_num: t4d0 train/loss:     
+                                                                        [37m0.171                       
+[37mEpoch 0/3 [39m [35m━━━━━━━╸[90m━━━━━━━━━━━━━━━━━━[39m [37m18/59[39m [37m0:00:01 • 0:00:04[39m [37m12.23it/s[39m [37mv_num: t4d0 train/loss:     
+[37mEpoch 0/3 [39m [35m━━━━━━━╸[90m━━━━━━━━━━━━━━━━━━[39m [37m18/59[39m [37m0:00:01 • 0:00:04[39m [37m12.23it/s[39m [37mv_num: t4d0 train/loss:     
+[37mEpoch 0/3 [39m [35m━━━━━━━╸[90m━━━━━━━━━━━━━━━━━━[39m [37m18/59[39m [37m0:00:01 • 0:00:04[39m [37m12.23it/s[39m [37mv_num: t4d0 train/loss:     
+[37mEpoch 0/3 [39m [35m━━━━━━━╸[90m━━━━━━━━━━━━━━━━━━[39m [37m18/59[39m [37m0:00:01 • 0:00:04[39m [37m12.23it/s[39m [37mv_num: t4d0 train/loss:     
+[37mEpoch 0/3 [39m [35m━━━━━━━╸[90m━━━━━━━━━━━━━━━━━━[39m [37m18/59[39m [37m0:00:01 • 0:00:04[39m [37m12.23it/s[39m [37mv_num: t4d0 train/loss:     
+[37mEpoch 0/3 [39m [35m━━━━━━━╸[90m━━━━━━━━━━━━━━━━━━[39m [37m18/59[39m [37m0:00:01 • 0:00:04[39m [37m12.23it/s[39m [37mv_num: t4d0 train/loss:     
+[37mEpoch 0/3 [39m [35m━━━━━━━╸[90m━━━━━━━━━━━━━━━━━━[39m [37m18/59[39m [37m0:00:01 • 0:00:04[39m [37m12.23it/s[39m [37mv_num: t4d0 train/loss:     
+[37mEpoch 0/3 [39m [35m━━━━━━━╸[90m━━━━━━━━━━━━━━━━━━[39m [37m18/59[39m [37m0:00:01 • 0:00:04[39m [37m12.23it/s[39m [37mv_num: t4d0 train/loss:     
+                                                                        [37m0.166                       
+                                                                        [37m0.166                       
+Epoch 0, global step 59: 'val_loss' reached 0.16811 (best 0.16811), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=0.ckpt' as top 1
+                                                                        [37m0.166                       
+                                                                        [37m0.166                       
+                                                                        [37m0.166                       
+                                                                        [37m0.166                       
+                                                                        [37m0.166                       
+Epoch 1, global step 118: 'val_loss' reached 0.16712 (best 0.16712), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=1.ckpt' as top 1
+                                                                        [37m0.166                       
+                                                                        [37m0.166                       
+                                                                        [37m0.166                       
+                                                                        [37m0.170                       
+                                                                        [37m0.170                       
+Epoch 2, global step 177: 'val_loss' reached 0.16677 (best 0.16677), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=2.ckpt' as top 1
+                                                                        [37m0.170                       
+                                                                        [37m0.170                       
+                                                                        [37m0.170                       
+                                                                        [37m0.170                       
+                                                                        [37m0.170                       
+                                                                        [37m0.167                       
+                                                                        [37m0.167                       
+`Trainer.fit` stopped: `max_epochs=4` reached.
+                                                                        [37m0.167                       
+[32m[I 2024-04-30 03:20:09,558][39m Trial 8 finished with value: 1.0 and parameters: {'batch_size': 17, 'epoch': 8, 'hidden_size': 296, 'hidden_size2': 583, 'focal_loss_gamma': 2}. Best is trial 0 with value: 1.0.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+[37mSanity Checking[39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m2/2[39m [37m0:00:00 • 0:00:00[39m [37m104.12it/s
+[37mEpoch 0/3 [39m [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m0/56[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: t4d0
+[37mEpoch 0/3 [39m [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m0/56[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: t4d0
+[37mEpoch 0/3 [39m [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m0/56[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: t4d0
+[37mEpoch 0/3 [39m [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m0/56[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: t4d0
+                                                                        [37m0.169                       
+                                                                        [37m0.169                       
+Epoch 0, global step 56: 'val_loss' reached 0.17005 (best 0.17005), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=0.ckpt' as top 1
+                                                                        [37m0.169                       
+                                                                        [37m0.169                       
+                                                                        [37m0.169                       
+                                                                        [37m0.169                       
+                                                                        [37m0.173                       
+                                                                        [37m0.173                       
+Epoch 1, global step 112: 'val_loss' reached 0.16845 (best 0.16845), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=1.ckpt' as top 1
+                                                                        [37m0.173                       
+                                                                        [37m0.173                       
+                                                                        [37m0.173                       
+                                                                        [37m0.173                       
+                                                                        [37m0.173                       
+                                                                        [37m0.169                       
+                                                                        [37m0.169                       
+                                                                        [37m0.169                       
+                                                                        [37m0.169                       
+                                                                        [37m0.169                       
+                                                                        [37m0.166                       
+                                                                        [37m0.166                       
+Epoch 3, global step 224: 'val_loss' reached 0.16744 (best 0.16744), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/03-12-56/wandb/run-20240430_031257-yoswt4d0/files/checkpoints/epoch=3-v9.ckpt' as top 1
+`Trainer.fit` stopped: `max_epochs=4` reached.
+[32m[I 2024-04-30 03:21:00,936][39m Trial 9 finished with value: 1.0 and parameters: {'batch_size': 18, 'epoch': 5, 'hidden_size': 322, 'hidden_size2': 701, 'focal_loss_gamma': 2}. Best is trial 0 with value: 1.0.
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 683, in main
+    trainer.test(model, data_module)
+NameError: name 'trainer' is not defined
+{'batch_size': 29, 'epoch': 5, 'hidden_size': 1003, 'hidden_size2': 491, 'focal_loss_gamma': 2}[37m     
+{'batch_size': 29, 'epoch': 5, 'hidden_size': 1003, 'hidden_size2': 491, 'focal_loss_gamma': 2}[37m     
