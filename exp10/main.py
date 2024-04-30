@@ -647,10 +647,12 @@ def main(cfg: DictConfig):
             fast_dev_run=False,
         )
         trainer.fit(model, data_module)
-        epoch_preds = model.on_train_epoch_end(epoch_preds)
-        epoch_labels = model.on_train_epoch_end(epoch_labels)
+        epoch_preds = model.validation_step_outputs_preds[-1]
+        epoch_labels = model.validation_step_outputs_labels[-1]
+        f1_score = torchmetrics.F1Score(num_classes=cfg.model.num_classes, threshold=0.5, average='macro')
+        f1_score = f1_score(epoch_preds, epoch_labels)
 
-        return 1.0 - torchmetrics.F1Score(epoch_preds,epoch_labels)
+        return 1.0 - f1_score
 
     study = optuna.create_study(direction='minimize')
     study.optimize(objective,n_trials=10)
