@@ -162,6 +162,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         self.test_step_outputs_preds = []
         self.test_step_outputs_labels = []
 
+        self.validation_f1score = 0
         self.validation_step_outputs_preds_return = []
         self.validation_step_outputs_labels_return = []
 
@@ -300,8 +301,8 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         self.validation_step_outputs_labels.append(batch["labels"])
 
         #objective
-        self.validation_step_outputs_preds_return.append(preds)
-        self.validation_step_outputs_labels_return.append(batch["labels"])
+        # self.validation_step_outputs_preds_return.append(preds)
+        # self.validation_step_outputs_labels_return.append(batch["labels"])
 
         # self.log("val_loss", loss, on_epoch=True, prog_bar=True)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
@@ -402,10 +403,10 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
         #obejective
-        epoch_preds = torch.cat(self.validation_step_outputs_preds_return)
-        epoch_preds = epoch_preds.squeeze()
-        epoch_labels = torch.cat(self.validation_step_outputs_labels_return)
-        epoch_labels = epoch_labels.squeeze()
+        # epoch_preds = torch.cat(self.validation_step_outputs_preds_return)
+        # epoch_preds = epoch_preds.squeeze()
+        # epoch_labels = torch.cat(self.validation_step_outputs_labels_return)
+        # epoch_labels = epoch_labels.squeeze()
 
         class_names = [
             "あいづち",
@@ -428,6 +429,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
 
         metrics = self.metrics(epoch_preds, epoch_labels)
         for metric in metrics.keys():
+            
             self.log(f"{mode}/{metric.lower()}", metrics[metric].item(), logger=True)
 
         for i in range(self.num_classes):
@@ -664,7 +666,7 @@ def main(cfg: DictConfig):
 
         epoch_preds = model.validation_step_outputs_preds_return[-1]
         epoch_labels = model.validation_step_outputs_labels_return[-1]
-        f1_score = torchmetrics.F1Score(task = "multilabel",num_labels = 16, threshold=0.5, average='macro')
+        f1_score = torchmetrics.F1Score(task = "multilabel",num_labels = 16, threshold=0.5, average='macro').to(device)
         f1_score = f1_score(epoch_preds, epoch_labels)
 
         return 1.0 - f1_score
