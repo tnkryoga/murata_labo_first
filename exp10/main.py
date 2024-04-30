@@ -162,6 +162,9 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         self.test_step_outputs_preds = []
         self.test_step_outputs_labels = []
 
+        self.validation_step_outputs_preds_return = []
+        self.validation_step_outputs_labels_return = []
+
         # モデルの構造
         self.bert = BertModel.from_pretrained(pretrained_model, return_dict=True)
         self.classifiers = nn.ModuleList(
@@ -295,6 +298,11 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         )
         self.validation_step_outputs_preds.append(preds)
         self.validation_step_outputs_labels.append(batch["labels"])
+
+        #objective
+        self.validation_step_outputs_preds_return.append(preds)
+        self.validation_step_outputs_labels_return.append(batch["labels"])
+
         # self.log("val_loss", loss, on_epoch=True, prog_bar=True)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
@@ -392,6 +400,12 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         epoch_labels = epoch_labels.squeeze()
         epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
         self.log(f"{mode}_loss", epoch_loss, logger=True)
+
+        #obejective
+        epoch_preds = torch.cat(self.validation_step_outputs_preds_return)
+        epoch_preds = epoch_preds.squeeze()
+        epoch_labels = torch.cat(self.validation_step_outputs_labels_return)
+        epoch_labels = epoch_labels.squeeze()
 
         class_names = [
             "あいづち",
@@ -647,8 +661,9 @@ def main(cfg: DictConfig):
             fast_dev_run=False,
         )
         trainer.fit(model, data_module)
-        epoch_preds = model.validation_step_outputs_preds[-1]
-        epoch_labels = model.validation_step_outputs_labels[-1]
+
+        epoch_preds = model.validation_step_outputs_preds_return[-1]
+        epoch_labels = model.validation_step_outputs_labels_return[-1]
         f1_score = torchmetrics.F1Score(num_classes=cfg.model.num_classes, threshold=0.5, average='macro')
         f1_score = f1_score(epoch_preds, epoch_labels)
 
