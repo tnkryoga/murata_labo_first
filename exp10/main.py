@@ -664,7 +664,7 @@ def main(cfg: DictConfig):
 
         epoch_preds = model.validation_step_outputs_preds_return[-1]
         epoch_labels = model.validation_step_outputs_labels_return[-1]
-        f1_score = torchmetrics.F1Score(task = "multilabel",num_classes=cfg.model.num_classes, threshold=0.5, average='macro')
+        f1_score = torchmetrics.F1Score(task = "multilabel",num_labels = 16, threshold=0.5, average='macro')
         f1_score = f1_score(epoch_preds, epoch_labels)
 
         return 1.0 - f1_score
