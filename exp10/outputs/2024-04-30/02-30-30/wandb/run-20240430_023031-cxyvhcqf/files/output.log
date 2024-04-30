@@ -1,0 +1,104 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:391: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+[32m[I 2024-04-30 02:30:32,789][39m A new study created in memory with name: no-name-c737c686-ee78-420d-8301-096b950a0bd3
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 4090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m    [22m┃[1m Name                        [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0  │ bert                        │ BertModel        │ 89.1 M │
+│ 1  │ classifiers                 │ ModuleList       │  4.2 M │
+│ 2  │ hidden_layer1               │ ModuleList       │  1.5 M │
+│ 3  │ hidden_layer2               │ ModuleList       │  4.4 K │
+│ 4  │ sigmoid                     │ Sigmoid          │      0 │
+│ 5  │ criterion                   │ Focal_Loss       │      0 │
+│ 6  │ metrics                     │ MetricCollection │      0 │
+│ 7  │ metrics_per_label_accuracy  │ MetricCollection │      0 │
+│ 8  │ metrics_per_label_precision │ MetricCollection │      0 │
+│ 9  │ metrics_per_label_recall    │ MetricCollection │      0 │
+│ 10 │ metrics_per_label_f1score   │ MetricCollection │      0 │
+└────┴─────────────────────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 12.8 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 94.9 M
+[1mTotal estimated model params size (MB)[22m: 379
+[37mEpoch 0/3 [39m [35m━━━━━━━━━[90m╺━━━━━━━━━━━━━━━━[39m [37m35/100[39m [37m0:00:01 • 0:00:04[39m [37m20.07it/s[39m [37mv_num: hcqf train/loss:    
+
+                                                                          [37m0.169                     
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━╸[90m━━━━[39m [37m215/257[39m [37m0:00:08 • 0:00:02[39m [37m24.62it/s
+[37mEpoch 0/3 [39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m100/100[39m [37m0:00:05 • 0:00:00[39m [37m19.80it/s[39m [37mv_num: hcqf train/loss:   
+                                                                          [37m0.169                     
+
+
+                                                                          [37m0.165                     
+
+
+
+
+
+Epoch 1/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m100/100[39m [37m0:00:05 • 0:00:00[39m [37m18.86it/s[39m [37mv_num: hcqf train/loss:   
+                                                                          [37m0.165                     
+
+
+
+                                                                          [37m0.165                     
+
+Epoch 2/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m100/100[39m [37m0:00:05 • 0:00:00[39m [37m18.97it/s[39m [37mv_num: hcqf train/loss:   
+                                                                          [37m0.165                     
+
+
+Epoch 2/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m100/100[39m [37m0:00:05 • 0:00:00[39m [37m18.97it/s[39m [37mv_num: hcqf train/loss:   
+                                                                          [37m0.165                     
+
+
+
+                                                                          [37m0.164                     
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━━╸[90m━━━━[39m [37m214/257[39m [37m0:00:08 • 0:00:02[39m [37m24.90it/s
+Epoch 3/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m100/100[39m [37m0:00:05 • 0:00:00[39m [37m19.04it/s[39m [37mv_num: hcqf train/loss:   
+                                                                          [37m0.164                     
+Epoch 3, global step 400: 'val_loss' reached 0.16592 (best 0.16592), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-04-30/02-30-30/wandb/run-20240430_023031-cxyvhcqf/files/checkpoints/epoch=3.ckpt' as top 1
+[?25h
+`Trainer.fit` stopped: `max_epochs=4` reached.
+[33m[W 2024-04-30 02:31:59,425][39m Trial 0 failed with parameters: {'batch_size': 10, 'epoch': 5, 'hidden_size': 344, 'hidden_size2': 275, 'focal_loss_gamma': 2} because of the following error: ValueError("`num_labels` is expected to be `int` but `<class 'NoneType'> was passed.`").
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 667, in objective
+    f1_score = torchmetrics.F1Score(task = "multilabel",num_classes=cfg.model.num_classes, threshold=0.5, average='macro')
+  File "/usr/local/lib/python3.10/dist-packages/torchmetrics/classification/f_beta.py", line 1156, in __new__
+    raise ValueError(f"`num_labels` is expected to be `int` but `{type(num_labels)} was passed.`")
+ValueError: `num_labels` is expected to be `int` but `<class 'NoneType'> was passed.`
+[33m[W 2024-04-30 02:31:59,427][39m Trial 0 failed with value None.
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 673, in main
+    study.optimize(objective,n_trials=10)
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 667, in objective
+    f1_score = torchmetrics.F1Score(task = "multilabel",num_classes=cfg.model.num_classes, threshold=0.5, average='macro')
+  File "/usr/local/lib/python3.10/dist-packages/torchmetrics/classification/f_beta.py", line 1156, in __new__
+    raise ValueError(f"`num_labels` is expected to be `int` but `{type(num_labels)} was passed.`")
+ValueError: `num_labels` is expected to be `int` but `<class 'NoneType'> was passed.`
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
