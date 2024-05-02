@@ -670,7 +670,7 @@ def main(cfg: DictConfig):
         return 1.0 - f1_score
 
     study = optuna.create_study(direction='minimize')
-    study.optimize(objective,n_trials=2)
+    study.optimize(objective,n_trials=5)
 
     print(study.best_value)
     print(study.best_params)
