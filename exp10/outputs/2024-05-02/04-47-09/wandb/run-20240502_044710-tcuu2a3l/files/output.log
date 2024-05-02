@@ -1,0 +1,262 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:391: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+[32m[I 2024-05-02 04:47:12,025][39m A new study created in memory with name: no-name-fc556598-1948-4316-a6a2-c5372d393633
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 4090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m    [22m┃[1m Name                        [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0  │ bert                        │ BertModel        │ 89.1 M │
+│ 1  │ classifiers                 │ ModuleList       │  4.7 M │
+│ 2  │ hidden_layer1               │ ModuleList       │  4.4 M │
+│ 3  │ hidden_layer2               │ ModuleList       │ 11.3 K │
+│ 4  │ sigmoid                     │ Sigmoid          │      0 │
+│ 5  │ criterion                   │ Focal_Loss       │      0 │
+│ 6  │ metrics                     │ MetricCollection │      0 │
+│ 7  │ metrics_per_label_accuracy  │ MetricCollection │      0 │
+│ 8  │ metrics_per_label_precision │ MetricCollection │      0 │
+│ 9  │ metrics_per_label_recall    │ MetricCollection │      0 │
+│ 10 │ metrics_per_label_f1score   │ MetricCollection │      0 │
+└────┴─────────────────────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 16.2 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 98.2 M
+[1mTotal estimated model params size (MB)[22m: 392
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelAccuracy
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelPrecision
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelRecall
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelF1Score
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelMatthewsCorrCoef
+NO
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+training batches (31) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a
+lower value for log_every_n_steps if you want to see logs for the training epoch.
+[37mEpoch 0/3 [39m [35m━━━━━━━━╸[90m━━━━━━━━━━━━━━━━━━[39m [37m10/31[39m [37m0:00:01 • 0:00:03[39m [37m7.10it/s[39m [37mv_num: 2a3l train/loss:     
+                                                                        [37m0.087                       
+MultilabelAccuracy
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelPrecision
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelRecall
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelF1Score
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelMatthewsCorrCoef
+NO
+torch.Size([1000, 16])
+[37mEpoch 0/3 [39m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m31/31[39m [37m0:00:04 • 0:00:00[39m [37m6.55it/s[39m [37mv_num: 2a3l train/loss:     
+                                                                        [37m0.087                       
+
+
+'MultilabelMatthewsCorrCoef'])
+MultilabelAccuracy
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelPrecision
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelRecall
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelF1Score
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelMatthewsCorrCoef
+NO
+torch.Size([1000, 16])
+Epoch 1/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m31/31[39m [37m0:00:05 • 0:00:00[39m [37m5.66it/s[39m [37mv_num: 2a3l train/loss:     
+                                                                        [37m0.087                       
+
+'MultilabelMatthewsCorrCoef'])
+MultilabelAccuracy
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelPrecision
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelRecall
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelF1Score
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelMatthewsCorrCoef
+NO
+torch.Size([1000, 16])
+Epoch 2/3  [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m31/31[39m [37m0:00:05 • 0:00:00[39m [37m5.71it/s[39m [37mv_num: 2a3l train/loss:     
+                                                                        [37m0.086                       
+Epoch 2, global step 93: 'val_loss' reached 0.08565 (best 0.08565), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-05-02/04-47-09/wandb/run-20240502_044710-tcuu2a3l/files/checkpoints/epoch=2.ckpt' as top 1
+                                                                        [37m0.087                       
+                                                                        [37m0.087                       
+                                                                        [37m0.085                       
+                                                                        [37m0.085                       
+
+Epoch 3, global step 124: 'val_loss' reached 0.08556 (best 0.08556), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-05-02/04-47-09/wandb/run-20240502_044710-tcuu2a3l/files/checkpoints/epoch=3.ckpt' as top 1
+`Trainer.fit` stopped: `max_epochs=4` reached.
+[32m[I 2024-05-02 04:48:00,056][39m Trial 0 finished with value: 1.0 and parameters: {'batch_size': 33, 'epoch': 7, 'hidden_size': 386, 'hidden_size2': 706, 'focal_loss_gamma': 3}. Best is trial 0 with value: 1.0.
+[?25h
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/callbacks/model_checkpoint.py:653: Checkpoint directory /content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-05-02/04-47-09/wandb/run-20240502_044710-tcuu2a3l/files/checkpoints exists and is not empty.
+[?25h┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m    [22m┃[1m Name                        [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0  │ bert                        │ BertModel        │ 89.1 M │
+│ 1  │ classifiers                 │ ModuleList       │  2.4 M │
+│ 2  │ hidden_layer1               │ ModuleList       │  1.5 M │
+│ 3  │ hidden_layer2               │ ModuleList       │  7.7 K │
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+│ 5  │ criterion                   │ Focal_Loss       │      0 │
+│ 6  │ metrics                     │ MetricCollection │      0 │
+│ 7  │ metrics_per_label_accuracy  │ MetricCollection │      0 │
+│ 8  │ metrics_per_label_precision │ MetricCollection │      0 │
+│ 9  │ metrics_per_label_recall    │ MetricCollection │      0 │
+│ 10 │ metrics_per_label_f1score   │ MetricCollection │      0 │
+└────┴─────────────────────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 11.1 M
+[1mNon-trainable params[22m: 82.0 M
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+[1mTotal estimated model params size (MB)[22m: 372
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelAccuracy
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelPrecision
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelRecall
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelF1Score
+NO
+dict_keys(['MultilabelAccuracy', 'MultilabelPrecision', 'MultilabelRecall', 'MultilabelF1Score',
+'MultilabelMatthewsCorrCoef'])
+MultilabelMatthewsCorrCoef
+NO
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+training batches (20) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a
+lower value for log_every_n_steps if you want to see logs for the training epoch.
+[37mEpoch 0/3 [39m [35m━━━━━╸[90m━━━━━━━━━━━━━━━━━━━━━━[39m [37m4/20[39m [37m0:00:01 • 0:00:06[39m [37m3.05it/s[39m [37mv_num: 2a3l train/loss:     
+                                                                        [37m0.177                       
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py:298: The number of
+NO
+NO
+Epoch 0, global step 20: 'val_loss' reached 0.17073 (best 0.17073), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-05-02/04-47-09/wandb/run-20240502_044710-tcuu2a3l/files/checkpoints/epoch=0.ckpt' as top 1
+NO
+NO
+NO
+NO
+NO
+Epoch 1, global step 40: 'val_loss' reached 0.16875 (best 0.16875), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-05-02/04-47-09/wandb/run-20240502_044710-tcuu2a3l/files/checkpoints/epoch=1.ckpt' as top 1
+NO
+NO
+NO
+NO
+Epoch 2, global step 60: 'val_loss' reached 0.16740 (best 0.16740), saving model to '/content/murata_labo_exp/murata_labo_exp_src/exp10/outputs/2024-05-02/04-47-09/wandb/run-20240502_044710-tcuu2a3l/files/checkpoints/epoch=2.ckpt' as top 1
+NO
+NO
+NO
+[32m[I 2024-05-02 04:48:43,907][39m Trial 1 finished with value: 1.0 and parameters: {'batch_size': 52, 'epoch': 8, 'hidden_size': 198, 'hidden_size2': 478, 'focal_loss_gamma': 2}. Best is trial 0 with value: 1.0.
+[33m[W 2024-05-02 04:48:43,918][39m Trial 2 failed with parameters: {'batch_size': 63, 'epoch': 6, 'hidden_size': 441, 'hidden_size2': 600, 'focal_loss_gamma': 3} because of the following error: KeyboardInterrupt().
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/genericpath.py", line 42, in isdir
+    st = os.stat(s)
+FileNotFoundError: [Errno 2] No such file or directory: 'cl-tohoku/bert-base-japanese-char-whole-word-masking'
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 636, in objective
+    data_module = CreateDataModule(
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 88, in __init__
+    self.tokenizer = BertJapaneseTokenizer.from_pretrained(pretrained_model)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/tokenization_utils_base.py", line 1939, in from_pretrained
+    is_local = os.path.isdir(pretrained_model_name_or_path)
+  File "/usr/lib/python3.10/genericpath.py", line 42, in isdir
+    st = os.stat(s)
+KeyboardInterrupt
+[33m[W 2024-05-02 04:48:43,926][39m Trial 2 failed with value None.
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/genericpath.py", line 42, in isdir
+    st = os.stat(s)
+FileNotFoundError: [Errno 2] No such file or directory: 'cl-tohoku/bert-base-japanese-char-whole-word-masking'
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 713, in <module>
+    main()
+  File "/usr/local/lib/python3.10/dist-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/usr/local/lib/python3.10/dist-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/usr/local/lib/python3.10/dist-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/usr/local/lib/python3.10/dist-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/usr/local/lib/python3.10/dist-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/usr/local/lib/python3.10/dist-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/usr/local/lib/python3.10/dist-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 682, in main
+    study.optimize(objective,n_trials=10)
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 636, in objective
+    data_module = CreateDataModule(
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 88, in __init__
+    self.tokenizer = BertJapaneseTokenizer.from_pretrained(pretrained_model)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/tokenization_utils_base.py", line 1939, in from_pretrained
+    is_local = os.path.isdir(pretrained_model_name_or_path)
+  File "/usr/lib/python3.10/genericpath.py", line 42, in isdir
+    st = os.stat(s)
+KeyboardInterrupt
+NO
