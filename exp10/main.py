@@ -430,6 +430,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         metrics = self.metrics(epoch_preds, epoch_labels)
         for metric in metrics.keys():
             print(metrics.key())
+            print(metric)
             if metric == 'MultilabelF1score':
                 self.validation_f1score = metrics[metirc].item()
                 print(self.validation_f1score)
