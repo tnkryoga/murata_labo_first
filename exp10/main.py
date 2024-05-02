@@ -431,7 +431,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         for metric in metrics.keys():
             print(metrics.keys())
             print(metric)
-            if metric == 'MultilabelF1score':
+            if metric == 'MultilabelF1Score':
                 self.validation_f1score = metrics[metirc].item()
                 print(self.validation_f1score)
             else:
