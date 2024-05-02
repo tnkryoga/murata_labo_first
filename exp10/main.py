@@ -429,13 +429,8 @@ class MaltiLabelClassifierModel(pl.LightningModule):
 
         metrics = self.metrics(epoch_preds, epoch_labels)
         for metric in metrics.keys():
-            print(metrics.keys())
-            print(metric)
             if metric == 'MultilabelF1Score':
                 self.validation_f1score = metrics[metric].item()
-                print(self.validation_f1score)
-            else:
-                print('NO')
             self.log(f"{mode}/{metric.lower()}", metrics[metric].item(), logger=True)
 
         for i in range(self.num_classes):
@@ -670,10 +665,6 @@ def main(cfg: DictConfig):
         )
         trainer.fit(model, data_module)
 
-        # epoch_preds = model.validation_step_outputs_preds_return[-1]
-        # epoch_labels = model.validation_step_outputs_labels_return[-1]
-        # f1_score = torchmetrics.F1Score(task = "multilabel",num_labels = 16, threshold=0.5, average='macro').to(device)
-        # f1_score = f1_score(epoch_preds, epoch_labels)
         f1_score = model.validation_f1score
 
         return 1.0 - f1_score

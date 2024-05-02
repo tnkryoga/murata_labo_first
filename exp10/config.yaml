@@ -15,7 +15,7 @@ model:
   focal_loss_gamma: 2
 training:
   val_size: 0.5
-  n_epochs: 4
+  n_epochs: 8
   seed: 40
   batch_size: 32
   max_length: 64
