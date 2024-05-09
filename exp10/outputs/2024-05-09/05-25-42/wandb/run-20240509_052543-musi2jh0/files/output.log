@@ -1,0 +1,56 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:391: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+[32m[I 2024-05-09 05:25:45,140][39m A new study created in memory with name: no-name-9a2778cd-6598-46f6-a69e-d60b23d573ce
+[33m[W 2024-05-09 05:25:45,144][39m Trial 0 failed with parameters: {'batch_size': 48, 'epoch': 4, 'hidden_size': 608, 'hidden_size2': 215, 'focal_loss_gamma': 3, 'chank_prev': 3} because of the following error: FileNotFoundError(2, 'No such file or directory').
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 633, in objective
+    train = pd.read_csv(f'/content/murata_labo_exp/data/chunk_prev_{chank_prev}.csv')
+  File "/usr/local/lib/python3.10/dist-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/util/_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py", line 950, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py", line 605, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py", line 1442, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py", line 1735, in _make_engine
+    self.handles = get_handle(
+  File "/usr/local/lib/python3.10/dist-packages/pandas/io/common.py", line 856, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/content/murata_labo_exp/data/chunk_prev_3.csv'
+[33m[W 2024-05-09 05:25:45,146][39m Trial 0 failed with value None.
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 682, in main
+    study.optimize(objective,n_trials=5)
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp10/main.py", line 633, in objective
+    train = pd.read_csv(f'/content/murata_labo_exp/data/chunk_prev_{chank_prev}.csv')
+  File "/usr/local/lib/python3.10/dist-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/util/_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py", line 950, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py", line 605, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py", line 1442, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py", line 1735, in _make_engine
+    self.handles = get_handle(
+  File "/usr/local/lib/python3.10/dist-packages/pandas/io/common.py", line 856, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/content/murata_labo_exp/data/chunk_prev_3.csv'
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
