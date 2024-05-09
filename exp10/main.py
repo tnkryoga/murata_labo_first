@@ -627,6 +627,15 @@ def main(cfg: DictConfig):
         hidden_size = trial.suggest_int('hidden_size',128,1024)
         hidden_size2 = trial.suggest_int('hidden_size2',128,1024)
         focal_loss_gamma = trial.suggest_int('focal_loss_gamma',1,4)
+        chank_prev = trial.suggest_int('chank_prev',2,10)
+        
+        # dataModuleのインスタンス化
+        train = pd.read_csv(f'/content/murata_labo_exp/data/chunk_prev_{chank_prev}.csv')
+        val,test = train_test_split(
+            pd.read_csv(f'/content/murata_labo_exp/data/chunk_prev_{chank_prev}_test.csv'),
+            test_size=cfg.training.val_size,
+            random_state=cfg.training.seed,
+        )
 
         data_module = CreateDataModule(
             train,
