@@ -572,7 +572,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
 # モデルの保存と更新のための関数
 def make_callbacks(min_delta, patience, checkpoint_path):
     checkpoint_callback = ModelCheckpoint(
-        dirpath=checkpoint_path,
+        dirpath='/content/murata_labo_exp/checkpoint',
         filename="{epoch}",
         # save_top_k=1,  #save_best_only
         verbose=True,

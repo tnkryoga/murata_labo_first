@@ -1,3 +1,4 @@
+#BCELoss
 import os
 import datetime
 import hydra
@@ -167,30 +168,30 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             [
                 torchmetrics.Accuracy(
                     task="multilabel",
-                    num_labels=8,
+                    num_labels=16,
                     threshold=self.THRESHOLD,
                     average="macro",
                 ),
                 torchmetrics.Precision(
                     task="multilabel",
-                    num_labels=8,
+                    num_labels=16,
                     threshold=self.THRESHOLD,
                     average="macro",
                 ),
                 torchmetrics.Recall(
                     task="multilabel",
-                    num_labels=8,
+                    num_labels=16,
                     threshold=self.THRESHOLD,
                     average="macro",
                 ),
                 torchmetrics.F1Score(
                     task="multilabel",
-                    num_labels=8,
+                    num_labels=16,
                     threshold=self.THRESHOLD,
                     average="macro",
                 ),
                 torchmetrics.MatthewsCorrCoef(
-                    task="multilabel", num_labels=8, threshold=self.THRESHOLD
+                    task="multilabel", num_labels=16, threshold=self.THRESHOLD
                 ),
             ]
         )
@@ -439,42 +440,6 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         )
         preds_binary = np.where(epoch_preds > self.THRESHOLD, 1, 0)
 
-        """# 混同行列
-        for i in range(self.num_classes):
-            label_preds = epoch_preds[:, i]  # i番目のepochの要素のみを抽出
-            label_labels = epoch_labels[:, i]
-            preds_binary = np.where(label_preds > self.THRESHOLD, 1, 0)
-            judg = False if i != self.num_classes - 1 else True
-            print(judg)
-            wandb.log(
-                {
-                    f"test/confusion_matrix_{i}": plot.confusion_matrix(
-                        probs=None,
-                        y_true=label_labels,
-                        preds=preds_binary,
-                        class_names=[
-                            "あいづち",
-                            "感心",
-                            "評価",
-                            "繰り返し応答",
-                            "同意",
-                            "納得",
-                            "驚き",
-                            "言い換え",
-                            "意見",
-                            "考えている最中",
-                            "不同意",
-                            "補完",
-                            "あいさつ",
-                            "想起",
-                            "驚きといぶかり",
-                            "その他",
-                        ],
-                    ),
-                },
-                commit=judg,
-            )"""
-
         self.test_step_outputs_preds.clear()
         self.test_step_outputs_labels.clear()  # free memory
 
@@ -507,7 +472,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
 # モデルの保存と更新のための関数
 def make_callbacks(min_delta, patience, checkpoint_path):
     checkpoint_callback = ModelCheckpoint(
-        dirpath=checkpoint_path,
+        dirpath='/content/murata_labo_exp/checkpoint',
         filename="{epoch}",
         # save_top_k=1,  #save_best_only
         verbose=True,
@@ -548,46 +513,77 @@ def main(cfg: DictConfig):
     )
 
     # dataModuleのインスタンス化
-    train, val = train_test_split(
-        pd.read_csv(cfg.path.data_file_name),
-        train_size=cfg.training.train_size,
+    train = pd.read_csv(cfg.path.train_file_name)
+    val,test = train_test_split(
+        pd.read_csv(cfg.path.val_test_file_name),
+        test_size=cfg.training.val_size,
         random_state=cfg.training.seed,
     )
-    test = pd.read_csv(cfg.path.test_file_name)
 
-    data_module = CreateDataModule(
-        train,
-        val,
-        test,
-        cfg.training.batch_size,
-        cfg.model.max_length,
-    )
-    data_module.setup()
+    def objective(trial):
+        #ハイパラメータのサジェスト
+        batch_size = trial.suggest_int('batch_size',8,64)
+        epoch = trial.suggest_int('epoch',4,8)
+        hidden_size = trial.suggest_int('hidden_size',128,1024)
+        hidden_size2 = trial.suggest_int('hidden_size2',128,1024)
+        #focal_loss_gamma = trial.suggest_int('focal_loss_gamma',1,4)
+        chank_prev = trial.suggest_int('chank_prev',2,10)
+        
+        # dataModuleのインスタンス化
+        train = pd.read_csv(f'/content/murata_labo_exp/data/chunk_prev_{chank_prev}.csv')
+        val,test = train_test_split(
+            pd.read_csv(f'/content/murata_labo_exp/data/chunk_prev_{chank_prev}_test.csv'),
+            test_size=cfg.training.val_size,
+            random_state=cfg.training.seed,
+        )
 
-    # callbackのインスタンス化
-    call_backs = make_callbacks(
-        cfg.callbacks.patience_min_delta, cfg.callbacks.patience, checkpoint_path
-    )
+        data_module = CreateDataModule(
+            train,
+            val,
+            test,
+            batch_size,
+            cfg.model.max_length,
+        )
+        data_module.setup()
 
-    # modelのインスタンスの作成
-    model = MaltiLabelClassifierModel(
-        hidden_size=cfg.model.hidden_size,
-        hidden_size2=cfg.model.hidden_size2,
-        num_classes=cfg.model.num_classes,
-        n_epochs=cfg.training.n_epochs,
-    )
+        # callbackのインスタンス化
+        call_backs = make_callbacks(
+            cfg.callbacks.patience_min_delta, cfg.callbacks.patience, checkpoint_path
+        )
 
-    # Trainerの設定
-    trainer = pl.Trainer(
-        max_epochs=cfg.training.n_epochs,
-        devices="auto",
-        # progress_bar_refresh_rate=30,
-        callbacks=call_backs,
-        logger=wandb_logger,
-        fast_dev_run=False,
-    )
-    trainer.fit(model, data_module)
-    trainer.test(model, data_module)
+        # modelのインスタンスの作成
+        model = MaltiLabelClassifierModel(
+            hidden_size=hidden_size,
+            hidden_size2=hidden_size2,
+            num_classes=cfg.model.num_classes,
+            loss_fn=criterion,
+            n_epochs=epoch,
+        )
+
+        # Trainerの設定
+        trainer = pl.Trainer(
+            max_epochs=cfg.training.n_epochs,
+            devices="auto",
+            # progress_bar_refresh_rate=30,
+            callbacks=call_backs,
+            logger=wandb_logger,
+            fast_dev_run=False,
+        )
+        trainer.fit(model, data_module)
+
+        f1_score = model.validation_f1score
+
+        return 1.0 - f1_score
+
+    study = optuna.create_study(direction='minimize')
+    study.optimize(objective,n_trials=5)
+
+    print(study.best_value)
+    print(study.best_params)
+    optuna.visualization.plot_optimization_history(study)
+    
+
+   #trainer.test(model, data_module)
 
     wandb.finish()
 
