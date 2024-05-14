@@ -147,6 +147,10 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         self.test_step_outputs_preds = []
         self.test_step_outputs_labels = []
 
+        self.validation_f1score = 0
+        self.validation_step_outputs_preds_return = []
+        self.validation_step_outputs_labels_return = []
+
         # モデルの構造
         self.bert = BertModel.from_pretrained(pretrained_model, return_dict=True)
         self.classifiers = nn.ModuleList(
