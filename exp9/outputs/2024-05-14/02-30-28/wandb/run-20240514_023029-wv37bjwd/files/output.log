@@ -1,0 +1,125 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:391: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+[32m[I 2024-05-14 02:30:31,102][39m A new study created in memory with name: no-name-1deb9324-50a7-448d-ab8f-2528f2b17803
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 4090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m    [22m┃[1m Name                        [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0  │ bert                        │ BertModel        │ 89.1 M │
+│ 1  │ classifiers                 │ ModuleList       │ 12.1 M │
+│ 2  │ hidden_layer1               │ ModuleList       │ 14.8 M │
+│ 3  │ hidden_layer2               │ ModuleList       │ 15.1 K │
+│ 4  │ sigmoid                     │ Sigmoid          │      0 │
+│ 5  │ criterion                   │ BCELoss          │      0 │
+│ 6  │ metrics                     │ MetricCollection │      0 │
+│ 7  │ metrics_per_label_accuracy  │ MetricCollection │      0 │
+│ 8  │ metrics_per_label_precision │ MetricCollection │      0 │
+│ 9  │ metrics_per_label_recall    │ MetricCollection │      0 │
+│ 10 │ metrics_per_label_f1score   │ MetricCollection │      0 │
+└────┴─────────────────────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 34.0 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 116 M
+[1mTotal estimated model params size (MB)[22m: 464
+[37mEpoch 0/15[39m [90m━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m15/1028[39m [37m0:00:01 • 0:01:33[39m [37m10.99it/s[39m [37mv_num: bjwd train/loss:   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                          [37m0.668                     
+
+
+
+
+
+[37mValidation[39m [35m━━━━━━━━━━━━━━━━━━━━[90m╺━━━[39m [37m108/129  [39m [37m0:00:08 • 0:00:02[39m [37m12.63it/s
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                          [37m0.667                     
+[33m[W 2024-05-14 02:32:53,986][39m Trial 0 failed with parameters: {'batch_size': 20, 'epoch': 4, 'hidden_size': 983, 'hidden_size2': 942, 'chank_prev': 4} because of the following error: AttributeError("'MaltiLabelClassifierModel' object has no attribute 'validation_f1score'").
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp9/main.py", line 591, in objective
+    f1_score = model.validation_f1score
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1688, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'MaltiLabelClassifierModel' object has no attribute 'validation_f1score'
+[33m[W 2024-05-14 02:32:53,991][39m Trial 0 failed with value None.
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp9/main.py", line 596, in main
+    study.optimize(objective,n_trials=5)
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp9/main.py", line 591, in objective
+    f1_score = model.validation_f1score
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1688, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'MaltiLabelClassifierModel' object has no attribute 'validation_f1score'
+KeyboardInterrupt, attempting graceful shutdown...
+Epoch 1/15 [35m━━━━━╸[90m━━━━━━━━━━━━━━━━━━━[39m [37m237/1028[39m [37m0:00:23 • 0:01:17[39m [37m10.30it/s[39m [37mv_num: bjwd train/loss:   
+                                                                          [37m0.668                     
+[?25h
