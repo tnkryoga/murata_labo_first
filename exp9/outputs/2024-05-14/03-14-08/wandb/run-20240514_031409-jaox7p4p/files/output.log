@@ -1,0 +1,28 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:391: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+[32m[I 2024-05-14 03:14:10,583][39m A new study created in memory with name: no-name-214adb6f-f612-43cb-b7d4-b603d3bc6cca
+[33m[W 2024-05-14 03:14:11,342][39m Trial 0 failed with parameters: {'batch_size': 35, 'epoch': 5, 'hidden_size': 158, 'hidden_size2': 583, 'chank_prev': 7} because of the following error: NameError("name 'criterion' is not defined").
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp9/main.py", line 643, in objective
+    loss_fn=criterion,
+NameError: name 'criterion' is not defined
+[33m[W 2024-05-14 03:14:11,343][39m Trial 0 failed with value None.
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp9/main.py", line 663, in main
+    study.optimize(objective,n_trials=5)
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/usr/local/lib/python3.10/dist-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp9/main.py", line 643, in objective
+    loss_fn=criterion,
+NameError: name 'criterion' is not defined
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
