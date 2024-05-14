@@ -1,4 +1,4 @@
-#BCELoss
+#Focal Loss ベイズ最適化
 import os
 import datetime
 import hydra
@@ -6,11 +6,11 @@ import numpy as np
 import pandas as pd
 import pytorch_lightning as pl
 import torch
+import optuna
 import torchmetrics
 import torch.optim as optim
 from omegaconf import DictConfig
 import wandb
-import optuna
 from wandb import plot
 from pytorch_lightning.callbacks import EarlyStopping, ModelCheckpoint, RichProgressBar
 from pytorch_lightning.loggers import WandbLogger
@@ -284,6 +284,11 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         )
         self.validation_step_outputs_preds.append(preds)
         self.validation_step_outputs_labels.append(batch["labels"])
+
+        #objective
+        self.validation_step_outputs_preds_return.append(preds)
+        self.validation_step_outputs_labels_return.append(batch["labels"])
+
         # self.log("val_loss", loss, on_epoch=True, prog_bar=True)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
@@ -304,6 +309,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         epoch_preds = epoch_preds.squeeze()
         epoch_labels = torch.cat(self.train_step_outputs_labels)
         epoch_labels = epoch_labels.squeeze()
+        print(epoch_labels.size(), "\n")
         epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
         self.log(f"{mode}_loss", epoch_loss, logger=True)
         class_names = [
@@ -367,6 +373,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
 
         self.train_step_outputs_preds.clear()  # free memory
         self.train_step_outputs_labels.clear()  # free memory
+        return epoch_preds,epoch_labels
 
     # epoch終了時にvalidationのlossとaccuracyを記録
     def on_validation_epoch_end(
@@ -459,15 +466,64 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
+        class_names = [
+            "あいづち",
+            "感心",
+            "評価",
+            "繰り返し応答",
+            "同意",
+            "納得",
+            "驚き",
+            "言い換え",
+            "意見",
+            "考えている最中",
+            "不同意",
+            "補完",
+            "あいさつ",
+            "想起",
+            "驚きといぶかり",
+            "その他",
+        ]
+
         metrics = self.metrics(epoch_preds, epoch_labels)
         for metric in metrics.keys():
             self.log(f"{mode}/{metric.lower()}", metrics[metric].item(), logger=True)
 
-        epoch_preds, epoch_labels = (
-            epoch_preds.cpu().numpy(),  # cpu上に移動し、numpy配列に変換
-            epoch_labels.cpu().numpy(),
-        )
-        preds_binary = np.where(epoch_preds > self.THRESHOLD, 1, 0)
+        for i in range(self.num_classes):
+            label_preds = epoch_preds[:, i]  # i番目の要素のみを抽出
+            label_labels = epoch_labels[:, i]
+            metrics_per_label_accuracy = self.metrics_per_label_accuracy(
+                label_preds, label_labels
+            )
+            metrics_per_label_precision = self.metrics_per_label_precision(
+                label_preds, label_labels
+            )
+            metrics_per_label_recall = self.metrics_per_label_recall(
+                label_preds, label_labels
+            )
+            metrics_per_label_f1score = self.metrics_per_label_f1score(
+                label_preds, label_labels
+            )
+            self.log(
+                f"{mode}/accuracy_label_{class_names[i]}",
+                metrics_per_label_accuracy[f"accuracy_label_{i}"].item(),
+                logger=True,
+            )
+            self.log(
+                f"{mode}/presicion_label_{class_names[i]}",
+                metrics_per_label_precision[f"precision_label_{i}"].item(),
+                logger=True,
+            )
+            self.log(
+                f"{mode}/recall_label_{class_names[i]}",
+                metrics_per_label_recall[f"recall_label_{i}"].item(),
+                logger=True,
+            )
+            self.log(
+                f"{mode}/f1score_label_{class_names[i]}",
+                metrics_per_label_f1score[f"f1score_label_{i}"].item(),
+                logger=True,
+            )
 
         self.test_step_outputs_preds.clear()
         self.test_step_outputs_labels.clear()  # free memory
@@ -555,7 +611,6 @@ def main(cfg: DictConfig):
         epoch = trial.suggest_int('epoch',4,8)
         hidden_size = trial.suggest_int('hidden_size',128,1024)
         hidden_size2 = trial.suggest_int('hidden_size2',128,1024)
-        #focal_loss_gamma = trial.suggest_int('focal_loss_gamma',1,4)
         chank_prev = trial.suggest_int('chank_prev',2,10)
         
         # dataModuleのインスタンス化
@@ -585,7 +640,7 @@ def main(cfg: DictConfig):
             hidden_size=hidden_size,
             hidden_size2=hidden_size2,
             num_classes=cfg.model.num_classes,
-            #loss_fn=criterion,
+            loss_fn=criterion,
             n_epochs=epoch,
         )
 
