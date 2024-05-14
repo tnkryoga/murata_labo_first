@@ -10,6 +10,7 @@ import torchmetrics
 import torch.optim as optim
 from omegaconf import DictConfig
 import wandb
+import optuna
 from wandb import plot
 from pytorch_lightning.callbacks import EarlyStopping, ModelCheckpoint, RichProgressBar
 from pytorch_lightning.loggers import WandbLogger
