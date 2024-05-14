@@ -14,7 +14,7 @@ model:
   num_classes: 16
 training:
   val_size: 0.5
-  n_epochs: 16
+  n_epochs: 8
   seed: 40
   batch_size: 128
   max_length: 64
