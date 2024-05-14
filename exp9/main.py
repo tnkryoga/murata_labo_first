@@ -557,7 +557,7 @@ def main(cfg: DictConfig):
             hidden_size=hidden_size,
             hidden_size2=hidden_size2,
             num_classes=cfg.model.num_classes,
-            loss_fn=criterion,
+            #loss_fn=criterion,
             n_epochs=epoch,
         )
 
