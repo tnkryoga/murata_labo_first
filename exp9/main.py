@@ -376,6 +376,12 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
+        #obejective
+        epoch_preds = torch.cat(self.validation_step_outputs_preds_return)
+        epoch_preds = epoch_preds.squeeze()
+        epoch_labels = torch.cat(self.validation_step_outputs_labels_return)
+        epoch_labels = epoch_labels.squeeze()
+
         class_names = [
             "あいづち",
             "感心",
@@ -397,6 +403,8 @@ class MaltiLabelClassifierModel(pl.LightningModule):
 
         metrics = self.metrics(epoch_preds, epoch_labels)
         for metric in metrics.keys():
+            if metric == 'MultilabelF1Score':
+                self.validation_f1score = metrics[metric].item()
             self.log(f"{mode}/{metric.lower()}", metrics[metric].item(), logger=True)
 
         for i in range(self.num_classes):
