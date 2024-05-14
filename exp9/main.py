@@ -310,6 +310,14 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             "同意",
             "納得",
             "驚き",
+            "言い換え",
+            "意見",
+            "考えている最中",
+            "不同意",
+            "補完",
+            "あいさつ",
+            "想起",
+            "驚きといぶかり",
             "その他",
         ]
 
@@ -376,6 +384,14 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             "同意",
             "納得",
             "驚き",
+            "言い換え",
+            "意見",
+            "考えている最中",
+            "不同意",
+            "補完",
+            "あいさつ",
+            "想起",
+            "驚きといぶかり",
             "その他",
         ]
 
