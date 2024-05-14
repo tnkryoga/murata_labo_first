@@ -1,0 +1,27 @@
+wandb:
+  project: murata_exp
+  exp_num: 9
+  tags:
+  - bert
+path:
+  train_file_name: /content/murata_labo_exp/data/chunk_prev_2.csv
+  val_test_file_name: /content/murata_labo_exp/data/chunk_prev_2_test.csv
+  checkpoint_path: checkpoints
+model:
+  d_model: 768
+  hidden_size: 1024
+  hidden_size2: 256
+  max_length: 512
+  num_classes: 16
+training:
+  val_size: 0.5
+  n_epochs: 8
+  seed: 40
+  batch_size: 128
+  max_length: 64
+  learning_rate: 0.0001
+  text_column_name: chunk
+  label_column_name: label
+callbacks:
+  patience: 3
+  patience_min_delta: 0
