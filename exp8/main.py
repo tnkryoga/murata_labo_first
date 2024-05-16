@@ -657,7 +657,7 @@ def main(cfg: DictConfig):
         )
 
         # loss関数のインスタンス作成
-        criterion = Dice_Loss()
+        criterion = Dice_MultiLabel_Loss()
 
         # modelのインスタンスの作成
         model = MaltiLabelClassifierModel(
