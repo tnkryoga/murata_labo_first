@@ -1,3 +1,4 @@
+#Dice Loss ベイズ最適化
 import os
 import datetime
 import hydra
@@ -5,6 +6,7 @@ import numpy as np
 import pandas as pd
 import pytorch_lightning as pl
 import torch
+import optuna
 import torchmetrics
 import torch.optim as optim
 from omegaconf import DictConfig
@@ -124,6 +126,26 @@ class CreateDataModule(pl.LightningDataModule):
         )
 
 
+# 損失関数の定義
+class Dice_MultiLabel_Loss(nn.Module):
+    def __init__(self):
+        super(Dice_MultiLabel_Loss, self).__init__()
+        self.bceloss = nn.BCELoss()
+        self.THRESHOLD = 0.5
+
+    def forward(self, outputs, targets):
+        smooth = 1.0  # ゼロ除算回避のための定数
+        y_true_flat = torch.reshape(outputs, [-1])  # 1次元に変換
+        y_pred_flat = torch.reshape(targets, [-1])  # 同様
+        preds_binary = torch.where(y_pred_flat > self.THRESHOLD, 1, 0)
+
+        tp = torch.sum(y_true_flat * preds_binary)  # True Positive
+        nominator = 2 * tp + smooth  # 分子
+        denominator = torch.sum(y_true_flat) + torch.sum(preds_binary) + smooth  # 分母
+        score = nominator / denominator
+        dice = 1.0 - score
+        return 0.5 * (self.bceloss(outputs, targets) + dice)
+
 # Model
 class MaltiLabelClassifierModel(pl.LightningModule):
     THRESHOLD = 0.5  # 閾値
@@ -133,6 +155,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         hidden_size,
         hidden_size2,
         num_classes,
+        loss_fn,
         n_epochs=None,
         pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking",
     ):
@@ -144,6 +167,10 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         self.validation_step_outputs_labels = []
         self.test_step_outputs_preds = []
         self.test_step_outputs_labels = []
+
+        self.validation_f1score = 0
+        self.validation_step_outputs_preds_return = []
+        self.validation_step_outputs_labels_return = []
 
         # モデルの構造
         self.bert = BertModel.from_pretrained(pretrained_model, return_dict=True)
@@ -161,36 +188,36 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         )  # classifierの隠れ層の追加
         self.sigmoid = nn.Sigmoid()
         self.n_epochs = n_epochs
-        self.criterion = nn.BCELoss()
+        self.criterion = loss_fn
 
         self.metrics = torchmetrics.MetricCollection(
             [
                 torchmetrics.Accuracy(
                     task="multilabel",
-                    num_labels=8,
+                    num_labels=16,
                     threshold=self.THRESHOLD,
                     average="macro",
                 ),
                 torchmetrics.Precision(
                     task="multilabel",
-                    num_labels=8,
+                    num_labels=16,
                     threshold=self.THRESHOLD,
                     average="macro",
                 ),
                 torchmetrics.Recall(
                     task="multilabel",
-                    num_labels=8,
+                    num_labels=16,
                     threshold=self.THRESHOLD,
                     average="macro",
                 ),
                 torchmetrics.F1Score(
                     task="multilabel",
-                    num_labels=8,
+                    num_labels=16,
                     threshold=self.THRESHOLD,
                     average="macro",
                 ),
                 torchmetrics.MatthewsCorrCoef(
-                    task="multilabel", num_labels=8, threshold=self.THRESHOLD
+                    task="multilabel", num_labels=16, threshold=self.THRESHOLD
                 ),
             ]
         )
@@ -278,6 +305,11 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         )
         self.validation_step_outputs_preds.append(preds)
         self.validation_step_outputs_labels.append(batch["labels"])
+
+        #objective
+        self.validation_step_outputs_preds_return.append(preds)
+        self.validation_step_outputs_labels_return.append(batch["labels"])
+
         # self.log("val_loss", loss, on_epoch=True, prog_bar=True)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
@@ -298,6 +330,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         epoch_preds = epoch_preds.squeeze()
         epoch_labels = torch.cat(self.train_step_outputs_labels)
         epoch_labels = epoch_labels.squeeze()
+        print(epoch_labels.size(), "\n")
         epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
         self.log(f"{mode}_loss", epoch_loss, logger=True)
         class_names = [
@@ -308,6 +341,14 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             "同意",
             "納得",
             "驚き",
+            "言い換え",
+            "意見",
+            "考えている最中",
+            "不同意",
+            "補完",
+            "あいさつ",
+            "想起",
+            "驚きといぶかり",
             "その他",
         ]
 
@@ -353,6 +394,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
 
         self.train_step_outputs_preds.clear()  # free memory
         self.train_step_outputs_labels.clear()  # free memory
+        return epoch_preds,epoch_labels
 
     # epoch終了時にvalidationのlossとaccuracyを記録
     def on_validation_epoch_end(
@@ -366,6 +408,12 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         epoch_loss = self.criterion(epoch_preds, epoch_labels.float())
         self.log(f"{mode}_loss", epoch_loss, logger=True)
 
+        #obejective
+        epoch_preds = torch.cat(self.validation_step_outputs_preds_return)
+        epoch_preds = epoch_preds.squeeze()
+        epoch_labels = torch.cat(self.validation_step_outputs_labels_return)
+        epoch_labels = epoch_labels.squeeze()
+
         class_names = [
             "あいづち",
             "感心",
@@ -374,11 +422,21 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             "同意",
             "納得",
             "驚き",
+            "言い換え",
+            "意見",
+            "考えている最中",
+            "不同意",
+            "補完",
+            "あいさつ",
+            "想起",
+            "驚きといぶかり",
             "その他",
         ]
 
         metrics = self.metrics(epoch_preds, epoch_labels)
         for metric in metrics.keys():
+            if metric == 'MultilabelF1Score':
+                self.validation_f1score = metrics[metric].item()
             self.log(f"{mode}/{metric.lower()}", metrics[metric].item(), logger=True)
 
         for i in range(self.num_classes):
@@ -437,6 +495,14 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             "同意",
             "納得",
             "驚き",
+            "言い換え",
+            "意見",
+            "考えている最中",
+            "不同意",
+            "補完",
+            "あいさつ",
+            "想起",
+            "驚きといぶかり",
             "その他",
         ]
 
@@ -500,8 +566,8 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         optimizer = optim.Adam(
             [
                 {"params": self.bert.encoder.layer[-1].parameters(), "lr": 5e-5},
-                # {"params": self.hidden_layer1.parameters(), "lr": 1e-4},
-                # {"params": self.hidden_layer2.parameters(), "lr": 1e-4},
+                # {"params": self.layer.parameters(), "lr": 1e-4},
+                # {"params": self.layer2.parameters(), "lr": 1e-4},
                 # {"params": self.layer3.parameters(), "lr": 1e-4},
             ]
         )
@@ -512,8 +578,8 @@ class MaltiLabelClassifierModel(pl.LightningModule):
 # モデルの保存と更新のための関数
 def make_callbacks(min_delta, patience, checkpoint_path):
     checkpoint_callback = ModelCheckpoint(
-        dirpath=checkpoint_path,
-        filename="{epoch}",
+        dirpath='/content/murata_labo_exp/checkpoint',
+        filename="Dice_Loss_{epoch}",
         # save_top_k=1,  #save_best_only
         verbose=True,
         monitor="val_loss",
@@ -553,46 +619,79 @@ def main(cfg: DictConfig):
     )
 
     # dataModuleのインスタンス化
-    train, val = train_test_split(
-        pd.read_csv(cfg.path.data_file_name),
-        train_size=cfg.training.train_size,
+    train = pd.read_csv(cfg.path.train_file_name)
+    val,test = train_test_split(
+        pd.read_csv(cfg.path.val_test_file_name),
+        test_size=cfg.training.val_size,
         random_state=cfg.training.seed,
     )
-    test = pd.read_csv(cfg.path.test_file_name)
 
-    data_module = CreateDataModule(
-        train,
-        val,
-        test,
-        cfg.training.batch_size,
-        cfg.model.max_length,
-    )
-    data_module.setup()
+    def objective(trial):
+        #ハイパラメータのサジェスト
+        batch_size = trial.suggest_int('batch_size',8,64)
+        epoch = trial.suggest_int('epoch',4,8)
+        hidden_size = trial.suggest_int('hidden_size',128,1024)
+        hidden_size2 = trial.suggest_int('hidden_size2',128,1024)
+        chank_prev = trial.suggest_int('chank_prev',2,10)
+        
+        # dataModuleのインスタンス化
+        train = pd.read_csv(f'/content/murata_labo_exp/data/chunk_prev_{chank_prev}.csv')
+        val,test = train_test_split(
+            pd.read_csv(f'/content/murata_labo_exp/data/chunk_prev_{chank_prev}_test.csv'),
+            test_size=cfg.training.val_size,
+            random_state=cfg.training.seed,
+        )
 
-    # callbackのインスタンス化
-    call_backs = make_callbacks(
-        cfg.callbacks.patience_min_delta, cfg.callbacks.patience, checkpoint_path
-    )
+        data_module = CreateDataModule(
+            train,
+            val,
+            test,
+            batch_size,
+            cfg.model.max_length,
+        )
+        data_module.setup()
 
-    # modelのインスタンスの作成
-    model = MaltiLabelClassifierModel(
-        hidden_size=cfg.model.hidden_size,
-        hidden_size2=cfg.model.hidden_size2,
-        num_classes=cfg.model.num_classes,
-        n_epochs=cfg.training.n_epochs,
-    )
+        # callbackのインスタンス化
+        call_backs = make_callbacks(
+            cfg.callbacks.patience_min_delta, cfg.callbacks.patience, checkpoint_path
+        )
 
-    # Trainerの設定
-    trainer = pl.Trainer(
-        max_epochs=cfg.training.n_epochs,
-        devices="auto",
-        # progress_bar_refresh_rate=30,
-        callbacks=call_backs,
-        logger=wandb_logger,
-        fast_dev_run=False,
-    )
-    trainer.fit(model, data_module)
-    trainer.test(model, data_module)
+        # loss関数のインスタンス作成
+        criterion = Dice_Loss()
+
+        # modelのインスタンスの作成
+        model = MaltiLabelClassifierModel(
+            hidden_size=hidden_size,
+            hidden_size2=hidden_size2,
+            num_classes=cfg.model.num_classes,
+            loss_fn=criterion,
+            n_epochs=epoch,
+        )
+
+        # Trainerの設定
+        trainer = pl.Trainer(
+            max_epochs=cfg.training.n_epochs,
+            devices="auto",
+            # progress_bar_refresh_rate=30,
+            callbacks=call_backs,
+            logger=wandb_logger,
+            fast_dev_run=False,
+        )
+        trainer.fit(model, data_module)
+
+        f1_score = model.validation_f1score
+
+        return 1.0 - f1_score
+
+    study = optuna.create_study(direction='minimize')
+    study.optimize(objective,n_trials=5)
+
+    print(study.best_value)
+    print(study.best_params)
+    optuna.visualization.plot_optimization_history(study)
+    
+
+   #trainer.test(model, data_module)
 
     wandb.finish()
 
