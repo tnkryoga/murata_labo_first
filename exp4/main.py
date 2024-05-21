@@ -547,7 +547,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
 def make_callbacks(min_delta, patience, checkpoint_path):
     checkpoint_callback = ModelCheckpoint(
         dirpath=checkpoint_path,
-        filename="{epoch}",
+        filename="BCELoss_{epoch}",
         # save_top_k=1,  #save_best_only
         verbose=True,
         monitor="val_loss",
@@ -605,7 +605,7 @@ def main(cfg: DictConfig):
 
     # callbackのインスタンス化
     call_backs = make_callbacks(
-        cfg.callbacks.patience_min_delta, cfg.callbacks.patience, checkpoint_path
+        cfg.callbacks.patience_min_delta, cfg.callbacks.patience, cfg.path.checkpoint_path
     )
 
     # modelのインスタンスの作成
