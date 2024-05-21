@@ -3,20 +3,20 @@ wandb:
   exp_num: 4
   tags: [bert]
 path:
-  data_file_name: /content/drive/MyDrive/murata_labo_exp/data/multi_classification_sentence_labels.csv
-  test_file_name: /content/drive/MyDrive/murata_labo_exp/data/multi_classification_sentence_labels_test.csv
+  train_file_name: /content/murata_labo_exp/data/chunk_prev_7.csv
+  val_test_file_name: /content/murata_labo_exp/data/chunk_prev_7_test.csv
   checkpoint_path: checkpoints
 model:
   d_model: 768
-  hidden_size: 1024
-  hidden_size2: 256
+  hidden_size: 601
+  hidden_size2: 139
   max_length: 512
   num_classes: 16
 training:
-  train_size: 0.8
-  n_epochs: 8
+  test_size: 0.5
+  n_epochs: 6
   seed: 40
-  batch_size: 8
+  batch_size: 14
   max_length: 64
   learning_rate: 0.0001
   text_column_name: chunk

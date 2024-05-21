@@ -1,3 +1,4 @@
+#BCELoss
 import os
 import datetime
 import hydra
@@ -22,7 +23,7 @@ from transformers import BertJapaneseTokenizer
 
 # Dataset
 class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoaderに渡す関数
-    TEXT_COLUMN = "sentence"
+    TEXT_COLUMN = "chunk"
     LABEL_COLUMN = "labels"
 
     def __init__(self, data, tokenizer, max_token_len):
@@ -586,12 +587,12 @@ def main(cfg: DictConfig):
     )
 
     # dataModuleのインスタンス化
-    train, val = train_test_split(
-        pd.read_csv(cfg.path.data_file_name),
-        train_size=cfg.training.train_size,
-        random_state=cfg.training.seed,
-    )
-    test = pd.read_csv(cfg.path.test_file_name)
+        train = pd.read_csv(cfg.path.train_file_name)
+        val,test = train_test_split(
+            pd.read_csv(cfg.path.val_test_file_name),
+            test_size=cfg.training.val_size,
+            random_state=cfg.training.seed,
+        )
 
     data_module = CreateDataModule(
         train,

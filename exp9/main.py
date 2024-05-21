@@ -1,4 +1,4 @@
-#Focal Loss ベイズ最適化
+#BCELoss ベイズ最適化
 import os
 import datetime
 import hydra
