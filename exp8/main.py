@@ -681,9 +681,9 @@ def main(cfg: DictConfig):
 
         f1_score = model.validation_f1score
 
-        return 1.0 - f1_score
+        return f1_score
 
-    study = optuna.create_study(direction='minimize')
+    study = optuna.create_study(direction='maximize')
     study.optimize(objective,n_trials=5)
 
     print(study.best_value)
