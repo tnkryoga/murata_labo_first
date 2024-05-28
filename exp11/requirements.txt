@@ -1,0 +1,9 @@
+transformers
+torch
+fugashi
+ipadic
+pytorch-lightning
+hydra-core
+wandb
+torchmetrics
+omegaconf
