@@ -151,18 +151,29 @@ class MaltiLabelClassifierModel(pl.LightningModule):
 
         # モデルの構造
         self.bert = BertModel.from_pretrained(pretrained_model, return_dict=True)
-        self.classifiers = nn.ModuleList(
-            [
-                nn.Linear(self.bert.config.hidden_size, hidden_size)
-                for _ in range(num_classes)
-            ]
-        )  # 入力BERT層、出力hidden_sizeの全結合層/二値分類器をクラス数分並べる
-        self.hidden_layer1 = nn.ModuleList(
-            [nn.Linear(hidden_size, hidden_size2) for _ in range(num_classes)]
-        )  # classifierの隠れ層の追加
-        self.hidden_layer2 = nn.ModuleList(
-            [nn.Linear(hidden_size2, 1) for _ in range(num_classes)]
-        )  # classifierの隠れ層の追加
+
+        self.classifiers = nn.ModuleList([
+            nn.Sequential(
+                nn.Linear(self.bert.config.hidden_size, hidden_size),
+                nn.ReLU(),
+                nn.Linear(hidden_size, hidden_size2),
+                nn.ReLU(),
+                nn.Linear(hidden_size2, 1)
+            ) for _ in range(num_classes)
+        ])
+
+        #self.classifiers = nn.ModuleList(
+        #     [
+        #         nn.Linear(self.bert.config.hidden_size, hidden_size)
+        #         for _ in range(num_classes)
+        #     ]
+        # )  # 入力BERT層、出力hidden_sizeの全結合層/二値分類器をクラス数分並べる
+        # self.hidden_layer1 = nn.ModuleList(
+        #     [nn.Linear(hidden_size, hidden_size2) for _ in range(num_classes)]
+        # )  # classifierの隠れ層の追加
+        # self.hidden_layer2 = nn.ModuleList(
+        #     [nn.Linear(hidden_size2, 1) for _ in range(num_classes)]
+        # )  # classifierの隠れ層の追加
         self.sigmoid = nn.Sigmoid()
         self.n_epochs = n_epochs
         self.criterion = nn.BCELoss()
@@ -244,16 +255,18 @@ class MaltiLabelClassifierModel(pl.LightningModule):
     # 順伝搬
     def forward(self, input_ids, attention_mask, labels=None):
         output = self.bert(input_ids, attention_mask=attention_mask)
-        hidden_outputs = []
-        for classifier, hidden_layer1, hidden_layer2 in zip(
-            self.classifiers, self.hidden_layer1, self.hidden_layer2
-        ):
-            binary_output = torch.relu(classifier(output.pooler_output))
-            hidden_output1 = torch.relu(hidden_layer1(binary_output))
-            hidden_output2 = torch.relu(hidden_layer2(hidden_output1))
-            hidden_outputs.append(hidden_output2)
+        #hidden_outputs = []
+        # for classifier, hidden_layer1, hidden_layer2 in zip(
+        #     self.classifiers, self.hidden_layer1, self.hidden_layer2
+        # ):
+        #     binary_output = torch.relu(classifier(output.pooler_output))
+        #     hidden_output1 = torch.relu(hidden_layer1(binary_output))
+        #     hidden_output2 = torch.relu(hidden_layer2(hidden_output1))
+        #     hidden_outputs.append(hidden_output2)
 
-        combine_outputs = torch.cat(hidden_outputs, dim=1)  # 各クラスのバイナリ出力を結合
+        logits = [classifier(output) for classifier in self.classifiers]
+        combine_outputs = torch.cat(logits, dim=1)  # 各クラスのバイナリ出力を結合
+
         preds = self.sigmoid(combine_outputs)
         loss = 0
         if labels is not None:
@@ -524,36 +537,37 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         preds = preds_binary.view(-1,16)
         dff = preds.cpu()
         df = pd.DataFrame(dff)
-        df.to_csv("table_exppp.csv", encoding="utf-8")
-        print('csv is done¥nß')
+        #df.to_csv("table_exppp.csv", encoding="utf-8")
+        #print('csv is done¥nß')
 
         self.test_step_outputs_preds.clear()
         self.test_step_outputs_labels.clear()  # free memory
 
-    # PR曲線,ROC曲線のy_probsの引数に必要な値を補完する関数
-    def complement_score(self, scores):
-        if isinstance(scores, np.ndarray):
-            y_complement = 1 - scores
-            return np.stack([y_complement, scores], axis=1)
-        elif isinstance(scores, torch.Tensor):
-            y_complement = 1 - scores
-            return torch.stack([y_complement, scores], dim=1).to(scores.device)
-        else:
-            raise ValueError("Input must be either a NumPy array or a PyTorch tensor")
-
     # optimizerの設定
     def configure_optimizers(self):
         # pretrainされているbert最終層のlrは小さめ、pretrainされていない分類層のlrは大きめに設定
-        optimizer = optim.Adam(
-            [
-                {"params": self.bert.encoder.layer[-1].parameters(), "lr": 5e-5},
-                # {"params": self.layer.parameters(), "lr": 1e-4},
-                # {"params": self.layer2.parameters(), "lr": 1e-4},
-                # {"params": self.layer3.parameters(), "lr": 1e-4},
-            ]
-        )
 
-        return [optimizer]
+        optimizer = optim.Adam(self.parameters(),"lr":5e-5)
+        # optimizer = optim.Adam(
+        # #     [
+        # #         {"params": self.bert.encoder.layer[-1].parameters(), "lr": 5e-5},
+        # #         # {"params": self.layer.parameters(), "lr": 1e-4},
+        # #         # {"params": self.layer2.parameters(), "lr": 1e-4},
+        # #         # {"params": self.layer3.parameters(), "lr": 1e-4},
+        # #     ]
+        # # )
+
+        return optimizer
+
+    #optimizerで値の更新の判定
+    def optimizer_step(self, epoch, batch_idx, optimizer, optimizer_idx, optimizer_closure, 
+                       on_tpu=False, using_native_amp=False, using_lbfgs=False):
+        # 特定の条件下で特定の分類器だけ更新（例：偶数エポックのみ1番目の分類器を更新）
+        if epoch % 2 == 0:
+            for name, param in self.named_parameters():
+                if 'classifiers.0' not in name:
+                    param.grad = None
+        optimizer.step(closure=optimizer_closure)
 
 
 # モデルの保存と更新のための関数
