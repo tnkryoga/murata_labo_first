@@ -281,15 +281,15 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             labels=batch["labels"],
         )
 
-        #条件下での重みの更新のFreez
-        if batch["flag"] == 1 and batch["labels"]:
-            for param in self.layer.parameters():
-                param.requires_grad = False
-        else:
-            for param in self.layer.parameters():
-                param.requires_grad = True
+        # #条件下での重みの更新のFreez
+        # if batch["flag"] == 1 and batch["labels"]:
+        #     for param in self.layer.parameters():
+        #         param.requires_grad = False
+        # else:
+        #     for param in self.layer.parameters():
+        #         param.requires_grad = True
         
-        return loss
+        # return loss
 
         self.train_step_outputs_preds.append(preds)
         self.train_step_outputs_labels.append(batch["labels"])
