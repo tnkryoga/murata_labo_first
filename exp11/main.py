@@ -25,7 +25,7 @@ from transformers import BertJapaneseTokenizer
 class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoaderに渡す関数
     TEXT_COLUMN = "chunk"
     LABEL_COLUMN = "labels"
-    FLAG_COLUMN = "flag"
+    #FLAG_COLUMN = "flag"
 
     def __init__(self, data, tokenizer, max_token_len):
         self.data = data
@@ -39,7 +39,7 @@ class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoader�
         data_row = self.data.iloc[index]  # iloc(data-frameの列の取得)/行数の取得
         text = data_row[self.TEXT_COLUMN]  # 行数分のtextを取得
         labels = data_row[self.LABEL_COLUMN]
-        flags = data_row[self.FLAG_COLUMN]
+        #flags = data_row[self.FLAG_COLUMN]
 
         labels = labels.replace("[", "").replace("]", "")  # "[", "]" を削除
 
