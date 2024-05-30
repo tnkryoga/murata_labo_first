@@ -264,7 +264,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         #     hidden_output2 = torch.relu(hidden_layer2(hidden_output1))
         #     hidden_outputs.append(hidden_output2)
 
-        logits = [classifier(output) for classifier in self.classifiers]
+        logits = [classifier(output.pooler_output) for classifier in self.classifiers]
         combine_outputs = torch.cat(logits, dim=1)  # 各クラスのバイナリ出力を結合
 
         preds = self.sigmoid(combine_outputs)
