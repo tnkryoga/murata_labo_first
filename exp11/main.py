@@ -25,7 +25,7 @@ from transformers import BertJapaneseTokenizer
 class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoaderに渡す関数
     TEXT_COLUMN = "chunk"
     LABEL_COLUMN = "labels"
-    #FLAG_COLUMN = "flag"
+    FLAG_COLUMN = "flag"
 
     def __init__(self, data, tokenizer, max_token_len):
         self.data = data
@@ -39,7 +39,7 @@ class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoader�
         data_row = self.data.iloc[index]  # iloc(data-frameの列の取得)/行数の取得
         text = data_row[self.TEXT_COLUMN]  # 行数分のtextを取得
         labels = data_row[self.LABEL_COLUMN]
-        #flags = data_row[self.FLAG_COLUMN]
+        flags = data_row[self.FLAG_COLUMN]
 
         labels = labels.replace("[", "").replace("]", "")  # "[", "]" を削除
 
@@ -161,19 +161,6 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                 nn.Linear(hidden_size2, 1)
             ) for _ in range(num_classes)
         ])
-
-        #self.classifiers = nn.ModuleList(
-        #     [
-        #         nn.Linear(self.bert.config.hidden_size, hidden_size)
-        #         for _ in range(num_classes)
-        #     ]
-        # )  # 入力BERT層、出力hidden_sizeの全結合層/二値分類器をクラス数分並べる
-        # self.hidden_layer1 = nn.ModuleList(
-        #     [nn.Linear(hidden_size, hidden_size2) for _ in range(num_classes)]
-        # )  # classifierの隠れ層の追加
-        # self.hidden_layer2 = nn.ModuleList(
-        #     [nn.Linear(hidden_size2, 1) for _ in range(num_classes)]
-        # )  # classifierの隠れ層の追加
         self.sigmoid = nn.Sigmoid()
         self.n_epochs = n_epochs
         self.criterion = nn.BCELoss()
@@ -255,14 +242,6 @@ class MaltiLabelClassifierModel(pl.LightningModule):
     # 順伝搬
     def forward(self, input_ids, attention_mask, labels=None):
         output = self.bert(input_ids, attention_mask=attention_mask)
-        #hidden_outputs = []
-        # for classifier, hidden_layer1, hidden_layer2 in zip(
-        #     self.classifiers, self.hidden_layer1, self.hidden_layer2
-        # ):
-        #     binary_output = torch.relu(classifier(output.pooler_output))
-        #     hidden_output1 = torch.relu(hidden_layer1(binary_output))
-        #     hidden_output2 = torch.relu(hidden_layer2(hidden_output1))
-        #     hidden_outputs.append(hidden_output2)
 
         logits = [classifier(output.pooler_output) for classifier in self.classifiers]
         combine_outputs = torch.cat(logits, dim=1)  # 各クラスのバイナリ出力を結合
@@ -279,17 +258,19 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             input_ids=batch["input_ids"],
             attention_mask=batch["attention_mask"],
             labels=batch["labels"],
+            flags=batch["flag"]
         )
 
-        # #条件下での重みの更新のFreez
-        # if batch["flag"] == 1 and batch["labels"]:
-        #     for param in self.layer.parameters():
-        #         param.requires_grad = False
-        # else:
-        #     for param in self.layer.parameters():
-        #         param.requires_grad = True
-        
-        # return loss
+        # 特定の条件下でのパラメータの更新
+        for classifier in enumerate(self.classifiers):
+            for i in range(14):
+                for i in range(16):
+                    if flags[j] == 1 and labels[i][j] == '0':
+                        for param in classifier.parameters():
+                            param.requires_grad = False
+                        
+
+
 
         self.train_step_outputs_preds.append(preds)
         self.train_step_outputs_labels.append(batch["labels"])
@@ -557,17 +538,9 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         # #     ]
         # # )
 
-        return optimizer
 
-    #optimizerで値の更新の判定
-    # def optimizer_step(self, epoch, batch_idx, optimizer, optimizer_idx, optimizer_closure, 
-    #                    on_tpu=False, using_native_amp=False, using_lbfgs=False):
-    #     # 特定の条件下で特定の分類器だけ更新（例：偶数エポックのみ1番目の分類器を更新）
-    #     if epoch % 2 == 0:
-    #         for name, param in self.named_parameters():
-    #             if 'classifiers.0' not in name:
-    #                 param.grad = None
-    #     optimizer.step(closure=optimizer_closure)
+
+        return optimizer
 
 
 # モデルの保存と更新のための関数
