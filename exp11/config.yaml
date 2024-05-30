@@ -3,7 +3,7 @@ wandb:
   exp_num: 11
   tags: [bert]
 path:
-  train_file_name: /content/drive/MyDrive/murata_labo_exp/data/chunk_prev_7.csv
+  train_file_name: /content/drive/MyDrive/murata_labo_exp/data/chunk_prev_test_7.csv
   val_test_file_name: /content/drive/MyDrive/murata_labo_exp/data/chunk_prev_7_test.csv
   checkpoint_path: '/content/murata_labo_exp/checkpoint'
 model:
@@ -14,7 +14,7 @@ model:
   num_classes: 16
 training:
   test_size: 0.5
-  n_epochs: 6
+  n_epochs: 3
   seed: 40
   batch_size: 14
   max_length: 64

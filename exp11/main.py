@@ -560,14 +560,14 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         return optimizer
 
     #optimizerで値の更新の判定
-    def optimizer_step(self, epoch, batch_idx, optimizer, optimizer_idx, optimizer_closure, 
-                       on_tpu=False, using_native_amp=False, using_lbfgs=False):
-        # 特定の条件下で特定の分類器だけ更新（例：偶数エポックのみ1番目の分類器を更新）
-        if epoch % 2 == 0:
-            for name, param in self.named_parameters():
-                if 'classifiers.0' not in name:
-                    param.grad = None
-        optimizer.step(closure=optimizer_closure)
+    # def optimizer_step(self, epoch, batch_idx, optimizer, optimizer_idx, optimizer_closure, 
+    #                    on_tpu=False, using_native_amp=False, using_lbfgs=False):
+    #     # 特定の条件下で特定の分類器だけ更新（例：偶数エポックのみ1番目の分類器を更新）
+    #     if epoch % 2 == 0:
+    #         for name, param in self.named_parameters():
+    #             if 'classifiers.0' not in name:
+    #                 param.grad = None
+    #     optimizer.step(closure=optimizer_closure)
 
 
 # モデルの保存と更新のための関数
