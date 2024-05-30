@@ -61,7 +61,7 @@ class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoader�
             input_ids=encoding["input_ids"].flatten(),
             attention_mask=encoding["attention_mask"].flatten(),
             labels=torch.tensor(labels),
-            flags=torch.tensor(flags),
+            #flags=torch.tensor(flags),
         )
 
 
