@@ -1,0 +1,56 @@
+
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃[1m   [22m┃[1m Name                        [22m┃[1m Type             [22m┃[1m Params [22m┃
+┡━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0 │ bert                        │ BertModel        │ 89.1 M │
+│ 1 │ classifiers                 │ ModuleList       │  8.7 M │
+│ 2 │ sigmoid                     │ Sigmoid          │      0 │
+│ 3 │ criterion                   │ BCELoss          │      0 │
+│ 4 │ metrics                     │ MetricCollection │      0 │
+│ 5 │ metrics_per_label_accuracy  │ MetricCollection │      0 │
+│ 6 │ metrics_per_label_precision │ MetricCollection │      0 │
+│ 7 │ metrics_per_label_recall    │ MetricCollection │      0 │
+│ 8 │ metrics_per_label_f1score   │ MetricCollection │      0 │
+└───┴─────────────────────────────┴──────────────────┴────────┘
+[1mTrainable params[22m: 15.8 M
+[1mNon-trainable params[22m: 82.0 M
+[1mTotal params[22m: 97.8 M
+[1mTotal estimated model params size (MB)[22m: 391
+[37mEpoch 0/5 [39m [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[39m [37m0/1469[39m [37m0:00:00 • -:--:--[39m [37m0.00it/s[39m [37mv_num: tup3
+[?25h
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp11/main.py", line 655, in main
+    trainer.fit(model, data_module)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 544, in fit
+    call._call_and_handle_interrupt(
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 580, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 987, in _run
+    results = self._run_stage()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/trainer.py", line 1033, in _run_stage
+    self.fit_loop.run()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py", line 205, in run
+    self.advance()
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/fit_loop.py", line 363, in advance
+    self.epoch_loop.run(self._data_fetcher)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/training_epoch_loop.py", line 140, in run
+    self.advance(data_fetcher)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/training_epoch_loop.py", line 250, in advance
+    batch_output = self.automatic_optimization.run(trainer.optimizers[0], batch_idx, kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/optimization/automatic.py", line 190, in run
+    self._optimizer_step(batch_idx, closure)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loops/optimization/automatic.py", line 268, in _optimizer_step
+    call._call_lightning_module_hook(
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/call.py", line 157, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+TypeError: MaltiLabelClassifierModel.optimizer_step() missing 1 required positional argument: 'optimizer_closure'
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
