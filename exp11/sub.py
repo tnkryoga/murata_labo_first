@@ -1033,7 +1033,7 @@ def main(cfg: DictConfig):
         num_classes=cfg.model.num_classes,
         n_epochs=cfg.training.n_epochs,
     )
-    checkpoint_path = '/content/drive/MyDrive/murata_labo_exp/checkpoint/BCELoss_exp11.ckpt'
+    checkpoint_path = '/content/murata_labo_exp/checkpoint/BCELoss_exp11.ckpt'
     original_model = MaltiLabelClassifierModel.load_from_checkpoint(checkpoint_path)
 
     new_model = NEWMaltiLabelClassifierModel(
