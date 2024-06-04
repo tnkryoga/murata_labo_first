@@ -265,8 +265,6 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             labels=batch["labels"],
         )
 
-        print(batch["labels"])
-
         self.train_step_outputs_preds.append(preds)
         self.train_step_outputs_labels.append(batch["labels"])
         self.log("train/loss", loss, on_step=True, prog_bar=True)
