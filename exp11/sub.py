@@ -1,4 +1,4 @@
-#BCELoss
+#BCELoss　Freez Paramater
 import os
 import datetime
 import hydra
@@ -25,6 +25,7 @@ from transformers import BertJapaneseTokenizer
 class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoaderに渡す関数
     TEXT_COLUMN = "chunk"
     LABEL_COLUMN = "labels"
+    FLAG_COLUMN = "flag"
 
     def __init__(self, data, tokenizer, max_token_len):
         self.data = data
@@ -38,6 +39,7 @@ class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoader�
         data_row = self.data.iloc[index]  # iloc(data-frameの列の取得)/行数の取得
         text = data_row[self.TEXT_COLUMN]  # 行数分のtextを取得
         labels = data_row[self.LABEL_COLUMN]
+        flags = data_row[self.FLAG_COLUMN]
 
         labels = labels.replace("[", "").replace("]", "")  # "[", "]" を削除
 
@@ -59,6 +61,7 @@ class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoader�
             input_ids=encoding["input_ids"].flatten(),
             attention_mask=encoding["attention_mask"].flatten(),
             labels=torch.tensor(labels),
+            #flags=torch.tensor(flags),
         )
 
 
@@ -148,18 +151,16 @@ class MaltiLabelClassifierModel(pl.LightningModule):
 
         # モデルの構造
         self.bert = BertModel.from_pretrained(pretrained_model, return_dict=True)
-        self.classifiers = nn.ModuleList(
-            [
-                nn.Linear(self.bert.config.hidden_size, hidden_size)
-                for _ in range(num_classes)
-            ]
-        )  # 入力BERT層、出力hidden_sizeの全結合層/二値分類器をクラス数分並べる
-        self.hidden_layer1 = nn.ModuleList(
-            [nn.Linear(hidden_size, hidden_size2) for _ in range(num_classes)]
-        )  # classifierの隠れ層の追加
-        self.hidden_layer2 = nn.ModuleList(
-            [nn.Linear(hidden_size2, 1) for _ in range(num_classes)]
-        )  # classifierの隠れ層の追加
+
+        self.classifiers = nn.ModuleList([
+            nn.Sequential(
+                nn.Linear(self.bert.config.hidden_size, hidden_size),
+                nn.ReLU(),
+                nn.Linear(hidden_size, hidden_size2),
+                nn.ReLU(),
+                nn.Linear(hidden_size2, 1)
+            ) for _ in range(num_classes)
+        ])
         self.sigmoid = nn.Sigmoid()
         self.n_epochs = n_epochs
         self.criterion = nn.BCELoss()
@@ -241,16 +242,10 @@ class MaltiLabelClassifierModel(pl.LightningModule):
     # 順伝搬
     def forward(self, input_ids, attention_mask, labels=None):
         output = self.bert(input_ids, attention_mask=attention_mask)
-        hidden_outputs = []
-        for classifier, hidden_layer1, hidden_layer2 in zip(
-            self.classifiers, self.hidden_layer1, self.hidden_layer2
-        ):
-            binary_output = torch.relu(classifier(output.pooler_output))
-            hidden_output1 = torch.relu(hidden_layer1(binary_output))
-            hidden_output2 = torch.relu(hidden_layer2(hidden_output1))
-            hidden_outputs.append(hidden_output2)
 
-        combine_outputs = torch.cat(hidden_outputs, dim=1)  # 各クラスのバイナリ出力を結合
+        logits = [classifier(output.pooler_output) for classifier in self.classifiers]
+        combine_outputs = torch.cat(logits, dim=1)  # 各クラスのバイナリ出力を結合
+
         preds = self.sigmoid(combine_outputs)
         loss = 0
         if labels is not None:
@@ -263,9 +258,19 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             input_ids=batch["input_ids"],
             attention_mask=batch["attention_mask"],
             labels=batch["labels"],
+            flags=batch["flag"]
         )
 
-        print(batch["labels"])
+        # 特定の条件下でのパラメータの更新
+        for classifier in enumerate(self.classifiers):
+            for i in range(14):
+                for i in range(16):
+                    if flags[j] == 1 and labels[i][j] == '0':
+                        for param in classifier.parameters():
+                            param.requires_grad = False
+                        
+
+
 
         self.train_step_outputs_preds.append(preds)
         self.train_step_outputs_labels.append(batch["labels"])
@@ -513,8 +518,8 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         preds = preds_binary.view(-1,16)
         dff = preds.cpu()
         df = pd.DataFrame(dff)
-        df.to_csv("table_exppp.csv", encoding="utf-8")
-        print('csv is done¥nß')
+        #df.to_csv("table_exppp.csv", encoding="utf-8")
+        #print('csv is done¥nß')
 
         self.test_step_outputs_preds.clear()
         self.test_step_outputs_labels.clear()  # free memory
@@ -522,24 +527,28 @@ class MaltiLabelClassifierModel(pl.LightningModule):
     # optimizerの設定
     def configure_optimizers(self):
         # pretrainされているbert最終層のlrは小さめ、pretrainされていない分類層のlrは大きめに設定
-        optimizer = optim.Adam(
-            [
-                {"params": self.bert.encoder.layer[-1].parameters(), "lr": 5e-5},
-                {"params": self.hidden_layer1.parameters(), "lr": 1e-4},
-                {"params": self.hidden_layer2.parameters(), "lr": 1e-4},
-                # {"params": self.layer3.parameters(), "lr": 1e-4},
-            ]
-        )
 
-        return [optimizer]
+        optimizer = optim.Adam(self.parameters(),lr=5e-5)
+        # optimizer = optim.Adam(
+        # #     [
+        # #         {"params": self.bert.encoder.layer[-1].parameters(), "lr": 5e-5},
+        # #         # {"params": self.layer.parameters(), "lr": 1e-4},
+        # #         # {"params": self.layer2.parameters(), "lr": 1e-4},
+        # #         # {"params": self.layer3.parameters(), "lr": 1e-4},
+        # #     ]
+        # # )
+
+
+
+        return optimizer
 
 
 # モデルの保存と更新のための関数
 def make_callbacks(min_delta, patience, checkpoint_path):
     checkpoint_callback = ModelCheckpoint(
         dirpath=checkpoint_path,
-        filename="BCELoss_exp11",
-        save_top_k=1,  #save_best_only
+        filename="BCELoss_{epoch}",
+        # save_top_k=1,  #save_best_only
         verbose=True,
         monitor="val_loss",
         mode="min",
