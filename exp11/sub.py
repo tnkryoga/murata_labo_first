@@ -1035,7 +1035,7 @@ def main(cfg: DictConfig):
     )
     checkpoint_path = '/content/murata_labo_exp/checkpoint/BCELoss_exp11.ckpt'
     checkpoint = torch.load(checkpoint_path)
-    model.load_state_dict(checkpoint['state_dict'])
+    model.load_state_dict(checkpoint)
 
     # new_model = NEWMaltiLabelClassifierModel(
     #     hidden_size=cfg.model.hidden_size,
