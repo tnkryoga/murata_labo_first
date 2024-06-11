@@ -1,0 +1,10 @@
+
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:391: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp11/sub.py", line 1037, in main
+    original_model = model.load_from_checkpoint(checkpoint_path)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/utilities/model_helpers.py", line 121, in wrapper
+    raise TypeError(
+TypeError: The classmethod `MaltiLabelClassifierModel.load_from_checkpoint` cannot be called on an instance. Please call it on the class type and make sure the return value is used.
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
