@@ -1034,7 +1034,7 @@ def main(cfg: DictConfig):
     #     n_epochs=cfg.training.n_epochs,
     # )
     checkpoint_path = '/content/murata_labo_exp/checkpoint/BCELoss_exp11.ckpt'
-    new_model = NEWMaltiLabelClassifierModel.load_from_checkpoint(checkpoint_path)
+    new_model = NEWMaltiLabelClassifierModel.load_from_checkpoint(checkpoint_path,hidden_size=cfg.model.hidden_size,hidden_size2=cfg.model.hidden_size2,num_classes=cfg.model.num_classes)
 
     # new_model = NEWMaltiLabelClassifierModel(
     #     hidden_size=cfg.model.hidden_size,
