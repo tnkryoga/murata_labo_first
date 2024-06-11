@@ -1,0 +1,208 @@
+{
+    "os": "Linux-5.15.146.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "heartbeatAt": "2024-06-11T02:48:39.729820",
+    "startedAt": "2024-06-11T02:48:39.075218",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/content/murata_labo_exp/murata_labo_exp_src/exp11/sub.py",
+    "codePathLocal": null,
+    "codePath": "exp11/sub.py",
+    "git": {
+        "remote": "https://tnkryoga:@github.com/tnkryoga/murata_labo_first.git",
+        "commit": "8b2cf426e62d7a8f7c0c9ff44773166d090fe6eb"
+    },
+    "email": "tanaryo-miyabi818@outlook.jp",
+    "root": "/content/murata_labo_exp/murata_labo_exp_src",
+    "host": "f515ebabd9b4",
+    "username": "root",
+    "executable": "/usr/bin/python3",
+    "cpu_count": 16,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 3187.198999999998,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3187.199,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 1006.853931427002,
+            "used": 88.18272018432617
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory_total": 25757220864
+        }
+    ],
+    "memory": {
+        "total": 31.251911163330078
+    }
+}

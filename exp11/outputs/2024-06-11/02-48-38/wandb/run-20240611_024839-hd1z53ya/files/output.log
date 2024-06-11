@@ -1,0 +1,18 @@
+
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:391: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp11/sub.py", line 1037, in main
+    new_model = NEWMaltiLabelClassifierModel.load_from_checkpoint(checkpoint_path,hidden_size=cfg.model.hidden_size,hidden_size2=cfg.model.hidden_size2,num_classes=cfg.model.num_classes)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/utilities/model_helpers.py", line 125, in wrapper
+    return self.method(cls, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/core/module.py", line 1581, in load_from_checkpoint
+    loaded = _load_from_checkpoint(
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/core/saving.py", line 91, in _load_from_checkpoint
+    model = _load_state(cls, checkpoint, strict=strict, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/pytorch_lightning/core/saving.py", line 158, in _load_state
+    obj = cls(**_cls_kwargs)
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp11/sub.py", line 566, in __init__
+    super(MaltiLabelClassifierModel, self).__init__()
+TypeError: super(type, obj): obj must be an instance or subtype of type
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
