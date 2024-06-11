@@ -1027,15 +1027,15 @@ def main(cfg: DictConfig):
     )
 
     # modelのインスタンスの作成
-    # model = NEWMaltiLabelClassifierModel(
-    #     hidden_size=cfg.model.hidden_size,
-    #     hidden_size2=cfg.model.hidden_size2,
-    #     num_classes=cfg.model.num_classes,
-    #     n_epochs=cfg.training.n_epochs,
-    # )
+    model = NEWMaltiLabelClassifierModel(
+        hidden_size=cfg.model.hidden_size,
+        hidden_size2=cfg.model.hidden_size2,
+        num_classes=cfg.model.num_classes,
+        n_epochs=cfg.training.n_epochs,
+    )
     checkpoint_path = '/content/murata_labo_exp/checkpoint/BCELoss_exp11.ckpt'
     checkpoint = torch.load(checkpoint_path)
-    new_model = NEWMaltiLabelClassifierModel.load_state_dict(checkpoint['state_dict'],hidden_size=cfg.model.hidden_size,hidden_size2=cfg.model.hidden_size2,num_classes=cfg.model.num_classes)
+    model.load_state_dict(checkpoint['state_dict'])
 
     # new_model = NEWMaltiLabelClassifierModel(
     #     hidden_size=cfg.model.hidden_size,
