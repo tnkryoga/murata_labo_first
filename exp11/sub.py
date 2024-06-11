@@ -1027,14 +1027,14 @@ def main(cfg: DictConfig):
     )
 
     # modelのインスタンスの作成
-    origin_model = MaltiLabelClassifierModel(
+    model = MaltiLabelClassifierModel(
         hidden_size=cfg.model.hidden_size,
         hidden_size2=cfg.model.hidden_size2,
         num_classes=cfg.model.num_classes,
         n_epochs=cfg.training.n_epochs,
     )
     checkpoint_path = '/content/murata_labo_exp/checkpoint/BCELoss_exp11.ckpt'
-    original_model = MaltiLabelClassifierModel.load_from_checkpoint(checkpoint_path)
+    original_model = model.load_from_checkpoint(checkpoint_path)
 
     new_model = NEWMaltiLabelClassifierModel(
         hidden_size=cfg.model.hidden_size,
