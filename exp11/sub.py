@@ -563,7 +563,7 @@ class NEWMaltiLabelClassifierModel(pl.LightningModule):
         n_epochs=None,
         pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking",
     ):
-        super(MaltiLabelClassifierModel, self).__init__()
+        super(NEWMaltiLabelClassifierModel, self).__init__()
         self.num_classes = num_classes
         self.train_step_outputs_preds = []
         self.train_step_outputs_labels = []
