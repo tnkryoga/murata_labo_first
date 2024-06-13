@@ -581,7 +581,7 @@ def main(cfg: DictConfig):
     )
 
     # dataModuleのインスタンス化
-    train = pd.read_csv('/content/drive/MyDrive/murata_labo_exp/data/chunk_prev_7_eda_flag1.csv')
+    train = pd.read_csv('/content/murata_labo_exp/data/chunk_prev_7_eda_flag1.csv')
     val,test = train_test_split(
         pd.read_csv(cfg.path.val_test_file_name),
         test_size=cfg.training.test_size,
@@ -609,7 +609,7 @@ def main(cfg: DictConfig):
         num_classes=cfg.model.num_classes,
         n_epochs=cfg.training.n_epochs,
     )
-    checkpoint_path = '/content/drive/MyDrive/murata_labo_exp/checkpoint/BCELoss_exp11.ckpt'
+    checkpoint_path = '/content/checkpoint/BCELoss_exp11-v1.ckpt'
     checkpoint = torch.load(checkpoint_path)
     model.load_state_dict(checkpoint["state_dict"])
 
