@@ -1,0 +1,21 @@
+
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+tokenizer_config.json: 100% 120/120 [00:00<00:00, 389kB/s]
+vocab.txt: 100% 15.7k/15.7k [00:00<00:00, 31.5MB/s]
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+config.json: 100% 478/478 [00:00<00:00, 1.35MB/s]
+
+pytorch_model.bin: 100% 359M/359M [00:01<00:00, 241MB/s]
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp11/sub.py", line 613, in main
+    checkpoint = torch.load(checkpoint_path)
+  File "/usr/local/lib/python3.10/dist-packages/torch/serialization.py", line 997, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/usr/local/lib/python3.10/dist-packages/torch/serialization.py", line 444, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/usr/local/lib/python3.10/dist-packages/torch/serialization.py", line 425, in __init__
+    super().__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: '/content/drive/Mydrive/murata_labo_exp/checkpoint/BCELoss_exp11.ckpt'
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
