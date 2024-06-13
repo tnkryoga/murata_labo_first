@@ -1,0 +1,12 @@
+
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:391: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/murata_labo_exp/murata_labo_exp_src/exp11/sub.py", line 633, in main
+    trainer.fit(new_model, data_module)
+NameError: name 'new_model' is not defined
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
