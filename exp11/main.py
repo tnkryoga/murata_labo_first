@@ -148,18 +148,15 @@ class MaltiLabelClassifierModel(pl.LightningModule):
 
         # モデルの構造
         self.bert = BertModel.from_pretrained(pretrained_model, return_dict=True)
-        self.classifiers = nn.ModuleList(
-            [
-                nn.Linear(self.bert.config.hidden_size, hidden_size)
-                for _ in range(num_classes)
-            ]
-        )  # 入力BERT層、出力hidden_sizeの全結合層/二値分類器をクラス数分並べる
-        self.hidden_layer1 = nn.ModuleList(
-            [nn.Linear(hidden_size, hidden_size2) for _ in range(num_classes)]
-        )  # classifierの隠れ層の追加
-        self.hidden_layer2 = nn.ModuleList(
-            [nn.Linear(hidden_size2, 1) for _ in range(num_classes)]
-        )  # classifierの隠れ層の追加
+        self.classifiers = nn.ModuleList([
+            nn.Sequential(
+                nn.Linear(self.bert.config.hidden_size, hidden_size),
+                nn.ReLU(),
+                nn.Linear(hidden_size, hidden_size2),
+                nn.ReLU(),
+                nn.Linear(hidden_size2, 1)
+            ) for _ in range(num_classes)
+        ])
         self.sigmoid = nn.Sigmoid()
         self.n_epochs = n_epochs
         self.criterion = nn.BCELoss()
@@ -241,16 +238,10 @@ class MaltiLabelClassifierModel(pl.LightningModule):
     # 順伝搬
     def forward(self, input_ids, attention_mask, labels=None):
         output = self.bert(input_ids, attention_mask=attention_mask)
-        hidden_outputs = []
-        for classifier, hidden_layer1, hidden_layer2 in zip(
-            self.classifiers, self.hidden_layer1, self.hidden_layer2
-        ):
-            binary_output = torch.relu(classifier(output.pooler_output))
-            hidden_output1 = torch.relu(hidden_layer1(binary_output))
-            hidden_output2 = torch.relu(hidden_layer2(hidden_output1))
-            hidden_outputs.append(hidden_output2)
 
-        combine_outputs = torch.cat(hidden_outputs, dim=1)  # 各クラスのバイナリ出力を結合
+        logits = [classifier(output.pooler_output) for classifier in self.classifiers]
+        combine_outputs = torch.cat(logits, dim=1)  # 各クラスのバイナリ出力を結合
+
         preds = self.sigmoid(combine_outputs)
         loss = 0
         if labels is not None:
