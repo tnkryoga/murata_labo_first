@@ -25,8 +25,7 @@ from transformers import BertJapaneseTokenizer
 class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoaderに渡す関数
     TEXT_COLUMN = "chunk"
     LABEL_COLUMN = "labels"
-    FLAG_COLUMN = "flag"
-
+    
     def __init__(self, data, tokenizer, max_token_len):
         self.data = data
         self.tokenizer = tokenizer
@@ -39,7 +38,6 @@ class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoader�
         data_row = self.data.iloc[index]  # iloc(data-frameの列の取得)/行数の取得
         text = data_row[self.TEXT_COLUMN]  # 行数分のtextを取得
         labels = data_row[self.LABEL_COLUMN]
-        flags = data_row[self.FLAG_COLUMN]
 
         labels = labels.replace("[", "").replace("]", "")  # "[", "]" を削除
 
@@ -61,7 +59,6 @@ class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoader�
             input_ids=encoding["input_ids"].flatten(),
             attention_mask=encoding["attention_mask"].flatten(),
             labels=torch.tensor(labels),
-            #flags=torch.tensor(flags),
         )
 
 
@@ -257,13 +254,12 @@ class NEWMaltiLabelClassifierModel(pl.LightningModule):
             input_ids=batch["input_ids"],
             attention_mask=batch["attention_mask"],
             labels=batch["labels"],
-            flags=batch["flag"]
         )
 
         # 特定の条件下でのパラメータの更新
         # 特定の条件下でのパラメータの更新
         for i,classifier in enumerate(self.classifiers):
-            if flags[1][i] == 1:
+            if labels[1][i] == 1:
                 for param in classifier.parameters():
                     param.requires_grad = False
 
