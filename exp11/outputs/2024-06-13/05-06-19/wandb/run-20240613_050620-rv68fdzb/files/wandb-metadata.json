@@ -1,0 +1,58 @@
+{
+    "os": "Linux-6.1.85+-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "heartbeatAt": "2024-06-13T05:06:21.366313",
+    "startedAt": "2024-06-13T05:06:20.651717",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/content/murata_labo_exp/murata_labo_exp_src/exp11/sub.py",
+    "codePathLocal": null,
+    "codePath": "exp11/sub.py",
+    "git": {
+        "remote": "https://tnkryoga:@github.com/tnkryoga/murata_labo_first.git",
+        "commit": "69c76f7fcadfb8ee942a77dd14aa8945948de022"
+    },
+    "email": "tanaryo-miyabi818@outlook.jp",
+    "root": "/content/murata_labo_exp/murata_labo_exp_src",
+    "host": "c24e6fd6fb2f",
+    "username": "root",
+    "executable": "/usr/bin/python3",
+    "cpu_count": 1,
+    "cpu_count_logical": 2,
+    "cpu_freq": {
+        "current": 2199.998,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 78.1898422241211,
+            "used": 31.12936019897461
+        }
+    },
+    "gpu": "Tesla T4",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "Tesla T4",
+            "memory_total": 16106127360
+        }
+    ],
+    "memory": {
+        "total": 12.674774169921875
+    }
+}
