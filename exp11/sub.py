@@ -609,7 +609,7 @@ def main(cfg: DictConfig):
         num_classes=cfg.model.num_classes,
         n_epochs=cfg.training.n_epochs,
     )
-    checkpoint_path = '/content/drive/Mydrive/murata_labo_exp/checkpoint/BCELoss_exp11.ckpt'
+    checkpoint_path = '/content/drive/MyDrive/murata_labo_exp/checkpoint/BCELoss_exp11.ckpt'
     checkpoint = torch.load(checkpoint_path)
     model.load_state_dict(checkpoint["state_dict"])
 
