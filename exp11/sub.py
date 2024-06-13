@@ -256,6 +256,8 @@ class NEWMaltiLabelClassifierModel(pl.LightningModule):
             labels=batch["labels"],
         )
 
+        print(batch["labels"])
+
         # 特定の条件下でのパラメータの更新
         # 特定の条件下でのパラメータの更新
         for i,classifier in enumerate(self.classifiers):
