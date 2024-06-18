@@ -261,7 +261,7 @@ class NEWMaltiLabelClassifierModel(pl.LightningModule):
         # 特定の条件下でのパラメータの更新
         # 特定の条件下でのパラメータの更新
         for i,classifier in enumerate(self.classifiers):
-            if batch["labels"][0][i] == 1:
+            if i >= 6 and batch["labels"][0][i] != 1:
                 for param in classifier.parameters():
                     param.requires_grad = False
 
