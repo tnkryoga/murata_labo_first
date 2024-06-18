@@ -539,8 +539,8 @@ class NEWMaltiLabelClassifierModel(pl.LightningModule):
 def make_callbacks(min_delta, patience, checkpoint_path):
     checkpoint_callback = ModelCheckpoint(
         dirpath=checkpoint_path,
-        filename="BCELoss_{epoch}",
-        # save_top_k=1,  #save_best_only
+        filename="BCELoss_Oversampling",
+        save_top_k=1,  #save_best_only
         verbose=True,
         monitor="val_loss",
         mode="min",
@@ -610,14 +610,6 @@ def main(cfg: DictConfig):
     checkpoint_path = '/content/murata_labo_exp/checkpoint/BCELoss_exp11-v1.ckpt'
     checkpoint = torch.load(checkpoint_path)
     model.load_state_dict(checkpoint["state_dict"])
-
-    # new_model = NEWMaltiLabelClassifierModel(
-    #     hidden_size=cfg.model.hidden_size,
-    #     hidden_size2=cfg.model.hidden_size2,
-    #     num_classes=cfg.model.num_classes,
-    #     n_epochs=cfg.training.n_epochs,
-    # )
-    # new_model.load_state_dict(original_model.state_dict())
 
     # Trainerの設定
     trainer = pl.Trainer(
