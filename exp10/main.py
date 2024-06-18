@@ -543,17 +543,6 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         self.test_step_outputs_preds.clear()
         self.test_step_outputs_labels.clear()  # free memory
 
-    # PR曲線,ROC曲線のy_probsの引数に必要な値を補完する関数
-    def complement_score(self, scores):
-        if isinstance(scores, np.ndarray):
-            y_complement = 1 - scores
-            return np.stack([y_complement, scores], axis=1)
-        elif isinstance(scores, torch.Tensor):
-            y_complement = 1 - scores
-            return torch.stack([y_complement, scores], dim=1).to(scores.device)
-        else:
-            raise ValueError("Input must be either a NumPy array or a PyTorch tensor")
-
     # optimizerの設定
     def configure_optimizers(self):
         # pretrainされているbert最終層のlrは小さめ、pretrainされていない分類層のlrは大きめに設定
