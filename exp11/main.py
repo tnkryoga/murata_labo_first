@@ -54,6 +54,8 @@ class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoader�
             return_tensors="pt",  # pytorchに入力するように調整
         )
 
+        print(encoding["attention_mask"].flatten())
+
         return dict(
             text=text,
             input_ids=encoding["input_ids"].flatten(),
