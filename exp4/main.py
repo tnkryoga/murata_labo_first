@@ -1,4 +1,4 @@
-#BCELoss
+#BCELoss not good model
 import os
 import datetime
 import hydra
@@ -19,7 +19,13 @@ from torch import nn
 from torch.utils.data import DataLoader, Dataset
 from transformers import BertModel
 from transformers import BertJapaneseTokenizer
+from torchviz import make_dot
+from pytorch_lightning.loggers import TensorBoardLogger
 
+
+
+seed=42
+torch.manual_seed(seed)
 
 # Dataset
 class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoaderに渡す関数
@@ -145,6 +151,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         self.validation_step_outputs_labels = []
         self.test_step_outputs_preds = []
         self.test_step_outputs_labels = []
+        self.test_step_outputs_texts = []
 
         # モデルの構造
         self.bert = BertModel.from_pretrained(pretrained_model, return_dict=True)
@@ -163,6 +170,8 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         self.sigmoid = nn.Sigmoid()
         self.n_epochs = n_epochs
         self.criterion = nn.BCELoss()
+        
+        self.print_initial_weights()
 
         self.metrics = torchmetrics.MetricCollection(
             [
@@ -238,6 +247,29 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         for param in self.bert.encoder.layer[-1].parameters():
             param.requires_grad = True
 
+    def print_initial_weights(self):
+        # classifiersの重みの初期値を出力
+        # for i, classifier in enumerate(self.classifiers):
+        #     print(f"Classifier {i+1} initial weights:")
+        #     for name, param in classifier.named_parameters():
+        #         if 'weight' in name:
+        #             print(name, param.data)
+
+        # # hidden_layer1の重みの初期値を出力
+        # for i, layer in enumerate(self.hidden_layer1):
+        #     print(f"Hidden Layer 1 - {i+1} initial weights:")
+        #     for name, param in layer.named_parameters():
+        #         if 'weight' in name:
+        #             print(name, param.data)
+
+        # # hidden_layer2の重みの初期値を出力
+        # for i, layer in enumerate(self.hidden_layer2):
+        #     print(f"Hidden Layer 2 - {i+1} initial weights:")
+        #     for name, param in layer.named_parameters():
+        #         if 'weight' in name:
+        #             print(name, param.data)
+        pass
+
     # 順伝搬
     def forward(self, input_ids, attention_mask, labels=None):
         output = self.bert(input_ids, attention_mask=attention_mask)
@@ -247,7 +279,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         ):
             binary_output = torch.relu(classifier(output.pooler_output))
             hidden_output1 = torch.relu(hidden_layer1(binary_output))
-            hidden_output2 = torch.relu(hidden_layer2(hidden_output1))
+            hidden_output2 = hidden_layer2(hidden_output1)
             hidden_outputs.append(hidden_output2)
 
         combine_outputs = torch.cat(hidden_outputs, dim=1)  # 各クラスのバイナリ出力を結合
@@ -265,7 +297,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             labels=batch["labels"],
         )
 
-        print(batch["labels"])
+        #print(batch["labels"])
 
         self.train_step_outputs_preds.append(preds)
         self.train_step_outputs_labels.append(batch["labels"])
@@ -292,6 +324,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         )
         self.test_step_outputs_preds.append(preds)
         self.test_step_outputs_labels.append(batch["labels"])
+        self.test_step_outputs_texts.append(batch["text"])
         # self.log("test_loss", loss, on_epoch=True, prog_bar=True)
         return {"loss": loss, "batch_preds": preds, "batch_labels": batch["labels"]}
 
@@ -507,39 +540,37 @@ class MaltiLabelClassifierModel(pl.LightningModule):
                 logger=True,
             )
 
-        tensor_list = torch.cat(self.test_step_outputs_preds)
-        y_pred_flat = torch.reshape(tensor_list, [-1])  # 同様
-        preds_binary = torch.where(y_pred_flat > self.THRESHOLD, 1, 0)
-        preds = preds_binary.view(-1,16)
-        dff = preds.cpu()
-        df = pd.DataFrame(dff)
-        df.to_csv("table_exppp.csv", encoding="utf-8")
-        print('csv is done¥nß')
+        # # 予測結果と正解ラベルをデータフレームに変換し、CSVに出力
+        # texts = self.test_step_outputs_texts  # テキストはそのままリストとして使用
+        # trans_text = [item for subtext in texts for item in subtext]
+        # trans_pred = [item for subpred in self.test_step_outputs_preds for item in subpred]
+        # binary_pred = [[1 if val > self.THRESHOLD else 0 for val in sublist] for sublist in trans_pred]
+        # trans_label = [item for sublabels in self.test_step_outputs_labels for item in sublabels]
+        # print(self.test_step_outputs_preds)
+        # print(binary_pred)
+        # print(len(trans_text))
+        # print(len(binary_pred))
+        # print(len(trans_label))
+        # df = pd.DataFrame([
+        #     trans_text,
+        #     binary_pred,
+        #     trans_label
+        # ])
+        # df = pd.DataFrame.transpose(df)
+        # dff = df.rename(columns={0:'chunk',1:'pred_labels',2:'true_labels'})
+        # dff.to_csv("predictions_5.csv", encoding="utf-8", index=False)
+        # print('CSV is saved.')
 
         self.test_step_outputs_preds.clear()
         self.test_step_outputs_labels.clear()  # free memory
+        self.test_step_outputs_texts.clear()  # 入力文章の保存をクリア
 
-    # PR曲線,ROC曲線のy_probsの引数に必要な値を補完する関数
-    def complement_score(self, scores):
-        if isinstance(scores, np.ndarray):
-            y_complement = 1 - scores
-            return np.stack([y_complement, scores], axis=1)
-        elif isinstance(scores, torch.Tensor):
-            y_complement = 1 - scores
-            return torch.stack([y_complement, scores], dim=1).to(scores.device)
-        else:
-            raise ValueError("Input must be either a NumPy array or a PyTorch tensor")
 
     # optimizerの設定
     def configure_optimizers(self):
         # pretrainされているbert最終層のlrは小さめ、pretrainされていない分類層のlrは大きめに設定
         optimizer = optim.Adam(
-            [
-                {"params": self.bert.encoder.layer[-1].parameters(), "lr": 5e-5},
-                # {"params": self.layer.parameters(), "lr": 1e-4},
-                # {"params": self.layer2.parameters(), "lr": 1e-4},
-                # {"params": self.layer3.parameters(), "lr": 1e-4},
-            ]
+           self.parameters(),lr=1e-4
         )
 
         return [optimizer]
@@ -549,8 +580,8 @@ class MaltiLabelClassifierModel(pl.LightningModule):
 def make_callbacks(min_delta, patience, checkpoint_path):
     checkpoint_callback = ModelCheckpoint(
         dirpath=checkpoint_path,
-        filename="BCELoss_{epoch}",
-        # save_top_k=1,  #save_best_only
+        filename="BCELoss_checker",
+        save_top_k=1,  #save_best_only
         verbose=True,
         monitor="val_loss",
         mode="min",
@@ -618,16 +649,64 @@ def main(cfg: DictConfig):
         n_epochs=cfg.training.n_epochs,
     )
 
+    # dummy_input_ids = torch.randint(0, 1000, (1, cfg.model.max_length)).long()
+    # dummy_attention_mask = torch.ones((1, cfg.model.max_length)).long()
+    # dummy_labels = torch.zeros((1, cfg.model.num_classes)).long()
+
+    # # 順伝搬の実行
+    # model.eval()
+    # with torch.no_grad():
+    #     loss, preds = model(dummy_input_ids, dummy_attention_mask, dummy_labels)
+
+    # # モデルのグラフを作成
+    # make_dot(preds, params=dict(model.named_parameters())).render("model_structure", format="png")
+
+    # main関数内でwandb_loggerの前にTensorBoardLoggerを追加
+    tensorboard_logger = TensorBoardLogger("logs/", name="exp_" + str(cfg.wandb.exp_num))
+    
+
+
+
+   # モデル1の重みをロード
+    state_dict_model1 = torch.load('/content/murata_labo_exp/checkpoint/BCELoss_exp12_good.ckpt')
+
+    # モデル2のstate_dictを取得
+    state_dict_model2 = model.state_dict()
+    print(state_dict_model1)
+    
+
+    # モデル1の重みをモデル2の対応する層にコピー
+    for name, param in state_dict_model1.items():
+        if 'classifiers' in name:
+            classifier_idx = int(name.split('.')[1])
+            layer_idx = int(name.split('.')[2])
+            if layer_idx == 0:
+                # BERTの出力層からhidden_sizeへの全結合層
+                state_dict_model2[f'classifiers.{classifier_idx}.weight'] = state_dict_model1[f'classifiers.{classifier_idx}.0.weight']
+                state_dict_model2[f'classifiers.{classifier_idx}.bias'] = state_dict_model1[f'classifiers.{classifier_idx}.0.bias']
+                if classifier_idx == 0:
+                    print(param)
+            elif layer_idx == 2:
+                # hidden_sizeからhidden_size2への全結合層
+                state_dict_model2[f'hidden_layer1.{classifier_idx}.weight'] = state_dict_model1[f'classifiers.{classifier_idx}.2.weight']
+                state_dict_model2[f'hidden_layer1.{classifier_idx}.bias'] = state_dict_model1[f'classifiers.{classifier_idx}.2.bias']
+            elif layer_idx == 4:
+                # hidden_size2から出力層への全結合層
+                state_dict_model2[f'hidden_layer2.{classifier_idx}.weight'] = state_dict_model1[f'classifiers.{classifier_idx}.4.weight']
+                state_dict_model2[f'hidden_layer2.{classifier_idx}.bias'] = state_dict_model1[f'classifiers.{classifier_idx}.4.bias']
+    
+    model.load_state_dict(state_dict_model2)
+
     # Trainerの設定
     trainer = pl.Trainer(
         max_epochs=cfg.training.n_epochs,
         devices="auto",
         # progress_bar_refresh_rate=30,
         callbacks=call_backs,
-        logger=wandb_logger,
+        logger=[wandb_logger, tensorboard_logger],
         fast_dev_run=False,
     )
-    trainer.fit(model, data_module)
+    #trainer.fit(model, data_module)
     trainer.test(model, data_module)
 
     wandb.finish()
