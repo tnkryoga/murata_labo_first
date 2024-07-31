@@ -545,8 +545,8 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         optimizer = optim.Adam(
             [
                 {"params": self.bert.encoder.layer[-1].parameters(), "lr": 5e-5},
-                # {"params": self.layer.parameters(), "lr": 1e-4},
-                # {"params": self.layer2.parameters(), "lr": 1e-4},
+                {"params": self.hidden_layer1.parameters(), "lr": 1e-4},
+                {"params": self.hidden_layer2.parameters(), "lr": 1e-4},
                 # {"params": self.layer3.parameters(), "lr": 1e-4},
             ]
         )
@@ -659,7 +659,7 @@ def main(cfg: DictConfig):
         return 1.0 - f1_score
 
     study = optuna.create_study(direction='minimize')
-    study.optimize(objective,n_trials=5)
+    study.optimize(objective,n_trials=50)
 
     print(study.best_value)
     print(study.best_params)
