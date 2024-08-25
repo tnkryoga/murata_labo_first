@@ -697,6 +697,22 @@ def main(cfg: DictConfig):
     
     model.load_state_dict(state_dict_model2)
 
+    # ダミー入力（バッチサイズ、シーケンス長）
+    dummy_input = torch.randn(1, 128, dtype=torch.float)
+
+    # モデルをONNX形式でエクスポート
+    torch.onnx.export(
+        model, 
+        (dummy_input, torch.tensor([1])),  # ダミー入力とアテンションマスクを含める
+        "model.onnx", 
+        export_params=True, 
+        opset_version=10, 
+        do_constant_folding=True, 
+        input_names = ['input_ids', 'attention_mask'], 
+        output_names = ['output'], 
+        dynamic_axes={'input_ids' : {0 : 'batch_size'}, 'output' : {0 : 'batch_size'}}
+    )
+
     # Trainerの設定
     trainer = pl.Trainer(
         max_epochs=cfg.training.n_epochs,
