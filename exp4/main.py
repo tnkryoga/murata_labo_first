@@ -19,7 +19,6 @@ from torch import nn
 from torch.utils.data import DataLoader, Dataset
 from transformers import BertModel
 from transformers import BertJapaneseTokenizer
-from torchviz import make_dot
 from pytorch_lightning.loggers import TensorBoardLogger
 
 
