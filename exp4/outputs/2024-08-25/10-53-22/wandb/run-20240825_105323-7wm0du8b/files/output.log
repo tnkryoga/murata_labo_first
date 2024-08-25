@@ -1,0 +1,23 @@
+
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+tokenizer_config.json: 100% 120/120 [00:00<00:00, 323kB/s]
+vocab.txt: 100% 15.7k/15.7k [00:00<00:00, 38.7MB/s]
+config.json: 100% 478/478 [00:00<00:00, 1.79MB/s]
+
+
+
+
+
+pytorch_model.bin: 100% 359M/359M [00:10<00:00, 35.4MB/s]
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/main.py", line 670, in main
+    state_dict_model1 = torch.load('/content/murata_labo_exp/checkpoint/BCELoss_exp12_good.ckpt')
+  File "/usr/local/lib/python3.10/dist-packages/torch/serialization.py", line 997, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/usr/local/lib/python3.10/dist-packages/torch/serialization.py", line 444, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/usr/local/lib/python3.10/dist-packages/torch/serialization.py", line 425, in __init__
+    super().__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: '/content/murata_labo_exp/checkpoint/BCELoss_exp12_good.ckpt'
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
