@@ -598,7 +598,7 @@ def main(cfg: DictConfig):
         n_epochs=cfg.training.n_epochs,
     )
 
-    state_dict_model1 = torch.load('/content/drive/MyDrive/murata_labo_exp/checkpoint/BCELoss_exp11-v1.ckpt')
+    state_dict_model1 = torch.load('/content/drive/MyDrive/murata_labo_exp/checkpoint/BCELoss_exp11.ckpt')
     model.load_state_dict(state_dict_model1)
 
     # Trainerの設定
