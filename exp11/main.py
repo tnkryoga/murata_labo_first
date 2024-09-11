@@ -598,6 +598,9 @@ def main(cfg: DictConfig):
         n_epochs=cfg.training.n_epochs,
     )
 
+    state_dict_model1 = torch.load('/content/drive/MyDrive/murata_labo_exp/checkpoint/BCELoss_exp11-v1.ckpt')
+    model.load_state_dict(state_dict_model1)
+
     # Trainerの設定
     trainer = pl.Trainer(
         max_epochs=cfg.training.n_epochs,
@@ -607,7 +610,7 @@ def main(cfg: DictConfig):
         logger=wandb_logger,
         fast_dev_run=False,
     )
-    trainer.fit(model, data_module)
+    #trainer.fit(model, data_module)
     trainer.test(model, data_module)
 
     wandb.finish()
