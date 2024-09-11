@@ -3,8 +3,8 @@ wandb:
   exp_num: 11
   tags: [bert]
 path:
-  train_file_name: /content/murata_labo_exp/data/chunk_prev_10.csv
-  val_test_file_name: /content/murata_labo_exp/data/chunk_prev_10_test.csv
+  train_file_name: /content/drive/MyDrive/murata_labo_exp/data/chunk_prev_10.csv
+  val_test_file_name: /content/drie/MyDrive/murata_labo_exp/data/chunk_prev_10_test.csv
   checkpoint_path: '/content/murata_labo_exp/checkpoint'
 model:
   d_model: 768
