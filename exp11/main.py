@@ -599,7 +599,8 @@ def main(cfg: DictConfig):
     )
 
     state_dict_model1 = torch.load('/content/drive/MyDrive/murata_labo_exp/checkpoint/BCELoss_exp12_good.ckpt')
-    model.load_state_dict(state_dict_model1)
+    state_dict = state_dict_model1['state_dict']
+    model.load_state_dict(state_dict)
 
     # Trainerの設定
     trainer = pl.Trainer(
