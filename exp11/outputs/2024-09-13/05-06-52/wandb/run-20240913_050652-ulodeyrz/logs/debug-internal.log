@@ -1,0 +1,18 @@
+{"time":"2024-09-13T05:06:52.975763488Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-13T05:06:52.977435461Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp11/outputs/2024-09-13/05-06-52/wandb/run-20240913_050652-ulodeyrz/logs/debug-core.log"}
+{"time":"2024-09-13T05:06:52.9816365Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-13T05:06:52.982803033Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp11/outputs/2024-09-13/05-06-52/wandb/run-20240913_050652-ulodeyrz/logs/debug-core.log"}
+{"time":"2024-09-13T05:06:52.991223302Z","level":"INFO","msg":"created new stream","id":"ulodeyrz"}
+{"time":"2024-09-13T05:06:52.992296144Z","level":"INFO","msg":"stream: started","id":"ulodeyrz"}
+{"time":"2024-09-13T05:06:52.992315726Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"ulodeyrz"}}
+{"time":"2024-09-13T05:06:52.992434479Z","level":"INFO","msg":"handler: started","stream_id":{"value":"ulodeyrz"}}
+{"time":"2024-09-13T05:06:52.992464508Z","level":"INFO","msg":"sender: started","stream_id":{"value":"ulodeyrz"}}
+{"time":"2024-09-13T05:06:53.302226559Z","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-13T05:06:53.31009515Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-13T05:06:56.773897015Z","level":"INFO","msg":"stream: closing","id":"ulodeyrz"}
+{"time":"2024-09-13T05:06:56.774017366Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-13T05:06:56.777403129Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-13T05:07:01.199350931Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"ulodeyrz"}}
+{"time":"2024-09-13T05:07:01.199427471Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"ulodeyrz"}}
+{"time":"2024-09-13T05:07:01.199479443Z","level":"INFO","msg":"sender: closed","stream_id":{"value":"ulodeyrz"}}
+{"time":"2024-09-13T05:07:01.201176513Z","level":"INFO","msg":"stream: closed","id":"ulodeyrz"}
