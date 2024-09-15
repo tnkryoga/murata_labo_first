@@ -685,7 +685,7 @@ def main(cfg: DictConfig):
                 state_dict_model2[f'classifiers.{classifier_idx}.weight'] = state_dict_model1[f'classifiers.{classifier_idx}.0.weight']
                 state_dict_model2[f'classifiers.{classifier_idx}.bias'] = state_dict_model1[f'classifiers.{classifier_idx}.0.bias']
                 if classifier_idx == 0:
-                    print(state_dict_model1[f'classifiers.{classifier_idx}.0.weight'])
+                    print(param)
             elif layer_idx == 2:
                 # hidden_sizeからhidden_size2への全結合層
                 state_dict_model2[f'hidden_layer1.{classifier_idx}.weight'] = state_dict_model1[f'classifiers.{classifier_idx}.2.weight']
@@ -702,7 +702,7 @@ def main(cfg: DictConfig):
     #         print(f"Layer: {name}")
     #         print(param.data)  # 重みの値を出力
 
-    print(state_dict_model1)
+    
 
     # # ダミー入力（バッチサイズ、シーケンス長）
     # dummy_input = torch.randn(1, 128, dtype=torch.float)
