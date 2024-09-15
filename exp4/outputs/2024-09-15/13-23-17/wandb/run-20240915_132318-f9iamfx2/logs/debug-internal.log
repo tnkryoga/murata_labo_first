@@ -1,0 +1,18 @@
+{"time":"2024-09-15T13:23:18.562993843Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T13:23:18.566405245Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/13-23-17/wandb/run-20240915_132318-f9iamfx2/logs/debug-core.log"}
+{"time":"2024-09-15T13:23:18.572194572Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T13:23:18.574259645Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/13-23-17/wandb/run-20240915_132318-f9iamfx2/logs/debug-core.log"}
+{"time":"2024-09-15T13:23:18.593101949Z","level":"INFO","msg":"created new stream","id":"f9iamfx2"}
+{"time":"2024-09-15T13:23:18.59465829Z","level":"INFO","msg":"stream: started","id":"f9iamfx2"}
+{"time":"2024-09-15T13:23:18.594693279Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"f9iamfx2"}}
+{"time":"2024-09-15T13:23:18.594819005Z","level":"INFO","msg":"handler: started","stream_id":{"value":"f9iamfx2"}}
+{"time":"2024-09-15T13:23:18.594846286Z","level":"INFO","msg":"sender: started","stream_id":{"value":"f9iamfx2"}}
+{"time":"2024-09-15T13:23:19.08106817Z","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-15T13:23:19.093079317Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-15T13:23:24.456478868Z","level":"INFO","msg":"stream: closing","id":"f9iamfx2"}
+{"time":"2024-09-15T13:23:24.456991383Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-15T13:23:24.4583334Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-15T13:23:27.468108196Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"f9iamfx2"}}
+{"time":"2024-09-15T13:23:27.468156516Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"f9iamfx2"}}
+{"time":"2024-09-15T13:23:27.468231802Z","level":"INFO","msg":"sender: closed","stream_id":{"value":"f9iamfx2"}}
+{"time":"2024-09-15T13:23:27.470395031Z","level":"INFO","msg":"stream: closed","id":"f9iamfx2"}
