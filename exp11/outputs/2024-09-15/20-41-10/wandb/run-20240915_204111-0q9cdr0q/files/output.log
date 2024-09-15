@@ -1,0 +1,16 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+/usr/local/lib/python3.10/dist-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp11/main.py:601: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state_dict_model1 = torch.load('/content/drive/MyDrive/murata_labo_exp/checkpoint/BCELoss_exp12_good.ckpt')
+tensor([[9.8389e-01, 4.0179e-03, 7.7222e-05, 1.3999e-02, 6.5650e-06, 8.0325e-07,
+         3.7300e-05, 6.4118e-05, 5.1612e-06, 1.4039e-05, 6.5324e-08, 3.9341e-07,
+         1.7958e-03, 1.5128e-07, 4.2209e-06, 6.0752e-03]],
+       grad_fn=<SigmoidBackward0>)
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp11/main.py", line 631, in main
+    image = make_dot(output, params=dict(model.named_parameters()),show_attrs=True)#.render("bert_input_layer", format="png")
+NameError: name 'make_dot' is not defined
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
