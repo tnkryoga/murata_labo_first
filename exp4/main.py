@@ -683,7 +683,7 @@ def main(cfg: DictConfig):
     #         print(param.data)  # 重みの値を出力
 
 
-    dummy = pd.read_csv('/content/drive/MyDrive/murata_labo_exp/data/multi_classification_sentence_labels_test_dummy.csv')
+    dummy = pd.read_csv('/content/drive/MyDrive/murata_labo_exp/data/chunk_prev_8_test.csv')
     pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking"
     tokenizer = BertJapaneseTokenizer.from_pretrained(pretrained_model)
     # ダミーの入力テキストをトークナイズ
