@@ -687,9 +687,22 @@ def main(cfg: DictConfig):
     pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking"
     tokenizer = BertJapaneseTokenizer.from_pretrained(pretrained_model)
     # ダミーの入力テキストをトークナイズ
-    inputs = CreateDataset(dummy,tokenizer,512)
+    # inputs = CreateDataset(dummy,tokenizer,512)
+    input_text = "Hello, this is a test input for BERT visualization."
+    encoding = self.tokenizer.encode_plus(  # encodingの詳細設定
+            input_text,
+            add_special_tokens=True,
+            max_length=512,
+            padding="max_length",
+            truncation=True,
+            return_attention_mask=True,
+            return_tensors="pt",  # pytorchに入力するように調整
+        )
 
-    output = model(inputs)
+    input_ids=encoding["input_ids"].flatten()
+    attention_mask=encoding["attention_mask"].flatten()
+
+    output = model(input_ids,attention_mask)
     make_dot(outputs.last_hidden_state, params=dict(model.named_parameters())).render("bert_input_layer", format="png")
 
     # Trainerの設定
