@@ -680,7 +680,9 @@ def main(cfg: DictConfig):
         if 'classifiers' in name:
             classifier_idx = int(name.split('.')[1])
             layer_idx = int(name.split('.')[2])
+            print(layer_idx)
             if layer_idx == 0:
+                print('ok=0\n')
                 # BERTの出力層からhidden_sizeへの全結合層
                 state_dict_model2[f'classifiers.{classifier_idx}.weight'] = state_dict_model1[f'classifiers.{classifier_idx}.0.weight']
                 state_dict_model2[f'classifiers.{classifier_idx}.bias'] = state_dict_model1[f'classifiers.{classifier_idx}.0.bias']
