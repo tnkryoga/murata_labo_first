@@ -1,0 +1,18 @@
+{"time":"2024-09-15T12:23:58.088553969Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T12:23:58.092027922Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp11/outputs/2024-09-15/12-23-57/wandb/run-20240915_122358-akrdujuo/logs/debug-core.log"}
+{"time":"2024-09-15T12:23:58.097256694Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T12:23:58.099031355Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp11/outputs/2024-09-15/12-23-57/wandb/run-20240915_122358-akrdujuo/logs/debug-core.log"}
+{"time":"2024-09-15T12:23:58.111030215Z","level":"INFO","msg":"created new stream","id":"akrdujuo"}
+{"time":"2024-09-15T12:23:58.112910169Z","level":"INFO","msg":"stream: started","id":"akrdujuo"}
+{"time":"2024-09-15T12:23:58.112913725Z","level":"INFO","msg":"handler: started","stream_id":{"value":"akrdujuo"}}
+{"time":"2024-09-15T12:23:58.113057746Z","level":"INFO","msg":"sender: started","stream_id":{"value":"akrdujuo"}}
+{"time":"2024-09-15T12:23:58.113074166Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"akrdujuo"}}
+{"time":"2024-09-15T12:23:58.670277088Z","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-15T12:23:58.680124583Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-15T12:25:19.492828574Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-15T12:25:19.493156742Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-15T12:25:24.290196569Z","level":"INFO","msg":"stream: closing","id":"akrdujuo"}
+{"time":"2024-09-15T12:25:24.290795279Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"akrdujuo"}}
+{"time":"2024-09-15T12:25:24.290862975Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"akrdujuo"}}
+{"time":"2024-09-15T12:25:24.290922936Z","level":"INFO","msg":"sender: closed","stream_id":{"value":"akrdujuo"}}
+{"time":"2024-09-15T12:25:24.292711313Z","level":"INFO","msg":"stream: closed","id":"akrdujuo"}
