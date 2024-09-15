@@ -705,10 +705,10 @@ def main(cfg: DictConfig):
     
     model.load_state_dict(state_dict_model2)
 
-    for name, param in model.named_parameters():
-        if param.requires_grad:
-            print(f"Layer: {name}")
-            print(param.data)  # 重みの値を出力
+    # for name, param in model.named_parameters():
+    #     if param.requires_grad:
+    #         print(f"Layer: {name}")
+    #         print(param.data)  # 重みの値を出力
 
     
 
@@ -738,7 +738,7 @@ def main(cfg: DictConfig):
         fast_dev_run=False,
     )
     #trainer.fit(model, data_module)
-    #trainer.test(model, data_module)
+    trainer.test(model, data_module)
 
     wandb.finish()
 
