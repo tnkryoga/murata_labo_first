@@ -699,8 +699,8 @@ def main(cfg: DictConfig):
             return_tensors="pt",  # pytorchに入力するように調整
         )
 
-    input_ids=encoding["input_ids"].flatten()
-    attention_mask=encoding["attention_mask"].flatten()
+    input_ids=encoding["input_ids"]
+    attention_mask=encoding["attention_mask"]
 
     output = model(input_ids,attention_mask)
     make_dot(outputs.last_hidden_state, params=dict(model.named_parameters())).render("bert_input_layer", format="png")
