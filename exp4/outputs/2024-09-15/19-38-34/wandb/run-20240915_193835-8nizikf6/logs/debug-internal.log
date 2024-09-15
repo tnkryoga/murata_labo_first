@@ -1,0 +1,18 @@
+{"time":"2024-09-15T19:38:35.43171335Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T19:38:35.433045515Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/19-38-34/wandb/run-20240915_193835-8nizikf6/logs/debug-core.log"}
+{"time":"2024-09-15T19:38:35.435902502Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T19:38:35.436831015Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/19-38-34/wandb/run-20240915_193835-8nizikf6/logs/debug-core.log"}
+{"time":"2024-09-15T19:38:35.441815162Z","level":"INFO","msg":"created new stream","id":"8nizikf6"}
+{"time":"2024-09-15T19:38:35.442510282Z","level":"INFO","msg":"stream: started","id":"8nizikf6"}
+{"time":"2024-09-15T19:38:35.442520588Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"8nizikf6"}}
+{"time":"2024-09-15T19:38:35.442601748Z","level":"INFO","msg":"sender: started","stream_id":{"value":"8nizikf6"}}
+{"time":"2024-09-15T19:38:35.44270763Z","level":"INFO","msg":"handler: started","stream_id":{"value":"8nizikf6"}}
+{"time":"2024-09-15T19:38:35.870615629Z","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-15T19:38:35.878055568Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-15T19:38:40.806376608Z","level":"INFO","msg":"stream: closing","id":"8nizikf6"}
+{"time":"2024-09-15T19:38:40.806449068Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-15T19:38:40.806973451Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-15T19:38:45.336040002Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"8nizikf6"}}
+{"time":"2024-09-15T19:38:45.336118723Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"8nizikf6"}}
+{"time":"2024-09-15T19:38:45.336132811Z","level":"INFO","msg":"sender: closed","stream_id":{"value":"8nizikf6"}}
+{"time":"2024-09-15T19:38:45.338468473Z","level":"INFO","msg":"stream: closed","id":"8nizikf6"}
