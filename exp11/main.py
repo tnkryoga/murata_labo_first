@@ -603,10 +603,34 @@ def main(cfg: DictConfig):
     model.load_state_dict(state_dict)
 
 
-    for name, param in model.named_parameters():
-        if param.requires_grad:
-            print(f"Layer: {name}")
-            print(param.data)  # 重みの値を出力
+    # for name, param in model.named_parameters():
+    #     if param.requires_grad:
+    #         print(f"Layer: {name}")
+    #         print(param.data)  # 重みの値を出力
+    
+    pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking"
+    tokenizer = BertJapaneseTokenizer.from_pretrained(pretrained_model)
+    # ダミーの入力テキストをトークナイズ
+    # inputs = CreateDataset(dummy,tokenizer,512)
+    input_text = "Hello, this is a test input for BERT visualization."
+    encoding = tokenizer.encode_plus(  # encodingの詳細設定
+            input_text,
+            add_special_tokens=True,
+            max_length=512,
+            padding="max_length",
+            truncation=True,
+            return_attention_mask=True,
+            return_tensors="pt",  # pytorchに入力するように調整
+        )
+
+    input_ids=encoding["input_ids"]
+    attention_mask=encoding["attention_mask"]
+
+    output = model.forward(input_ids,attention_mask)[1]
+    print(output)
+    image = make_dot(output, params=dict(model.named_parameters()),show_attrs=True)#.render("bert_input_layer", format="png")
+    image.format = "png"
+    image.render("/content/drive/MyDrive/murata_labo_exp/data/NeuralNet_good")
 
     # Trainerの設定
     trainer = pl.Trainer(
