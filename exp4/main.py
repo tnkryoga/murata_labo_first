@@ -703,7 +703,7 @@ def main(cfg: DictConfig):
     attention_mask=encoding["attention_mask"]
 
     output = model(input_ids,attention_mask)
-    make_dot(outputs.last_hidden_state, params=dict(model.named_parameters())).render("bert_input_layer", format="png")
+    make_dot(output.last_hidden_state, params=dict(model.named_parameters())).render("bert_input_layer", format="png")
 
     # Trainerの設定
     trainer = pl.Trainer(
