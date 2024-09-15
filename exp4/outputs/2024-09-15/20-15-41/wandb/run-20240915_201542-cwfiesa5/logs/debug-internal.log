@@ -1,0 +1,18 @@
+{"time":"2024-09-15T20:15:42.513834238Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T20:15:42.514999519Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/20-15-41/wandb/run-20240915_201542-cwfiesa5/logs/debug-core.log"}
+{"time":"2024-09-15T20:15:42.517445294Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T20:15:42.5182963Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/20-15-41/wandb/run-20240915_201542-cwfiesa5/logs/debug-core.log"}
+{"time":"2024-09-15T20:15:42.522477102Z","level":"INFO","msg":"created new stream","id":"cwfiesa5"}
+{"time":"2024-09-15T20:15:42.523355355Z","level":"INFO","msg":"stream: started","id":"cwfiesa5"}
+{"time":"2024-09-15T20:15:42.523395497Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"cwfiesa5"}}
+{"time":"2024-09-15T20:15:42.52343905Z","level":"INFO","msg":"sender: started","stream_id":{"value":"cwfiesa5"}}
+{"time":"2024-09-15T20:15:42.523423778Z","level":"INFO","msg":"handler: started","stream_id":{"value":"cwfiesa5"}}
+{"time":"2024-09-15T20:15:42.978089737Z","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-15T20:15:42.984634444Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-15T20:16:20.938378946Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-15T20:16:20.93878444Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-15T20:16:26.258949198Z","level":"INFO","msg":"stream: closing","id":"cwfiesa5"}
+{"time":"2024-09-15T20:16:26.259065782Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"cwfiesa5"}}
+{"time":"2024-09-15T20:16:26.259098297Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"cwfiesa5"}}
+{"time":"2024-09-15T20:16:26.259147172Z","level":"INFO","msg":"sender: closed","stream_id":{"value":"cwfiesa5"}}
+{"time":"2024-09-15T20:16:26.260092565Z","level":"INFO","msg":"stream: closed","id":"cwfiesa5"}
