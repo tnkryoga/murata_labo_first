@@ -689,8 +689,7 @@ def main(cfg: DictConfig):
     pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking"
     tokenizer = BertJapaneseTokenizer.from_pretrained(pretrained_model)
     # ダミーの入力テキストをトークナイズ
-    input_text = "Hello, this is a test input for BERT visualization."
-    inputs = tokenizer(input_text, return_tensors="pt")
+    inputs = CreateDataset('/content/drive/MyDrive/murata_labo_exp/data/multi_classification_chunk_labels_test.csv')
 
     output = model(inputs)
     make_dot(outputs.last_hidden_state, params=dict(model.named_parameters())).render("bert_input_layer", format="png")
