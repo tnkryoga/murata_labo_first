@@ -702,7 +702,7 @@ def main(cfg: DictConfig):
     input_ids=encoding["input_ids"]
     attention_mask=encoding["attention_mask"]
 
-    output = model(input_ids,attention_mask)
+    output = model(input_ids,attention_mask)[0]
     make_dot(output, params=dict(model.named_parameters())).render("bert_input_layer", format="png")
 
     # Trainerの設定
