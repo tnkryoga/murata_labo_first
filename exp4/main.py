@@ -661,7 +661,7 @@ def main(cfg: DictConfig):
     # make_dot(preds, params=dict(model.named_parameters())).render("model_structure", format="png")
 
     # main関数内でwandb_loggerの前にTensorBoardLoggerを追加
-    tensorboard_logger = TensorBoardLogger("logs/", name="exp_" + str(cfg.wandb.exp_num))
+    #tensorboard_logger = TensorBoardLogger("logs/", name="exp_" + str(cfg.wandb.exp_num))
     
 
 
@@ -671,7 +671,7 @@ def main(cfg: DictConfig):
 
     # モデル2のstate_dictを取得
     state_dict_model2 = model.state_dict()
-    print(state_dict_model1)
+    #print(state_dict_model1)
     
 
     # モデル1の重みをモデル2の対応する層にコピー
@@ -696,21 +696,26 @@ def main(cfg: DictConfig):
     
     model.load_state_dict(state_dict_model2)
 
-    # ダミー入力（バッチサイズ、シーケンス長）
-    dummy_input = torch.randn(1, 128, dtype=torch.float)
+    for name, param in model.named_parameters():
+        if param.requires_grad:
+            print(f"Layer: {name}")
+            print(param.data)  # 重みの値を出力
 
-    # モデルをONNX形式でエクスポート
-    torch.onnx.export(
-        model, 
-        (dummy_input, torch.tensor([1])),  # ダミー入力とアテンションマスクを含める
-        "model.onnx", 
-        export_params=True, 
-        opset_version=10, 
-        do_constant_folding=True, 
-        input_names = ['input_ids', 'attention_mask'], 
-        output_names = ['output'], 
-        dynamic_axes={'input_ids' : {0 : 'batch_size'}, 'output' : {0 : 'batch_size'}}
-    )
+    # # ダミー入力（バッチサイズ、シーケンス長）
+    # dummy_input = torch.randn(1, 128, dtype=torch.float)
+
+    # # モデルをONNX形式でエクスポート
+    # torch.onnx.export(
+    #     model, 
+    #     (dummy_input, torch.tensor([1])),  # ダミー入力とアテンションマスクを含める
+    #     "model.onnx", 
+    #     export_params=True, 
+    #     opset_version=10, 
+    #     do_constant_folding=True, 
+    #     input_names = ['input_ids', 'attention_mask'], 
+    #     output_names = ['output'], 
+    #     dynamic_axes={'input_ids' : {0 : 'batch_size'}, 'output' : {0 : 'batch_size'}}
+    # )
 
     # Trainerの設定
     trainer = pl.Trainer(
