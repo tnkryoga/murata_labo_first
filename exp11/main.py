@@ -545,21 +545,6 @@ def make_callbacks(min_delta, patience, checkpoint_path):
     return [early_stop_callback, checkpoint_callback, progress_bar]
 
 
-def save_all_weights_to_one_csv(model, filename="all_weights.csv"):
-    all_weights = []  # すべての重みを保持するリスト
-    for name, param in model.named_parameters():
-        if param.requires_grad:  # 学習対象のパラメータのみを保存
-            weight = param.data.numpy()  # PyTorch TensorをNumpy配列に変換
-            # 名前とともに重みをリストに追加（列名にレイヤー名を含める）
-            all_weights.append(pd.DataFrame(weight).stack().reset_index(drop=True).rename(name))
-    
-    # 各レイヤーの重みを列として結合
-    df_all_weights = pd.concat(all_weights, axis=1)
-    # CSVに保存
-    df_all_weights.to_csv(filename, header=True, index=False)
-    print(f"All weights saved to {filename}")
-
-
 # Train Runner
 @hydra.main(config_path=".", config_name="config")
 def main(cfg: DictConfig):
@@ -617,7 +602,11 @@ def main(cfg: DictConfig):
     state_dict = state_dict_model1['state_dict']
     model.load_state_dict(state_dict)
 
-    save_all_weights_to_one_csv(model)
+
+    for name, param in model.named_parameters():
+        if param.requires_grad:
+            print(f"Layer: {name}")
+            print(param.data)  # 重みの値を出力
 
     # Trainerの設定
     trainer = pl.Trainer(
