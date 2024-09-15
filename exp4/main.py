@@ -678,7 +678,7 @@ def main(cfg: DictConfig):
     # モデル1の重みをモデル2の対応する層にコピー
     for name, param in state_dict_model1.items():
         if 'state_dict' in name:
-            for p in param:
+            for p in param['state_dict']:
                 print(p)
                 # classifier_idx = int(p[0].split('.')[1])
                 # layer_idx = int(p[0].split('.')[2])
