@@ -663,17 +663,14 @@ def main(cfg: DictConfig):
     for i in range(16):
         for j in range(5):
             if j == 0:
-                print('ok')
                 # BERTの出力層からhidden_sizeへの全結合層
                 state_dict_model2[f'classifiers.{i}.weight'] = state_dict[f'classifiers.{i}.0.weight']
                 state_dict_model2[f'classifiers.{i}.bias'] = state_dict[f'classifiers.{i}.0.bias']
             elif j == 2:
-                print('okk')
                 # hidden_sizeからhidden_size2への全結合層
                 state_dict_model2[f'hidden_layer1.{i}.weight'] = state_dict[f'classifiers.{i}.2.weight']
                 state_dict_model2[f'hidden_layer1.{i}.bias'] = state_dict[f'classifiers.{i}.2.bias']
             elif j == 4:
-                print('okkk')
                 # hidden_size2から出力層への全結合層
                 state_dict_model2[f'hidden_layer2.{i}.weight'] = state_dict[f'classifiers.{i}.4.weight']
                 state_dict_model2[f'hidden_layer2.{i}.bias'] = state_dict[f'classifiers.{i}.4.bias']
@@ -685,12 +682,14 @@ def main(cfg: DictConfig):
     #         print(f"Layer: {name}")
     #         print(param.data)  # 重みの値を出力
 
-
     pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking"
     tokenizer = BertJapaneseTokenizer.from_pretrained(pretrained_model)
     # ダミーの入力テキストをトークナイズ
     inputs = CreateDataset('/content/drive/MyDrive/murata_labo_exp/data/multi_classification_chunk_labels_test.csv',tokenizer,512)
-    print(inputs)
+    dummy_attention = inputs['attention_mask']
+    dummy_input = inputs['input_ids']
+
+    print(dummy_attention)
 
     output = model(inputs)
     make_dot(outputs.last_hidden_state, params=dict(model.named_parameters())).render("bert_input_layer", format="png")
