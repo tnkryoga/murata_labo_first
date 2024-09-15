@@ -1,0 +1,85 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+/usr/local/lib/python3.10/dist-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/main.py:670: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state_dict_model1 = torch.load('/content/drive/MyDrive/murata_labo_exp/checkpoint/BCELoss_exp12_good.ckpt')
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+[2K┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓37m43/43[0m [37m0:01:07 • 0:00:00[0m [37m0.61it/s[0m  t/s[0m  t/s[0m  
+┃[1m [0m[1m          Test metric          [0m[1m [0m┃[1m [0m[1m         DataLoader 0          [0m[1m [0m┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│[36m [0m[36m test/accuracy_label_あいさつ  [0m[36m [0m│[35m [0m[35m      0.6408560276031494       [0m[35m [0m│
+│[36m [0m[36m test/accuracy_label_あいづち  [0m[36m [0m│[35m [0m[35m      0.8715953230857849       [0m[35m [0m│
+│[36m [0m[36m  test/accuracy_label_その他   [0m[36m [0m│[35m [0m[35m      0.6225680708885193       [0m[35m [0m│
+│[36m [0m[36m  test/accuracy_label_不同意   [0m[36m [0m│[35m [0m[35m      0.06809338182210922      [0m[35m [0m│
+│[36m [0m[36m   test/accuracy_label_同意    [0m[36m [0m│[35m [0m[35m      0.6042801737785339       [0m[35m [0m│
+│[36m [0m[36m   test/accuracy_label_想起    [0m[36m [0m│[35m [0m[35m     0.009727626107633114      [0m[35m [0m│
+│[36m [0m[36m   test/accuracy_label_意見    [0m[36m [0m│[35m [0m[35m      0.16147859394550323      [0m[35m [0m│
+│[36m [0m[36m   test/accuracy_label_感心    [0m[36m [0m│[35m [0m[35m      0.3844358026981354       [0m[35m [0m│
+│[36m [0m[36m   test/accuracy_label_納得    [0m[36m [0m│[35m [0m[35m      0.3361867666244507       [0m[35m [0m│
+│[36m [0m[36mtest/accuracy_label_繰り返し応…[0m[36m [0m│[35m [0m[35m      0.6743190884590149       [0m[35m [0m│
+│[36m [0m[36mtest/accuracy_label_考えている…[0m[36m [0m│[35m [0m[35m      0.09649805724620819      [0m[35m [0m│
+│[36m [0m[36m   test/accuracy_label_補完    [0m[36m [0m│[35m [0m[35m      0.17821010947227478      [0m[35m [0m│
+│[36m [0m[36m test/accuracy_label_言い換え  [0m[36m [0m│[35m [0m[35m     0.004280155524611473      [0m[35m [0m│
+│[36m [0m[36m   test/accuracy_label_評価    [0m[36m [0m│[35m [0m[35m      0.5268482565879822       [0m[35m [0m│
+│[36m [0m[36m   test/accuracy_label_驚き    [0m[36m [0m│[35m [0m[35m      0.4338521361351013       [0m[35m [0m│
+│[36m [0m[36mtest/accuracy_label_驚きといぶ…[0m[36m [0m│[35m [0m[35m      0.8019455075263977       [0m[35m [0m│
+│[36m [0m[36m  test/f1score_label_あいさつ  [0m[36m [0m│[35m [0m[35m      0.07607607543468475      [0m[35m [0m│
+│[36m [0m[36m  test/f1score_label_あいづち  [0m[36m [0m│[35m [0m[35m       0.930962324142456       [0m[35m [0m│
+│[36m [0m[36m   test/f1score_label_その他   [0m[36m [0m│[35m [0m[35m              0.0              [0m[35m [0m│
+│[36m [0m[36m   test/f1score_label_不同意   [0m[36m [0m│[35m [0m[35m      0.10198725014925003      [0m[35m [0m│
+│[36m [0m[36m    test/f1score_label_同意    [0m[36m [0m│[35m [0m[35m      0.13151152431964874      [0m[35m [0m│
+│[36m [0m[36m    test/f1score_label_想起    [0m[36m [0m│[35m [0m[35m     0.017753763124346733      [0m[35m [0m│
+│[36m [0m[36m    test/f1score_label_意見    [0m[36m [0m│[35m [0m[35m      0.2770882248878479       [0m[35m [0m│
+│[36m [0m[36m    test/f1score_label_感心    [0m[36m [0m│[35m [0m[35m      0.5277612209320068       [0m[35m [0m│
+│[36m [0m[36m    test/f1score_label_納得    [0m[36m [0m│[35m [0m[35m      0.49882492423057556      [0m[35m [0m│
+│[36m [0m[36mtest/f1score_label_繰り返し応答[0m[36m [0m│[35m [0m[35m      0.8052129149436951       [0m[35m [0m│
+│[36m [0m[36mtest/f1score_label_考えている …[0m[36m [0m│[35m [0m[35m      0.16534866392612457      [0m[35m [0m│
+│[36m [0m[36m    test/f1score_label_補完    [0m[36m [0m│[35m [0m[35m      0.3025099039077759       [0m[35m [0m│
+│[36m [0m[36m  test/f1score_label_言い換え  [0m[36m [0m│[35m [0m[35m              0.0              [0m[35m [0m│
+│[36m [0m[36m    test/f1score_label_評価    [0m[36m [0m│[35m [0m[35m      0.25853657722473145      [0m[35m [0m│
+│[36m [0m[36m    test/f1score_label_驚き    [0m[36m [0m│[35m [0m[35m      0.3507362902164459       [0m[35m [0m│
+│[36m [0m[36mtest/f1score_label_驚きといぶ …[0m[36m [0m│[35m [0m[35m     0.003913894295692444      [0m[35m [0m│
+│[36m [0m[36m    test/multilabelaccuracy    [0m[36m [0m│[35m [0m[35m      0.4009484350681305       [0m[35m [0m│
+│[36m [0m[36m    test/multilabelf1score     [0m[36m [0m│[35m [0m[35m      0.2780139744281769       [0m[35m [0m│
+│[36m [0m[36mtest/multilabelmatthewscorrcoef[0m[36m [0m│[35m [0m[35m      -0.0707622691988945      [0m[35m [0m│
+│[36m [0m[36m   test/multilabelprecision    [0m[36m [0m│[35m [0m[35m      0.2694329619407654       [0m[35m [0m│
+│[36m [0m[36m     test/multilabelrecall     [0m[36m [0m│[35m [0m[35m      0.6018493175506592       [0m[35m [0m│
+│[36m [0m[36m test/presicion_label_あいさつ [0m[36m [0m│[35m [0m[35m      0.04203539714217186      [0m[35m [0m│
+│[36m [0m[36m test/presicion_label_あいづち [0m[36m [0m│[35m [0m[35m      0.9699215292930603       [0m[35m [0m│
+│[36m [0m[36m  test/presicion_label_その他  [0m[36m [0m│[35m [0m[35m              0.0              [0m[35m [0m│
+│[36m [0m[36m  test/presicion_label_不同意  [0m[36m [0m│[35m [0m[35m      0.05381875857710838      [0m[35m [0m│
+│[36m [0m[36m   test/presicion_label_同意   [0m[36m [0m│[35m [0m[35m      0.29389312863349915      [0m[35m [0m│
+│[36m [0m[36m   test/presicion_label_想起   [0m[36m [0m│[35m [0m[35m      0.00895638670772314      [0m[35m [0m│
+│[36m [0m[36m   test/presicion_label_意見   [0m[36m [0m│[35m [0m[35m      0.16082555055618286      [0m[35m [0m│
+│[36m [0m[36m   test/presicion_label_感心   [0m[36m [0m│[35m [0m[35m      0.9085302948951721       [0m[35m [0m│
+│[36m [0m[36m   test/presicion_label_納得   [0m[36m [0m│[35m [0m[35m      0.3330717980861664       [0m[35m [0m│
+│[36m [0m[36mtest/presicion_label_繰り返し …[0m[36m [0m│[35m [0m[35m      0.6744639277458191       [0m[35m [0m│
+│[36m [0m[36mtest/presicion_label_考えてい …[0m[36m [0m│[35m [0m[35m      0.09012538939714432      [0m[35m [0m│
+│[36m [0m[36m   test/presicion_label_補完   [0m[36m [0m│[35m [0m[35m      0.17821010947227478      [0m[35m [0m│
+│[36m [0m[36m test/presicion_label_言い換え [0m[36m [0m│[35m [0m[35m              0.0              [0m[35m [0m│
+│[36m [0m[36m   test/presicion_label_評価   [0m[36m [0m│[35m [0m[35m      0.3557046949863434       [0m[35m [0m│
+│[36m [0m[36m   test/presicion_label_驚き   [0m[36m [0m│[35m [0m[35m      0.23934227228164673      [0m[35m [0m│
+│[36m [0m[36mtest/presicion_label_驚きとい …[0m[36m [0m│[35m [0m[35m     0.0020283975172787905     [0m[35m [0m│
+│[36m [0m[36m  test/recall_label_あいさつ   [0m[36m [0m│[35m [0m[35m      0.4000000059604645       [0m[35m [0m│
+│[36m [0m[36m  test/recall_label_あいづち   [0m[36m [0m│[35m [0m[35m      0.8950120806694031       [0m[35m [0m│
+│[36m [0m[36m   test/recall_label_その他    [0m[36m [0m│[35m [0m[35m              0.0              [0m[35m [0m│
+│[36m [0m[36m   test/recall_label_不同意    [0m[36m [0m│[35m [0m[35m      0.9714285731315613       [0m[35m [0m│
+│[36m [0m[36m    test/recall_label_同意     [0m[36m [0m│[35m [0m[35m      0.08470846712589264      [0m[35m [0m│
+│[36m [0m[36m    test/recall_label_想起     [0m[36m [0m│[35m [0m[35m              1.0              [0m[35m [0m│
+│[36m [0m[36m    test/recall_label_意見     [0m[36m [0m│[35m [0m[35m              1.0              [0m[35m [0m│
+│[36m [0m[36m    test/recall_label_感心     [0m[36m [0m│[35m [0m[35m      0.3718973398208618       [0m[35m [0m│
+│[36m [0m[36m    test/recall_label_納得     [0m[36m [0m│[35m [0m[35m      0.9929824471473694       [0m[35m [0m│
+│[36m [0m[36mtest/recall_label_繰り返し応答 [0m[36m [0m│[35m [0m[35m      0.9988452792167664       [0m[35m [0m│
+│[36m [0m[36mtest/recall_label_考えている最…[0m[36m [0m│[35m [0m[35m              1.0              [0m[35m [0m│
+│[36m [0m[36m    test/recall_label_補完     [0m[36m [0m│[35m [0m[35m              1.0              [0m[35m [0m│
+│[36m [0m[36m  test/recall_label_言い換え   [0m[36m [0m│[35m [0m[35m              0.0              [0m[35m [0m│
+│[36m [0m[36m    test/recall_label_評価     [0m[36m [0m│[35m [0m[35m      0.20306512713432312      [0m[35m [0m│
+│[36m [0m[36m    test/recall_label_驚き     [0m[36m [0m│[35m [0m[35m      0.6560934782028198       [0m[35m [0m│
+│[36m [0m[36mtest/recall_label_驚きといぶか…[0m[36m [0m│[35m [0m[35m      0.0555555559694767       [0m[35m [0m│
+│[36m [0m[36m           test_loss           [0m[36m [0m│[35m [0m[35m      0.7003936767578125       [0m[35m [0m│
+└─────────────────────────────────┴─────────────────────────────────┘
+[2K[37mTesting[0m [35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [37m43/43[0m [37m0:01:07 • 0:00:00[0m [37m0.61it/s[0m
+[?25h
