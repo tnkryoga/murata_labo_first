@@ -1,0 +1,34 @@
+2024-09-15 13:07:25,579 INFO    MainThread:23837 [wandb_setup.py:_flush():77] Current SDK version is 0.18.0
+2024-09-15 13:07:25,580 INFO    MainThread:23837 [wandb_setup.py:_flush():77] Configure stats pid to 23837
+2024-09-15 13:07:25,580 INFO    MainThread:23837 [wandb_setup.py:_flush():77] Loading settings from /root/.config/wandb/settings
+2024-09-15 13:07:25,581 INFO    MainThread:23837 [wandb_setup.py:_flush():77] Loading settings from /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/13-07-24/wandb/settings
+2024-09-15 13:07:25,581 INFO    MainThread:23837 [wandb_setup.py:_flush():77] Loading settings from environment variables: {}
+2024-09-15 13:07:25,581 INFO    MainThread:23837 [wandb_setup.py:_flush():77] Applying setup settings: {'_disable_service': False}
+2024-09-15 13:07:25,581 INFO    MainThread:23837 [wandb_setup.py:_flush():77] Inferring run settings from compute environment: {'program_relpath': 'exp4/main.py', 'program_abspath': '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/main.py', 'program': '/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/main.py'}
+2024-09-15 13:07:25,581 INFO    MainThread:23837 [wandb_setup.py:_flush():77] Applying login settings: {}
+2024-09-15 13:07:25,583 INFO    MainThread:23837 [wandb_init.py:_log_setup():525] Logging user logs to /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/13-07-24/wandb/run-20240915_130725-gh2f86f0/logs/debug.log
+2024-09-15 13:07:25,583 INFO    MainThread:23837 [wandb_init.py:_log_setup():526] Logging internal logs to /content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/13-07-24/wandb/run-20240915_130725-gh2f86f0/logs/debug-internal.log
+2024-09-15 13:07:25,584 INFO    MainThread:23837 [wandb_init.py:init():609] calling init triggers
+2024-09-15 13:07:25,584 INFO    MainThread:23837 [wandb_init.py:init():616] wandb.init called with sweep_config: {}
+config: {}
+2024-09-15 13:07:25,584 INFO    MainThread:23837 [wandb_init.py:init():659] starting backend
+2024-09-15 13:07:25,584 INFO    MainThread:23837 [wandb_init.py:init():663] setting up manager
+2024-09-15 13:07:25,592 INFO    MainThread:23837 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-09-15 13:07:25,595 INFO    MainThread:23837 [wandb_init.py:init():671] backend started and connected
+2024-09-15 13:07:25,633 INFO    MainThread:23837 [wandb_init.py:init():766] updated telemetry
+2024-09-15 13:07:25,711 INFO    MainThread:23837 [wandb_init.py:init():799] communicating run to backend with 90.0 second timeout
+2024-09-15 13:07:26,083 INFO    MainThread:23837 [wandb_init.py:init():850] starting run threads in backend
+2024-09-15 13:07:26,589 INFO    MainThread:23837 [wandb_run.py:_console_start():2466] atexit reg
+2024-09-15 13:07:26,591 INFO    MainThread:23837 [wandb_run.py:_redirect():2312] redirect: wrap_raw
+2024-09-15 13:07:26,592 INFO    MainThread:23837 [wandb_run.py:_redirect():2377] Wrapping output streams.
+2024-09-15 13:07:26,593 INFO    MainThread:23837 [wandb_run.py:_redirect():2402] Redirects installed.
+2024-09-15 13:07:26,598 INFO    MainThread:23837 [wandb_init.py:init():893] run started, returning control to user process
+2024-09-15 13:08:48,133 INFO    MainThread:23837 [wandb_run.py:_finish():2163] finishing run tanaryo-miyabi818/murata_exp/gh2f86f0
+2024-09-15 13:08:48,135 INFO    MainThread:23837 [wandb_run.py:_atexit_cleanup():2427] got exitcode: 0
+2024-09-15 13:08:48,138 INFO    MainThread:23837 [wandb_run.py:_restore():2409] restore
+2024-09-15 13:08:48,139 INFO    MainThread:23837 [wandb_run.py:_restore():2415] restore done
+2024-09-15 13:08:48,139 INFO    MainThread:23837 [wandb_run.py:_on_finish():2680] communicating current version
+2024-09-15 13:08:48,589 INFO    MainThread:23837 [wandb_run.py:_on_finish():2689] got version response 
+2024-09-15 13:08:54,143 INFO    MainThread:23837 [wandb_run.py:_footer_history_summary_info():4104] rendering history
+2024-09-15 13:08:54,145 INFO    MainThread:23837 [wandb_run.py:_footer_history_summary_info():4136] rendering summary
+2024-09-15 13:08:54,162 INFO    MainThread:23837 [wandb_run.py:_footer_sync_info():4063] logging synced files
