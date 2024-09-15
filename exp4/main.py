@@ -682,10 +682,12 @@ def main(cfg: DictConfig):
     #         print(f"Layer: {name}")
     #         print(param.data)  # 重みの値を出力
 
+
+    dummy = pd.read_csv('/content/drive/MyDrive/murata_labo_exp/data/multi_classification_sentence_labels_test_dummy.csv')
     pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking"
     tokenizer = BertJapaneseTokenizer.from_pretrained(pretrained_model)
     # ダミーの入力テキストをトークナイズ
-    inputs = CreateDataset('/content/drive/MyDrive/murata_labo_exp/data/multi_classification_chunk_labels_test.csv',tokenizer,512)
+    inputs = CreateDataset(dummy,tokenizer,512)
     dummy_attention = inputs['attention_mask']
     dummy_input = inputs['input_ids']
 
