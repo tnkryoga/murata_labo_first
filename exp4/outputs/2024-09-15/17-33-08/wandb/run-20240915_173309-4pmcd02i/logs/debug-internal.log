@@ -1,0 +1,18 @@
+{"time":"2024-09-15T17:33:09.293656831Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T17:33:09.294782157Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/17-33-08/wandb/run-20240915_173309-4pmcd02i/logs/debug-core.log"}
+{"time":"2024-09-15T17:33:09.296831693Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T17:33:09.297538491Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/17-33-08/wandb/run-20240915_173309-4pmcd02i/logs/debug-core.log"}
+{"time":"2024-09-15T17:33:09.301386417Z","level":"INFO","msg":"created new stream","id":"4pmcd02i"}
+{"time":"2024-09-15T17:33:09.302149252Z","level":"INFO","msg":"stream: started","id":"4pmcd02i"}
+{"time":"2024-09-15T17:33:09.302180214Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"4pmcd02i"}}
+{"time":"2024-09-15T17:33:09.3022572Z","level":"INFO","msg":"sender: started","stream_id":{"value":"4pmcd02i"}}
+{"time":"2024-09-15T17:33:09.302337977Z","level":"INFO","msg":"handler: started","stream_id":{"value":"4pmcd02i"}}
+{"time":"2024-09-15T17:33:09.717231103Z","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-15T17:33:09.722874039Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-15T17:33:17.670552685Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-15T17:33:17.670988741Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-15T17:33:24.018305583Z","level":"INFO","msg":"stream: closing","id":"4pmcd02i"}
+{"time":"2024-09-15T17:33:24.018470838Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"4pmcd02i"}}
+{"time":"2024-09-15T17:33:24.018504742Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"4pmcd02i"}}
+{"time":"2024-09-15T17:33:24.018555211Z","level":"INFO","msg":"sender: closed","stream_id":{"value":"4pmcd02i"}}
+{"time":"2024-09-15T17:33:24.019691334Z","level":"INFO","msg":"stream: closed","id":"4pmcd02i"}
