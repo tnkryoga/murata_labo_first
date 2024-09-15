@@ -1,0 +1,18 @@
+{"time":"2024-09-15T19:41:39.332797217Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T19:41:39.341692296Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/19-41-38/wandb/run-20240915_194139-txvubbzk/logs/debug-core.log"}
+{"time":"2024-09-15T19:41:39.346330697Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T19:41:39.347334012Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/19-41-38/wandb/run-20240915_194139-txvubbzk/logs/debug-core.log"}
+{"time":"2024-09-15T19:41:39.352780478Z","level":"INFO","msg":"created new stream","id":"txvubbzk"}
+{"time":"2024-09-15T19:41:39.353912129Z","level":"INFO","msg":"stream: started","id":"txvubbzk"}
+{"time":"2024-09-15T19:41:39.353955444Z","level":"INFO","msg":"sender: started","stream_id":{"value":"txvubbzk"}}
+{"time":"2024-09-15T19:41:39.353996223Z","level":"INFO","msg":"handler: started","stream_id":{"value":"txvubbzk"}}
+{"time":"2024-09-15T19:41:39.353931535Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"txvubbzk"}}
+{"time":"2024-09-15T19:41:39.752550353Z","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-15T19:41:39.759147237Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-15T19:41:44.462505093Z","level":"INFO","msg":"stream: closing","id":"txvubbzk"}
+{"time":"2024-09-15T19:41:44.462602508Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-15T19:41:44.46292348Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-15T19:41:47.71068184Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"txvubbzk"}}
+{"time":"2024-09-15T19:41:47.71071871Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"txvubbzk"}}
+{"time":"2024-09-15T19:41:47.71078547Z","level":"INFO","msg":"sender: closed","stream_id":{"value":"txvubbzk"}}
+{"time":"2024-09-15T19:41:47.712623872Z","level":"INFO","msg":"stream: closed","id":"txvubbzk"}
