@@ -723,7 +723,7 @@ def main(cfg: DictConfig):
         devices="auto",
         # progress_bar_refresh_rate=30,
         callbacks=call_backs,
-        logger=[wandb_logger, tensorboard_logger],
+        logger=[wandb_logger],
         fast_dev_run=False,
     )
     #trainer.fit(model, data_module)
