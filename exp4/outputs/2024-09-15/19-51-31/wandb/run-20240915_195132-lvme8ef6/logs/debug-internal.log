@@ -1,0 +1,18 @@
+{"time":"2024-09-15T19:51:32.352401602Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T19:51:32.353652738Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/19-51-31/wandb/run-20240915_195132-lvme8ef6/logs/debug-core.log"}
+{"time":"2024-09-15T19:51:32.356026767Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T19:51:32.356658213Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/19-51-31/wandb/run-20240915_195132-lvme8ef6/logs/debug-core.log"}
+{"time":"2024-09-15T19:51:32.36080646Z","level":"INFO","msg":"created new stream","id":"lvme8ef6"}
+{"time":"2024-09-15T19:51:32.361650396Z","level":"INFO","msg":"stream: started","id":"lvme8ef6"}
+{"time":"2024-09-15T19:51:32.361689907Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"lvme8ef6"}}
+{"time":"2024-09-15T19:51:32.361718752Z","level":"INFO","msg":"handler: started","stream_id":{"value":"lvme8ef6"}}
+{"time":"2024-09-15T19:51:32.361730722Z","level":"INFO","msg":"sender: started","stream_id":{"value":"lvme8ef6"}}
+{"time":"2024-09-15T19:51:32.787573547Z","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-15T19:51:32.794762545Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-15T19:51:37.727207108Z","level":"INFO","msg":"stream: closing","id":"lvme8ef6"}
+{"time":"2024-09-15T19:51:37.727309823Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-15T19:51:37.729033216Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-15T19:51:42.109024739Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"lvme8ef6"}}
+{"time":"2024-09-15T19:51:42.109050334Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"lvme8ef6"}}
+{"time":"2024-09-15T19:51:42.109113045Z","level":"INFO","msg":"sender: closed","stream_id":{"value":"lvme8ef6"}}
+{"time":"2024-09-15T19:51:42.111236886Z","level":"INFO","msg":"stream: closed","id":"lvme8ef6"}
