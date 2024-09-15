@@ -678,7 +678,7 @@ def main(cfg: DictConfig):
     # モデル1の重みをモデル2の対応する層にコピー
     for name, param in state_dict_model1.items():
         print(name)
-        print(param)
+        #print(param)
         if 'state_dic' in name:
             classifier_idx = int(name.split('.')[1])
             layer_idx = int(name.split('.')[2])
@@ -734,7 +734,7 @@ def main(cfg: DictConfig):
         fast_dev_run=False,
     )
     #trainer.fit(model, data_module)
-    trainer.test(model, data_module)
+    #trainer.test(model, data_module)
 
     wandb.finish()
 
