@@ -669,7 +669,6 @@ def main(cfg: DictConfig):
    # モデル1の重みをロード
     state_dict_model1 = torch.load('/content/drive/MyDrive/murata_labo_exp/checkpoint/BCELoss_exp12_good.ckpt')
 
-    print(state_dict_model1['classifiers.15.4.weight'])
 
     # モデル2のstate_dictを取得
     state_dict_model2 = model.state_dict()
