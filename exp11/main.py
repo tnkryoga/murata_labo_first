@@ -54,7 +54,7 @@ class CreateDataset(Dataset):  # 文章のtokenize処理を行ってDataLoader�
             return_tensors="pt",  # pytorchに入力するように調整
         )
 
-        print(encoding["attention_mask"].flatten())
+        #print(encoding["attention_mask"].flatten())
 
         return dict(
             text=text,
@@ -505,7 +505,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
         dff = preds.cpu()
         df = pd.DataFrame(dff)
         df.to_csv("table_exppp.csv", encoding="utf-8")
-        print('csv is done¥nß')
+        print('csv is done¥n')
 
         self.test_step_outputs_preds.clear()
         self.test_step_outputs_labels.clear()  # free memory
@@ -543,6 +543,21 @@ def make_callbacks(min_delta, patience, checkpoint_path):
     progress_bar = RichProgressBar()
 
     return [early_stop_callback, checkpoint_callback, progress_bar]
+
+
+def save_all_weights_to_one_csv(model, filename="all_weights.csv"):
+    all_weights = []  # すべての重みを保持するリスト
+    for name, param in model.named_parameters():
+        if param.requires_grad:  # 学習対象のパラメータのみを保存
+            weight = param.data.numpy()  # PyTorch TensorをNumpy配列に変換
+            # 名前とともに重みをリストに追加（列名にレイヤー名を含める）
+            all_weights.append(pd.DataFrame(weight).stack().reset_index(drop=True).rename(name))
+    
+    # 各レイヤーの重みを列として結合
+    df_all_weights = pd.concat(all_weights, axis=1)
+    # CSVに保存
+    df_all_weights.to_csv(filename, header=True, index=False)
+    print(f"All weights saved to {filename}")
 
 
 # Train Runner
@@ -601,6 +616,8 @@ def main(cfg: DictConfig):
     state_dict_model1 = torch.load('/content/drive/MyDrive/murata_labo_exp/checkpoint/BCELoss_exp12_good.ckpt')
     state_dict = state_dict_model1['state_dict']
     model.load_state_dict(state_dict)
+
+    save_all_weights_to_one_csv(model)
 
     # Trainerの設定
     trainer = pl.Trainer(
