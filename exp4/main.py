@@ -20,6 +20,7 @@ from torch.utils.data import DataLoader, Dataset
 from transformers import BertModel
 from transformers import BertJapaneseTokenizer
 from pytorch_lightning.loggers import TensorBoardLogger
+from torchviz import make_dot
 
 
 
@@ -648,24 +649,6 @@ def main(cfg: DictConfig):
         n_epochs=cfg.training.n_epochs,
     )
 
-    # dummy_input_ids = torch.randint(0, 1000, (1, cfg.model.max_length)).long()
-    # dummy_attention_mask = torch.ones((1, cfg.model.max_length)).long()
-    # dummy_labels = torch.zeros((1, cfg.model.num_classes)).long()
-
-    # # 順伝搬の実行
-    # model.eval()
-    # with torch.no_grad():
-    #     loss, preds = model(dummy_input_ids, dummy_attention_mask, dummy_labels)
-
-    # # モデルのグラフを作成
-    # make_dot(preds, params=dict(model.named_parameters())).render("model_structure", format="png")
-
-    # main関数内でwandb_loggerの前にTensorBoardLoggerを追加
-    #tensorboard_logger = TensorBoardLogger("logs/", name="exp_" + str(cfg.wandb.exp_num))
-    
-
-
-
    # モデル1の重みをロード
     state_dict_model1 = torch.load('/content/drive/MyDrive/murata_labo_exp/checkpoint/BCELoss_exp12_good.ckpt')
     state_dict = state_dict_model1['state_dict']
@@ -677,16 +660,8 @@ def main(cfg: DictConfig):
     
 
     # モデル1の重みをモデル2の対応する層にコピー
-    # for name, param in state_dict_model1.items():
-    #     if 'state_dict' in name:
-    # for s in range(len(state_dict)):
     for i in range(16):
         for j in range(5):
-            
-        # classifier_idx = int(p[0].split('.')[1])
-        # layer_idx = int(p[0].split('.')[2])
-        # print(classifier_idx)
-        # print(layer_idx)
             if j == 0:
                 print('ok')
                 # BERTの出力層からhidden_sizeへの全結合層
@@ -710,23 +685,15 @@ def main(cfg: DictConfig):
     #         print(f"Layer: {name}")
     #         print(param.data)  # 重みの値を出力
 
-    
 
-    # # ダミー入力（バッチサイズ、シーケンス長）
-    # dummy_input = torch.randn(1, 128, dtype=torch.float)
+    pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking"
+    tokenizer = BertJapaneseTokenizer.from_pretrained(pretrained_model)
+    # ダミーの入力テキストをトークナイズ
+    input_text = "Hello, this is a test input for BERT visualization."
+    inputs = tokenizer(input_text, return_tensors="pt")
 
-    # # モデルをONNX形式でエクスポート
-    # torch.onnx.export(
-    #     model, 
-    #     (dummy_input, torch.tensor([1])),  # ダミー入力とアテンションマスクを含める
-    #     "model.onnx", 
-    #     export_params=True, 
-    #     opset_version=10, 
-    #     do_constant_folding=True, 
-    #     input_names = ['input_ids', 'attention_mask'], 
-    #     output_names = ['output'], 
-    #     dynamic_axes={'input_ids' : {0 : 'batch_size'}, 'output' : {0 : 'batch_size'}}
-    # )
+    output = model(inputs)
+    make_dot(outputs.last_hidden_state, params=dict(model.named_parameters())).render("bert_input_layer", format="png")
 
     # Trainerの設定
     trainer = pl.Trainer(

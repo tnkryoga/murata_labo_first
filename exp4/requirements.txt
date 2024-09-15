@@ -8,3 +8,4 @@ wandb
 torchmetrics
 omegaconf
 netron
+torchviz
