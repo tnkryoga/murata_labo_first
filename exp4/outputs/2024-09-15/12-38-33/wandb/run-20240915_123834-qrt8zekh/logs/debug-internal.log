@@ -1,0 +1,18 @@
+{"time":"2024-09-15T12:38:35.189457459Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T12:38:35.19130899Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/12-38-33/wandb/run-20240915_123834-qrt8zekh/logs/debug-core.log"}
+{"time":"2024-09-15T12:38:35.19415629Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T12:38:35.195559255Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/12-38-33/wandb/run-20240915_123834-qrt8zekh/logs/debug-core.log"}
+{"time":"2024-09-15T12:38:35.202419299Z","level":"INFO","msg":"created new stream","id":"qrt8zekh"}
+{"time":"2024-09-15T12:38:35.203761284Z","level":"INFO","msg":"stream: started","id":"qrt8zekh"}
+{"time":"2024-09-15T12:38:35.203789229Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"qrt8zekh"}}
+{"time":"2024-09-15T12:38:35.203937847Z","level":"INFO","msg":"handler: started","stream_id":{"value":"qrt8zekh"}}
+{"time":"2024-09-15T12:38:35.203965652Z","level":"INFO","msg":"sender: started","stream_id":{"value":"qrt8zekh"}}
+{"time":"2024-09-15T12:38:35.663419329Z","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-15T12:38:35.675816627Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-15T12:38:45.299917024Z","level":"INFO","msg":"stream: closing","id":"qrt8zekh"}
+{"time":"2024-09-15T12:38:45.300057027Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-15T12:38:45.302564208Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-15T12:38:49.183051148Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"qrt8zekh"}}
+{"time":"2024-09-15T12:38:49.18312973Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"qrt8zekh"}}
+{"time":"2024-09-15T12:38:49.183232482Z","level":"INFO","msg":"sender: closed","stream_id":{"value":"qrt8zekh"}}
+{"time":"2024-09-15T12:38:49.185267683Z","level":"INFO","msg":"stream: closed","id":"qrt8zekh"}
