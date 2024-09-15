@@ -689,7 +689,7 @@ def main(cfg: DictConfig):
     # ダミーの入力テキストをトークナイズ
     # inputs = CreateDataset(dummy,tokenizer,512)
     input_text = "Hello, this is a test input for BERT visualization."
-    encoding = self.tokenizer.encode_plus(  # encodingの詳細設定
+    encoding = tokenizer.encode_plus(  # encodingの詳細設定
             input_text,
             add_special_tokens=True,
             max_length=512,
