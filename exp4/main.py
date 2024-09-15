@@ -688,10 +688,6 @@ def main(cfg: DictConfig):
     tokenizer = BertJapaneseTokenizer.from_pretrained(pretrained_model)
     # ダミーの入力テキストをトークナイズ
     inputs = CreateDataset(dummy,tokenizer,512)
-    dummy_attention = inputs['attention_mask']
-    dummy_input = inputs['input_ids']
-
-    print(dummy_attention)
 
     output = model(inputs)
     make_dot(outputs.last_hidden_state, params=dict(model.named_parameters())).render("bert_input_layer", format="png")
