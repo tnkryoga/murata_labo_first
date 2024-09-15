@@ -680,26 +680,25 @@ def main(cfg: DictConfig):
     # for name, param in state_dict_model1.items():
     #     if 'state_dict' in name:
     # for s in range(len(state_dict)):
-    print(state_dict['classifiers.15.0.weight'])
+    for i in range(16):
+        for j in range(4):
+            
         # classifier_idx = int(p[0].split('.')[1])
         # layer_idx = int(p[0].split('.')[2])
         # print(classifier_idx)
         # print(layer_idx)
-        # if layer_idx == 0:
-        #     print('ok=0\n')
-        #     # BERTの出力層からhidden_sizeへの全結合層
-        #     state_dict_model2[f'classifiers.{classifier_idx}.weight'] = state_dict_model1[f'classifiers.{classifier_idx}.0.weight']
-        #     state_dict_model2[f'classifiers.{classifier_idx}.bias'] = state_dict_model1[f'classifiers.{classifier_idx}.0.bias']
-        #     if classifier_idx == 0:
-        #         print(param)
-        # elif layer_idx == 2:
-        #     # hidden_sizeからhidden_size2への全結合層
-        #     state_dict_model2[f'hidden_layer1.{classifier_idx}.weight'] = state_dict_model1[f'classifiers.{classifier_idx}.2.weight']
-        #     state_dict_model2[f'hidden_layer1.{classifier_idx}.bias'] = state_dict_model1[f'classifiers.{classifier_idx}.2.bias']
-        # elif layer_idx == 4:
-        #     # hidden_size2から出力層への全結合層
-        #     state_dict_model2[f'hidden_layer2.{classifier_idx}.weight'] = state_dict_model1[f'classifiers.{classifier_idx}.4.weight']
-        #     state_dict_model2[f'hidden_layer2.{classifier_idx}.bias'] = state_dict_model1[f'classifiers.{classifier_idx}.4.bias']
+        if j == 0:
+            # BERTの出力層からhidden_sizeへの全結合層
+            state_dict_model2[f'classifiers.{i}.weight'] = state_dict[f'classifiers.{i}.0.weight']
+            state_dict_model2[f'classifiers.{i}.bias'] = state_dict[f'classifiers.{i}.0.bias']
+        elif j == 2:
+            # hidden_sizeからhidden_size2への全結合層
+            state_dict_model2[f'hidden_layer1.{i}.weight'] = state_dict[f'classifiers.{i}.2.weight']
+            state_dict_model2[f'hidden_layer1.{i}.bias'] = state_dict[f'classifiers.{i}.2.bias']
+        elif j == 4:
+            # hidden_size2から出力層への全結合層
+            state_dict_model2[f'hidden_layer2.{i}.weight'] = state_dict[f'classifiers.{i}.4.weight']
+            state_dict_model2[f'hidden_layer2.{i}.bias'] = state_dict[f'classifiers.{i}.4.bias']
     
     model.load_state_dict(state_dict_model2)
 
