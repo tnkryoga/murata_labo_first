@@ -1,0 +1,18 @@
+{"time":"2024-09-15T17:40:08.641767977Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T17:40:08.642838256Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/17-40-07/wandb/run-20240915_174008-mz2gvsiw/logs/debug-core.log"}
+{"time":"2024-09-15T17:40:08.645679742Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T17:40:08.646453309Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/17-40-07/wandb/run-20240915_174008-mz2gvsiw/logs/debug-core.log"}
+{"time":"2024-09-15T17:40:08.651293228Z","level":"INFO","msg":"created new stream","id":"mz2gvsiw"}
+{"time":"2024-09-15T17:40:08.651879339Z","level":"INFO","msg":"stream: started","id":"mz2gvsiw"}
+{"time":"2024-09-15T17:40:08.651911596Z","level":"INFO","msg":"sender: started","stream_id":{"value":"mz2gvsiw"}}
+{"time":"2024-09-15T17:40:08.651971336Z","level":"INFO","msg":"handler: started","stream_id":{"value":"mz2gvsiw"}}
+{"time":"2024-09-15T17:40:08.65189487Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"mz2gvsiw"}}
+{"time":"2024-09-15T17:40:09.045629576Z","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-15T17:40:09.051594078Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-15T17:40:13.447098375Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-15T17:40:13.447504997Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-15T17:40:18.939085837Z","level":"INFO","msg":"stream: closing","id":"mz2gvsiw"}
+{"time":"2024-09-15T17:40:18.939274765Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"mz2gvsiw"}}
+{"time":"2024-09-15T17:40:18.939307346Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"mz2gvsiw"}}
+{"time":"2024-09-15T17:40:18.939354039Z","level":"INFO","msg":"sender: closed","stream_id":{"value":"mz2gvsiw"}}
+{"time":"2024-09-15T17:40:18.941000114Z","level":"INFO","msg":"stream: closed","id":"mz2gvsiw"}
