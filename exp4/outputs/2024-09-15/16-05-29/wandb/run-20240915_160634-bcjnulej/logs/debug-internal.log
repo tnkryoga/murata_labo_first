@@ -1,0 +1,18 @@
+{"time":"2024-09-15T16:06:34.659047027Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T16:06:34.660087935Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/16-05-29/wandb/run-20240915_160634-bcjnulej/logs/debug-core.log"}
+{"time":"2024-09-15T16:06:34.662444527Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T16:06:34.663139685Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/16-05-29/wandb/run-20240915_160634-bcjnulej/logs/debug-core.log"}
+{"time":"2024-09-15T16:06:34.667717994Z","level":"INFO","msg":"created new stream","id":"bcjnulej"}
+{"time":"2024-09-15T16:06:34.668299407Z","level":"INFO","msg":"stream: started","id":"bcjnulej"}
+{"time":"2024-09-15T16:06:34.668347577Z","level":"INFO","msg":"handler: started","stream_id":{"value":"bcjnulej"}}
+{"time":"2024-09-15T16:06:34.668331813Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"bcjnulej"}}
+{"time":"2024-09-15T16:06:34.668401768Z","level":"INFO","msg":"sender: started","stream_id":{"value":"bcjnulej"}}
+{"time":"2024-09-15T16:06:35.102026238Z","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-15T16:06:35.10823549Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-15T16:07:38.228402084Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-15T16:07:38.228987531Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-15T16:07:43.837009367Z","level":"INFO","msg":"stream: closing","id":"bcjnulej"}
+{"time":"2024-09-15T16:07:43.837138678Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"bcjnulej"}}
+{"time":"2024-09-15T16:07:43.837176537Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"bcjnulej"}}
+{"time":"2024-09-15T16:07:43.837220712Z","level":"INFO","msg":"sender: closed","stream_id":{"value":"bcjnulej"}}
+{"time":"2024-09-15T16:07:43.838285916Z","level":"INFO","msg":"stream: closed","id":"bcjnulej"}
