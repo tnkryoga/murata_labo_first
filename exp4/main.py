@@ -704,7 +704,7 @@ def main(cfg: DictConfig):
 
     output = model(input_ids,attention_mask)[1]
     print(output)
-    image = make_dot(output, params=dict(model.named_parameters()))#.render("bert_input_layer", format="png")
+    image = make_dot(output, params=dict(model.named_parameters()),show_attrs=True)#.render("bert_input_layer", format="png")
     image.format = "png"
     image.render("NeuralNet")
 
