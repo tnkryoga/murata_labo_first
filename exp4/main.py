@@ -668,6 +668,7 @@ def main(cfg: DictConfig):
 
    # モデル1の重みをロード
     state_dict_model1 = torch.load('/content/drive/MyDrive/murata_labo_exp/checkpoint/BCELoss_exp12_good.ckpt')
+    state_dict = state_dict_model1['state_dict']
 
 
     # モデル2のstate_dictを取得
@@ -676,29 +677,29 @@ def main(cfg: DictConfig):
     
 
     # モデル1の重みをモデル2の対応する層にコピー
-    for name, param in state_dict_model1.items():
-        if 'state_dict' in name:
-            for p in param['state_dict']:
-                print(p)
-                # classifier_idx = int(p[0].split('.')[1])
-                # layer_idx = int(p[0].split('.')[2])
-                # print(classifier_idx)
-                # print(layer_idx)
-                # if layer_idx == 0:
-                #     print('ok=0\n')
-                #     # BERTの出力層からhidden_sizeへの全結合層
-                #     state_dict_model2[f'classifiers.{classifier_idx}.weight'] = state_dict_model1[f'classifiers.{classifier_idx}.0.weight']
-                #     state_dict_model2[f'classifiers.{classifier_idx}.bias'] = state_dict_model1[f'classifiers.{classifier_idx}.0.bias']
-                #     if classifier_idx == 0:
-                #         print(param)
-                # elif layer_idx == 2:
-                #     # hidden_sizeからhidden_size2への全結合層
-                #     state_dict_model2[f'hidden_layer1.{classifier_idx}.weight'] = state_dict_model1[f'classifiers.{classifier_idx}.2.weight']
-                #     state_dict_model2[f'hidden_layer1.{classifier_idx}.bias'] = state_dict_model1[f'classifiers.{classifier_idx}.2.bias']
-                # elif layer_idx == 4:
-                #     # hidden_size2から出力層への全結合層
-                #     state_dict_model2[f'hidden_layer2.{classifier_idx}.weight'] = state_dict_model1[f'classifiers.{classifier_idx}.4.weight']
-                #     state_dict_model2[f'hidden_layer2.{classifier_idx}.bias'] = state_dict_model1[f'classifiers.{classifier_idx}.4.bias']
+    # for name, param in state_dict_model1.items():
+    #     if 'state_dict' in name:
+    for s in state_dict:
+        print(s)
+        # classifier_idx = int(p[0].split('.')[1])
+        # layer_idx = int(p[0].split('.')[2])
+        # print(classifier_idx)
+        # print(layer_idx)
+        # if layer_idx == 0:
+        #     print('ok=0\n')
+        #     # BERTの出力層からhidden_sizeへの全結合層
+        #     state_dict_model2[f'classifiers.{classifier_idx}.weight'] = state_dict_model1[f'classifiers.{classifier_idx}.0.weight']
+        #     state_dict_model2[f'classifiers.{classifier_idx}.bias'] = state_dict_model1[f'classifiers.{classifier_idx}.0.bias']
+        #     if classifier_idx == 0:
+        #         print(param)
+        # elif layer_idx == 2:
+        #     # hidden_sizeからhidden_size2への全結合層
+        #     state_dict_model2[f'hidden_layer1.{classifier_idx}.weight'] = state_dict_model1[f'classifiers.{classifier_idx}.2.weight']
+        #     state_dict_model2[f'hidden_layer1.{classifier_idx}.bias'] = state_dict_model1[f'classifiers.{classifier_idx}.2.bias']
+        # elif layer_idx == 4:
+        #     # hidden_size2から出力層への全結合層
+        #     state_dict_model2[f'hidden_layer2.{classifier_idx}.weight'] = state_dict_model1[f'classifiers.{classifier_idx}.4.weight']
+        #     state_dict_model2[f'hidden_layer2.{classifier_idx}.bias'] = state_dict_model1[f'classifiers.{classifier_idx}.4.bias']
     
     model.load_state_dict(state_dict_model2)
 
