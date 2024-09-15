@@ -1,0 +1,18 @@
+{"time":"2024-09-15T15:40:29.763430722Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T15:40:29.770093309Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/15-40-14/wandb/run-20240915_154029-th6566zp/logs/debug-core.log"}
+{"time":"2024-09-15T15:40:29.775030222Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T15:40:29.776459874Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/15-40-14/wandb/run-20240915_154029-th6566zp/logs/debug-core.log"}
+{"time":"2024-09-15T15:40:29.784985563Z","level":"INFO","msg":"created new stream","id":"th6566zp"}
+{"time":"2024-09-15T15:40:29.787427333Z","level":"INFO","msg":"stream: started","id":"th6566zp"}
+{"time":"2024-09-15T15:40:29.788242201Z","level":"INFO","msg":"handler: started","stream_id":{"value":"th6566zp"}}
+{"time":"2024-09-15T15:40:29.788499823Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"th6566zp"}}
+{"time":"2024-09-15T15:40:29.788671514Z","level":"INFO","msg":"sender: started","stream_id":{"value":"th6566zp"}}
+{"time":"2024-09-15T15:40:30.512627588Z","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-15T15:40:30.526907463Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-15T15:40:47.134256784Z","level":"INFO","msg":"stream: closing","id":"th6566zp"}
+{"time":"2024-09-15T15:40:47.134409468Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-15T15:40:47.134646375Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-15T15:40:48.754770362Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"th6566zp"}}
+{"time":"2024-09-15T15:40:48.754883579Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"th6566zp"}}
+{"time":"2024-09-15T15:40:48.755026414Z","level":"INFO","msg":"sender: closed","stream_id":{"value":"th6566zp"}}
+{"time":"2024-09-15T15:40:48.757717504Z","level":"INFO","msg":"stream: closed","id":"th6566zp"}
