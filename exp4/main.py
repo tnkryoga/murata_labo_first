@@ -702,11 +702,11 @@ def main(cfg: DictConfig):
     input_ids=encoding["input_ids"]
     attention_mask=encoding["attention_mask"]
 
-    output = model(input_ids,attention_mask)[1]
+    output = model.forward(input_ids,attention_mask)
     print(output)
     image = make_dot(output, params=dict(model.named_parameters()),show_attrs=True)#.render("bert_input_layer", format="png")
     image.format = "png"
-    image.render("NeuralNet")
+    image.render("/content/drive/MyDrive/murata_labo_exp/data/NeuralNet")
 
     # Trainerの設定
     trainer = pl.Trainer(
