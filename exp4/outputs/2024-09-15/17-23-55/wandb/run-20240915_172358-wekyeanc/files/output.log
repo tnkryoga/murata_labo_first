@@ -1,0 +1,16 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:396: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+/usr/local/lib/python3.10/dist-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/main.py:670: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state_dict_model1 = torch.load('/content/drive/MyDrive/murata_labo_exp/checkpoint/BCELoss_exp12_good.ckpt')
+tensor([[ 0.0310,  0.0187,  0.0198,  ...,  0.0319,  0.0389,  0.0347],
+        [ 0.0224,  0.0256,  0.0205,  ..., -0.0185, -0.0106,  0.0228],
+        [ 0.0130,  0.0038, -0.0300,  ...,  0.0005, -0.0131, -0.0356],
+        ...,
+        [-0.0423, -0.0290, -0.0213,  ...,  0.0215, -0.0126, -0.0226],
+        [ 0.0181,  0.0054, -0.0252,  ..., -0.0187,  0.0206,  0.0033],
+        [ 0.0010, -0.0194, -0.0248,  ..., -0.0114,  0.0013,  0.0288]],
+       device='cuda:0')
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
