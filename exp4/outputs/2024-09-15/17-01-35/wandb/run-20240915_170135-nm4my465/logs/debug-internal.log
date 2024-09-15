@@ -1,0 +1,18 @@
+{"time":"2024-09-15T17:01:35.944768432Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T17:01:35.94593982Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/17-01-35/wandb/run-20240915_170135-nm4my465/logs/debug-core.log"}
+{"time":"2024-09-15T17:01:35.947933996Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T17:01:35.948637491Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/17-01-35/wandb/run-20240915_170135-nm4my465/logs/debug-core.log"}
+{"time":"2024-09-15T17:01:35.95255774Z","level":"INFO","msg":"created new stream","id":"nm4my465"}
+{"time":"2024-09-15T17:01:35.953329397Z","level":"INFO","msg":"stream: started","id":"nm4my465"}
+{"time":"2024-09-15T17:01:35.953367769Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"nm4my465"}}
+{"time":"2024-09-15T17:01:35.953422052Z","level":"INFO","msg":"sender: started","stream_id":{"value":"nm4my465"}}
+{"time":"2024-09-15T17:01:35.953557387Z","level":"INFO","msg":"handler: started","stream_id":{"value":"nm4my465"}}
+{"time":"2024-09-15T17:01:37.652998665Z","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-15T17:01:37.659668424Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-15T17:01:44.798972996Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-15T17:01:44.799228585Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-15T17:01:51.315570644Z","level":"INFO","msg":"stream: closing","id":"nm4my465"}
+{"time":"2024-09-15T17:01:51.315753294Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"nm4my465"}}
+{"time":"2024-09-15T17:01:51.315793772Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"nm4my465"}}
+{"time":"2024-09-15T17:01:51.315853947Z","level":"INFO","msg":"sender: closed","stream_id":{"value":"nm4my465"}}
+{"time":"2024-09-15T17:01:51.316852046Z","level":"INFO","msg":"stream: closed","id":"nm4my465"}
