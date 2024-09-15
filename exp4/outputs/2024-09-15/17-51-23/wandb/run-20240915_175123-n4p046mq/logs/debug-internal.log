@@ -1,0 +1,18 @@
+{"time":"2024-09-15T17:51:23.951196759Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T17:51:23.973254032Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/17-51-23/wandb/run-20240915_175123-n4p046mq/logs/debug-core.log"}
+{"time":"2024-09-15T17:51:23.976591484Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-15T17:51:23.977261095Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp4/outputs/2024-09-15/17-51-23/wandb/run-20240915_175123-n4p046mq/logs/debug-core.log"}
+{"time":"2024-09-15T17:51:23.982059001Z","level":"INFO","msg":"created new stream","id":"n4p046mq"}
+{"time":"2024-09-15T17:51:23.982838414Z","level":"INFO","msg":"stream: started","id":"n4p046mq"}
+{"time":"2024-09-15T17:51:23.982872994Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"n4p046mq"}}
+{"time":"2024-09-15T17:51:23.982899656Z","level":"INFO","msg":"handler: started","stream_id":{"value":"n4p046mq"}}
+{"time":"2024-09-15T17:51:23.982917354Z","level":"INFO","msg":"sender: started","stream_id":{"value":"n4p046mq"}}
+{"time":"2024-09-15T17:51:24.3848743Z","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-15T17:51:24.391191937Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-15T17:51:59.578642068Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-15T17:51:59.578999737Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-15T17:52:04.976267828Z","level":"INFO","msg":"stream: closing","id":"n4p046mq"}
+{"time":"2024-09-15T17:52:04.976480608Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"n4p046mq"}}
+{"time":"2024-09-15T17:52:04.976549596Z","level":"INFO","msg":"sender: closed","stream_id":{"value":"n4p046mq"}}
+{"time":"2024-09-15T17:52:04.976516402Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"n4p046mq"}}
+{"time":"2024-09-15T17:52:04.977936086Z","level":"INFO","msg":"stream: closed","id":"n4p046mq"}
