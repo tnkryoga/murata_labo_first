@@ -322,6 +322,9 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             attention_mask=batch["attention_mask"],
             labels=batch["labels"],
         )
+
+        print(f'Batch_index:{batch_idx} / preds:{preds} / Loss:{loss}\n')
+
         self.test_step_outputs_preds.append(preds)
         self.test_step_outputs_labels.append(batch["labels"])
         self.test_step_outputs_texts.append(batch["text"])
@@ -677,10 +680,10 @@ def main(cfg: DictConfig):
     
     model.load_state_dict(state_dict_model2)
 
-    for name, param in model.named_parameters():
-        if param.requires_grad:
-            print(f"Layer: {name}")
-            print(param.data)  # 重みの値を出力
+    # for name, param in model.named_parameters():
+    #     if param.requires_grad:
+    #         print(f"Layer: {name}")
+    #         print(param.data)  # 重みの値を出力
 
 
     
