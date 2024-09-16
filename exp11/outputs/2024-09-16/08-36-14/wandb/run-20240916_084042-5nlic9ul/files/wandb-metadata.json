@@ -1,0 +1,42 @@
+{
+  "os":  "Linux-6.1.85+-x86_64-with-glibc2.35",
+  "python":  "3.10.12",
+  "startedAt":  "2024-09-16T08:40:42.556455Z",
+  "program":  "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp11/main.py",
+  "codePath":  "exp11/main.py",
+  "git":  {
+    "remote":  "https://tnkryoga:@github.com/tnkryoga/murata_labo_first.git",
+    "commit":  "056b76f97d426ed0a3ce19888f39f8742f93244b"
+  },
+  "email":  "tanaryo-miyabi818@outlook.jp",
+  "root":  "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp11/outputs/2024-09-16/08-36-14",
+  "host":  "cbbc3fa0d1fc",
+  "username":  "root",
+  "executable":  "/usr/bin/python3",
+  "cpu_count":  6,
+  "cpu_count_logical":  12,
+  "gpu":  "[NVIDIA L4]",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "253055008768",
+      "used":  "36173058048"
+    }
+  },
+  "memory":  {
+    "total":  "56866914304"
+  },
+  "cpu":  {
+    "count":  6,
+    "countLogical":  12
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA L4",
+      "memoryTotal":  "24152899584",
+      "cudaCores":  7424,
+      "architecture":  "Ada"
+    }
+  ],
+  "cudaVersion":  "12.2"
+}
