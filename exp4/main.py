@@ -274,13 +274,19 @@ class MaltiLabelClassifierModel(pl.LightningModule):
     def forward(self, input_ids, attention_mask, labels=None):
         output = self.bert(input_ids, attention_mask=attention_mask)
         hidden_outputs = []
+        c = 0
         for classifier, hidden_layer1, hidden_layer2 in zip(
             self.classifiers, self.hidden_layer1, self.hidden_layer2
         ):
             binary_output = torch.relu(classifier(output.pooler_output))
             hidden_output1 = torch.relu(hidden_layer1(binary_output))
+            if c == 0:
+                print(hidden_output1)
             hidden_output2 = hidden_layer2(hidden_output1)
+            if c == 0:
+                print(hidden_output2)
             hidden_outputs.append(hidden_output2)
+            c+=1
 
         combine_outputs = torch.cat(hidden_outputs, dim=1)  # 各クラスのバイナリ出力を結合
         preds = self.sigmoid(combine_outputs)
@@ -323,7 +329,7 @@ class MaltiLabelClassifierModel(pl.LightningModule):
             labels=batch["labels"],
         )
 
-        print(f'Batch_index:{batch_idx} / preds:{preds} / Loss:{loss}\n')
+        #print(f'Batch_index:{batch_idx} / preds:{preds} / Loss:{loss}\n')
 
         self.test_step_outputs_preds.append(preds)
         self.test_step_outputs_labels.append(batch["labels"])
