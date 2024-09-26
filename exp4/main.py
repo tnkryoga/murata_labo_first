@@ -666,6 +666,12 @@ def main(cfg: DictConfig):
     # モデル2のstate_dictを取得
     state_dict_model2 = model.state_dict()
     #print(state_dict_model1)
+
+    # BERT層のパラメータのみを取得
+    bert_state_dict = {k: v for k, v in state_dict.items() if k.startswith('bert.')}
+
+    # モデルのBERT層のみにロード
+    state_dict_model2.update(bert_state_dict)
     
 
     # モデル1の重みをモデル2の対応する層にコピー
