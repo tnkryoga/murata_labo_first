@@ -515,12 +515,9 @@ class MaltiLabelClassifierModel(pl.LightningModule):
     def configure_optimizers(self):
         # pretrainされているbert最終層のlrは小さめ、pretrainされていない分類層のlrは大きめに設定
         optimizer = optim.Adam(
-            [
-                {"params": self.bert.encoder.layer[-1].parameters(), "lr": 5e-5},
-                #{"params": self.hidden_layer1.parameters(), "lr": 1e-4},
-                #{"params": self.hidden_layer2.parameters(), "lr": 1e-4},
-                # {"params": self.layer3.parameters(), "lr": 1e-4},
-            ]
+            optimizer = optim.Adam(
+           self.parameters(),lr=1e-4
+        )
         )
 
         return [optimizer]
