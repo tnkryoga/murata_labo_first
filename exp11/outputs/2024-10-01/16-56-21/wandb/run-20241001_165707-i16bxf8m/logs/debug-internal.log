@@ -1,0 +1,18 @@
+{"time":"2024-10-01T16:57:07.985356626Z","level":"INFO","msg":"using version","core version":"0.18.2"}
+{"time":"2024-10-01T16:57:07.986586903Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp11/outputs/2024-10-01/16-56-21/wandb/run-20241001_165707-i16bxf8m/logs/debug-core.log"}
+{"time":"2024-10-01T16:57:07.993477073Z","level":"INFO","msg":"created new stream","id":"i16bxf8m"}
+{"time":"2024-10-01T16:57:07.994199221Z","level":"INFO","msg":"stream: started","id":"i16bxf8m"}
+{"time":"2024-10-01T16:57:07.994261396Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"i16bxf8m"}}
+{"time":"2024-10-01T16:57:07.994265185Z","level":"INFO","msg":"sender: started","stream_id":{"value":"i16bxf8m"}}
+{"time":"2024-10-01T16:57:07.994291056Z","level":"INFO","msg":"handler: started","stream_id":{"value":"i16bxf8m"}}
+{"time":"2024-10-01T16:57:08.499073703Z","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-01T16:57:08.505043306Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-01T18:11:12.456282392Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-01T18:11:12.457952725Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-01T18:11:17.458224731Z","level":"ERROR","msg":"monitor: gpu: timeout waiting for process to exit"}
+{"time":"2024-10-01T18:11:21.395316031Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-01T18:11:23.07440757Z","level":"INFO","msg":"stream: closing","id":"i16bxf8m"}
+{"time":"2024-10-01T18:11:23.07455446Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"i16bxf8m"}}
+{"time":"2024-10-01T18:11:23.074598952Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"i16bxf8m"}}
+{"time":"2024-10-01T18:11:23.074648904Z","level":"INFO","msg":"sender: closed","stream_id":{"value":"i16bxf8m"}}
+{"time":"2024-10-01T18:11:23.075758364Z","level":"INFO","msg":"stream: closed","id":"i16bxf8m"}
