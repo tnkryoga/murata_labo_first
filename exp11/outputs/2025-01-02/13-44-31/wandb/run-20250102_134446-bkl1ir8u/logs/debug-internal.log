@@ -1,0 +1,17 @@
+{"time":"2025-01-02T13:44:47.005750409Z","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-01-02T13:44:47.007242478Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp11/outputs/2025-01-02/13-44-31/wandb/run-20250102_134446-bkl1ir8u/logs/debug-core.log"}
+{"time":"2025-01-02T13:44:47.121217513Z","level":"INFO","msg":"created new stream","id":"bkl1ir8u"}
+{"time":"2025-01-02T13:44:47.1224717Z","level":"INFO","msg":"stream: started","id":"bkl1ir8u"}
+{"time":"2025-01-02T13:44:47.12255926Z","level":"INFO","msg":"sender: started","stream_id":"bkl1ir8u"}
+{"time":"2025-01-02T13:44:47.122486227Z","level":"INFO","msg":"writer: Do: started","stream_id":"bkl1ir8u"}
+{"time":"2025-01-02T13:44:47.122534741Z","level":"INFO","msg":"handler: started","stream_id":"bkl1ir8u"}
+{"time":"2025-01-02T13:44:47.526150002Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-02T13:46:23.049543849Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-02T13:46:23.050355675Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-02T13:46:24.050157695Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.470260917,"progress":"3.5KB/3.5KB"},{"desc":"uploading config.yaml","runtime_seconds":0.223285846,"progress":"1.0KB/1.0KB"},{"desc":"uploading output.log","runtime_seconds":0.223273513,"progress":"11.8KB/11.8KB"}],"total_operations":3}}
+{"time":"2025-01-02T13:46:25.090185184Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-02T13:46:26.393881781Z","level":"INFO","msg":"stream: closing","id":"bkl1ir8u"}
+{"time":"2025-01-02T13:46:26.394550121Z","level":"INFO","msg":"handler: closed","stream_id":"bkl1ir8u"}
+{"time":"2025-01-02T13:46:26.394575369Z","level":"INFO","msg":"writer: Close: closed","stream_id":"bkl1ir8u"}
+{"time":"2025-01-02T13:46:26.394706012Z","level":"INFO","msg":"sender: closed","stream_id":"bkl1ir8u"}
+{"time":"2025-01-02T13:46:26.396272953Z","level":"INFO","msg":"stream: closed","id":"bkl1ir8u"}
