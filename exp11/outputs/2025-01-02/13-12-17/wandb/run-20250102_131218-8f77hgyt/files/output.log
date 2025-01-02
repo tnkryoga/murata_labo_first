@@ -1,0 +1,63 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:397: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+pytorch_model.bin: 100% 359M/359M [00:06<00:00, 55.3MB/s] 
+/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp11/main.py:597: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state_dict_model1 = torch.load('/content/drive/MyDrive/murata_labo_exp/checkpoint/BCELoss_exp12_good.ckpt')
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓
+┃[1;35m [0m[1;35m [0m[1;35m [0m┃[1;35m [0m[1;35mName                       [0m[1;35m [0m┃[1;35m [0m[1;35mType            [0m[1;35m [0m┃[1;35m [0m[1;35mParams[0m[1;35m [0m┃[1;35m [0m[1;35mMode [0m[1;35m [0m┃
+┡━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━┩
+│[2m [0m[2m0[0m[2m [0m│ bert                        │ BertModel        │ 89.1 M │ eval  │
+│[2m [0m[2m1[0m[2m [0m│ classifiers                 │ ModuleList       │ 28.4 M │ train │
+│[2m [0m[2m2[0m[2m [0m│ sigmoid                     │ Sigmoid          │      0 │ train │
+│[2m [0m[2m3[0m[2m [0m│ criterion                   │ BCELoss          │      0 │ train │
+│[2m [0m[2m4[0m[2m [0m│ metrics                     │ MetricCollection │      0 │ train │
+│[2m [0m[2m5[0m[2m [0m│ metrics_per_label_accuracy  │ MetricCollection │      0 │ train │
+│[2m [0m[2m6[0m[2m [0m│ metrics_per_label_precision │ MetricCollection │      0 │ train │
+│[2m [0m[2m7[0m[2m [0m│ metrics_per_label_recall    │ MetricCollection │      0 │ train │
+│[2m [0m[2m8[0m[2m [0m│ metrics_per_label_f1score   │ MetricCollection │      0 │ train │
+└───┴─────────────────────────────┴──────────────────┴────────┴───────┘
+[1mTrainable params[0m: 35.4 M
+[1mNon-trainable params[0m: 82.0 M
+[1mTotal params[0m: 117 M
+[1mTotal estimated model params size (MB)[0m: 469
+[1mModules in train mode[0m: 173
+[1mModules in eval mode[0m: 228
+[2KEpoch 0/5  [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m 1/337 [2m0:00:02 • -:--:--[0m [2;4m0.00it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [90m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m 2/337 [2m0:00:02 • 0:00:19[0m [2;4m17.75it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [90m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m 2/337 [2m0:00:03 • 0:00:19[0m [2;4m17.75it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m 3/337 [2m0:00:03 • 0:04:51[0m [2;4m1.15it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m 3/337 [2m0:00:05 • 0:04:51[0m [2;4m1.15it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m 4/337 [2m0:00:05 • 0:06:30[0m [2;4m0.85it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m 4/337 [2m0:00:07 • 0:06:30[0m [2;4m0.85it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m 5/337 [2m0:00:07 • 0:07:08[0m [2;4m0.78it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m 5/337 [2m0:00:08 • 0:07:08[0m [2;4m0.78it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m 6/337 [2m0:00:08 • 0:07:32[0m [2;4m0.73it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m 6/337 [2m0:00:10 • 0:07:32[0m [2;4m0.73it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m 7/337 [2m0:00:10 • 0:07:47[0m [2;4m0.71it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m 7/337 [2m0:00:12 • 0:07:47[0m [2;4m0.71it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m 8/337 [2m0:00:12 • 0:07:59[0m [2;4m0.69it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m 8/337 [2m0:00:13 • 0:07:59[0m [2;4m0.69it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m 9/337 [2m0:00:13 • 0:08:07[0m [2;4m0.67it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m 9/337 [2m0:00:15 • 0:08:07[0m [2;4m0.67it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m 10/337 [2m0:00:15 • 0:08:14[0m [2;4m0.66it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m 10/337 [2m0:00:17 • 0:08:14[0m [2;4m0.66it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m 11/337 [2m0:00:17 • 0:08:19[0m [2;4m0.65it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m 11/337 [2m0:00:19 • 0:08:19[0m [2;4m0.65it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m 12/337 [2m0:00:19 • 0:08:22[0m [2;4m0.65it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m 12/337 [2m0:00:20 • 0:08:22[0m [2;4m0.65it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━[0m 13/337 [2m0:00:20 • 0:08:26[0m [2;4m0.64it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━[0m 13/337 [2m0:00:22 • 0:08:26[0m [2;4m0.64it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━[0m 14/337 [2m0:00:22 • 0:08:28[0m [2;4m0.64it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━[0m 14/337 [2m0:00:24 • 0:08:28[0m [2;4m0.64it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━[0m 15/337 [2m0:00:24 • 0:08:30[0m [2;4m0.63it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━[0m 15/337 [2m0:00:25 • 0:08:30[0m [2;4m0.63it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━[0m 16/337 [2m0:00:25 • 0:08:31[0m [2;4m0.63it/s[0m [3mv_num: hgyt train/loss:     [0m
+[2K[1A[2KEpoch 0/5  [35m━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━[0m 16/337 [2m0:00:27 • 0:08:31[0m [2;4m0.63it/s[0m [3mv_num: hgyt train/loss:     [0m
+[rank: 0] Received SIGTERM: 15
+
+Detected KeyboardInterrupt, attempting graceful shutdown ...
+                                                                        [3m0.104                       [0m
+[?25h

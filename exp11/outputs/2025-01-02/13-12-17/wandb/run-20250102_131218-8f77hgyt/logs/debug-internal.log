@@ -1,0 +1,15 @@
+{"time":"2025-01-02T13:12:18.081019744Z","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-01-02T13:12:18.191637788Z","level":"INFO","msg":"created new stream","id":"8f77hgyt"}
+{"time":"2025-01-02T13:12:18.192568127Z","level":"INFO","msg":"stream: started","id":"8f77hgyt"}
+{"time":"2025-01-02T13:12:18.192596665Z","level":"INFO","msg":"writer: Do: started","stream_id":"8f77hgyt"}
+{"time":"2025-01-02T13:12:18.192639712Z","level":"INFO","msg":"handler: started","stream_id":"8f77hgyt"}
+{"time":"2025-01-02T13:12:18.19266463Z","level":"INFO","msg":"sender: started","stream_id":"8f77hgyt"}
+{"time":"2025-01-02T13:12:18.509497757Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-02T13:13:21.650910986Z","level":"INFO","msg":"stream: closing","id":"8f77hgyt"}
+{"time":"2025-01-02T13:13:21.651018256Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-02T13:13:21.700202553Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-02T13:13:22.778443223Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-02T13:13:22.938478284Z","level":"INFO","msg":"handler: closed","stream_id":"8f77hgyt"}
+{"time":"2025-01-02T13:13:22.938524859Z","level":"INFO","msg":"writer: Close: closed","stream_id":"8f77hgyt"}
+{"time":"2025-01-02T13:13:22.938634764Z","level":"INFO","msg":"sender: closed","stream_id":"8f77hgyt"}
+{"time":"2025-01-02T13:13:22.941132737Z","level":"INFO","msg":"stream: closed","id":"8f77hgyt"}
