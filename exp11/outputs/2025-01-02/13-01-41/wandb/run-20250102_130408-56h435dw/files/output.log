@@ -1,0 +1,28 @@
+/usr/local/lib/python3.10/dist-packages/pytorch_lightning/loggers/wandb.py:397: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+tokenizer_config.json: 100% 120/120 [00:00<00:00, 452kB/s]
+vocab.txt: 100% 15.7k/15.7k [00:00<00:00, 39.2MB/s]
+config.json: 100% 478/478 [00:00<00:00, 1.91MB/s]
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/bert_japanese/tokenization_bert_japanese.py", line 431, in __init__
+    import unidic_lite
+ModuleNotFoundError: No module named 'unidic_lite'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp11/main.py", line 575, in main
+    data_module = CreateDataModule(
+  File "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp11/main.py", line 90, in __init__
+    self.tokenizer = BertJapaneseTokenizer.from_pretrained(pretrained_model)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/tokenization_utils_base.py", line 2032, in from_pretrained
+    return cls._from_pretrained(
+  File "/usr/local/lib/python3.10/dist-packages/transformers/tokenization_utils_base.py", line 2272, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/bert_japanese/tokenization_bert_japanese.py", line 143, in __init__
+    self.word_tokenizer = MecabTokenizer(
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/bert_japanese/tokenization_bert_japanese.py", line 433, in __init__
+    raise error.__class__(
+ModuleNotFoundError: The unidic_lite dictionary is not installed. See https://github.com/polm/unidic-lite for installation.
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

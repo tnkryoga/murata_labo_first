@@ -1,0 +1,16 @@
+{"time":"2025-01-02T13:04:08.376637341Z","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-01-02T13:04:08.3782328Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp11/outputs/2025-01-02/13-01-41/wandb/run-20250102_130408-56h435dw/logs/debug-core.log"}
+{"time":"2025-01-02T13:04:08.490344776Z","level":"INFO","msg":"created new stream","id":"56h435dw"}
+{"time":"2025-01-02T13:04:08.491097902Z","level":"INFO","msg":"stream: started","id":"56h435dw"}
+{"time":"2025-01-02T13:04:08.491113102Z","level":"INFO","msg":"writer: Do: started","stream_id":"56h435dw"}
+{"time":"2025-01-02T13:04:08.491175824Z","level":"INFO","msg":"handler: started","stream_id":"56h435dw"}
+{"time":"2025-01-02T13:04:08.491201992Z","level":"INFO","msg":"sender: started","stream_id":"56h435dw"}
+{"time":"2025-01-02T13:04:08.741917321Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-02T13:04:13.906322379Z","level":"INFO","msg":"stream: closing","id":"56h435dw"}
+{"time":"2025-01-02T13:04:13.906532246Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-02T13:04:13.90804829Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-02T13:04:15.203096892Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-02T13:04:15.415106065Z","level":"INFO","msg":"handler: closed","stream_id":"56h435dw"}
+{"time":"2025-01-02T13:04:15.415173162Z","level":"INFO","msg":"writer: Close: closed","stream_id":"56h435dw"}
+{"time":"2025-01-02T13:04:15.415289361Z","level":"INFO","msg":"sender: closed","stream_id":"56h435dw"}
+{"time":"2025-01-02T13:04:15.416799987Z","level":"INFO","msg":"stream: closed","id":"56h435dw"}

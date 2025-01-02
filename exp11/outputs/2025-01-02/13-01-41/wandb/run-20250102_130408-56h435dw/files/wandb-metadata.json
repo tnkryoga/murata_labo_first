@@ -1,0 +1,41 @@
+{
+  "os":  "Linux-6.1.85+-x86_64-with-glibc2.35",
+  "python":  "CPython 3.10.12",
+  "startedAt":  "2025-01-02T13:04:08.368217Z",
+  "program":  "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp11/main.py",
+  "codePath":  "exp11/main.py",
+  "git":  {
+    "remote":  "https://tnkryoga:@github.com/tnkryoga/murata_labo_first.git",
+    "commit":  "92cd9bdc404ba735c926137f0fa1da5d59d6d86e"
+  },
+  "email":  "tanaryo-miyabi818@outlook.jp",
+  "root":  "/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp11/outputs/2025-01-02/13-01-41",
+  "host":  "fff5db094d20",
+  "executable":  "/usr/bin/python3",
+  "cpu_count":  1,
+  "cpu_count_logical":  2,
+  "gpu":  "Tesla T4",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "120942624768",
+      "used":  "36055973888"
+    }
+  },
+  "memory":  {
+    "total":  "13609422848"
+  },
+  "cpu":  {
+    "count":  1,
+    "countLogical":  2
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "Tesla T4",
+      "memoryTotal":  "16106127360",
+      "cudaCores":  2560,
+      "architecture":  "Turing"
+    }
+  ],
+  "cudaVersion":  "12.2"
+}
