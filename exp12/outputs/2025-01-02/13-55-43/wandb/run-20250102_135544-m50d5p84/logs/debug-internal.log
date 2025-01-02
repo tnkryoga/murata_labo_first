@@ -1,0 +1,16 @@
+{"time":"2025-01-02T13:55:44.329403196Z","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-01-02T13:55:44.330981019Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp12/outputs/2025-01-02/13-55-43/wandb/run-20250102_135544-m50d5p84/logs/debug-core.log"}
+{"time":"2025-01-02T13:55:44.444710683Z","level":"INFO","msg":"created new stream","id":"m50d5p84"}
+{"time":"2025-01-02T13:55:44.445538311Z","level":"INFO","msg":"stream: started","id":"m50d5p84"}
+{"time":"2025-01-02T13:55:44.445637884Z","level":"INFO","msg":"writer: Do: started","stream_id":"m50d5p84"}
+{"time":"2025-01-02T13:55:44.445717606Z","level":"INFO","msg":"handler: started","stream_id":"m50d5p84"}
+{"time":"2025-01-02T13:55:44.445755273Z","level":"INFO","msg":"sender: started","stream_id":"m50d5p84"}
+{"time":"2025-01-02T13:55:44.763558663Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-02T13:55:45.224161875Z","level":"INFO","msg":"stream: closing","id":"m50d5p84"}
+{"time":"2025-01-02T13:55:45.224433381Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-02T13:55:45.225290002Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-02T13:55:47.466910783Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-02T13:55:47.7253965Z","level":"INFO","msg":"handler: closed","stream_id":"m50d5p84"}
+{"time":"2025-01-02T13:55:47.725437334Z","level":"INFO","msg":"writer: Close: closed","stream_id":"m50d5p84"}
+{"time":"2025-01-02T13:55:47.725670438Z","level":"INFO","msg":"sender: closed","stream_id":"m50d5p84"}
+{"time":"2025-01-02T13:55:47.727600377Z","level":"INFO","msg":"stream: closed","id":"m50d5p84"}
