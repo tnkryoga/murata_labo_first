@@ -607,37 +607,37 @@ def main(cfg: DictConfig):
     )
 
 
-    vocab_size = model.bert.config.vocab_size  # 使用するBERTモデルの語彙サイズを取得
-    input_ids = torch.randint(0, vocab_size, (1, 512))  # 語彙サイズに適合するように変更
-    attention_mask = torch.ones_like(input_ids)
+    # vocab_size = model.bert.config.vocab_size  # 使用するBERTモデルの語彙サイズを取得
+    # input_ids = torch.randint(0, vocab_size, (1, 512))  # 語彙サイズに適合するように変更
+    # attention_mask = torch.ones_like(input_ids)
 
-    dammy_input = {
-        'input_ids':torch.zeros(1, cfg.model.max_length, dtype=torch.long),
-        'attention_mask':torch.ones(1, cfg.model.max_length, dtype=torch.long),
-    }
+    # dammy_input = {
+    #     'input_ids':torch.zeros(1, cfg.model.max_length, dtype=torch.long),
+    #     'attention_mask':torch.ones(1, cfg.model.max_length, dtype=torch.long),
+    # }
     
-    pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking"
-    tokenizer = BertJapaneseTokenizer.from_pretrained(pretrained_model)
-    ex_string = "example string"
-    inputs = tokenizer(ex_string,
-                       padding='max_length', max_length=512, truncation=True,
-                       return_tensors="pt")
-    input_id = inputs['input_ids'].squeeze(1)
-    mask = inputs['attention_mask']
+    # pretrained_model="cl-tohoku/bert-base-japanese-char-whole-word-masking"
+    # tokenizer = BertJapaneseTokenizer.from_pretrained(pretrained_model)
+    # ex_string = "example string"
+    # inputs = tokenizer(ex_string,
+    #                    padding='max_length', max_length=512, truncation=True,
+    #                    return_tensors="pt")
+    # input_id = inputs['input_ids'].squeeze(1)
+    # mask = inputs['attention_mask']
 
-    dam = (torch.zeros(1, cfg.model.max_length, dtype=torch.long).flatten(),torch.ones(1, cfg.model.max_length, dtype=torch.long).flatten())
+    # dam = (torch.zeros(1, cfg.model.max_length, dtype=torch.long).flatten(),torch.ones(1, cfg.model.max_length, dtype=torch.long).flatten())
 
-    with torch.no_grad():
-            input_names, output_names, dynamic_axes = infer_shapes(model, input_id, mask)
-            torch.onnx.export(model=model,
-                              args=(input_id, mask),
-                              f='tryout.onnx',
-                              input_names=input_names,
-                              output_names=output_names,
-                              dynamic_axes=dynamic_axes,
-                              export_params=True,
-                              do_constant_folding=False,
-                              verbose=False)
+    # with torch.no_grad():
+    #         input_names, output_names, dynamic_axes = infer_shapes(model, input_id, mask)
+    #         torch.onnx.export(model=model,
+    #                           args=(input_id, mask),
+    #                           f='tryout.onnx',
+    #                           input_names=input_names,
+    #                           output_names=output_names,
+    #                           dynamic_axes=dynamic_axes,
+    #                           export_params=True,
+    #                           do_constant_folding=False,
+    #                           verbose=False)
 
     # Trainerの設定
     trainer = pl.Trainer(
