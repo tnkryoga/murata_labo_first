@@ -19,10 +19,7 @@ from torch import nn
 from torch.utils.data import DataLoader, Dataset
 from transformers import BertModel
 from transformers import BertJapaneseTokenizer
-from torchinfo import summary
-from torchviz import make_dot
-import torch.onnx
-import torch.onnx.shape_inference
+
 
 
 # Dataset
