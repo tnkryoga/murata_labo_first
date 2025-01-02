@@ -1,0 +1,17 @@
+{"time":"2025-01-02T13:16:19.297650525Z","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-01-02T13:16:19.299548033Z","level":"INFO","msg":"created symlink","path":"/content/drive/MyDrive/murata_labo_exp/murata_labo_exp_src/exp11/outputs/2025-01-02/13-16-18/wandb/run-20250102_131619-o168w3b8/logs/debug-core.log"}
+{"time":"2025-01-02T13:16:19.407550877Z","level":"INFO","msg":"created new stream","id":"o168w3b8"}
+{"time":"2025-01-02T13:16:19.40842202Z","level":"INFO","msg":"stream: started","id":"o168w3b8"}
+{"time":"2025-01-02T13:16:19.408458929Z","level":"INFO","msg":"writer: Do: started","stream_id":"o168w3b8"}
+{"time":"2025-01-02T13:16:19.408496797Z","level":"INFO","msg":"handler: started","stream_id":"o168w3b8"}
+{"time":"2025-01-02T13:16:19.408518835Z","level":"INFO","msg":"sender: started","stream_id":"o168w3b8"}
+{"time":"2025-01-02T13:16:19.680027382Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-02T13:17:30.445365441Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-02T13:17:30.446095593Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-02T13:17:31.413020439Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.640905994,"progress":"3.5KB/3.5KB"},{"desc":"uploading config.yaml","runtime_seconds":0.493730689,"progress":"1.0KB/1.0KB"},{"desc":"uploading output.log","runtime_seconds":0.493717207,"progress":"11.5KB/11.5KB"}],"total_operations":3}}
+{"time":"2025-01-02T13:17:31.663373687Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-02T13:17:32.894695636Z","level":"INFO","msg":"stream: closing","id":"o168w3b8"}
+{"time":"2025-01-02T13:17:32.895456976Z","level":"INFO","msg":"handler: closed","stream_id":"o168w3b8"}
+{"time":"2025-01-02T13:17:32.895526281Z","level":"INFO","msg":"writer: Close: closed","stream_id":"o168w3b8"}
+{"time":"2025-01-02T13:17:32.895589005Z","level":"INFO","msg":"sender: closed","stream_id":"o168w3b8"}
+{"time":"2025-01-02T13:17:32.896983683Z","level":"INFO","msg":"stream: closed","id":"o168w3b8"}
