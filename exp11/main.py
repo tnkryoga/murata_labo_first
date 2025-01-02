@@ -637,7 +637,7 @@ def main(cfg: DictConfig):
         logger=wandb_logger,
         fast_dev_run=False,
     )
-    trainer.fit(model, data_module)
+    #trainer.fit(model, data_module)
     trainer.test(model, data_module)
 
     wandb.finish()
